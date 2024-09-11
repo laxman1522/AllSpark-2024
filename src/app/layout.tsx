@@ -4,7 +4,7 @@ import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "AllSpark'24",
-  description: " ",
+  description: "",
 };
 
 export default function RootLayout({
