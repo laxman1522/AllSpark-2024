@@ -1,7 +1,5 @@
+import Logo from '../components/Logo/Logo';
+
 export default function Home() {
-  return (
-    <div>
-      All Spark 2024
-    </div>
-  );
+  return <Logo />;
 }
