@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import styles from './Logo.module.scss';
@@ -12,10 +13,24 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
+// Register GSAP MotionPath plugin
 gsap.registerPlugin(MotionPathPlugin);
 
-const getDynamicValues = (width) => {
-  let starSize, logoSize, logoStarSize;
+// Define interface for dynamic size values
+interface Size {
+  height: string;
+  width: string;
+}
+
+// Function to calculate dynamic values based on screen width
+const getDynamicValues = (
+  width: number,
+): {
+  starSize: Size;
+  logoSize: Size;
+  logoStarSize: Size;
+} => {
+  let starSize: Size, logoSize: Size, logoStarSize: Size;
 
   if (width <= 425) {
     starSize = { height: '24px', width: '30px' };
@@ -42,7 +57,8 @@ const getDynamicValues = (width) => {
   return { starSize, logoSize, logoStarSize };
 };
 
-const getWindowSizeCategory = (width) => {
+// Function to determine window size category
+const getWindowSizeCategory = (width: number): string => {
   if (width > 1024) return 'lg-desktop';
   if (width <= 1024 && width > 768) return 'desktop';
   if (width <= 768 && width > 580) return 'tablet';
@@ -50,14 +66,15 @@ const getWindowSizeCategory = (width) => {
   return 'mobile';
 };
 
+// Main Logo component
 export default function Logo() {
-  const leftRef = useRef(null);
-  const rightRef = useRef(null);
-  const logoContainerRef = useRef(null);
-  const [windowSize, setWindowSize] = useState('default');
+  const leftRef = useRef<HTMLImageElement>(null);
+  const rightRef = useRef<HTMLImageElement>(null);
+  const logoContainerRef = useRef<HTMLDivElement>(null);
+  const [windowSize, setWindowSize] = useState<string>('default');
 
   // Reusable functions for common animations
-  const motionPathAnimation = (path) => ({
+  const motionPathAnimation = (path: any) => ({
     duration: 2.5,
     motionPath: { path, curviness: 1.2 },
     scaleY: 5,
@@ -66,36 +83,71 @@ export default function Logo() {
     yoyo: true,
   });
 
-  // Define paths
+  const calculateElementWidth = (windowWidth: number) => {
+    if (windowWidth > 1024) {
+      return (24 * 2.5) / 2;
+    } else if (windowWidth > 768) {
+      return (17 * 2.5) / 2;
+    } else if (windowWidth > 580) {
+      return (12.8 * 2.5) / 2;
+    } else {
+      return (9.6 * 2.5) / 2;
+    }
+  };
+
+  //Calculating the Left Path dynamically based on the image size
+  const calculateLeftPath = () => {
+    const windowWidth = window?.innerWidth;
+    return 50 + (calculateElementWidth(windowWidth) / windowWidth) * 100;
+  };
+
+  //Calculating the Right Path dynamically based on the image size
+  const calculateRightPath = () => {
+    const windowWidth = window?.innerWidth;
+    return 50 - (calculateElementWidth(windowWidth) / windowWidth) * 100;
+  };
+
+  // Define paths for GSAP animation
   const paths = {
     right: [
       { x: '75vw', y: '60vh' },
-      { x: '51.1vw', y: '20vh' },
+      { x: `${calculateLeftPath()}vw`, y: '20vh' },
     ],
     left: [
       { x: '25vw', y: '60vh' },
-      { x: '47.4vw', y: '20vh' },
+      { x: `${calculateRightPath()}vw`, y: '20vh' },
     ],
   };
 
+  // Handle window resize event
   useEffect(() => {
     const resizeHandler = () => {
       const newSizeCategory = getWindowSizeCategory(window.innerWidth);
       if (newSizeCategory !== windowSize) setWindowSize(newSizeCategory);
     };
+
     window.addEventListener('resize', resizeHandler);
     return () => {
       window.removeEventListener('resize', resizeHandler);
     };
-  }, []);
+  }, [windowSize]);
 
+  // Animation logic
   useEffect(() => {
     if (leftRef.current && rightRef.current && logoContainerRef.current) {
       const elements = {
-        star: logoContainerRef.current.querySelector(`.${styles.star}`),
-        aLetter: logoContainerRef.current.querySelector(`.${styles.aLetter}`),
-        llspark: logoContainerRef.current.querySelector(`.${styles.llspark}`),
-        allspark: logoContainerRef.current.querySelector(`.${styles.allspark}`),
+        star: logoContainerRef.current.querySelector<HTMLImageElement>(
+          `.${styles.star}`,
+        ),
+        aLetter: logoContainerRef.current.querySelector<HTMLImageElement>(
+          `.${styles.aLetter}`,
+        ),
+        llspark: logoContainerRef.current.querySelector<HTMLImageElement>(
+          `.${styles.llspark}`,
+        ),
+        allspark: logoContainerRef.current.querySelector<HTMLImageElement>(
+          `.${styles.allspark}`,
+        ),
       };
 
       const { starSize, logoSize, logoStarSize } = getDynamicValues(
