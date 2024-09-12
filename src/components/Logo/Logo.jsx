@@ -8,7 +8,7 @@ import star from '../../../public/images/star.png';
 import aLetter from '../../../public/images/letter-A.png';
 import llspark from '../../../public/images/Text-without-A.png';
 import allspark from '../../../public/images/Allsparktext.png';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
@@ -43,10 +43,21 @@ const getDynamicValues = () => {
   return { starSize, logoSize, logoStarSize };
 };
 
+const getWindowSizeCategory = (width) => {
+  if (width > 1024) return 'lg-desktop';
+  if (width <= 1024 && width > 768) return 'desktop';
+  if (width <= 768 && width > 580) return 'tablet';
+  if (width <= 580 && width > 425) return 'lg-mobile';
+  return 'mobile';
+};
+
 export default function Logo() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const logoContainerRef = useRef(null);
+  const [windowSize, setWindowSize] = useState(
+    getWindowSizeCategory(window.innerWidth),
+  );
 
   // Reusable functions for common animations
   const motionPathAnimation = (path) => ({
@@ -75,6 +86,17 @@ export default function Logo() {
   };
 
   useEffect(() => {
+    const resizeHandler = () => {
+      const newSizeCategory = getWindowSizeCategory(window.innerWidth);
+      if (newSizeCategory !== windowSize) setWindowSize(newSizeCategory);
+    };
+    window.addEventListener('resize', resizeHandler);
+    return () => {
+      window.removeEventListener('resize', resizeHandler);
+    };
+  }, []);
+
+  useEffect(() => {
     if (leftRef.current && rightRef.current && logoContainerRef.current) {
       const elements = {
         star: logoContainerRef.current.querySelector(`.${styles.star}`),
@@ -84,6 +106,22 @@ export default function Logo() {
       };
 
       const { starSize, logoSize, logoStarSize } = getDynamicValues();
+
+      // Reset animations to initial state
+      gsap.set(
+        [
+          rightRef.current,
+          leftRef.current,
+          logoContainerRef.current,
+          elements.star,
+          elements.aLetter,
+          elements.llspark,
+          elements.allspark,
+        ],
+        {
+          clearProps: 'all',
+        },
+      );
 
       // Animate right and left elements
       gsap
@@ -159,7 +197,7 @@ export default function Logo() {
           );
       });
     }
-  }, []);
+  }, [windowSize]);
 
   return (
     <div className={styles.logo}>
