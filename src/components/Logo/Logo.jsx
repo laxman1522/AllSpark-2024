@@ -14,8 +14,7 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
 gsap.registerPlugin(MotionPathPlugin);
 
-const getDynamicValues = () => {
-  const width = window.innerWidth;
+const getDynamicValues = (width) => {
   let starSize, logoSize, logoStarSize;
 
   if (width <= 425) {
@@ -55,9 +54,7 @@ export default function Logo() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const logoContainerRef = useRef(null);
-  const [windowSize, setWindowSize] = useState(
-    getWindowSizeCategory(window.innerWidth),
-  );
+  const [windowSize, setWindowSize] = useState('default');
 
   // Reusable functions for common animations
   const motionPathAnimation = (path) => ({
@@ -101,7 +98,9 @@ export default function Logo() {
         allspark: logoContainerRef.current.querySelector(`.${styles.allspark}`),
       };
 
-      const { starSize, logoSize, logoStarSize } = getDynamicValues();
+      const { starSize, logoSize, logoStarSize } = getDynamicValues(
+        window.innerWidth,
+      );
 
       // Reset animations to initial state
       gsap.globalTimeline.clear();
