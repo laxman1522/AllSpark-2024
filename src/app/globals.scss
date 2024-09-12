@@ -25,6 +25,11 @@ body {
   }
 }
 
+@font-face {
+  font-family: 'counter';
+  src: url('/fonts/DSEG14Classic-Regular.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -43,20 +48,26 @@ body {
 }
 
 .time-section {
+  // font-family: 'counter';
   text-align: center;
   font-size: 30px;
 }
 
+.time-lable {
+  font-size: 29px;
+  padding: 30px;
+}
+
 .time-group {
   display: flex;
-  gap: 10px;
+  gap: 16px;
 }
 
 .time-segment {
   display: block;
   font-size: 100px;
   font-weight: 900;
-  width: 100px;
+  width: 116px;
   z-index: 1;
 }
 
@@ -93,7 +104,7 @@ body {
   top: 0;
   perspective: 400px;
   height: 100%;
-  width: 100px;
+  width: 116px;
   display: flex;
   flex-direction: row;
   gap: 1rem;
