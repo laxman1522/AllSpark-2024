@@ -1,3 +1,10 @@
+import { Fragment } from 'react';
+import BackgroundAnimation from '../components/BackgroundAnimation/BackgroundAnimation';
+
 export default function Home() {
-  return <div>All Spark 2024</div>;
+  return (
+    <Fragment>
+      <BackgroundAnimation />
+    </Fragment>
+  );
 }
