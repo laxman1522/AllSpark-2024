@@ -1,7 +1,15 @@
+// import HandAnimation from "@/components/handAnimation/HandAnimation";
+// import JumpAnimation from "@/components/jumpingAnimation/JumpingAnimation";
+
+import { CountDown } from '@/components/countDown/CountDown';
+
 export default function Home() {
   return (
-    <div>
-      All Spark 2024
-    </div>
+    <>
+      {/* <HandAnimation /> */}
+      {/* <JumpAnimation/> */}
+
+      <CountDown></CountDown>
+    </>
   );
 }
