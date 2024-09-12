@@ -72,15 +72,11 @@ export default function Logo() {
   // Define paths
   const paths = {
     right: [
-      { x: '90vw', y: '80vh' },
-      { x: '20vw', y: '60vh' },
-      { x: '70vw', y: '40vh' },
+      { x: '75vw', y: '60vh' },
       { x: '51.1vw', y: '20vh' },
     ],
     left: [
-      { x: '10vw', y: '80vh' },
-      { x: '80vw', y: '60vh' },
-      { x: '30vw', y: '40vh' },
+      { x: '25vw', y: '60vh' },
       { x: '47.4vw', y: '20vh' },
     ],
   };
@@ -108,6 +104,7 @@ export default function Logo() {
       const { starSize, logoSize, logoStarSize } = getDynamicValues();
 
       // Reset animations to initial state
+      gsap.globalTimeline.clear();
       gsap.set(
         [
           rightRef.current,
@@ -135,7 +132,7 @@ export default function Logo() {
         .to(leftRef.current, motionPathAnimation(paths.left))
         .set(leftRef.current, { display: 'none' });
 
-      // Star animation after 3 seconds
+      // Star animation after 2.5 seconds
       gsap.delayedCall(2.5, () => {
         gsap
           .timeline({ ease: 'power2.in' })
@@ -149,7 +146,7 @@ export default function Logo() {
           });
       });
 
-      // Letters animation after 4 seconds
+      // Letters animation after 3.5 seconds
       gsap.delayedCall(3.5, () => {
         gsap
           .timeline({ ease: 'bounce.out' })
@@ -164,13 +161,24 @@ export default function Logo() {
             },
             0,
           )
-          .to(elements.llspark, { duration: 1.5, opacity: 1, left: 0 }, 0)
+          .to(
+            elements.llspark,
+            {
+              duration: 1.5,
+              opacity: 1,
+              filter: 'blur(0px) contrast(1)',
+              ease: 'power2.out',
+              stagger: 0.1,
+              startAt: { filter: 'blur(50px) contrast(0.5)' },
+            },
+            0,
+          )
           .set(elements.aLetter, { display: 'none' }, 1.5)
           .set(elements.llspark, { display: 'none' }, 1.5)
           .set(elements.allspark, { display: 'block' }, 1.5);
       });
 
-      // Logo animation after 5.5 seconds
+      // Logo animation after 5 seconds
       gsap.delayedCall(5, () => {
         gsap
           .timeline({ ease: 'power2.out' })
