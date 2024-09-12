@@ -4,6 +4,9 @@
 
 :root {
   --background: #ffffff;
+  --background-gradient: transparent
+    linear-gradient(180deg, #270212 0%, #511717 100%) 0% 0% no-repeat
+    padding-box;
   --foreground: #171717;
 }
 
@@ -15,8 +18,11 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   color: var(--foreground);
-  background: var(--background);
+  background: var(--background-gradient);
   font-family: Arial, Helvetica, sans-serif;
 }
 
