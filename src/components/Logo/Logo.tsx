@@ -270,30 +270,43 @@ const Logo = () => {
       <Image
         src={left}
         alt="left"
-        className="left"
+        className="left absolute hidden"
         priority={true}
         ref={leftRef}
       />
       <Image
         src={right}
         alt="right"
-        className="right"
+        className="right absolute hidden"
         priority={true}
         ref={rightRef}
       />
-      <div className="logo-container" ref={logoContainerRef}>
+      <div
+        className="logo-container relative top-[50vh] left-[50vw] -translate-x-1/2 -translate-y-1/2"
+        ref={logoContainerRef}
+      >
         <Image
           src={allspark}
           alt="allspark"
-          className="allspark"
+          className="allspark absolute hidden object-contain top-0 h-full w-full"
           priority={true}
         />
-        <Image src={star} alt="star" className="star" priority={true} />
-        <Image src={aLetter} alt="a" className="aLetter" priority={true} />
+        <Image
+          src={star}
+          alt="star"
+          className="star absolute hidden"
+          priority={true}
+        />
+        <Image
+          src={aLetter}
+          alt="a"
+          className="aLetter absolute hidden object-contain w-auto h-1/5 top-[-2%] left-[5%]"
+          priority={true}
+        />
         <Image
           src={llspark}
           alt="llspark"
-          className="llspark"
+          className="llspark absolute object-contain opacity-0 top-0 h-full"
           priority={true}
         />
       </div>
