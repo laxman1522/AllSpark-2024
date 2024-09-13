@@ -1,37 +1,5 @@
-.time-segment {
-  display: block;
-  font-size: 100px;
-  font-weight: 900;
-  width: 116px;
-  z-index: 1;
-}
-
-.segment-display {
-  position: relative;
-  height: 100%;
-}
-
-.segment-display__top,
-.segment-display__bottom {
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: 50%;
-  position: relative;
-  border-radius: 5px;
-  border: 0;
-}
-
-.segment-display__top {
-  line-height: 1.5;
-  color: #332723;
-  background-color: #f3baa7;
-}
-
 .segment-display__bottom {
   line-height: 0;
-  color: #332723;
-  background-color: #f3baa7;
 }
 
 .segment-overlay {
@@ -58,22 +26,13 @@
 .segment-overlay__top {
   top: 0;
   line-height: 1.5;
-  color: #332723;
-  background-color: #f3baa7;
   transform-origin: bottom;
 }
 
 .segment-overlay__bottom {
   bottom: 0;
   line-height: 0;
-  color: #332723;
-  background-color: #f3baa7;
   transform-origin: top;
-}
-
-.segment-middle-seperation {
-  background-color: #3f0d15;
-  height: 4.3px;
 }
 
 .segment-display__top .counter-value,

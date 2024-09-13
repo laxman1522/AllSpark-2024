@@ -2,7 +2,6 @@
 import { getTimeRemaining } from '@/utils/countdown-utils';
 import { useEffect, useState } from 'react';
 import TimeSection from '@/components/timeSection/TimeSection';
-import './CountDownTimer.scss';
 
 interface CountDownTimerProps {
   targetTime: number;
@@ -13,9 +12,7 @@ interface CountDownTimerProps {
  * @version 1.0.0
  * @author [Hariharan Muralidharan]
  */
-export const CountDownTimer: React.FC<CountDownTimerProps> = ({
-  targetTime,
-}) => {
+const CountDownTimer: React.FC<CountDownTimerProps> = ({ targetTime }) => {
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     seconds: 0,
@@ -49,7 +46,7 @@ export const CountDownTimer: React.FC<CountDownTimerProps> = ({
   }, []);
 
   return (
-    <div className="countdown">
+    <div className="flex justify-center items-center gap-8 bg-counter-background w-100 p-20 my-8 mx-auto">
       <TimeSection label="Days" value={timeRemaining.days} />
       <TimeSection label="Hours" value={timeRemaining.hours} />
       <TimeSection label="Minutes" value={timeRemaining.minutes} />
@@ -57,3 +54,5 @@ export const CountDownTimer: React.FC<CountDownTimerProps> = ({
     </div>
   );
 };
+
+export default CountDownTimer;

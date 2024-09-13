@@ -1,6 +1,6 @@
-import { TimeSegment } from '../timeSegment/TimeSegment';
+import TimeSegment from '../timeSegment/TimeSegment';
 import React from 'react';
-import './TimeGroup.scss';
+
 interface TimeGroupProps {
   value: string;
 }
@@ -10,11 +10,13 @@ interface TimeGroupProps {
  * @version 1.0.0
  * @author [Hariharan Muralidharan,Praneash Krishnamurthi]
  */
-export const TimeGroup: React.FC<TimeGroupProps> = ({ value }) => {
+const TimeGroup: React.FC<TimeGroupProps> = ({ value }) => {
   return (
-    <div className="time-group">
+    <div className="flex gap-4 font-dseg">
       <TimeSegment currentValue={parseInt(value.toString()[0])} />
       <TimeSegment currentValue={parseInt(value.slice(1))} />
     </div>
   );
 };
+
+export default TimeGroup;

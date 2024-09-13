@@ -1,7 +1,6 @@
-import { TimeGroup } from '../timeGroup/TimeGroup';
+import TimeGroup from '../timeGroup/TimeGroup';
 import { dateUtil } from '@/utils/countdown-utils';
 import React from 'react';
-import './TimeSection.scss';
 
 interface TimeSectionProps {
   label: string;
@@ -15,9 +14,9 @@ interface TimeSectionProps {
  */
 const TimeSection: React.FC<TimeSectionProps> = ({ label, value }) => {
   return (
-    <div className="time-section">
+    <div className="text-center text-[30px] text-label-color">
       <TimeGroup value={dateUtil(value)} />
-      <p className="time-label">{label}</p>
+      <p className="text-[29px] p-[30px] font-poppins">{label}</p>
     </div>
   );
 };

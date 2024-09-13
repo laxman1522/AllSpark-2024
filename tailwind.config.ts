@@ -11,6 +11,14 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        'counter-background': '#3f0d15',
+        'counter-color': '#f3baa7',
+        'label-color': '#f3baa7',
+        'counter-text-color': '#332723',
+      },
+      fontFamily: {
+        dseg: ['DSEG7_Classic_Bold', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
