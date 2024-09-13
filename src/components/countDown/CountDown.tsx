@@ -19,8 +19,10 @@ const CountDown = () => {
     const timer = setTimeout(() => {
       setShowCountDown(true);
     }, 7 * 1000);
-
     setTargetTime(new Date(TIMER.TARGET_DATE).getTime());
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
   return <>{showCountDown && <CountDownTimer targetTime={targetTime} />}</>;
 };
