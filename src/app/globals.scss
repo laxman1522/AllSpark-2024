@@ -26,8 +26,11 @@ body {
 }
 
 @font-face {
-  font-family: 'counter';
-  src: url('/fonts/DSEG14Classic-Regular.ttf') format('truetype');
+  font-family: 'DSEG7_Classic_Bold';
+  src: url('../../public/fonts/DSEG7Classic/DSEG7Classic-Bold.woff2')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
@@ -43,12 +46,10 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  font-family: sans-serif;
   color: #f3baa7;
 }
 
 .time-section {
-  // font-family: 'counter';
   text-align: center;
   font-size: 30px;
 }
@@ -56,11 +57,13 @@ body {
 .time-lable {
   font-size: 29px;
   padding: 30px;
+  font-family: 'Poppins';
 }
 
 .time-group {
   display: flex;
   gap: 16px;
+  font-family: 'DSEG7_Classic_Bold';
 }
 
 .time-segment {
