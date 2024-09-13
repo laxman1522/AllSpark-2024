@@ -1,11 +1,15 @@
 'use client';
 import React, { memo, useEffect, useState } from 'react';
 import './TimeSegment.scss';
-
 interface TimeSegmentProps {
   currentValue: number;
 }
 
+/**
+ * @description An component which has card flipping logic
+ * @version 1.0.0
+ * @author [Praneash Krishnamurthi,Hariharan Muralidharan]
+ */
 export const TimeSegment: React.FC<TimeSegmentProps> = memo(
   function TimeSegment({ currentValue }) {
     const [isFlipped, setIsFlipped] = useState(false);

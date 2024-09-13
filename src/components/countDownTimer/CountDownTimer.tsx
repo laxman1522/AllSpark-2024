@@ -1,47 +1,21 @@
 'use client';
-
+import { getTimeRemaining } from '@/utils/countdown-utils';
 import { useEffect, useState } from 'react';
 import TimeSection from '@/components/timeSection/TimeSection';
 import './CountDownTimer.scss';
 
 interface CountDownTimerProps {
-  days: number;
-  months: number;
-  hours: number;
-  minutes: number;
+  targetTime: number;
 }
 
-function calculateHours(
-  days: number,
-  months: number,
-  hours: number,
-  minutes: number,
-) {
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + days);
-  targetDate.setMonth(targetDate.getMonth() + months);
-  targetDate.setHours(targetDate.getHours() + hours);
-  targetDate.setMinutes(targetDate.getMinutes() + minutes);
-  return targetDate;
-}
-
-function getTimeRemaining(remainingTime: number) {
-  return {
-    Total: remainingTime,
-    Days: Math.floor(remainingTime / (1000 * 60 * 60 * 24)),
-    Hours: Math.floor((remainingTime / (1000 * 60 * 60)) % 24),
-    Minutes: Math.floor((remainingTime / 1000 / 60) % 60),
-    Seconds: Math.floor((remainingTime / 1000) % 60),
-  };
-}
-
+/**
+ * @description A reusable component which has countdown logic
+ * @version 1.0.0
+ * @author [Hariharan Muralidharan]
+ */
 export const CountDownTimer: React.FC<CountDownTimerProps> = ({
-  days,
-  months,
-  hours,
-  minutes,
+  targetTime,
 }) => {
-  const targetDate = calculateHours(days, months, hours, minutes);
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     seconds: 0,
@@ -52,7 +26,7 @@ export const CountDownTimer: React.FC<CountDownTimerProps> = ({
   useEffect(() => {
     const updateTime = () => {
       const now = Date.now();
-      const complete = now >= targetDate.getTime();
+      const complete = now >= targetTime;
       if (complete) {
         return {
           seconds: 0,
@@ -61,7 +35,7 @@ export const CountDownTimer: React.FC<CountDownTimerProps> = ({
           days: 0,
         };
       }
-      const remainingTime = getTimeRemaining(targetDate.getTime() - now);
+      const remainingTime = getTimeRemaining(targetTime - now);
       setTimeRemaining({
         days: remainingTime.Days,
         seconds: remainingTime.Seconds,
