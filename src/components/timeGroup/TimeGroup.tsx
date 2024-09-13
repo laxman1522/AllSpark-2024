@@ -1,6 +1,6 @@
 import { TimeSegment } from '../timeSegment/TimeSegment';
 import React from 'react';
-
+import './TimeGroup.scss';
 interface TimeGroupProps {
   value: string;
 }

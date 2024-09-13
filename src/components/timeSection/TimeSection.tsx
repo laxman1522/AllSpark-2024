@@ -1,6 +1,7 @@
 import { TimeGroup } from '../timeGroup/TimeGroup';
 import { dateUtil } from '@/utils/dateUtils';
 import React from 'react';
+import './TimeSection.scss';
 
 interface TimeSectionProps {
   label: string;

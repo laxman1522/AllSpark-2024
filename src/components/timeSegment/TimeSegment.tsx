@@ -1,5 +1,6 @@
 'use client';
 import React, { memo, useEffect, useState } from 'react';
+import './TimeSegment.scss';
 
 interface TimeSegmentProps {
   currentValue: number;
@@ -31,19 +32,16 @@ export const TimeSegment: React.FC<TimeSegmentProps> = memo(
       <div className="time-segment">
         <div className="segment-display">
           <div className="segment-display__top">
-            {/* {(isFlipped==true)?<div className="segment-middle-seperation"></div>:<></>} */}
             <span className="counter-value">{value}</span>
           </div>
           <div className="segment-display__bottom">
             <div className="segment-middle-seperation"></div>
-            {/* {(isFlipped==false)?<div className="segment-middle-seperation"></div>:<></>} */}
             <span className="counter-value">{prevNumber}</span>
           </div>
           <div
             className={`${isFlipped ? 'segment-overlay flip' : 'segment-overlay'}`}
           >
             <div className="segment-overlay__top">
-              {/* {(isFlipped==false)?<div className="segment-middle-seperation"></div>:<></>} */}
               <span className="counter-value">{prevNumber}</span>
             </div>
             <div className="segment-overlay__bottom">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import TimeSection from '@/components/timeSection/TimeSection';
-import '@/app/globals.scss';
+import './CountDownTimer.scss';
 
 interface CountDownTimerProps {
   days: number;
