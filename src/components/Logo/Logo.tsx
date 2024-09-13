@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import styles from './Logo.module.scss';
+import './Logo.scss';
 import Image from 'next/image';
 import left from '../../../public/images/left.png';
 import right from '../../../public/images/right.png';
@@ -12,6 +12,7 @@ import allspark from '../../../public/images/Allsparktext.png';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { SCREEN_NAMES, SCREEN_SIZES } from '../../constants/constants';
 
 // Register GSAP MotionPath plugin
 gsap.registerPlugin(MotionPathPlugin);
@@ -32,26 +33,26 @@ const getDynamicValues = (
 } => {
   let starSize: Size, logoSize: Size, logoStarSize: Size;
 
-  if (width <= 425) {
+  if (width <= SCREEN_SIZES.mobile) {
     starSize = { height: '24px', width: '30px' };
     logoSize = { height: '44.27px', width: '160px' };
-    logoStarSize = { height: '11.81px', width: '17.71px' };
-  } else if (width <= 580) {
+    logoStarSize = { height: '12.39px', width: '11.8px' };
+  } else if (width <= SCREEN_SIZES.lgMobile) {
     starSize = { height: '32.22px', width: '40.25px' };
     logoSize = { height: '60.42px', width: '217.5px' };
-    logoStarSize = { height: '16.11px', width: '24.16px' };
-  } else if (width <= 768) {
+    logoStarSize = { height: '16.91px', width: '16.11px' };
+  } else if (width <= SCREEN_SIZES.tablet) {
     starSize = { height: '42.67px', width: '53.34px' };
     logoSize = { height: '80px', width: '288px' };
-    logoStarSize = { height: '21.33px', width: '32px' };
-  } else if (width <= 1024) {
+    logoStarSize = { height: '22.4px', width: '21.33px' };
+  } else if (width <= SCREEN_SIZES.desktop) {
     starSize = { height: '56.88px', width: '71.1px' };
     logoSize = { height: '106.67px', width: '384px' };
-    logoStarSize = { height: '28.45px', width: '42.67px' };
+    logoStarSize = { height: '29.86px', width: '28.44px' };
   } else {
     starSize = { height: '80px', width: '100px' };
     logoSize = { height: '150px', width: '540px' };
-    logoStarSize = { height: '40px', width: '60px' };
+    logoStarSize = { height: '42px', width: '40px' };
   }
 
   return { starSize, logoSize, logoStarSize };
@@ -59,19 +60,22 @@ const getDynamicValues = (
 
 // Function to determine window size category
 const getWindowSizeCategory = (width: number): string => {
-  if (width > 1024) return 'lg-desktop';
-  if (width <= 1024 && width > 768) return 'desktop';
-  if (width <= 768 && width > 580) return 'tablet';
-  if (width <= 580 && width > 425) return 'lg-mobile';
-  return 'mobile';
+  if (width > SCREEN_SIZES.desktop) return SCREEN_NAMES.lgDesktop;
+  if (width <= SCREEN_SIZES.desktop && width > SCREEN_SIZES.tablet)
+    return SCREEN_NAMES.desktop;
+  if (width <= SCREEN_SIZES.tablet && width > SCREEN_SIZES.lgMobile)
+    return SCREEN_NAMES.tablet;
+  if (width <= SCREEN_SIZES.lgMobile && width > SCREEN_SIZES.mobile)
+    return SCREEN_NAMES.lgMobile;
+  return SCREEN_NAMES.mobile;
 };
 
 // Main Logo component
-export default function Logo() {
+const Logo = () => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const [windowSize, setWindowSize] = useState<string>('default');
+  const [windowSize, setWindowSize] = useState<string>(SCREEN_NAMES.default);
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({
@@ -84,39 +88,27 @@ export default function Logo() {
   });
 
   const calculateElementWidth = (windowWidth: number) => {
-    if (windowWidth > 1024) {
+    if (windowWidth > SCREEN_SIZES.desktop) {
       return (24 * 2.5) / 2;
-    } else if (windowWidth > 768) {
+    } else if (windowWidth > SCREEN_SIZES.tablet) {
       return (17 * 2.5) / 2;
-    } else if (windowWidth > 580) {
+    } else if (windowWidth > SCREEN_SIZES.lgMobile) {
       return (12.8 * 2.5) / 2;
-    } else {
+    } else if (windowWidth > SCREEN_SIZES.mobile) {
       return (9.6 * 2.5) / 2;
+    } else {
+      return (7.2 * 2.5) / 2;
     }
   };
 
   //Calculating the Left Path dynamically based on the image size
-  const calculateLeftPath = () => {
-    const windowWidth = window?.innerWidth;
+  const calculateLeftPath = (windowWidth: number) => {
     return 50 + (calculateElementWidth(windowWidth) / windowWidth) * 100;
   };
 
   //Calculating the Right Path dynamically based on the image size
-  const calculateRightPath = () => {
-    const windowWidth = window?.innerWidth;
+  const calculateRightPath = (windowWidth: number) => {
     return 50 - (calculateElementWidth(windowWidth) / windowWidth) * 100;
-  };
-
-  // Define paths for GSAP animation
-  const paths = {
-    right: [
-      { x: '75vw', y: '60vh' },
-      { x: `${calculateLeftPath()}vw`, y: '20vh' },
-    ],
-    left: [
-      { x: '25vw', y: '60vh' },
-      { x: `${calculateRightPath()}vw`, y: '20vh' },
-    ],
   };
 
   // Handle window resize event
@@ -130,24 +122,39 @@ export default function Logo() {
     return () => {
       window.removeEventListener('resize', resizeHandler);
     };
-  }, [windowSize]);
+  }, []);
 
   // Animation logic
   useEffect(() => {
+    // Define paths for GSAP animation
+    const paths = {
+      right: [
+        { x: '75vw', y: '60vh' },
+        { x: `${calculateLeftPath(window.innerWidth)}vw`, y: '20vh' },
+      ],
+      left: [
+        { x: '25vw', y: '60vh' },
+        { x: `${calculateRightPath(window.innerWidth)}vw`, y: '20vh' },
+      ],
+    };
+
     if (leftRef.current && rightRef.current && logoContainerRef.current) {
       const elements = {
         star: logoContainerRef.current.querySelector<HTMLImageElement>(
-          `.${styles.star}`,
+          '.logo .star',
         ),
-        aLetter: logoContainerRef.current.querySelector<HTMLImageElement>(
-          `.${styles.aLetter}`,
-        ),
-        llspark: logoContainerRef.current.querySelector<HTMLImageElement>(
-          `.${styles.llspark}`,
-        ),
-        allspark: logoContainerRef.current.querySelector<HTMLImageElement>(
-          `.${styles.allspark}`,
-        ),
+        aLetter:
+          logoContainerRef.current.querySelector<HTMLImageElement>(
+            '.logo .aLetter',
+          ),
+        llspark:
+          logoContainerRef.current.querySelector<HTMLImageElement>(
+            '.logo .llspark',
+          ),
+        allspark:
+          logoContainerRef.current.querySelector<HTMLImageElement>(
+            '.logo .allspark',
+          ),
       };
 
       const { starSize, logoSize, logoStarSize } = getDynamicValues(
@@ -248,7 +255,7 @@ export default function Logo() {
             {
               duration: 1,
               top: '5%',
-              left: '1.2%',
+              left: '3.2%',
               height: logoStarSize.height,
               width: logoStarSize.width,
             },
@@ -259,47 +266,39 @@ export default function Logo() {
   }, [windowSize]);
 
   return (
-    <div className={styles.logo}>
+    <div className="logo">
       <Image
         src={left}
         alt="left"
-        className={styles['left']}
+        className="left"
         priority={true}
         ref={leftRef}
       />
       <Image
         src={right}
         alt="right"
-        className={styles['right']}
+        className="right"
         priority={true}
         ref={rightRef}
       />
-      <div className={styles['logo-container']} ref={logoContainerRef}>
+      <div className="logo-container" ref={logoContainerRef}>
         <Image
           src={allspark}
           alt="allspark"
-          className={styles['allspark']}
+          className="allspark"
           priority={true}
         />
-        <Image
-          src={star}
-          alt="star"
-          className={styles['star']}
-          priority={true}
-        />
-        <Image
-          src={aLetter}
-          alt="a"
-          className={styles['aLetter']}
-          priority={true}
-        />
+        <Image src={star} alt="star" className="star" priority={true} />
+        <Image src={aLetter} alt="a" className="aLetter" priority={true} />
         <Image
           src={llspark}
           alt="llspark"
-          className={styles['llspark']}
+          className="llspark"
           priority={true}
         />
       </div>
     </div>
   );
-}
+};
+
+export default Logo;
