@@ -8,6 +8,7 @@ export const SCREEN_NAMES = {
 };
 
 export const SCREEN_SIZES = {
+  lgDesktop: 1280,
   desktop: 1024,
   tablet: 768,
   lgMobile: 580,

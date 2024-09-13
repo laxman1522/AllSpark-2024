@@ -2,6 +2,16 @@
   perspective: 400px;
 }
 
+.counter-container {
+  opacity: 1;
+  animation: none;
+}
+
+.counter-container.animate {
+  opacity: 0;
+  animation: blur-bounce 0.8s ease-out 6s forwards;
+}
+
 .segment-overlay.flip .segment-overlay__top {
   animation: flip-top 0.8s ease-out;
 }
@@ -33,5 +43,19 @@
   }
   100% {
     transform: rotateX(0deg);
+  }
+}
+@keyframes blur-bounce {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
   }
 }

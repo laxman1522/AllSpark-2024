@@ -244,7 +244,12 @@ const Logo = () => {
             logoContainerRef.current,
             {
               duration: 1,
-              top: '20vh',
+              top:
+                window.innerWidth <= SCREEN_SIZES.tablet
+                  ? '10vh'
+                  : window.innerWidth >= SCREEN_SIZES.lgDesktop
+                    ? '20vh'
+                    : '15vh',
               height: logoSize.height,
               width: logoSize.width,
             },
