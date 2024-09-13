@@ -1,0 +1,87 @@
+.logo {
+  .left,
+  .right {
+    height: 20px;
+    width: 24px;
+  }
+  .logo-container {
+    height: 250px;
+    width: 900px;
+    .star {
+      height: 105px;
+      width: 125px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .logo {
+    .left,
+    .right {
+      height: 14px;
+      width: 17px;
+    }
+    .logo-container {
+      height: 178px;
+      width: 640px;
+      .star {
+        height: 74.6px;
+        width: 88.88px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    .left,
+    .right {
+      height: 10.5px;
+      width: 12.8px;
+    }
+    .logo-container {
+      height: 133px;
+      width: 480px;
+      .star {
+        height: 56px;
+        width: 66.66px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .logo {
+    .left,
+    .right {
+      height: 8px;
+      width: 9.6px;
+    }
+    .logo-container {
+      height: 100px;
+      width: 362.5px;
+      .star {
+        height: 42.29px;
+        width: 50.35px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .logo {
+    .left,
+    .right {
+      height: 6px;
+      width: 7.2px;
+    }
+    .logo-container {
+      height: 74px;
+      width: 265.5px;
+      .star {
+        height: 31px;
+        width: 36.89px;
+      }
+    }
+  }
+}
