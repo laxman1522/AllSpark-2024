@@ -36,22 +36,22 @@ const TimeSegment: React.FC<TimeSegmentProps> = memo(function TimeSegment({
   return (
     <div className="block text-[100px] font-black w-[116px] z-10">
       <div className="relative h-full">
-        <div className="segment-display__top bg-counter-color text-counter-text-color leading-normal overflow-hidden text-center w-full h-1/2 relative rounded-[5px] border-0">
-          <span className="counter-value">{value}</span>
+        <div className=" bg-counter-color text-counter-text-color leading-normal overflow-hidden text-center w-full h-1/2 relative rounded-[5px] border-0  rounded-bl-none rounded-br-none">
+          <span className=" relative top-[7.5px]">{value}</span>
         </div>
-        <div className="segment-display__bottom bg-counter-color text-counter-text-color overflow-hidden text-center w-full h-1/2 relative rounded-[5px] border-0">
-          <div className="segment-middle-seperation bg-counter-background h-[4.3px]"></div>
-          <span className="counter-value">{prevNumber}</span>
+        <div className=" bg-counter-color text-counter-text-color overflow-hidden text-center w-full h-1/2 relative rounded-[5px] border-0 leading-[0] rounded-tl-none rounded-tr-none">
+          <div className=" bg-counter-background h-[4.3px]"></div>
+          <span className=" relative bottom-[2px]">{prevNumber}</span>
         </div>
         <div
-          className={`${isFlipped ? 'segment-overlay flip' : 'segment-overlay'}`}
+          className={`absolute top-0 h-full w-[116px] flex flex-row gap-[1rem] segment-overlay ${isFlipped ? 'flip' : ''}`}
         >
-          <div className="segment-overlay__top bg-counter-color text-counter-text-color">
-            <span className="counter-value">{prevNumber}</span>
+          <div className="segment-overlay__top bg-counter-color text-counter-text-color absolute overflow-hidden text-center w-full h-1/2 rounded-[5px] top-0 leading-normal origin-bottom rounded-bl-none rounded-br-none">
+            <span className=" relative top-[7.5px]">{prevNumber}</span>
           </div>
-          <div className="segment-overlay__bottom bg-counter-color text-counter-text-color">
-            <div className="segment-middle-seperation bg-counter-background h-[4.3px]"></div>
-            <span className="counter-value">{value}</span>
+          <div className="segment-overlay__bottom bg-counter-color text-counter-text-color absolute overflow-hidden text-center w-full h-1/2 rounded-[5px] bottom-0 leading-[0] origin-top rounded-tl-none rounded-tr-none">
+            <div className=" bg-counter-background h-[4.3px]"></div>
+            <span className=" relative bottom-[2px]">{value}</span>
           </div>
         </div>
       </div>
