@@ -6,12 +6,16 @@ import './BackgroundAnimation.scss';
  * @author [Ashok Natarajan]
  */
 export default function BackgroundAnimation() {
-  const items = new Array(10).fill(null);
+  const sparkleItems = new Array(10).fill(null);
+
   return (
-    <div className="area absolute bg-custom-gradient w-full h-screen">
+    <div className="area z-[-9999] absolute bg-custom-gradient w-full h-screen">
       <ul className="sparkles absolute top-0 left-0 w-full h-full overflow-hidden">
-        {items.map((_, index) => (
-          <li key={index}></li>
+        {sparkleItems.map((_, index) => (
+          <li
+            className="absolute block bottom-[-100px] list-none bg-animation-background"
+            key={index}
+          ></li>
         ))}
       </ul>
     </div>

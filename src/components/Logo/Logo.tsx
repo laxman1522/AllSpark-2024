@@ -254,7 +254,7 @@ const Logo = () => {
             elements.star,
             {
               duration: 1,
-              top: '5%',
+              top: '3%',
               left: '3.2%',
               height: logoStarSize.height,
               width: logoStarSize.width,
