@@ -46,7 +46,7 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({ targetTime }) => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center gap-8 bg-counter-background w-100 p-20 my-8 mx-auto">
+    <div className="flex justify-center items-center gap-8 w-100 p-20 my-8 mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <TimeSection label="Days" value={timeRemaining.days} />
       <TimeSection label="Hours" value={timeRemaining.hours} />
       <TimeSection label="Minutes" value={timeRemaining.minutes} />

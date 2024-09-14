@@ -12,14 +12,19 @@ const CountDown = () => {
   const [targetTime, setTargetTime] = useState(
     new Date(TIMER.TARGET_DATE).getTime(),
   );
+
+  const [showCountDown, setShowCountDown] = useState(false);
+
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCountDown(true);
+    }, 7 * 1000);
     setTargetTime(new Date(TIMER.TARGET_DATE).getTime());
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
-  return (
-    <div>
-      <CountDownTimer targetTime={targetTime} />
-    </div>
-  );
+  return <>{showCountDown && <CountDownTimer targetTime={targetTime} />}</>;
 };
 
 export default CountDown;
