@@ -14,17 +14,27 @@ const CountDown = () => {
   const [targetTime, setTargetTime] = useState(
     new Date(TIMER.TARGET_DATE).getTime(),
   );
+
+  const [showCountDown, setShowCountDown] = useState(false);
+
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCountDown(true);
+    }, 7 * 1000);
     setTargetTime(new Date(TIMER.TARGET_DATE).getTime());
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
   return (
     <div>
-      <CountDownTimer targetTime={targetTime} />
+      {showCountDown && <CountDownTimer targetTime={targetTime} />}
       <div className="absolute bottom-0 inset-x-0 flex justify-center p-6 md:p-20">
         <Image src={logo} alt="Logo" width={120} height={50} />
       </div>
     </div>
   );
+  return <>{showCountDown && <CountDownTimer targetTime={targetTime} />}</>;
 };
 
 export default CountDown;

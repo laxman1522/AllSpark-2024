@@ -18,10 +18,14 @@ const config: Config = {
         'counter-color': '#f3baa7',
         'label-color': '#f3baa7',
         'counter-text-color': '#332723',
+        'animation-background': 'f2baa740',
       },
       fontFamily: {
         dseg: ['DSEG7_Classic_Bold', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(180deg, #270212 0%, #511717 100%)',
       },
     },
   },
