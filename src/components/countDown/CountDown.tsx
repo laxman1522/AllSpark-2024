@@ -29,12 +29,11 @@ const CountDown = () => {
   return (
     <div>
       {showCountDown && <CountDownTimer targetTime={targetTime} />}
-      <div className="absolute bottom-0 inset-x-0 flex justify-center p-6 md:p-20">
+      <div className="absolute bottom-0 inset-x-0 flex justify-center p-10 md:p-20">
         <Image src={logo} alt="Logo" width={120} height={50} />
       </div>
     </div>
   );
-  return <>{showCountDown && <CountDownTimer targetTime={targetTime} />}</>;
 };
 
 export default CountDown;

@@ -1,3 +1,5 @@
+@import '../../app/variable.scss';
+
 .segment-overlay {
   perspective: 400px;
 }
@@ -5,6 +7,9 @@
 .counter-container {
   opacity: 1;
   animation: none;
+  p {
+    color: $countdown-font-color;
+  }
 }
 
 .counter-container.animate {
@@ -45,6 +50,7 @@
     transform: rotateX(0deg);
   }
 }
+
 @keyframes blur-bounce {
   0% {
     opacity: 0;
