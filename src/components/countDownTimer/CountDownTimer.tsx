@@ -49,43 +49,48 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({ targetTime }) => {
 
     if (crossedBreakpoint) {
       setAnimationKey((prevKey) => prevKey + 1);
+      setPrevScreenWidth(screenWidth);
     }
+  };
 
-    setPrevScreenWidth(screenWidth);
+  /**
+   * Function responsible for Updating the timer
+   * @returns {*}
+   */
+  const updateTime = () => {
+    const now = Date.now();
+    const complete = now >= targetTime;
+    if (complete) {
+      return {
+        seconds: 0,
+        minutes: 0,
+        hours: 0,
+        days: 0,
+      };
+    }
+    const remainingTime = getTimeRemaining(targetTime - now);
+    setTimeRemaining({
+      days: remainingTime.Days,
+      seconds: remainingTime.Seconds,
+      minutes: remainingTime.Minutes,
+      hours: remainingTime.Hours,
+    });
   };
 
   useEffect(() => {
+    //Animation logic
     applyAnimation();
     const handleResize = () => applyAnimation();
     window.addEventListener('resize', handleResize);
 
-    // Cleanup the event listener when the component is unmounted
-    return () => window.removeEventListener('resize', handleResize);
-  }, [prevScreenWidth]);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = Date.now();
-      const complete = now >= targetTime;
-      if (complete) {
-        return {
-          seconds: 0,
-          minutes: 0,
-          hours: 0,
-          days: 0,
-        };
-      }
-      const remainingTime = getTimeRemaining(targetTime - now);
-      setTimeRemaining({
-        days: remainingTime.Days,
-        seconds: remainingTime.Seconds,
-        minutes: remainingTime.Minutes,
-        hours: remainingTime.Hours,
-      });
-    };
+    //Timer logic
     updateTime();
     const intervalId = setInterval(updateTime, 1000);
-    return () => clearInterval(intervalId);
+
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
