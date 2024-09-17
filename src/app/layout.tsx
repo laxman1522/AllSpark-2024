@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.scss";
-
+import type { Metadata } from 'next';
+import './globals.scss';
 
 export const metadata: Metadata = {
   title: "AllSpark'24",
-  description: "",
+  description: '',
 };
 
 export default function RootLayout({
@@ -14,10 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        {children}
-      </body>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

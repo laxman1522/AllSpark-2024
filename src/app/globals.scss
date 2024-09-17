@@ -3,20 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #3f0d15;
   --foreground: #171717;
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #3f0d15;
     --foreground: #ededed;
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  width: 100vw;
+  height: 100vh;
   color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +30,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: 'DSEG7_Classic_Bold';
+  src: url('/fonts/DSEG7Classic/DSEG7Classic-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
 }

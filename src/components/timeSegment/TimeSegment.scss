@@ -1,0 +1,67 @@
+@import '../../app/variable.scss';
+
+.segment-overlay {
+  perspective: 400px;
+}
+
+.counter-container {
+  opacity: 1;
+  animation: none;
+  p {
+    color: $countdown-font-color;
+  }
+}
+
+.counter-container.animate {
+  opacity: 0;
+  animation: blur-bounce 0.8s ease-out 7s forwards;
+}
+
+.segment-overlay.flip .segment-overlay__top {
+  animation: flip-top 0.8s ease-out;
+}
+
+.segment-overlay.flip .segment-overlay__bottom {
+  animation: flip-bottom 0.8s ease-out;
+}
+
+@keyframes flip-top {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50%,
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  0%,
+  50% {
+    transform: rotateX(90deg);
+  }
+  67% {
+    transform: rotateX(0deg);
+  }
+  75% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes blur-bounce {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
