@@ -16,7 +16,7 @@ const TimeSection: React.FC<TimeSectionProps> = ({ label, value }) => {
   return (
     <div className="text-center text-[30px] text-label-color">
       <TimeGroup value={dateUtil(value)} />
-      <p className="md:text-[29px] text-[24px] max-[410px]:text-[18px] p-[10px] font-poppins">
+      <p className="md:text-[29px] text-[24px] max-[430px]:text-[18px] p-[10px] font-poppins">
         {label}
       </p>
     </div>
