@@ -6,7 +6,7 @@ import './BackgroundAnimation.scss';
  * @author [Ashok Natarajan]
  */
 export default function BackgroundAnimation() {
-  const sparkleItems = new Array(10).fill(null);
+  const sparkleItems = new Array(12).fill(null);
 
   return (
     <div className="area z-[-9999] absolute bg-custom-gradient w-full h-screen">

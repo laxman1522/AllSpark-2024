@@ -14,3 +14,5 @@ export const SCREEN_SIZES = {
   lgMobile: 580,
   mobile: 425,
 };
+
+export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
