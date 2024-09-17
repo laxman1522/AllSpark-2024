@@ -75,7 +75,7 @@ const Logo = () => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const [windowSize, setWindowSize] = useState<string>(SCREEN_NAMES.default);
+  const [windowSize, setWindowSize] = useState<string>('');
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({
@@ -111,13 +111,13 @@ const Logo = () => {
     return 50 - (calculateElementWidth(windowWidth) / windowWidth) * 100;
   };
 
+  const resizeHandler = () => {
+    const newSizeCategory = getWindowSizeCategory(window.innerWidth);
+    if (newSizeCategory !== windowSize) setWindowSize(newSizeCategory);
+  };
   // Handle window resize event
   useEffect(() => {
-    const resizeHandler = () => {
-      const newSizeCategory = getWindowSizeCategory(window.innerWidth);
-      if (newSizeCategory !== windowSize) setWindowSize(newSizeCategory);
-    };
-
+    resizeHandler();
     window.addEventListener('resize', resizeHandler);
     return () => {
       window.removeEventListener('resize', resizeHandler);
@@ -236,8 +236,8 @@ const Logo = () => {
           .set(elements.allspark, { display: 'block' }, 1.5);
       });
 
-      // Logo animation after 5 seconds
-      gsap.delayedCall(5, () => {
+      // Logo animation after 6 seconds
+      gsap.delayedCall(6, () => {
         gsap
           .timeline({ ease: 'power2.out' })
           .to(
@@ -245,10 +245,10 @@ const Logo = () => {
             {
               duration: 1,
               top:
-                window.innerWidth <= SCREEN_SIZES.tablet
-                  ? '10vh'
-                  : window.innerWidth >= SCREEN_SIZES.lgDesktop
-                    ? '20vh'
+                window.innerWidth <= SCREEN_SIZES.mobile
+                  ? '7vh'
+                  : window.innerWidth <= SCREEN_SIZES.tablet
+                    ? '10vh'
                     : '15vh',
               height: logoSize.height,
               width: logoSize.width,
