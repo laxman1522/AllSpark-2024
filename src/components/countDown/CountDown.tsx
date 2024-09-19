@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import logo from '../../../public/images/cdwLogo.png';
 import { ALLSPARK_DATE } from '@/constants/constants';
-
+import './CountDown.scss';
 /**
  * @description An component which calculates target time value for a countdown
  * @version 1.0.0
@@ -26,7 +26,7 @@ const CountDown = () => {
   }, []);
   return (
     <div key={animationKey}>
-      <p className="counter-container animate w-full text-center absolute top-[13%] min-[425px]:top-[15%] md:top-[24%] lg:top-1/4 xl:top-[31%] left-1/2 text-label-color transform -translate-x-1/2 -translate-y-1/2 md:text-[29px] text-[16px] min-[410px]:text-[18px]">
+      <p className="counter-container animate w-full text-center absolute top-[13%] min-[425px]:top-[15%] md:top-[24%] lg:top-1/4 xl:top-[31%] left-1/2 text-label-color transform -translate-x-1/2 -translate-y-1/2 md:text-[29px] text-[16px] min-[410px]:text-[18px] ">
         {ALLSPARK_DATE}
       </p>
       <CountDownTimer
