@@ -70,7 +70,11 @@ const getWindowSizeCategory = (width: number): string => {
   return SCREEN_NAMES.mobile;
 };
 
-// Main Logo component
+/**
+ * @description An component to animate the main logo
+ * @version 1.0.0
+ * @author [Charanraj Thiyagarajan]
+ */
 const Logo = () => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
@@ -194,7 +198,7 @@ const Logo = () => {
       gsap.delayedCall(2.5, () => {
         gsap
           .timeline({ ease: 'power2.in' })
-          .set(elements.star, { display: 'block', top: '-80%', left: '44%' })
+          .set(elements.star, { display: 'block', top: '-20vh', left: '44%' })
           .to(elements.star, {
             duration: 1,
             top: 0,

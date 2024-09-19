@@ -16,3 +16,6 @@ export const SCREEN_SIZES = {
 };
 
 export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
+
+export const MOBILE_LANDSCAPE_MESSAGE =
+  'Please rotate your device to portrait mode';
