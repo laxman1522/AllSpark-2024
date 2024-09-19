@@ -25,6 +25,19 @@
   animation: flip-bottom 0.8s ease-out;
 }
 
+.counter-value::before {
+  content: '8';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.1;
+  color: var(--counter-text-color);
+  font-size: inherit;
+  text-align: center;
+}
+
 @keyframes flip-top {
   0% {
     transform: rotateX(0deg);
