@@ -66,7 +66,7 @@
   }
 }
 
-@media only screen and (min-width: 1000px) and (orientation: landscape) {
+@media only screen and (min-width: 1000px) and (max-width: 1200px) and (orientation: landscape) {
   /* Styles for landscape mode with screen width at least 1000px */
   .time-segment-container {
     width: 65px;
