@@ -42,3 +42,18 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.landscape-fallback-page {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
+  /* Styles for landscape mode with screen width at least 1000px */
+  .home {
+    display: none;
+  }
+
+  .landscape-fallback-page {
+    display: flex;
+  }
+}
