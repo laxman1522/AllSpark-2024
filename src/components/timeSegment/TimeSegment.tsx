@@ -31,10 +31,10 @@ const TimeSegment: React.FC<TimeSegmentProps> = memo(function TimeSegment({
   }, [currentValue]);
 
   return (
-    <div className="block md:text-[100px] w-[65px] max-[430px]:w-[45px] md:w-[110px] z-10">
+    <div className="time-segment-container block md:text-[100px] w-[65px] max-[430px]:w-[45px] md:w-[110px] z-10">
       <div className="relative h-full">
         <div className="bg-counter-color text-counter-text-color text-center overflow-hidden rounded-[5px] border-0 w-full h-1/2 relative  rounded-bl-none rounded-br-none">
-          <span className="counter-value text-[3.5rem] max-[430px]:text-[2.5rem] md:text-[6.25rem] relative top-[5.5px]">
+          <span className="previous-counter-value counter-value text-[3.5rem] max-[430px]:text-[2.5rem] md:text-[6.25rem] relative top-[5.5px]">
             {value}
           </span>
         </div>
