@@ -16,7 +16,7 @@ export default function Home() {
         <BackgroundAnimation />
         <LandscapeFallback></LandscapeFallback>
       </div>
-      {/* the back ground component is the vanta js background use it as a backgorund */}
+      {/* this below component is the vanta js background use it as a backgorund */}
       {/* <BackGround></BackGround> */}
     </div>
   );
