@@ -2,6 +2,7 @@ import CountDown from '@/components/countDown/CountDown';
 import Logo from '@/components/Logo/Logo';
 import BackgroundAnimation from '@/components/BackgroundAnimation/BackgroundAnimation';
 import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
+import BackGround from '@/components/BackGround/BackGround';
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
         <BackgroundAnimation />
         <LandscapeFallback></LandscapeFallback>
       </div>
+      {/* the back ground component is the vanta js background use it as a backgorund */}
+      {/* <BackGround></BackGround> */}
     </div>
   );
 }
