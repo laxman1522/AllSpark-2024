@@ -4,7 +4,7 @@ import WAVES from 'vanta/dist/vanta.waves.min.js';
 import * as THREE from 'three';
 
 export default function BackGround() {
-  const [vantaEffect, setVantaEffect] = useState(0);
+  const [vantaEffect, setVantaEffect] = useState<any>(0);
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
@@ -28,7 +28,7 @@ export default function BackGround() {
       );
     }
     return () => {
-      if (vantaEffect) vantaEffect.destory();
+      if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
   return <div ref={vantaRef} className="h-screen"></div>;
