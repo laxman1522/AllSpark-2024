@@ -1,7 +1,7 @@
 'use client';
 import CountDownTimer from '@/components/countDownTimer/CountDownTimer';
 import { TIMER } from '@/constants/count-down-constants';
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import logo from '../../../public/images/cdwLogo.png';
 import { ALLSPARK_DATE } from '@/constants/constants';
@@ -11,7 +11,7 @@ import './CountDown.scss';
  * @version 1.0.0
  * @author [Praneash Krishnamurthi,Hariharan Muralidharan]
  */
-const CountDown = () => {
+const CountDown = forwardRef<HTMLDivElement>((props, ref) => {
   const [targetTime, setTargetTime] = useState(
     new Date(TIMER.TARGET_DATE).getTime(),
   );
@@ -25,7 +25,7 @@ const CountDown = () => {
     setTargetTime(new Date(TIMER.TARGET_DATE).getTime());
   }, []);
   return (
-    <div key={animationKey}>
+    <div key={animationKey} id="countdown-section" ref={ref}>
       <p className="counter-container animate w-full text-center absolute top-[16%] min-[540px]:top-[20%] md:top-[23%] lg:top-1/4 xl:top-[31%] left-1/2 text-label-color transform -translate-x-1/2 -translate-y-1/2 md:text-[29px] text-[16px] min-[410px]:text-[18px] ">
         {ALLSPARK_DATE}
       </p>
@@ -39,6 +39,6 @@ const CountDown = () => {
       </div>
     </div>
   );
-};
+});
 
 export default CountDown;
