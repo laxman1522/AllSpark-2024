@@ -6,6 +6,11 @@ import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback'
 import ReactFullpage from '@fullpage/react-fullpage';
 
 export default function Home() {
+  const handleClick = (fullpageApi: any) => {
+    console.log(fullpageApi?.fullpageApi);
+    fullpageApi?.fullpageApi?.moveTo(3);
+  };
+
   return (
     // <div className="home-page h-screen w-screen">
     //   <div className="home">
@@ -20,6 +25,7 @@ export default function Home() {
     <ReactFullpage
       navigation
       // scrollHorizontally = {true}
+      normalScrollElements={'.scrollable-section'}
       sectionsColor={[
         'blue',
         'red',
@@ -30,10 +36,18 @@ export default function Home() {
         'purple',
         'yellow',
       ]}
-      render={() => (
+      render={(fullpageApi: any) => (
         <ReactFullpage.Wrapper>
           <div key={'section1'} className="section">
             <h1>section1</h1>
+            <button onClick={() => handleClick(fullpageApi)}>
+              Navigate to 3
+            </button>
+            <div className={'scrollable-section'} data-anchor-ignore>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+            </div>
           </div>
           <div key={'section2'} className="section">
             <h1>section2</h1>
