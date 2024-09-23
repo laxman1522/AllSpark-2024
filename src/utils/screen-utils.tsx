@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { SCREEN_NAMES, SCREEN_SIZES } from '../constants/constants';
 
 /**
@@ -9,8 +10,8 @@ import { SCREEN_NAMES, SCREEN_SIZES } from '../constants/constants';
  */
 export const setWindowSizeCategory = (
   width: number,
-  windowSize: any,
-  setWindowSize: any,
+  windowSize: string,
+  setWindowSize: Dispatch<SetStateAction<string>>,
 ) => {
   let newSizeCategory = SCREEN_NAMES.mobile;
   if (width > SCREEN_SIZES.desktop) newSizeCategory = SCREEN_NAMES.lgDesktop;

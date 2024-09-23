@@ -1,4 +1,3 @@
-import CountDown from '@/components/countDown/CountDown';
 import Logo from '@/components/Logo/Logo';
 import BackgroundAnimation from '@/components/BackgroundAnimation/BackgroundAnimation';
 import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
