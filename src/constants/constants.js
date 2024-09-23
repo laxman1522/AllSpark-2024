@@ -19,17 +19,18 @@ export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
 
 export const MOBILE_LANDSCAPE_MESSAGE =
   'Please rotate your device to portrait mode';
-export const BACKGROUND_VANTA_SETTINGS = {
-  MOUSECONTROLS: true,
-  TOUCHCONTROLS: true,
-  GYROCONTROLS: false,
-  MINHEIGHT: 200.0,
-  MINWIDTH: 200.0,
-  SCALE: 1.0,
-  SCALEMOBILE: 1.0,
-  COLOR: 0x270212,
-  SHININESS: 13.0,
-  WAVEHEIGHT: 4.5,
-  WAVESPEED: 1.2,
-  ZOOM: 0.96,
+
+export const BACKGROUND_VANTA_OPTIONS = {
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  color: 0x270212,
+  shininess: 13.0,
+  waveHeight: 4.5,
+  waveSpeed: 1.2,
+  zoom: 0.96,
 };
