@@ -27,6 +27,18 @@ const config: Config = {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(180deg, #270212 0%, #511717 100%)',
       },
+      translate: {
+        '2/5': '40%',
+      },
+      keyframes: {
+        shakeY: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        'shake-y': 'shakeY 1s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

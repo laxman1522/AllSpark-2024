@@ -1,0 +1,21 @@
+// initial styles for location container
+.bottom-container {
+  opacity: 0;
+}
+
+// iPhone SE
+@media screen and (max-height: 720px) {
+  .location-container {
+    margin-top: 40vh;
+  }
+}
+
+// google next hub
+@media screen and (min-width: 1024) and (min-height: 600) and (max-height: 800) {
+  .location-container {
+    margin-top: 28vh;
+  }
+  .circle-arrow {
+    margin-top: 5vh;
+  }
+}
