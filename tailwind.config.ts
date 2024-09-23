@@ -27,6 +27,9 @@ const config: Config = {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(180deg, #270212 0%, #511717 100%)',
       },
+      borderWidth: {
+        10: '10px',
+      },
     },
   },
   plugins: [],
