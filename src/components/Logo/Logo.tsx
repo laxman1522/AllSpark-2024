@@ -1,3 +1,4 @@
+'use client';
 import './Logo.scss';
 import Image from 'next/image';
 import left from '../../../public/images/left.png';
@@ -10,6 +11,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { SCREEN_SIZES } from '../../constants/constants';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
 
 // Register GSAP MotionPath plugin
 gsap.registerPlugin(MotionPathPlugin);
@@ -22,7 +24,6 @@ interface Size {
 
 interface LogoProps {
   isCountDownDisplayed: boolean;
-  windowSize: string;
 }
 
 // Function to calculate dynamic values based on screen width
@@ -61,10 +62,11 @@ const getDynamicValues = (
  * @version 1.0.0
  * @author [Charanraj Thiyagarajan]
  */
-const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed, windowSize }) => {
+const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
+  const windowSize = useWindowSize();
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({
@@ -244,7 +246,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed, windowSize }) => {
         });
       }
     }
-  }, [windowSize]);
+  }, [windowSize, isCountDownDisplayed]);
 
   return (
     <div className="logo">

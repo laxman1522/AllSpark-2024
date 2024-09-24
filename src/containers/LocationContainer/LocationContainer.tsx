@@ -1,3 +1,4 @@
+'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 import './LocationContainer.scss';
@@ -5,10 +6,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import LocationTime from '../../components/LocationTime/LocationTime';
 import CDWLogo from '../../components/CDWLogo/CDWLogo';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
 
 interface LocationContainerProps {
   isCountDownDisplayed: boolean;
-  windowSize: string;
 }
 
 /**
@@ -18,9 +19,9 @@ interface LocationContainerProps {
  */
 const LocationContainer: React.FC<LocationContainerProps> = ({
   isCountDownDisplayed,
-  windowSize,
 }) => {
   const container = useRef<HTMLDivElement>(null);
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     if (container.current) {
@@ -41,10 +42,7 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
       ref={container}
     >
       <div className="location-container min-[540px]:mt-[40vh] 2xl:mt-[35vh]">
-        <LocationTime
-          windowSize={windowSize}
-          isCountDownDisplayed={isCountDownDisplayed}
-        />
+        <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
       </div>
       <CDWLogo />
       <div

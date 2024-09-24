@@ -1,3 +1,4 @@
+'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import CalendarIcon from '@/components/CalendarIcon/CalendarIcon';
@@ -5,17 +6,17 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './LocationTime.scss';
 import { ALLSPARK_INFO } from '@/constants/constants';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
 
 interface LocationTimeProps {
   isCountDownDisplayed: boolean;
-  windowSize: string;
 }
 
 const LocationTime: React.FC<LocationTimeProps> = ({
   isCountDownDisplayed,
-  windowSize,
 }) => {
   const container = useRef<HTMLDivElement>(null);
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     if (container.current) {
