@@ -49,3 +49,9 @@
     margin-top: 268px;
   }
 }
+
+@media screen and (min-width: 1024) and (max-width: 1300) and (min-height: 768) and (max-height: 1000) {
+  .location-bottom-tab {
+    margin-top: 500px;
+  }
+}

@@ -7,7 +7,7 @@ import CountDown from '@/components/countDown/CountDown';
 import { useState } from 'react';
 
 export default function Home() {
-  const [isCountDownDisplayed, setIsCountDownDisplayed] = useState(true);
+  const [isCountDownDisplayed, setIsCountDownDisplayed] = useState(false);
 
   return (
     <div className="home-page h-screen w-screen">

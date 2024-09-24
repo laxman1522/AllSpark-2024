@@ -286,7 +286,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
         ref={rightRef}
       />
       <div
-        className={`logo-container relative top-[${isCountDownDisplayed ? '50vh' : '45vh'}] left-[50vw] -translate-x-1/2 -translate-y-1/2`}
+        className={`logo-container relative top-[45vh] top-${!isCountDownDisplayed && '[50vh]'} left-[50vw] -translate-x-1/2 -translate-y-1/2`}
         ref={logoContainerRef}
       >
         <Image
