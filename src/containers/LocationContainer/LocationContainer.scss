@@ -55,3 +55,11 @@
     margin-top: 500px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .location-bottom-tab {
+    .location-container {
+      display: none;
+    }
+  }
+}

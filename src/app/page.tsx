@@ -1,14 +1,14 @@
 'use client';
 import Logo from '@/components/Logo/Logo';
 import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
-import LocationContainer from '@/components/LocationContainer/LocationContainer';
+import LocationContainer from '@/containers/LocationContainer/LocationContainer';
 import BackGround from '@/components/BackGround/BackGround';
 import CountDown from '@/components/countDown/CountDown';
 import { useEffect, useState } from 'react';
 import { setWindowSizeCategory } from '@/utils/screen-utils';
 
 export default function Home() {
-  const [isCountDownDisplayed, setIsCountDownDisplayed] = useState(false);
+  const [isCountDownDisplayed, setIsCountDownDisplayed] = useState(true);
   const [windowSize, setWindowSize] = useState<string>('');
 
   useEffect(() => {
