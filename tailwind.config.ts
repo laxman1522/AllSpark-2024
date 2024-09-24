@@ -19,8 +19,8 @@ const config: Config = {
         'label-color': '#f3baa7',
         'counter-text-color': '#332723',
         'animation-background': 'f2baa740',
-        'text-color': '#f1bba7',
-        'button-color': '#f9f1d5',
+        'text-color': '#f2bba7',
+        'button-color': '#f9f0d5',
       },
       fontFamily: {
         dseg: ['DSEG7_Classic_Bold', 'sans-serif'],
