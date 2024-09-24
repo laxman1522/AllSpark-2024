@@ -5,6 +5,7 @@ import Logo from '@/components/Logo/Logo';
 import BackGround from '@/components/BackGround/BackGround';
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import Header from '@/components/Header/Header';
+import { ALLSPARK_VIDEO } from '@/constants/constants';
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <BackGround>
         <Header />
         <div className="px-10">
-          <VideoPlayer videoUrl="https://www.youtube.com/embed/ySa8B8IXWB8?si=ijEBpnRbdvedxcKm?rel=0" />
+          <VideoPlayer videoUrl={ALLSPARK_VIDEO} />
         </div>
       </BackGround>
     </div>
