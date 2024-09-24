@@ -29,18 +29,20 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
       });
       gsap.to(container.current, {
         opacity: 1,
-        duration: 0.22,
-        delay: isCountDownDisplayed ? 0.7 : 0.5,
+        duration: 2,
+        delay: isCountDownDisplayed ? 7 : 5,
       });
     }
   }, [windowSize]);
 
   return (
     <div
-      className={`bottom-container ${isCountDownDisplayed && 'mt-[45vh] location-bottom-tab'}`}
+      className={`bottom-container ${isCountDownDisplayed && ' min-[540px]:mt-[54vh] mt-[62vh] location-bottom-tab'}`}
       ref={container}
     >
-      <LocationTime />
+      <div className="location-container min-[540px]:mt-[40vh] 2xl:mt-[35vh]">
+        <LocationTime />
+      </div>
       <CDWLogo />
       <div
         className={`${isCountDownDisplayed && 'arrow-tab'} circle-arrow flex justify-center items-center cursor-pointer mt-[12vh] 2xl:mt-[10vh] animate-shake-y`}

@@ -4,3 +4,9 @@
     margin-top: 20px;
   }
 }
+
+@media only screen and (max-height: 700px) {
+  .counter-container {
+    flex-direction: row;
+  }
+}

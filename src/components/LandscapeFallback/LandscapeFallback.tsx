@@ -8,7 +8,7 @@ import React from 'react';
  */
 export default function LandscapeFallback() {
   return (
-    <p className="text-label-color text-center  md:text-[29px] text-[16px] min-[410px]:text-[18px]">
+    <p className="text-label-color h-screen w-screen flex justify-center items-center md:text-[29px] text-[16px] min-[410px]:text-[18px]">
       {MOBILE_LANDSCAPE_MESSAGE}
     </p>
   );

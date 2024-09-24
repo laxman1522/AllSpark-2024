@@ -24,7 +24,7 @@ export default function BackGround({ children }: BackGroundProps) {
     };
   }, [vantaEffect]);
   return (
-    <div ref={vantaRef} className="h-screen">
+    <div ref={vantaRef} className="h-screen w-screen ">
       {children}
     </div>
   );

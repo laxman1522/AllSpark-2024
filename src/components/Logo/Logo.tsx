@@ -40,10 +40,6 @@ const getDynamicValues = (
   let starSize: Size, logoSize: Size, logoStarSize: Size;
 
   if (width <= SCREEN_SIZES.mobile) {
-    starSize = { height: '24px', width: '30px' };
-    logoSize = { height: '44.27px', width: '160px' };
-    logoStarSize = { height: '12.39px', width: '11.8px' };
-  } else if (width <= SCREEN_SIZES.lgMobile) {
     starSize = { height: '32.22px', width: '40.25px' };
     logoSize = { height: '60.42px', width: '217.5px' };
     logoStarSize = { height: '16.91px', width: '16.11px' };
@@ -89,10 +85,8 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed, windowSize }) => {
       return (24 * 2.5) / 2;
     } else if (windowWidth > SCREEN_SIZES.tablet) {
       return (17 * 2.5) / 2;
-    } else if (windowWidth > SCREEN_SIZES.lgMobile) {
-      return (12.8 * 2.5) / 2;
     } else if (windowWidth > SCREEN_SIZES.mobile) {
-      return (9.6 * 2.5) / 2;
+      return (12.8 * 2.5) / 2;
     } else {
       return (7.2 * 2.5) / 2;
     }
