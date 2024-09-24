@@ -20,7 +20,7 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
   isCountDownDisplayed,
   windowSize,
 }) => {
-  const container = useRef<HTMLImageElement>(null);
+  const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (container.current) {
@@ -37,11 +37,14 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
 
   return (
     <div
-      className={`bottom-container ${isCountDownDisplayed && ' min-[540px]:mt-[54vh] mt-[62vh] location-bottom-tab'}`}
+      className={`bottom-container opacity-0 ${isCountDownDisplayed && ' min-[540px]:mt-[54vh] mt-[62vh] location-bottom-tab'}`}
       ref={container}
     >
       <div className="location-container min-[540px]:mt-[40vh] 2xl:mt-[35vh]">
-        <LocationTime />
+        <LocationTime
+          windowSize={windowSize}
+          isCountDownDisplayed={isCountDownDisplayed}
+        />
       </div>
       <CDWLogo />
       <div

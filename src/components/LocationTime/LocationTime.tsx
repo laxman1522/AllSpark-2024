@@ -1,10 +1,38 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import CalendarIcon from '@/components/CalendarIcon/CalendarIcon';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
-const LocationTime = () => {
+interface LocationTimeProps {
+  isCountDownDisplayed: boolean;
+  windowSize: string;
+}
+
+const LocationTime: React.FC<LocationTimeProps> = ({
+  isCountDownDisplayed,
+  windowSize,
+}) => {
+  const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (container.current) {
+      gsap.set(container.current, {
+        opacity: 0,
+      });
+      gsap.to(container.current, {
+        opacity: 1,
+        duration: 2,
+        delay: isCountDownDisplayed ? 7 : 5,
+      });
+    }
+  }, [windowSize]);
+
   return (
-    <div className="flex flex-col min-[540px]:flex-row text-[#f5d2c6] justify-center items-center md:gap-[23px] min-[540px]:gap-[20px] gap-[12px] text-[15px] md:text-[20px] lg:text-[24px]">
+    <div
+      className="flex flex-col min-[540px]:flex-row text-[#f5d2c6] justify-center items-center md:gap-[23px] min-[540px]:gap-[20px] gap-[12px] text-[15px] md:text-[20px] lg:text-[24px] opacity-0"
+      ref={container}
+    >
       <div className="location-name flex md:gap-[25px] min-[540px]:gap-[15px] gap-[8px] items-center">
         <FontAwesomeIcon
           icon={faLocationDot}

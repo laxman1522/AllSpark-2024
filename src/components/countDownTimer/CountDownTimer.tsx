@@ -32,6 +32,7 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({
   const breakpoints = [
     SCREEN_SIZES.desktop,
     SCREEN_SIZES.tablet,
+    SCREEN_SIZES.lgMobile,
     SCREEN_SIZES.mobile,
   ];
 

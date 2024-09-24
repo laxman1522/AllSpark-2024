@@ -9,11 +9,10 @@ import star from '../../../public/images/star.png';
 import aLetter from '../../../public/images/letter-A.png';
 import llspark from '../../../public/images/Text-without-A.png';
 import allspark from '../../../public/images/Allsparktext.png';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { SCREEN_SIZES } from '../../constants/constants';
-import { setWindowSizeCategory } from '@/utils/screen-utils';
 
 // Register GSAP MotionPath plugin
 gsap.registerPlugin(MotionPathPlugin);
@@ -39,7 +38,7 @@ const getDynamicValues = (
 } => {
   let starSize: Size, logoSize: Size, logoStarSize: Size;
 
-  if (width <= SCREEN_SIZES.mobile) {
+  if (width <= SCREEN_SIZES.lgMobile) {
     starSize = { height: '32.22px', width: '40.25px' };
     logoSize = { height: '60.42px', width: '217.5px' };
     logoStarSize = { height: '16.91px', width: '16.11px' };
@@ -85,10 +84,10 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed, windowSize }) => {
       return (24 * 2.5) / 2;
     } else if (windowWidth > SCREEN_SIZES.tablet) {
       return (17 * 2.5) / 2;
-    } else if (windowWidth > SCREEN_SIZES.mobile) {
+    } else if (windowWidth > SCREEN_SIZES.lgMobile) {
       return (12.8 * 2.5) / 2;
     } else {
-      return (7.2 * 2.5) / 2;
+      return (9.6 * 2.5) / 2;
     }
   };
 

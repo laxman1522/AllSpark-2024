@@ -17,7 +17,9 @@ export const setWindowSizeCategory = (
   if (width > SCREEN_SIZES.desktop) newSizeCategory = SCREEN_NAMES.lgDesktop;
   else if (width <= SCREEN_SIZES.desktop && width > SCREEN_SIZES.tablet)
     newSizeCategory = SCREEN_NAMES.desktop;
-  else if (width <= SCREEN_SIZES.tablet && width > SCREEN_SIZES.mobile)
+  else if (width <= SCREEN_SIZES.tablet && width > SCREEN_SIZES.lgMobile)
     newSizeCategory = SCREEN_NAMES.tablet;
+  else if (width <= SCREEN_SIZES.lgMobile && width > SCREEN_SIZES.mobile)
+    newSizeCategory = SCREEN_NAMES.lgMobile;
   if (newSizeCategory !== windowSize) setWindowSize(newSizeCategory);
 };
