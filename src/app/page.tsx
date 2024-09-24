@@ -1,7 +1,7 @@
 // import CountDown from '@/components/countDown/CountDown';
 // import BackgroundAnimation from '@/components/BackgroundAnimation/BackgroundAnimation';
 // import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
-import Logo from '@/components/Logo/Logo';
+// import Logo from '@/components/Logo/Logo';
 import BackGround from '@/components/BackGround/BackGround';
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import Header from '@/components/Header/Header';
