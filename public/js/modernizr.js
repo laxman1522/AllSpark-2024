@@ -438,10 +438,7 @@ window.Modernizr = (function (window, document, undefined) {
   tests['touch'] = function () {
     var bool;
 
-    if (
-      'ontouchstart' in window ||
-      (window.DocumentTouch && document instanceof DocumentTouch)
-    ) {
+    if (window.innerWidth <= 480) {
       bool = true;
     } else {
       injectElementWithStyles(

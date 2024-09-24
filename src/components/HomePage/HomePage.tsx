@@ -7,7 +7,7 @@ interface HomePageProps {
 const HomePage = forwardRef<HTMLDivElement, HomePageProps>((props, ref) => {
   return (
     <div ref={ref} className="home h-screen" id="home-section">
-      <BackgroundAnimation />
+      {/* <BackgroundAnimation /> */}
       <h1>Home Page</h1>
       {/* //TODO: Add Home Page content */}
     </div>

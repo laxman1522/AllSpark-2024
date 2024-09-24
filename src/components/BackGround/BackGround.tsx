@@ -13,7 +13,7 @@ export default function BackGround({ children }: BackGroundProps) {
     if (!vantaEffect) {
       setVantaEffect(
         WAVES({
-          el: vantaRef.current,
+          el: '#nav-wrapper',
           THREE,
           ...BACKGROUND_VANTA_OPTIONS,
         }),
@@ -24,7 +24,7 @@ export default function BackGround({ children }: BackGroundProps) {
     };
   }, [vantaEffect]);
   return (
-    <div ref={vantaRef} className="h-screen">
+    <div ref={vantaRef} className="h-[100vh] ">
       {children}
     </div>
   );

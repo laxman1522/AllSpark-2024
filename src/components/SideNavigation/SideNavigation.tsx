@@ -1,9 +1,10 @@
 'use client';
 import './SideNavigation.scss';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import EventsPage from '../EventsPage/EventsPage';
 import HomePage from '../HomePage/HomePage';
 import AboutPage from '../AboutPage/AboutPage';
+import BackGround from '../BackGround/BackGround';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
@@ -12,26 +13,35 @@ export default function SideNavigation() {
   const aboutPageRef = useRef(null);
 
   const sections = [
-    { label: 'Home', ref: homePageRef, number: '1', id: '#home-section' },
+    { label: 'About', ref: aboutPageRef, number: '1', id: '#about-section' },
     { label: 'Events', ref: eventsPageRef, number: '2', id: '#events-section' },
-    { label: 'About', ref: aboutPageRef, number: '3', id: '#about-section' },
-    //TODO: Add Sections
+    { label: 'Guests', ref: aboutPageRef, number: '3', id: '#guests-section' },
     {
-      label: 'Section 4',
+      label: 'Schedule',
       ref: aboutPageRef,
       number: '4',
-      id: '#about-section',
+      id: '#schedule-section',
     },
     {
-      label: 'Section 5',
+      label: 'Speakers',
       ref: aboutPageRef,
       number: '5',
-      id: '#about-section',
+      id: '#speakers-section',
+    },
+    { label: 'Recap', ref: aboutPageRef, number: '6', id: '#recap-section' },
+    {
+      label: 'Committee',
+      ref: aboutPageRef,
+      number: '7',
+      id: '#committee-section',
     },
   ];
 
+  const rows = new Array(3).fill(null);
+  const boxes = new Array(3).fill(null);
+
   return (
-    <div>
+    <div id="nav-wrapper">
       <nav id="cd-vertical-nav">
         <ul>
           {sections.map((section) => (
@@ -50,7 +60,15 @@ export default function SideNavigation() {
       </nav>
 
       <a className="cd-nav-trigger cd-img-replace">
-        <span></span>
+        {rows.map((_, rowIndex) => (
+          <span className="row" key={`row-${rowIndex}`}>
+            {boxes.map((_, boxIndex) => (
+              <span className="box" key={`box-${boxIndex}`}></span>
+            ))}
+          </span>
+        ))}
+
+        {/* <span ></span> */}
       </a>
 
       <section id="home-section" className="cd-section">
