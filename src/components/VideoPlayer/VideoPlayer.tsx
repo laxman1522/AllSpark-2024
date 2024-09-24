@@ -10,7 +10,7 @@ interface VideoPlayer {
 
 const VideoPlayer: React.FC<{ videoUrl: string }> = ({ videoUrl }) => {
   return (
-    <div className="relative w-full p-2 flex justify-center bg-white border-10 border-[#270212]">
+    <div className="relative w-full p-1 flex justify-center bg-white shadow rounded">
       <iframe
         src={String(videoUrl)}
         id="video-player"
