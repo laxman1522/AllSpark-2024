@@ -26,6 +26,7 @@ interface Size {
 
 interface LogoProps {
   isCountDownDisplayed: boolean;
+  windowSize: string;
 }
 
 // Function to calculate dynamic values based on screen width
@@ -68,11 +69,10 @@ const getDynamicValues = (
  * @version 1.0.0
  * @author [Charanraj Thiyagarajan]
  */
-const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
+const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed, windowSize }) => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const [windowSize, setWindowSize] = useState<string>('');
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({
@@ -107,19 +107,6 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
   const calculateRightPath = (windowWidth: number) => {
     return 50 - (calculateElementWidth(windowWidth) / windowWidth) * 100;
   };
-
-  // Handle window resize event
-  useEffect(() => {
-    setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
-    window.addEventListener('resize', () => {
-      setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
-      });
-    };
-  }, []);
 
   // Animation logic
   useEffect(() => {

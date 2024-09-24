@@ -6,12 +6,12 @@ import CalendarIcon from '@/components/CalendarIcon/CalendarIcon';
 import logo from '../../../public/images/cdwLogo.png';
 import Image from 'next/image';
 import './LocationContainer.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { setWindowSizeCategory } from '@/utils/screen-utils';
 
 interface LocationContainerProps {
   isCountDownDisplayed: boolean;
+  windowSize: string;
 }
 
 /**
@@ -21,22 +21,9 @@ interface LocationContainerProps {
  */
 const LocationContainer: React.FC<LocationContainerProps> = ({
   isCountDownDisplayed,
+  windowSize,
 }) => {
   const container = useRef<HTMLImageElement>(null);
-
-  const [windowSize, setWindowSize] = useState<string>('');
-
-  useEffect(() => {
-    setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
-    window.addEventListener('resize', () => {
-      setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
-      });
-    };
-  }, []);
 
   useEffect(() => {
     if (container.current) {

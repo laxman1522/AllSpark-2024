@@ -2,9 +2,6 @@
 import CountDownTimer from '@/components/countDownTimer/CountDownTimer';
 import { TIMER } from '@/constants/count-down-constants';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import logo from '../../../public/images/cdwLogo.png';
-import { ALLSPARK_DATE } from '@/constants/constants';
 import './CountDown.scss';
 /**
  * @description An component which calculates target time value for a countdown
