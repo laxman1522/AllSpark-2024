@@ -19,3 +19,33 @@
     margin-top: 5vh;
   }
 }
+
+@media screen and (min-width: 760) and (max-width: 819px) and (min-height: 1024) and (max-height: 1179) {
+  .location-bottom-tab {
+    margin-top: 648px;
+  }
+  .arrow-tab {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 820) and (max-width: 1023) and (min-height: 1180) and (max-height: 1366) {
+  .location-bottom-tab {
+    margin-top: 750px;
+  }
+  .arrow-tab {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1024) and (min-height: 1366) {
+  .location-bottom-tab {
+    margin-top: 800px;
+  }
+}
+
+@media screen and (min-width: 1024) and (max-width: 1179) and (min-height: 768) and (max-height: 819) {
+  .bottom-container {
+    margin-top: 268px;
+  }
+}

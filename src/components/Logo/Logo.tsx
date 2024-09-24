@@ -25,7 +25,7 @@ interface Size {
 }
 
 interface LogoProps {
-  isHomePage: boolean;
+  isCountDownDisplayed: boolean;
 }
 
 // Function to calculate dynamic values based on screen width
@@ -68,7 +68,7 @@ const getDynamicValues = (
  * @version 1.0.0
  * @author [Charanraj Thiyagarajan]
  */
-const Logo: React.FC<LogoProps> = ({ isHomePage }) => {
+const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
@@ -234,8 +234,8 @@ const Logo: React.FC<LogoProps> = ({ isHomePage }) => {
       });
 
       // Logo animation after 6 seconds
-      if (!isHomePage) {
-        gsap.delayedCall(6, () => {
+      if (isCountDownDisplayed) {
+        gsap.delayedCall(5.5, () => {
           gsap
             .timeline({ ease: 'power2.out' })
             .to(
@@ -286,7 +286,7 @@ const Logo: React.FC<LogoProps> = ({ isHomePage }) => {
         ref={rightRef}
       />
       <div
-        className="logo-container relative top-[45vh] left-[50vw] -translate-x-1/2 -translate-y-1/2"
+        className={`logo-container relative top-[${isCountDownDisplayed ? '50vh' : '45vh'}] left-[50vw] -translate-x-1/2 -translate-y-1/2`}
         ref={logoContainerRef}
       >
         <Image
