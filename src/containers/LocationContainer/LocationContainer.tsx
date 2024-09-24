@@ -33,7 +33,7 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
         delay: isCountDownDisplayed ? 7 : 5,
       });
     }
-  }, [windowSize]);
+  }, [isCountDownDisplayed, windowSize]);
 
   return (
     <div

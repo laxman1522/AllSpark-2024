@@ -5,8 +5,14 @@
   }
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 750px) {
   .counter-container {
     flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 580px) and (min-height: 900px) {
+  .counter-container {
+    margin-top: 6rem;
   }
 }

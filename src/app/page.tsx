@@ -33,7 +33,7 @@ export default function Home() {
             isCountDownDisplayed={isCountDownDisplayed}
           />
           {isCountDownDisplayed && (
-            <div className="md:hidden mt-[5vh]">
+            <div className="md:hidden">
               <LocationTime
                 windowSize={windowSize}
                 isCountDownDisplayed={isCountDownDisplayed}

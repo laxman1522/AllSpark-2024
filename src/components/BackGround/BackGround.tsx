@@ -1,4 +1,3 @@
-'use client';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import WAVES from 'vanta/dist/vanta.waves.min.js';
 import * as THREE from 'three';

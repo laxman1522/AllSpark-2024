@@ -15,7 +15,10 @@ export const SCREEN_SIZES = {
   mobile: 425,
 };
 
-export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
+export const ALLSPARK_INFO = {
+  date: 'October 25 & 26',
+  place: 'Namma Bengaluru',
+};
 
 export const MOBILE_LANDSCAPE_MESSAGE =
   'Please rotate your device to portrait mode';

@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-'use client';
-
 import './Logo.scss';
 import Image from 'next/image';
 import left from '../../../public/images/left.png';
