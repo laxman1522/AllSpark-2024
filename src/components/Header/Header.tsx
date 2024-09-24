@@ -12,14 +12,14 @@ const Header = () => {
   return (
     <div className="flex justify-center md:justify-between px-12 py-10">
       <Image
-        src={allspark.src}
+        src={allspark}
         alt="allspark-logo"
         className="object-contain"
         width={263}
         height={73}
       />
       <Image
-        src={cdwlogo.src}
+        src={cdwlogo}
         alt="cdw-logo"
         className="object-contain hidden md:block"
         width={105}
