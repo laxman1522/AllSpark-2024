@@ -12,7 +12,7 @@ interface TimeGroupProps {
  */
 const TimeGroup: React.FC<TimeGroupProps> = ({ value }) => {
   return (
-    <div className="time-segment flex md:gap-4 gap-2 font-dseg md:h-full xl:h-[70%] h-[54px] min-[540px]:h-[90px] justify-center">
+    <div className="time-segment flex md:gap-4 gap-2 font-dseg md:h-full xl:h-[70%] lg:h-[70%] h-[54px] min-[540px]:h-[90px] justify-center">
       <TimeSegment currentValue={parseInt(value.toString()[0])} />
       <TimeSegment currentValue={parseInt(value.slice(1))} />
     </div>

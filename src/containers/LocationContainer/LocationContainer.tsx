@@ -38,7 +38,7 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
 
   return (
     <div
-      className={`bottom-container opacity-0 ${isCountDownDisplayed && ' min-[540px]:mt-[54vh] mt-[62vh] location-bottom-tab'}`}
+      className={`bottom-container opacity-0 ${isCountDownDisplayed && ' min-[540px]:mt-[47vh] mt-[62vh] location-bottom-tab'}`}
       ref={container}
     >
       <div className="location-container min-[540px]:mt-[40vh] 2xl:mt-[35vh]">

@@ -33,7 +33,7 @@ const LocationTime: React.FC<LocationTimeProps> = ({
 
   return (
     <div
-      className="location-time flex flex-col min-[540px]:flex-row text-[#f5d2c6] justify-center items-center md:gap-[23px] min-[540px]:gap-[20px] gap-[12px] text-[15px] md:text-[20px] lg:text-[24px] opacity-0"
+      className="location-time flex flex-col min-[540px]:flex-row text-[#f5d2c6] justify-center items-center md:gap-[23px] min-[540px]:gap-[20px] gap-[12px] text-[15px] md:text-[20px] lg:text-[28px] opacity-0"
       ref={container}
     >
       <div className="location-name flex md:gap-[25px] min-[540px]:gap-[15px] gap-[8px] items-center">
@@ -47,7 +47,7 @@ const LocationTime: React.FC<LocationTimeProps> = ({
       </div>
       <div className="location-place flex items-center gap-[10px] md:gap-[21px]">
         <CalendarIcon />
-        <span className="text-[16px] md:text-[18px] lg:text-[24px] font-bold">
+        <span className="text-[16px] md:text-[18px] lg:text-[24px] font-bold lg:text-[28px]">
           {ALLSPARK_INFO.date}
         </span>
       </div>
