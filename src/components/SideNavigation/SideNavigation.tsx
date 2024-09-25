@@ -3,11 +3,10 @@ import './SideNavigation.scss';
 import EventsContainer from '../../containers/EventsContainer/EventsContainer';
 import HomeContainer from '../../containers/HomeContainer/HomeContainer';
 import AboutContainer from '../../containers/AboutContainer/AboutContainer';
-import { constructSections } from '@/utils/section-utils';
+import { SECTIONS } from '@/constants/constants';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
-  const sections = constructSections();
   const rows = new Array(3).fill(null);
   const boxes = new Array(3).fill(null);
 
@@ -15,7 +14,7 @@ export default function SideNavigation() {
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
         <ul>
-          {Object.values(sections)?.map((section) => (
+          {SECTIONS?.map((section) => (
             <li key={section.number}>
               <a
                 href={section.id}
@@ -41,15 +40,15 @@ export default function SideNavigation() {
       </a>
 
       <section id="home-section" className="navbar-section">
-        <HomeContainer ref={sections?.About?.ref} />
+        <HomeContainer />
       </section>
 
       <section id="events-section" className="navbar-section">
-        <EventsContainer ref={sections?.Events?.ref} />
+        <EventsContainer />
       </section>
 
       <section id="about-section" className="navbar-section">
-        <AboutContainer ref={sections?.About?.ref} />
+        <AboutContainer />
       </section>
     </div>
   );
