@@ -39,7 +39,7 @@ const LocationTime: React.FC<LocationTimeProps> = ({
       <div className="location-name flex md:gap-[25px] min-[540px]:gap-[15px] gap-[8px] items-center">
         <FontAwesomeIcon
           icon={faLocationDot}
-          className="cursor-pointer location-icon text-[#f9f1d5] min-[540px]:h-[30px] h-[20px] md:h-[40px] lg:h-[50px]"
+          className="cursor-pointer location-icon text-[#f9f1d5] min-[540px]:!h-[30px] !h-[20px] md:!h-[40px] lg:!h-[50px]"
         />
         <div className="location-text-wrapper flex flex-row items-center font-bold">
           {ALLSPARK_INFO.place}

@@ -1,14 +1,14 @@
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
-import './LocationContainer.scss';
+import './EventDetailsContainer.scss';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import LocationTime from '../../components/LocationTime/LocationTime';
 import CDWLogo from '../../components/CDWLogo/CDWLogo';
 import { useWindowSize } from '@/contexts/WindowSizeContext';
 
-interface LocationContainerProps {
+interface EventDetailsContainerProps {
   isCountDownDisplayed: boolean;
 }
 
@@ -17,7 +17,7 @@ interface LocationContainerProps {
  * @version 1.0.0
  * @author [Rubesh Udayakumar]
  */
-const LocationContainer: React.FC<LocationContainerProps> = ({
+const EventDetailsContainer: React.FC<EventDetailsContainerProps> = ({
   isCountDownDisplayed,
 }) => {
   const container = useRef<HTMLDivElement>(null);
@@ -52,11 +52,11 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
       >
         <FontAwesomeIcon
           icon={faCircleChevronDown}
-          className="text-[#f9f1d5] h-[30px] md:h-[40px] lg:h-[50px]"
+          className="text-[#f9f1d5] !h-[30px] md:!h-[40px] lg:!h-[50px]"
         />
       </div>
     </div>
   );
 };
 
-export default LocationContainer;
+export default EventDetailsContainer;
