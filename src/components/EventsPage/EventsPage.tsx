@@ -12,4 +12,5 @@ const EventsPage = forwardRef<HTMLDivElement, EventsPageProps>((props, ref) => {
   );
 });
 
+EventsPage.displayName = 'EventsPage';
 export default EventsPage;

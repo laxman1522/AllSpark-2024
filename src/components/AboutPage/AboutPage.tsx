@@ -12,4 +12,6 @@ const AboutPage = forwardRef<HTMLDivElement, AboutPageProps>((props, ref) => {
   );
 });
 
+AboutPage.displayName = 'AboutPage';
+
 export default AboutPage;
