@@ -110,3 +110,25 @@
     line-height: 0.395;
   }
 }
+
+@media screen and (min-width: 1024) and (max-width: 1280px) and (min-height: 600) and (max-height: 800) {
+  .time-segment-container {
+    width: 65px;
+  }
+  .previous-counter-value {
+    top: -50px;
+  }
+  .counter-value {
+    font-size: 3.5rem;
+    bottom: 24px;
+  }
+  .segment-overlay {
+    width: 65px;
+  }
+  .time-segment {
+    height: 90px;
+  }
+  .segment-overlay__top {
+    line-height: 0.395;
+  }
+}
