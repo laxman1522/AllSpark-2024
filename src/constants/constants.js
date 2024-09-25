@@ -37,3 +37,10 @@ export const BACKGROUND_VANTA_OPTIONS = {
   waveSpeed: 1.2,
   zoom: 0.96,
 };
+
+export const COMING_SOON_TEXTS = {
+  newSite: 'Our new site is',
+  comingSoon: 'COMING SOON',
+  stayTuned: 'Stay Tuned!',
+  allSpark: "AllSpark'24",
+};
