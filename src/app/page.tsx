@@ -14,13 +14,15 @@ export default function Home() {
       <div className="h-screen w-screen">
         <div className="home">
           <BackGround>
-            <Logo isCountDownDisplayed={isCountDownDisplayed} />
+            <></>
+            {/* Home page component for integration */}
+            {/* <Logo isCountDownDisplayed={isCountDownDisplayed} />
             {isCountDownDisplayed && (
               <div className="md:hidden">
                 <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
               </div>
             )}
-            <LocationContainer isCountDownDisplayed={isCountDownDisplayed} />
+            <LocationContainer isCountDownDisplayed={isCountDownDisplayed} /> */}
           </BackGround>
           {isCountDownDisplayed && <CountDown />}
         </div>
