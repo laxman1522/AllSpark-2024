@@ -11,7 +11,7 @@ import { WindowSizeProvider } from '../contexts/WindowSizeContext';
 import BackGround from '@/components/BackGround/BackGround';
 // import ComingSoon from '@/components/ComingSoon/ComingSoon';
 // import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
-import Header from '@/components/Header/Header';
+// import Header from '@/components/Header/Header';
 import Logo from '@/components/Logo/Logo';
 import LocationTime from '@/components/LocationTime/LocationTime';
 import LocationContainer from '@/containers/LocationContainer/LocationContainer';
