@@ -17,6 +17,9 @@ export const SCREEN_SIZES = {
 
 export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
 
+export const ALLSPARK_VIDEO =
+  'https://www.youtube.com/embed/ySa8B8IXWB8?si=ijEBpnRbdvedxcKm?rel=0';
+
 export const MOBILE_LANDSCAPE_MESSAGE =
   'Please rotate your device to portrait mode';
 
