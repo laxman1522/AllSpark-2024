@@ -10,7 +10,7 @@ const HomeContainer = () => {
   const { windowWidth } = useWindowSize();
 
   return (
-    <div className="home h-screen w-screen">
+    <div className="home" id="home-section">
       <Logo isCountDownDisplayed={isCountDownDisplayed} />
       {windowWidth < 768 && (
         <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
@@ -20,5 +20,7 @@ const HomeContainer = () => {
     </div>
   );
 };
+
+HomeContainer.displayName = 'HomeContainer';
 
 export default HomeContainer;

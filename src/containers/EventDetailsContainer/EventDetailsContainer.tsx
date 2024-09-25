@@ -49,6 +49,7 @@ const EventDetailsContainer: React.FC<EventDetailsContainerProps> = ({
       <CDWLogo />
       <div
         className={`${isCountDownDisplayed && 'arrow-tab'} circle-arrow flex justify-center items-center cursor-pointer mt-[12vh] 2xl:mt-[10vh] animate-shake-y`}
+        id="homeArrowIcon"
       >
         <FontAwesomeIcon
           icon={faCircleChevronDown}

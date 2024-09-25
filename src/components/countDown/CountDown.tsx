@@ -3,6 +3,7 @@ import CountDownTimer from '@/components/countDownTimer/CountDownTimer';
 import { TIMER } from '@/constants/count-down-constants';
 import { useEffect, useState } from 'react';
 import './CountDown.scss';
+
 /**
  * @description An component which calculates target time value for a countdown
  * @version 1.0.0
