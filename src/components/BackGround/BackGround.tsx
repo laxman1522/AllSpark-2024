@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import WAVES from 'vanta/dist/vanta.waves.min.js';
 import * as THREE from 'three';
 import { BACKGROUND_VANTA_OPTIONS } from '@/constants/constants';
@@ -8,7 +8,6 @@ interface BackGroundProps {
 }
 export default function BackGround({ children }: BackGroundProps) {
   const [vantaEffect, setVantaEffect] = useState<any>(0);
-  const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
@@ -23,9 +22,5 @@ export default function BackGround({ children }: BackGroundProps) {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
-  return (
-    <div ref={vantaRef} className="h-[100vh] ">
-      {children}
-    </div>
-  );
+  return <div className="h-screen w-screen ">{children}</div>;
 }

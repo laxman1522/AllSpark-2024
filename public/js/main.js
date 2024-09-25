@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
   var contentSections = $('.navbar-section'),
     navigationItems = $('#navbar-vertical-nav a');
+  $('#homeArrowIcon').on('click', () => navigationItems[1].click());
 
   updateNavigation();
   $(window).on('scroll', function () {

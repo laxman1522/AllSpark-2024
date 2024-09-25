@@ -15,7 +15,10 @@ export const SCREEN_SIZES = {
   mobile: 425,
 };
 
-export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
+export const ALLSPARK_INFO = {
+  date: 'October 25 & 26',
+  place: 'Namma Bengaluru',
+};
 
 export const ALLSPARK_VIDEO =
   'https://www.youtube.com/embed/ySa8B8IXWB8?si=ijEBpnRbdvedxcKm?rel=0';
@@ -47,8 +50,8 @@ export const COMING_SOON_TEXTS = {
 
 export const SECTIONS = [
   { label: 'Home', number: '1', id: '#home-section' },
-  { label: 'About', number: '2', id: '#about-section' },
-  { label: 'Events', number: '3', id: '#events-section' },
+  { label: 'Events', number: '2', id: '#events-section' },
+  { label: 'About', number: '3', id: '#about-section' },
   { label: 'Guests', number: '4', id: '#guests-section' },
   { label: 'Schedule', number: '5', id: '#schedule-section' },
   { label: 'Speakers', number: '6', id: '#speakers-section' },

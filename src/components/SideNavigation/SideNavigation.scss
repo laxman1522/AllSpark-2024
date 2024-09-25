@@ -1,7 +1,5 @@
 @import '../../app/variable.scss'; // colors, fonts etc...
-
 @import '../../app/mixins.scss'; // custom mixins
-
 @import '../../app/layout.scss'; // responsive grid and media queries
 
 a {
@@ -28,11 +26,6 @@ Main components
 
 -------------------------------- */
 
-.navbar-section {
-  min-height: 100%;
-  position: relative;
-}
-
 .navbar-scroll-down {
   position: absolute;
   @include center(x);
@@ -48,10 +41,10 @@ Main components
 }
 
 .no-touch #navbar-vertical-nav {
-  position: fixed;
+  position: fixed !important;
   right: 40px;
   @include center(y); // see partials > _mixins.scss
-  z-index: 9;
+  z-index: 9 !important;
 
   li {
     text-align: right;
@@ -140,8 +133,8 @@ Main components
 
 .touch .navbar-nav-trigger {
   display: block;
-  z-index: 2;
-  position: fixed;
+  z-index: 2 !important;
+  position: fixed !important;
   bottom: 30px;
   right: 5%;
   height: 54px;
@@ -173,8 +166,8 @@ Main components
 }
 
 .touch #navbar-vertical-nav {
-  position: fixed;
-  z-index: 9;
+  position: fixed !important;
+  z-index: 9 !important;
   right: 5%;
   bottom: 30px;
   width: 160px;

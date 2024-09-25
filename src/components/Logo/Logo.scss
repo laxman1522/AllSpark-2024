@@ -67,21 +67,3 @@
     }
   }
 }
-
-@media only screen and (max-width: 425px) {
-  .logo {
-    .left,
-    .right {
-      height: 6px;
-      width: 7.2px;
-    }
-    .logo-container {
-      height: 74px;
-      width: 265.5px;
-      .star {
-        height: 31px;
-        width: 36.89px;
-      }
-    }
-  }
-}
