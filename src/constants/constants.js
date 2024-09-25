@@ -44,3 +44,13 @@ export const COMING_SOON_TEXTS = {
   stayTuned: 'Stay Tuned!',
   allSpark: "AllSpark'24",
 };
+
+export const SECTIONS = [
+  { label: 'About', number: '1', id: '#about-section' },
+  { label: 'Events', number: '2', id: '#events-section' },
+  { label: 'Guests', number: '3', id: '#guests-section' },
+  { label: 'Schedule', number: '4', id: '#schedule-section' },
+  { label: 'Speakers', number: '5', id: '#speakers-section' },
+  { label: 'Recap', number: '6', id: '#recap-section' },
+  { label: 'Committee', number: '7', id: '#committee-section' },
+];

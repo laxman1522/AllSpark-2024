@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
-  var contentSections = $('.cd-section'),
-    navigationItems = $('#cd-vertical-nav a');
+  var contentSections = $('.navbar-section'),
+    navigationItems = $('#navbar-vertical-nav a');
 
   updateNavigation();
   $(window).on('scroll', function () {
@@ -13,25 +13,25 @@ jQuery(document).ready(function ($) {
     smoothScroll($(this.hash));
   });
   //smooth scroll to second section
-  $('.cd-scroll-down').on('click', function (event) {
+  $('.navbar-scroll-down').on('click', function (event) {
     event.preventDefault();
     smoothScroll($(this.hash));
   });
 
   //open-close navigation on touch devices
-  $('.touch .cd-nav-trigger').on('click', function () {
-    $('.touch #cd-vertical-nav').toggleClass('open');
+  $('.touch .navbar-nav-trigger').on('click', function () {
+    $('.touch #navbar-vertical-nav').toggleClass('open');
   });
   //close navigation on touch devices when selectin an elemnt from the list
-  $('.touch #cd-vertical-nav a').on('click', function () {
-    $('.touch #cd-vertical-nav').removeClass('open');
+  $('.touch #navbar-vertical-nav a').on('click', function () {
+    $('.touch #navbar-vertical-nav').removeClass('open');
   });
 
   function updateNavigation() {
     contentSections.each(function () {
       $this = $(this);
       var activeSection =
-        $('#cd-vertical-nav a[href="#' + $this.attr('id') + '"]').data(
+        $('#navbar-vertical-nav a[href="#' + $this.attr('id') + '"]').data(
           'number',
         ) - 1;
       if (
