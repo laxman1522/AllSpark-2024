@@ -4,12 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import cdwlogo from '../../../public/images/cdwLogo.png';
 
-const AboutContainer = () => {
+const ScheduleContainer = () => {
   return (
     <div className="h-screen relative">
       <Header />
       <div
-        id="about-section"
+        id="schedule-section"
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
         <ComingSoon />
@@ -27,6 +27,5 @@ const AboutContainer = () => {
   );
 };
 
-AboutContainer.displayName = 'AboutContainer';
-
-export default AboutContainer;
+ScheduleContainer.displayName = 'ScheduleContainer';
+export default ScheduleContainer;

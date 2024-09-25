@@ -66,52 +66,31 @@
   }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 1366px) {
+  /* Common styles for screen sizes between 768px and 1280px width, and 600px to 1366px height */
+  .time-segment-container {
+    width: 65px;
+  }
+  .previous-counter-value {
+    top: -50px;
+  }
+  .counter-value {
+    font-size: 3.5rem;
+    bottom: 24px;
+  }
+  .segment-overlay {
+    width: 65px;
+  }
+  .time-segment {
+    height: 90px;
+  }
+  .segment-overlay__top {
+    line-height: 0.395;
+  }
+}
+
 @media only screen and (min-width: 1000px) and (max-width: 1200px) and (orientation: landscape) {
-  /* Styles for landscape mode with screen width at least 1000px */
-  .time-segment-container {
-    width: 65px;
-  }
-  .previous-counter-value {
-    top: -50px;
-  }
-  .counter-value {
-    font-size: 3.5rem;
-    bottom: 24px;
-  }
-  .segment-overlay {
-    width: 65px;
-  }
-  .time-segment {
-    height: 90px;
-  }
-  .segment-overlay__top {
-    line-height: 0.395;
-  }
-}
-
-@media screen and (min-width: 768) and (max-width: 1024px) and (min-height: 800) and (max-height: 1366) {
-  .time-segment-container {
-    width: 65px;
-  }
-  .previous-counter-value {
-    top: -50px;
-  }
-  .counter-value {
-    font-size: 3.5rem;
-    bottom: 24px;
-  }
-  .segment-overlay {
-    width: 65px;
-  }
-  .time-segment {
-    height: 90px;
-  }
-  .segment-overlay__top {
-    line-height: 0.395;
-  }
-}
-
-@media screen and (min-width: 1024) and (max-width: 1280px) and (min-height: 600) and (max-height: 800) {
+  /* Styles for landscape mode with screen width between 1000px and 1200px */
   .time-segment-container {
     width: 65px;
   }
