@@ -17,6 +17,9 @@ export const SCREEN_SIZES = {
 
 export const ALLSPARK_DATE = 'October 25 & 26, Bengaluru';
 
+export const ALLSPARK_VIDEO =
+  'https://www.youtube.com/embed/ySa8B8IXWB8?si=ijEBpnRbdvedxcKm?rel=0';
+
 export const MOBILE_LANDSCAPE_MESSAGE =
   'Please rotate your device to portrait mode';
 
@@ -33,4 +36,11 @@ export const BACKGROUND_VANTA_OPTIONS = {
   waveHeight: 7.5,
   waveSpeed: 1.2,
   zoom: 0.7,
+};
+
+export const COMING_SOON_TEXTS = {
+  newSite: 'Our new site is',
+  comingSoon: 'COMING SOON',
+  stayTuned: 'Stay Tuned!',
+  allSpark: "AllSpark'24",
 };
