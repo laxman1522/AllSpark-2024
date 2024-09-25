@@ -11,7 +11,7 @@ const ComingSoon = () => {
         <p className="font-poppins text-text-color text-[1.75rem]">
           {COMING_SOON_TEXTS.newSite}
         </p>
-        <h1 className="coming-soon-text font-poppins text-text-color text-5xl font-bold">
+        <h1 className="coming-soon-text font-poppins text-text-color text-5xl font-[600]">
           {COMING_SOON_TEXTS.comingSoon}
         </h1>
         <p className="font-poppins text-text-color text-[1.75rem]">
