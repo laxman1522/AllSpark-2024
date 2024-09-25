@@ -12,6 +12,9 @@ import BackGround from '@/components/BackGround/BackGround';
 import ComingSoon from '@/components/ComingSoon/ComingSoon';
 // import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import Header from '@/components/Header/Header';
+import Logo from '@/components/Logo/Logo';
+import LocationTime from '@/components/LocationTime/LocationTime';
+import LocationContainer from '@/containers/LocationContainer/LocationContainer';
 // import { ALLSPARK_VIDEO } from '@/constants/constants';
 
 export default function Home() {
@@ -26,20 +29,20 @@ export default function Home() {
             {/* Home page component for integration */}
 
             {/* <>---------------------HOME PAGE--------------------</> */}
-            {/* <Logo isCountDownDisplayed={isCountDownDisplayed} />
+            <Logo isCountDownDisplayed={isCountDownDisplayed} />
             {isCountDownDisplayed && (
               <div className="md:hidden">
                 <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
               </div>
             )}
-            <LocationContainer isCountDownDisplayed={isCountDownDisplayed} /> */}
+            <LocationContainer isCountDownDisplayed={isCountDownDisplayed} />
             {/* <>---------------------HOME PAGE--------------------</> */}
 
             {/* <>-------------- COMING SOON PAGE----------------</> */}
-            <Header />
+            {/* <Header />
             <div className="absolute inset-0 h-screen flex align-center justify-center">
               <ComingSoon />
-            </div>
+            </div> */}
             {/* {<>---------------COMING SOON PAGE-----------------</>} */}
           </BackGround>
           {isCountDownDisplayed && <CountDown />}
