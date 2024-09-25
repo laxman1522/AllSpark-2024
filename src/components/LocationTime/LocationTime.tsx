@@ -25,8 +25,8 @@ const LocationTime: React.FC<LocationTimeProps> = ({
       });
       gsap.to(container.current, {
         opacity: 1,
-        duration: 2,
-        delay: isCountDownDisplayed ? 7 : 5,
+        duration: 0.2,
+        delay: isCountDownDisplayed ? 0.7 : 0.5,
       });
     }
   }, [isCountDownDisplayed, windowSize]);

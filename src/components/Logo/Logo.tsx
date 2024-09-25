@@ -70,7 +70,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({
-    duration: 2.5,
+    duration: 0.5,
     motionPath: { path, curviness: 1.2 },
     scaleY: 5,
     scaleX: 2.5,
@@ -167,12 +167,12 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
         .set(leftRef.current, { display: 'none' });
 
       // Star animation after 2.5 seconds
-      gsap.delayedCall(2.5, () => {
+      gsap.delayedCall(0.5, () => {
         gsap
           .timeline({ ease: 'power2.in' })
           .set(elements.star, { display: 'block', top: '-20vh', left: '44%' })
           .to(elements.star, {
-            duration: 1,
+            duration: 0.1,
             top: 0,
             left: '1.5%',
             height: starSize.height,
@@ -181,13 +181,13 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
       });
 
       // Letters animation after 3.5 seconds
-      gsap.delayedCall(3.5, () => {
+      gsap.delayedCall(0.5, () => {
         gsap
           .timeline({ ease: 'bounce.out' })
           .to(
             elements.aLetter,
             {
-              duration: 1.2,
+              duration: 0.2,
               display: 'block',
               top: '1%',
               left: 0,
@@ -198,7 +198,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
           .to(
             elements.llspark,
             {
-              duration: 1.5,
+              duration: 0.5,
               opacity: 1,
               filter: 'blur(0px) contrast(1)',
               ease: 'power2.out',
@@ -207,20 +207,20 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
             },
             0,
           )
-          .set(elements.aLetter, { display: 'none' }, 1.5)
-          .set(elements.llspark, { display: 'none' }, 1.5)
-          .set(elements.allspark, { display: 'block' }, 1.5);
+          .set(elements.aLetter, { display: 'none' }, 0.5)
+          .set(elements.llspark, { display: 'none' }, 0.5)
+          .set(elements.allspark, { display: 'block' }, 0.5);
       });
 
       // Logo animation after 6 seconds
       if (isCountDownDisplayed) {
-        gsap.delayedCall(5.5, () => {
+        gsap.delayedCall(0.5, () => {
           gsap
             .timeline({ ease: 'power2.out' })
             .to(
               logoContainerRef.current,
               {
-                duration: 1,
+                duration: 0.1,
                 top:
                   window.innerWidth <= SCREEN_SIZES.mobile
                     ? '7vh'
@@ -235,7 +235,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
             .to(
               elements.star,
               {
-                duration: 1,
+                duration: 0.1,
                 top: '3%',
                 left: '3.2%',
                 height: logoStarSize.height,
