@@ -1,4 +1,3 @@
-'use client';
 import './SideNavigation.scss';
 import EventsContainer from '../../containers/EventsContainer/EventsContainer';
 import HomeContainer from '../../containers/HomeContainer/HomeContainer';
