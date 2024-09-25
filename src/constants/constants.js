@@ -46,11 +46,12 @@ export const COMING_SOON_TEXTS = {
 };
 
 export const SECTIONS = [
-  { label: 'About', number: '1', id: '#about-section' },
-  { label: 'Events', number: '2', id: '#events-section' },
-  { label: 'Guests', number: '3', id: '#guests-section' },
-  { label: 'Schedule', number: '4', id: '#schedule-section' },
-  { label: 'Speakers', number: '5', id: '#speakers-section' },
-  { label: 'Recap', number: '6', id: '#recap-section' },
-  { label: 'Committee', number: '7', id: '#committee-section' },
+  { label: 'Home', number: '1', id: '#home-section' },
+  { label: 'About', number: '2', id: '#about-section' },
+  { label: 'Events', number: '3', id: '#events-section' },
+  { label: 'Guests', number: '4', id: '#guests-section' },
+  { label: 'Schedule', number: '5', id: '#schedule-section' },
+  { label: 'Speakers', number: '6', id: '#speakers-section' },
+  { label: 'Recap', number: '7', id: '#recap-section' },
+  { label: 'Committee', number: '8', id: '#committee-section' },
 ];

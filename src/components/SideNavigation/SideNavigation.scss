@@ -5,7 +5,6 @@
 @import '../../app/layout.scss'; // responsive grid and media queries
 
 a {
-  color: $color-1;
   text-decoration: none;
 }
 
@@ -32,41 +31,6 @@ Main components
 .navbar-section {
   min-height: 100%;
   position: relative;
-
-  p {
-    color: lighten($color-2, 30%);
-  }
-
-  h1,
-  p {
-    position: absolute;
-    @include center;
-    width: 90%;
-    max-width: $M;
-    text-align: center;
-  }
-
-  h1 {
-    color: $color-4;
-    font-weight: 300;
-    text-transform: uppercase;
-    @include font-size(20px);
-  }
-
-  p {
-    line-height: 1.6;
-  }
-
-  @include MQ(M) {
-    h1 {
-      @include font-size(30px);
-    }
-
-    p {
-      @include font-size(20px);
-      line-height: 2;
-    }
-  }
 }
 
 .navbar-scroll-down {
@@ -227,14 +191,9 @@ Main components
   a {
     display: block;
     padding: 1em;
-    border-bottom: 1px solid rgba($color-1, 0.1);
 
     span:first-child {
       display: none;
-    }
-
-    &.is-selected span:last-child {
-      color: $color-3;
     }
   }
 
@@ -245,13 +204,8 @@ Main components
   &.open + .navbar-nav-trigger {
     background-color: transparent;
 
-    span {
-      background-color: rgba($color-1, 0);
-    }
-
     span::before,
     span::after {
-      background-color: rgba($color-1, 1);
       height: 3px;
       width: 20px;
       border-radius: 0;
@@ -286,5 +240,9 @@ Main components
   .touch .navbar-nav-trigger,
   .touch #navbar-vertical-nav {
     bottom: 40px;
+  }
+
+  .footer-logo {
+    display: none;
   }
 }

@@ -4,6 +4,11 @@ import EventsContainer from '../../containers/EventsContainer/EventsContainer';
 import HomeContainer from '../../containers/HomeContainer/HomeContainer';
 import AboutContainer from '../../containers/AboutContainer/AboutContainer';
 import { SECTIONS } from '@/constants/constants';
+import GuestsContainer from '@/containers/GuestsContainer/GuestsContainer';
+import ScheduleContainer from '@/containers/ScheduleContainer/ScheduleContainer';
+import SpeakerContainer from '@/containers/SpeakerContainer/SpeakerContainer';
+import RecapContainer from '@/containers/RecapContainer/RecapContainer';
+import CommitteeContainer from '@/containers/CommitteeContainer/CommitteeContainer';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
@@ -43,12 +48,32 @@ export default function SideNavigation() {
         <HomeContainer />
       </section>
 
+      <section id="about-section" className="navbar-section">
+        <AboutContainer />
+      </section>
+
       <section id="events-section" className="navbar-section">
         <EventsContainer />
       </section>
 
-      <section id="about-section" className="navbar-section">
-        <AboutContainer />
+      <section id="guests-section" className="navbar-section">
+        <GuestsContainer />
+      </section>
+
+      <section id="schedule-section" className="navbar-section">
+        <ScheduleContainer />
+      </section>
+
+      <section id="speakers-section" className="navbar-section">
+        <SpeakerContainer />
+      </section>
+
+      <section id="recap-section" className="navbar-section">
+        <RecapContainer />
+      </section>
+
+      <section id="committee-section" className="navbar-section">
+        <CommitteeContainer />
       </section>
     </div>
   );
