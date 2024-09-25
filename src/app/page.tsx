@@ -1,9 +1,13 @@
+'use client';
 // import Logo from '@/components/Logo/Logo';
 import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
 // import LocationContainer from '@/containers/LocationContainer/LocationContainer';
 import CountDown from '@/components/countDown/CountDown';
 // import LocationTime from '@/components/LocationTime/LocationTime';
-import { WindowSizeProvider } from '../contexts/WindowSizeContext';
+import {
+  useWindowSize,
+  WindowSizeProvider,
+} from '../contexts/WindowSizeContext';
 // import CountDown from '@/components/countDown/CountDown';
 // import BackgroundAnimation from '@/components/BackgroundAnimation/BackgroundAnimation';
 // import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
@@ -19,6 +23,8 @@ import LocationContainer from '@/containers/LocationContainer/LocationContainer'
 
 export default function Home() {
   const isCountDownDisplayed = true;
+  console.log(useWindowSize());
+  const { windowWidth } = useWindowSize();
 
   return (
     <WindowSizeProvider>
@@ -30,11 +36,10 @@ export default function Home() {
 
             {/* <>---------------------HOME PAGE--------------------</> */}
             <Logo isCountDownDisplayed={isCountDownDisplayed} />
-            {isCountDownDisplayed && (
-              <div className="md:hidden">
-                <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
-              </div>
+            {windowWidth < 768 && (
+              <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
             )}
+
             <LocationContainer isCountDownDisplayed={isCountDownDisplayed} />
             {/* <>---------------------HOME PAGE--------------------</> */}
 

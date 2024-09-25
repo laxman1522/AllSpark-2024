@@ -2,7 +2,10 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { setWindowSizeCategory } from '@/utils/screen-utils';
 
-const WindowSizeContext = createContext();
+const WindowSizeContext = createContext({
+  windowWidth: window.innerWidth || 0,
+  windowSize: '',
+});
 
 /**
  * @description A context for getting the width of screen
@@ -11,10 +14,12 @@ const WindowSizeContext = createContext();
  */
 export const WindowSizeProvider = ({ children }) => {
   const [windowSize, setWindowSize] = useState('');
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSizeCategory(window.innerWidth, windowSize, setWindowSize);
+      setWindowWidth(window.innerWidth);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -22,7 +27,7 @@ export const WindowSizeProvider = ({ children }) => {
   }, []);
 
   return (
-    <WindowSizeContext.Provider value={{ windowSize }}>
+    <WindowSizeContext.Provider value={{ windowSize, windowWidth }}>
       {children}
     </WindowSizeContext.Provider>
   );

@@ -66,7 +66,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const windowSize = useWindowSize();
+  const { windowSize } = useWindowSize();
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({

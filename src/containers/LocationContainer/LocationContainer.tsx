@@ -21,7 +21,7 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
   isCountDownDisplayed,
 }) => {
   const container = useRef<HTMLDivElement>(null);
-  const windowSize = useWindowSize();
+  const { windowSize, windowWidth } = useWindowSize();
 
   useEffect(() => {
     if (container.current) {
@@ -41,9 +41,11 @@ const LocationContainer: React.FC<LocationContainerProps> = ({
       className={`bottom-container opacity-0 ${isCountDownDisplayed && ' min-[540px]:mt-[47vh] mt-[62vh] location-bottom-tab'}`}
       ref={container}
     >
-      <div className="location-container min-[540px]:mt-[40vh] 2xl:mt-[35vh]">
-        <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
-      </div>
+      {windowWidth > 767 && (
+        <div className="location-container min-[540px]:mt-[40vh] 2xl:mt-[35vh]">
+          <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
+        </div>
+      )}
       <CDWLogo />
       <div
         className={`${isCountDownDisplayed && 'arrow-tab'} circle-arrow flex justify-center items-center cursor-pointer mt-[12vh] 2xl:mt-[10vh] animate-shake-y`}

@@ -16,7 +16,7 @@ const LocationTime: React.FC<LocationTimeProps> = ({
   isCountDownDisplayed,
 }) => {
   const container = useRef<HTMLDivElement>(null);
-  const windowSize = useWindowSize();
+  const { windowSize } = useWindowSize();
 
   useEffect(() => {
     if (container.current) {
