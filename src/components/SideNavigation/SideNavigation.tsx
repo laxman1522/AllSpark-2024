@@ -8,7 +8,6 @@ import { constructSections } from '@/utils/section-utils';
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
   const sections = constructSections();
-  console.log(sections);
   const rows = new Array(3).fill(null);
   const boxes = new Array(3).fill(null);
 
