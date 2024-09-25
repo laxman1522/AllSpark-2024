@@ -6,6 +6,11 @@ import { BACKGROUND_VANTA_OPTIONS } from '@/constants/constants';
 interface BackGroundProps {
   children: ReactNode;
 }
+/**
+ * @description Vanta js background component
+ * @version 1.0.0
+ * @author [Praneash]
+ */
 export default function BackGround({ children }: BackGroundProps) {
   const [vantaEffect, setVantaEffect] = useState<any>(0);
   useEffect(() => {

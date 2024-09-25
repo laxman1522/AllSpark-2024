@@ -10,7 +10,7 @@ import cdwlogo from '../../../public/images/cdwLogo.png';
 
 const Header = () => {
   return (
-    <div className="flex justify-center md:justify-between px-12 py-10">
+    <div className="flex justify-center md:justify-between px-12 py-10 sticky top-0">
       <Image
         src={allspark}
         alt="allspark-logo"

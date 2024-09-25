@@ -3,6 +3,7 @@ import EventsContainer from '../../containers/EventsContainer/EventsContainer';
 import HomeContainer from '../../containers/HomeContainer/HomeContainer';
 import AboutContainer from '../../containers/AboutContainer/AboutContainer';
 import { SECTIONS } from '@/constants/constants';
+import Header from '../Header/Header';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
@@ -38,17 +39,20 @@ export default function SideNavigation() {
         ))}
       </a>
 
-      <section id="home-section" className="h-screen w-screen">
-        <HomeContainer />
-      </section>
+      <div className="sections-wrapper">
+        <Header />
+        <section id="home-section" className="h-screen w-screen">
+          <HomeContainer />
+        </section>
 
-      <section id="events-section" className="h-screen w-screen">
-        <EventsContainer />
-      </section>
+        <section id="events-section" className="h-screen w-screen">
+          <EventsContainer />
+        </section>
 
-      <section id="about-section" className="h-screen w-screen">
-        <AboutContainer />
-      </section>
+        <section id="about-section" className="h-screen w-screen">
+          <AboutContainer />
+        </section>
+      </div>
     </div>
   );
 }
