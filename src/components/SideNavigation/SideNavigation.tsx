@@ -1,10 +1,9 @@
 'use client';
 import './SideNavigation.scss';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import EventsPage from '../EventsPage/EventsPage';
 import HomePage from '../HomePage/HomePage';
 import AboutPage from '../AboutPage/AboutPage';
-import BackGround from '../BackGround/BackGround';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
