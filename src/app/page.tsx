@@ -9,7 +9,7 @@ import { WindowSizeProvider } from '../contexts/WindowSizeContext';
 // import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
 // import Logo from '@/components/Logo/Logo';
 import BackGround from '@/components/BackGround/BackGround';
-import ComingSoon from '@/components/ComingSoon/ComingSoon';
+// import ComingSoon from '@/components/ComingSoon/ComingSoon';
 // import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import Header from '@/components/Header/Header';
 import Logo from '@/components/Logo/Logo';
