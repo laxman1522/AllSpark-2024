@@ -6,6 +6,7 @@ import Image from 'next/image';
 import logo from '../../../public/images/cdwLogo.png';
 import { ALLSPARK_DATE } from '@/constants/constants';
 import './CountDown.scss';
+
 /**
  * @description An component which calculates target time value for a countdown
  * @version 1.0.0
