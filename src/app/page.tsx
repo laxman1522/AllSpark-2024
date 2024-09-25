@@ -1,8 +1,8 @@
-import Logo from '@/components/Logo/Logo';
+// import Logo from '@/components/Logo/Logo';
 import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
-import LocationContainer from '@/containers/LocationContainer/LocationContainer';
+// import LocationContainer from '@/containers/LocationContainer/LocationContainer';
 import CountDown from '@/components/countDown/CountDown';
-import LocationTime from '@/components/LocationTime/LocationTime';
+// import LocationTime from '@/components/LocationTime/LocationTime';
 import { WindowSizeProvider } from '../contexts/WindowSizeContext';
 // import CountDown from '@/components/countDown/CountDown';
 // import BackgroundAnimation from '@/components/BackgroundAnimation/BackgroundAnimation';
