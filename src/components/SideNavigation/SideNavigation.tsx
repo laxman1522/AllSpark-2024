@@ -12,46 +12,31 @@ import { SECTIONS } from '@/constants/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import Header from '../Header/Header';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
   const [currentSection, setCurrentSection] = useState(0);
-  const containerRef = useRef(null);
+  const navRef = useRef<HTMLUListElement | null>(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
   const rows = new Array(3).fill(null);
   const boxes = new Array(3).fill(null);
 
-  useEffect(() => {
-    const container: any = containerRef?.current;
-    if (!container) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries?.forEach((entry) => {
-          if (entry?.isIntersecting) {
-            setCurrentSection(
-              Number(entry?.target?.getAttribute('data-section-id')),
-            );
-          }
-        });
-      },
-      { threshold: 0.5 },
-    );
-
-    if (container) {
-      container?.childNodes?.forEach((child: Element) =>
-        observer.observe(child),
-      );
+  const handleScroll = () => {
+    if (navRef && navRef.current) {
+      const section = navRef.current
+        .querySelector('.is-selected')
+        ?.getAttribute('href');
+      setCurrentSection(section == '#home-section' ? 0 : 1);
     }
-    return () => observer.disconnect();
-  }, []);
+  };
 
   return (
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
-        <ul>
+        <ul ref={navRef}>
           {SECTIONS?.map((section) => (
             <li key={section.number} className="text-center">
               <a
@@ -87,24 +72,21 @@ export default function SideNavigation() {
       </a>
 
       <CSSTransition
-        in={currentSection !== 0} // true if we want to show the component
-        timeout={1500} // 1.5s transition duration
-        classNames="box" // CSS class base name
-        unmountOnExit // Automatically unmount when not shown
+        in={currentSection !== 0}
+        timeout={1000}
+        classNames="box"
+        unmountOnExit
+        nodeRef={headerRef}
       >
-        {currentSection !== 0 ? (
-          <div className="box">
-            <Header />
-          </div>
-        ) : (
-          <></>
-        )}
+        <div className="box" ref={headerRef}>
+          <Header />
+        </div>
       </CSSTransition>
 
       <div
-        ref={containerRef}
         id="screeensContainer"
         className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
+        onScroll={handleScroll}
       >
         <section
           id="home-section"
