@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
 
   updateNavigation();
   updateNavigationClass();
-  $(window).on('scroll', function () {
+  $('#screeensContainer').on('scroll', function () {
     updateNavigation();
   });
   $(window).on('resize', function () {
@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
   }
 
   function smoothScroll(target) {
-    $('body,html').animate({ scrollTop: target.offset()?.top }, 600);
+    target[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function updateNavigationClass() {

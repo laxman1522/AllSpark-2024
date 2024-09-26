@@ -3,6 +3,11 @@ import './SideNavigation.scss';
 import EventsContainer from '../../containers/EventsContainer/EventsContainer';
 import HomeContainer from '../../containers/HomeContainer/HomeContainer';
 import AboutContainer from '../../containers/AboutContainer/AboutContainer';
+import GuestsContainer from '@/containers/GuestsContainer/GuestsContainer';
+import ScheduleContainer from '@/containers/ScheduleContainer/ScheduleContainer';
+import SpeakerContainer from '@/containers/SpeakerContainer/SpeakerContainer';
+import RecapContainer from '@/containers/RecapContainer/RecapContainer';
+import CommitteeContainer from '@/containers/CommitteeContainer/CommitteeContainer';
 import { SECTIONS } from '@/constants/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
@@ -94,12 +99,13 @@ export default function SideNavigation() {
 
       <div
         ref={containerRef}
+        id="screeensContainer"
         className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
       >
         <section
           id="home-section"
           data-section-id={0}
-          className="h-screen w-screen snap-start"
+          className="navbar-section h-screen w-screen snap-start"
         >
           <HomeContainer />
         </section>
@@ -107,7 +113,7 @@ export default function SideNavigation() {
         <section
           id="events-section"
           data-section-id={1}
-          className="h-screen w-screen snap-start"
+          className="navbar-section h-screen w-screen snap-start"
         >
           <EventsContainer />
         </section>
@@ -115,9 +121,49 @@ export default function SideNavigation() {
         <section
           id="about-section"
           data-section-id={2}
-          className="h-screen w-screen snap-start"
+          className="navbar-section h-screen w-screen snap-start"
         >
           <AboutContainer />
+        </section>
+
+        <section
+          id="guests-section"
+          data-section-id={3}
+          className="navbar-section h-screen w-screen snap-start"
+        >
+          <GuestsContainer />
+        </section>
+
+        <section
+          id="schedule-section"
+          data-section-id={4}
+          className="navbar-section h-screen w-screen snap-start"
+        >
+          <ScheduleContainer />
+        </section>
+
+        <section
+          id="speakers-section"
+          data-section-id={5}
+          className="navbar-section h-screen w-screen snap-start"
+        >
+          <SpeakerContainer />
+        </section>
+
+        <section
+          id="recap-section"
+          data-section-id={6}
+          className="navbar-section h-screen w-screen snap-start"
+        >
+          <RecapContainer />
+        </section>
+
+        <section
+          id="committee-section"
+          data-section-id={7}
+          className="navbar-section h-screen w-screen snap-start"
+        >
+          <CommitteeContainer />
         </section>
       </div>
     </div>
