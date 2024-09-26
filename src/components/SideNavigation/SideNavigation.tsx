@@ -48,6 +48,9 @@ export default function SideNavigation() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    console.log(currentSection, currentSection !== 0);
+  }, [currentSection]);
   return (
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
@@ -88,13 +91,17 @@ export default function SideNavigation() {
 
       <CSSTransition
         in={currentSection !== 0} // true if we want to show the component
-        timeout={1500} // 2s transition duration
+        timeout={1500} // 1.5s transition duration
         classNames="box" // CSS class base name
         unmountOnExit // Automatically unmount when not shown
       >
-        <div className="box">
-          <Header />
-        </div>
+        {currentSection !== 0 ? (
+          <div className="box">
+            <Header />
+          </div>
+        ) : (
+          <></>
+        )}
       </CSSTransition>
 
       <div
