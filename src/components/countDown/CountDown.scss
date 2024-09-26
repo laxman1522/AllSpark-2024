@@ -16,3 +16,15 @@
     margin-top: 6rem;
   }
 }
+
+@media screen and (width: 375px) and (height: 667px) {
+  .counter-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .count-down-top,
+  .count-down-bottom {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
