@@ -4,8 +4,12 @@ jQuery(document).ready(function ($) {
   $('#homeArrowIcon').on('click', () => navigationItems[1].click());
 
   updateNavigation();
+  updateNavigationClass();
   $(window).on('scroll', function () {
     updateNavigation();
+  });
+  $(window).on('resize', function () {
+    updateNavigationClass();
   });
 
   //smooth scroll to the section
@@ -28,7 +32,13 @@ jQuery(document).ready(function ($) {
     $('.touch #navbar-vertical-nav').removeClass('open');
   });
 
+  $('#navCloseIcon').on('click', function () {
+    $('.touch #navbar-vertical-nav').removeClass('open');
+  });
+
   function updateNavigation() {
+    console.log('hariharn');
+
     contentSections.each(function () {
       $this = $(this);
       var activeSection =
@@ -42,6 +52,7 @@ jQuery(document).ready(function ($) {
       ) {
         navigationItems.eq(activeSection).addClass('is-selected');
       } else {
+        console.log(navigationItems.eq(activeSection));
         navigationItems.eq(activeSection).removeClass('is-selected');
       }
     });
@@ -49,5 +60,13 @@ jQuery(document).ready(function ($) {
 
   function smoothScroll(target) {
     $('body,html').animate({ scrollTop: target.offset()?.top }, 600);
+  }
+
+  function updateNavigationClass() {
+    if (window.innerWidth < 767) {
+      $('html').removeClass('no-touch').addClass('touch');
+    } else {
+      $('html').removeClass('touch').addClass('no-touch');
+    }
   }
 });
