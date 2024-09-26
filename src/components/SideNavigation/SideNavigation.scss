@@ -134,6 +134,32 @@ Main components
   }
 }
 
+/* START:react transition group css*/
+
+/* Initial state before entering */
+.box-enter {
+  opacity: 0;
+}
+
+/* Applied when the component is entering */
+.box-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* Transition duration for enter */
+}
+
+/* Initial state before exiting */
+.box-exit {
+  opacity: 1;
+}
+
+/* Applied when the component is exiting */
+.box-exit-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Transition duration for exit */
+}
+
+/* END:react transition group css*/
+
 /* Touch devices */
 
 .touch .navbar-nav-trigger {

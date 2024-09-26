@@ -1,3 +1,4 @@
+'use client';
 import './SideNavigation.scss';
 import EventsContainer from '../../containers/EventsContainer/EventsContainer';
 import HomeContainer from '../../containers/HomeContainer/HomeContainer';
@@ -10,11 +11,40 @@ import CommitteeContainer from '@/containers/CommitteeContainer/CommitteeContain
 import { SECTIONS } from '@/constants/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
+import Header from '../Header/Header';
+import { useEffect, useRef, useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
+  const [currentSection, setCurrentSection] = useState(0);
+  const containerRef = useRef(null);
+
   const rows = new Array(3).fill(null);
   const boxes = new Array(3).fill(null);
+
+  useEffect(() => {
+    const container: any = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry?.isIntersecting) {
+            setCurrentSection(
+              Number(entry?.target?.getAttribute('data-section-id')),
+            );
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    if (container) {
+      container.childNodes.forEach((child: Element) => observer.observe(child));
+    }
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div id="nav-wrapper">
@@ -54,37 +84,45 @@ export default function SideNavigation() {
         ))}
       </a>
 
-      <section id="home-section" className="navbar-section">
-        <HomeContainer />
-      </section>
+      <CSSTransition
+        in={currentSection !== 0} // true if we want to show the component
+        timeout={1500} // 2s transition duration
+        classNames="box" // CSS class base name
+        unmountOnExit // Automatically unmount when not shown
+      >
+        <div className="box">
+          <Header />
+        </div>
+      </CSSTransition>
 
-      <section id="events-section" className="navbar-section">
-        <EventsContainer />
-      </section>
+      <div
+        ref={containerRef}
+        className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
+      >
+        <section
+          id="home-section"
+          data-section-id={0}
+          className="h-screen w-screen snap-start"
+        >
+          <HomeContainer />
+        </section>
 
-      <section id="about-section" className="navbar-section">
-        <AboutContainer />
-      </section>
+        <section
+          id="events-section"
+          data-section-id={1}
+          className="h-screen w-screen snap-start"
+        >
+          <EventsContainer />
+        </section>
 
-      <section id="guests-section" className="navbar-section">
-        <GuestsContainer />
-      </section>
-
-      <section id="schedule-section" className="navbar-section">
-        <ScheduleContainer />
-      </section>
-
-      <section id="speakers-section" className="navbar-section">
-        <SpeakerContainer />
-      </section>
-
-      <section id="recap-section" className="navbar-section">
-        <RecapContainer />
-      </section>
-
-      <section id="committee-section" className="navbar-section">
-        <CommitteeContainer />
-      </section>
+        <section
+          id="about-section"
+          data-section-id={2}
+          className="h-screen w-screen snap-start"
+        >
+          <AboutContainer />
+        </section>
+      </div>
     </div>
   );
 }
