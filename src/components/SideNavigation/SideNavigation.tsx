@@ -48,9 +48,6 @@ export default function SideNavigation() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    console.log(currentSection, currentSection !== 0);
-  }, [currentSection]);
   return (
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
