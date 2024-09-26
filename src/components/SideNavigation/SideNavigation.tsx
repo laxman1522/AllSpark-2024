@@ -23,7 +23,7 @@ export default function SideNavigation() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry !== null && entry.isIntersecting) {
             setCurrentSection(
               Number(entry.target.getAttribute('data-section-id')),
             );
