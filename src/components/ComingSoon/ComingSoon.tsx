@@ -5,9 +5,9 @@ import { COMING_SOON_TEXTS } from '@/constants/constants';
 
 const ComingSoon = () => {
   return (
-    <div className="coming-soon-container relative flex flex-col justify-center items-center m-auto py-[58px] px-[95px] shadow-lg">
-      <div className="coming-soon absolute inset-0"></div>
-      <div className="content-box relative z-10 flex flex-col items-center gap-[23px]">
+    <div className="coming-soon-container text-center relative flex flex-col justify-center items-center m-auto py-[58px] px-[95px] shadow-lg">
+      <div className="coming-soon absolute inset-0 rounded-[25px]"></div>
+      <div className="content-box relative z-10 flex flex-col items-center gap-[23px] ">
         <p className="font-poppins text-text-color text-[1.75rem]">
           {COMING_SOON_TEXTS.newSite}
         </p>

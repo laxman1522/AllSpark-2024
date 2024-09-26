@@ -47,7 +47,7 @@ const LocationTime: React.FC<LocationTimeProps> = ({
       </div>
       <div className="location-place flex items-center gap-[10px] md:gap-[21px]">
         <CalendarIcon />
-        <span className="text-[16px] md:text-[18px] font-bold lg:text-[28px]">
+        <span className="location-place-date text-[16px] md:text-[18px] font-bold lg:text-[28px]">
           {ALLSPARK_INFO.date}
         </span>
       </div>

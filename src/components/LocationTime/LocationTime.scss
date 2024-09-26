@@ -15,3 +15,13 @@
     margin-top: 7.5vh;
   }
 }
+
+@media screen and (width: 375px) and (height: 667px) {
+  .location-time {
+    margin-top: 3vh;
+  }
+  .location-text-wrapper,
+  .location-place-date {
+    font-size: 14px;
+  }
+}
