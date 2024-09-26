@@ -60,7 +60,7 @@ jQuery(document).ready(function ($) {
   }
 
   function updateNavigationClass() {
-    if (window.innerWidth < 767) {
+    if (window.innerWidth < 1024) {
       $('html').removeClass('no-touch').addClass('touch');
     } else {
       $('html').removeClass('touch').addClass('no-touch');

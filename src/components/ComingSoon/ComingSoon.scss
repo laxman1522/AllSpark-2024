@@ -26,3 +26,17 @@
     }
   }
 }
+
+@media screen and (min-width: 581px) and (max-width: 1083px) {
+  .coming-soon-container {
+    white-space: nowrap;
+    padding: 2.56rem 3.75rem;
+  }
+  .coming-soon-container .coming-soon-text {
+    font-size: 2rem;
+  }
+  .coming-soon-container p,
+  .coming-soon-container span {
+    font-size: 1.5rem;
+  }
+}
