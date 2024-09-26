@@ -19,12 +19,12 @@ export default function SideNavigation() {
   const boxes = new Array(3).fill(null);
 
   useEffect(() => {
-    const container: any = containerRef.current;
+    const container: any = containerRef?.current;
     if (!container) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries?.forEach((entry) => {
           if (entry?.isIntersecting) {
             setCurrentSection(
               Number(entry?.target?.getAttribute('data-section-id')),
@@ -36,7 +36,9 @@ export default function SideNavigation() {
     );
 
     if (container) {
-      container.childNodes.forEach((child: Element) => observer.observe(child));
+      container?.childNodes?.forEach((child: Element) =>
+        observer.observe(child),
+      );
     }
     return () => observer.disconnect();
   }, []);
