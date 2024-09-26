@@ -6,6 +6,7 @@ import AboutContainer from '../../containers/AboutContainer/AboutContainer';
 import { SECTIONS } from '@/constants/constants';
 import Header from '../Header/Header';
 import { useEffect, useRef, useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
@@ -16,7 +17,7 @@ export default function SideNavigation() {
   const boxes = new Array(3).fill(null);
 
   useEffect(() => {
-    const container = containerRef.current;
+    const container: any = containerRef.current;
     if (!container) return;
 
     const observer = new IntersectionObserver(
@@ -32,8 +33,9 @@ export default function SideNavigation() {
       { threshold: 0.5 },
     );
 
-    container.childNodes.forEach((child) => observer.observe(child));
-
+    if (container) {
+      container.childNodes.forEach((child: Element) => observer.observe(child));
+    }
     return () => observer.disconnect();
   }, []);
 
@@ -68,14 +70,26 @@ export default function SideNavigation() {
           </span>
         ))}
       </a>
-      <div className={`box ${currentSection !== 0 ? 'visible' : 'hidden'}`}>
-        <Header />
-      </div>
-      <div ref={containerRef} className="sections-wrapper">
+
+      <CSSTransition
+        in={currentSection !== 0} // true if we want to show the component
+        timeout={1500} // 2s transition duration
+        classNames="box" // CSS class base name
+        unmountOnExit // Automatically unmount when not shown
+      >
+        <div className="box">
+          <Header />
+        </div>
+      </CSSTransition>
+
+      <div
+        ref={containerRef}
+        className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
+      >
         <section
           id="home-section"
           data-section-id={0}
-          className="h-screen w-screen"
+          className="h-screen w-screen snap-start"
         >
           <HomeContainer />
         </section>
@@ -83,7 +97,7 @@ export default function SideNavigation() {
         <section
           id="events-section"
           data-section-id={1}
-          className="h-screen w-screen"
+          className="h-screen w-screen snap-start"
         >
           <EventsContainer />
         </section>
@@ -91,7 +105,7 @@ export default function SideNavigation() {
         <section
           id="about-section"
           data-section-id={2}
-          className="h-screen w-screen"
+          className="h-screen w-screen snap-start"
         >
           <AboutContainer />
         </section>

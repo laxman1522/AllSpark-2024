@@ -129,31 +129,31 @@ Main components
   }
 }
 
-.sections-wrapper {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-}
+/* START:react transition group css*/
 
-section {
-  scroll-snap-align: start;
-  height: 100vh;
-  // width: 100vw;
-}
-
-.box {
+/* Initial state before entering */
+.box-enter {
   opacity: 0;
-  transition: opacity 2s ease-in-out;
 }
 
-.box.visible {
+/* Applied when the component is entering */
+.box-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* Transition duration for enter */
+}
+
+/* Initial state before exiting */
+.box-exit {
   opacity: 1;
 }
 
-.box.hidden {
+/* Applied when the component is exiting */
+.box-exit-active {
   opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Transition duration for exit */
 }
+
+/* END:react transition group css*/
 
 /* Touch devices */
 
