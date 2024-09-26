@@ -27,7 +27,7 @@ export default function SideNavigation() {
                 data-number={section.number}
                 aria-label={section.label}
               >
-                <span className="navbar-dot"></span>
+                <span className="navbar-dot cursor-pointer"></span>
                 <span className="navbar-label">{section.label}</span>
               </a>
             </li>

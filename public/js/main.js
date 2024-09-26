@@ -37,8 +37,6 @@ jQuery(document).ready(function ($) {
   });
 
   function updateNavigation() {
-    console.log('hariharn');
-
     contentSections.each(function () {
       $this = $(this);
       var activeSection =
@@ -52,7 +50,6 @@ jQuery(document).ready(function ($) {
       ) {
         navigationItems.eq(activeSection).addClass('is-selected');
       } else {
-        console.log(navigationItems.eq(activeSection));
         navigationItems.eq(activeSection).removeClass('is-selected');
       }
     });
