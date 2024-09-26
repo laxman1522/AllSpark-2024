@@ -20,6 +20,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-fontawesome": "^1.7.1",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.78.0",
     "three": "^0.121.0",
     "vanta": "^0.5.24"
@@ -29,6 +30,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-fontawesome": "^1.6.8",
+    "@types/react-transition-group": "^4.4.11",
     "eslint": "^8",
     "eslint-config-next": "14.2.9",
     "husky": "^9.1.5",
