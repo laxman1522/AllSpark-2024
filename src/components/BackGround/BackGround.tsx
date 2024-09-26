@@ -27,5 +27,5 @@ export default function BackGround({ children }: BackGroundProps) {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
-  return <div className="h-screen w-screen ">{children}</div>;
+  return <div className="h-screen w-screen">{children}</div>;
 }
