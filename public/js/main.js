@@ -4,8 +4,12 @@ jQuery(document).ready(function ($) {
   $('#homeArrowIcon').on('click', () => navigationItems[1].click());
 
   updateNavigation();
-  $(window).on('scroll', function () {
+  updateNavigationClass();
+  $('#screeensContainer').on('scroll', function () {
     updateNavigation();
+  });
+  $(window).on('resize', function () {
+    updateNavigationClass();
   });
 
   //smooth scroll to the section
@@ -25,6 +29,10 @@ jQuery(document).ready(function ($) {
   });
   //close navigation on touch devices when selectin an elemnt from the list
   $('.touch #navbar-vertical-nav a').on('click', function () {
+    $('.touch #navbar-vertical-nav').removeClass('open');
+  });
+
+  $('#navCloseIcon').on('click', function () {
     $('.touch #navbar-vertical-nav').removeClass('open');
   });
 
@@ -48,6 +56,14 @@ jQuery(document).ready(function ($) {
   }
 
   function smoothScroll(target) {
-    $('body,html').animate({ scrollTop: target.offset()?.top }, 600);
+    target[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateNavigationClass() {
+    if (window.innerWidth < 767) {
+      $('html').removeClass('no-touch').addClass('touch');
+    } else {
+      $('html').removeClass('touch').addClass('no-touch');
+    }
   }
 });
