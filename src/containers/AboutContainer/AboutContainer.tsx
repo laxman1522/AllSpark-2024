@@ -10,7 +10,7 @@ const AboutContainer = () => {
         <SectionHeader headerText="About AllSpark'24" />
         <VideoPlayer
           videoUrl={
-            'https://www.youtube.com/embed/ySa8B8IXWB8?si=ijEBpnRbdvedxcKm?rel=0'
+            'https://www.youtube.com/embed/YrYivVC-Yhg?si=OdvhFYA9PWtAfBha?rel=0'
           }
         />
       </div>
