@@ -6,7 +6,7 @@ import './AboutContainer.scss';
 const AboutContainer = () => {
   return (
     <div className="h-screen relative">
-      <div id="about-section" className="pt-[15vh]">
+      <div id="about-section" className="pt-[18vh]">
         <SectionHeader headerText="About AllSpark'24" />
         <VideoPlayer
           videoUrl={

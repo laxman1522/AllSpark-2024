@@ -97,19 +97,19 @@ export default function SideNavigation() {
         </section>
 
         <section
-          id="events-section"
-          data-section-id={1}
-          className="navbar-section h-screen w-screen snap-start"
-        >
-          <EventsContainer />
-        </section>
-
-        <section
           id="about-section"
           data-section-id={2}
           className="navbar-section h-screen w-screen snap-start"
         >
           <AboutContainer />
+        </section>
+
+        <section
+          id="events-section"
+          data-section-id={1}
+          className="navbar-section h-screen w-screen snap-start"
+        >
+          <EventsContainer />
         </section>
 
         <section
