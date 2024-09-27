@@ -101,14 +101,14 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({
 
   return (
     <div
-      className={`counter-container animate flex flex-col min-[540px]:flex-row justify-center items-center md:gap-[5rem] gap-5 w-100 p-10 mt-20 xl:mt-8 md:mt-12  mx-auto absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+      className={`counter-container animate flex flex-col min-[540px]:flex-row justify-center items-center md:gap-[3rem] gap-5 w-100 p-10 mt-20 xl:mt-8 md:mt-12  mx-auto absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
     >
-      <div className="flex count-down-top flex-col xl:flex-row md:gap-[4rem] gap-5">
+      <div className="flex count-down-top flex-col xl:flex-row md:gap-[3rem] gap-5">
         <TimeSection label="Days" value={timeRemaining.days} />
         <TimeSection label="Hours" value={timeRemaining.hours} />
       </div>
 
-      <div className="flex count-down-bottom flex-col xl:flex-row md:gap-[4rem] gap-5">
+      <div className="flex count-down-bottom flex-col xl:flex-row md:gap-[3rem] gap-5">
         <TimeSection label="Minutes" value={timeRemaining.minutes} />
         <TimeSection label="Seconds" value={timeRemaining.seconds} />
       </div>

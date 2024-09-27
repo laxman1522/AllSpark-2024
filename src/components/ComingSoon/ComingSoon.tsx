@@ -4,6 +4,20 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { COMING_SOON_TEXTS } from '@/constants/constants';
 
 const ComingSoon = () => {
+  const navigateToPage = () => {
+    const aboutNav = document.querySelector(
+      '#navbar-vertical-nav a[href="#about-section"]',
+    );
+    if (aboutNav) {
+      const event = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+      });
+      aboutNav.dispatchEvent(event);
+    }
+  };
+
   return (
     <div className="coming-soon-container text-center relative flex flex-col justify-center items-center m-auto py-[58px] px-[95px] shadow-lg">
       <div className="coming-soon absolute inset-0 rounded-[25px]"></div>
@@ -17,7 +31,10 @@ const ComingSoon = () => {
         <p className="font-poppins text-text-color text-[1.75rem]">
           {COMING_SOON_TEXTS.stayTuned}
         </p>
-        <button className="all-spark-button mt-5 bg-button-color text-lg pl-[26px] py-[12px] pr-[15px] rounded-[10px] shadow-lg flex items-center justify-center gap-5">
+        <button
+          onClick={navigateToPage}
+          className="all-spark-button mt-5 bg-button-color text-lg pl-[26px] py-[12px] pr-[15px] rounded-[10px] shadow-lg flex items-center justify-center gap-5"
+        >
           <span className="font-poppins italic font-medium text-[1.75rem] tracking-normal text-button-text-color">
             {COMING_SOON_TEXTS.allSpark}
           </span>
