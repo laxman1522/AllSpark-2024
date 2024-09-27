@@ -12,8 +12,10 @@ import { SECTIONS } from '@/constants/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import Header from '../Header/Header';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
+import gsap from 'gsap';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
@@ -32,11 +34,25 @@ export default function SideNavigation() {
       setCurrentSection(section == '#home-section' ? 0 : 1);
     }
   };
+  const { windowSize } = useWindowSize();
+
+  useEffect(() => {
+    if (navRef.current) {
+      gsap.set(navRef.current, {
+        display: 'none',
+      });
+      gsap.to(navRef.current, {
+        display: 'block',
+        duration: 1,
+        delay: 2,
+      });
+    }
+  }, [windowSize]);
 
   return (
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
-        <ul ref={navRef}>
+        <ul ref={navRef} className="hidden">
           {SECTIONS?.map((section) => (
             <li key={section.number} className="text-center">
               <a
