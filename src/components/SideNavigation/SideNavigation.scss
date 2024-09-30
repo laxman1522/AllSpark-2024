@@ -72,17 +72,18 @@ Main components
       display: block;
       transform: scale(0.6);
     }
+    @media (hover: hover) {
+      &:hover span {
+        transform: scale(1);
+      }
 
-    &:hover span {
-      transform: scale(1);
-    }
+      &:hover .navbar-label {
+        opacity: 1;
+      }
 
-    &:hover .navbar-label {
-      opacity: 1;
-    }
-
-    &:hover .navbar-dot {
-      background-color: $countdown-font-color;
+      &:hover .navbar-dot {
+        background-color: $countdown-font-color;
+      }
     }
   }
 
