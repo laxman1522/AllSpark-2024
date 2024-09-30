@@ -1,4 +1,4 @@
-jQuery(document).ready(function ($) {
+$(document).ready(function ($) {
   var contentSections = $('.navbar-section'),
     navigationItems = $('#navbar-vertical-nav a');
   $('#homeArrowIcon').on('click', () => navigationItems[1].click());
@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
   });
 
   //open-close navigation on touch devices
-  $('.touch .navbar-nav-trigger').on('click', function () {
+  $('.navbar-nav-trigger').on('click', function () {
     $('.touch #navbar-vertical-nav').toggleClass('open');
   });
   //close navigation on touch devices when selectin an elemnt from the list
