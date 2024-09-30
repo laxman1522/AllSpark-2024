@@ -21,7 +21,7 @@ export const ALLSPARK_INFO = {
 };
 
 export const ALLSPARK_VIDEO =
-  'https://www.youtube.com/embed/ySa8B8IXWB8?si=ijEBpnRbdvedxcKm?rel=0';
+  'https://www.youtube.com/embed/E7JqULOYoYE?si=vS6wf9e2DHOBJlEY&rel=0';
 
 export const MOBILE_LANDSCAPE_MESSAGE =
   'Please rotate your device to portrait mode';
