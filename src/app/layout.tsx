@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script src="/js/modernizr.js" />
-        <Script src="/js/jquery-2.1.1.js" />
+        <Script src="/js/jquery-2.1.1.js" strategy="beforeInteractive" />
         <Script src="/js/main.js" />
       </head>
       <body className={poppins.className}>{children}</body>
