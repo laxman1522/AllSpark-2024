@@ -58,3 +58,7 @@ export const SECTIONS = [
   { label: 'Recap', number: '7', id: '#recap-section' },
   { label: 'Committee', number: '8', id: '#committee-section' },
 ];
+
+export const GUESTS = {
+  ourGuests: 'Our Guests',
+};
