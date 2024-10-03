@@ -103,7 +103,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           prevSlide={prevSlide}
           nextSlide={nextSlide}
           currentIndex={currentIndex}
-          items={items}
+          itemsLength={items.length}
         ></SliderNav>
       </div>
 
