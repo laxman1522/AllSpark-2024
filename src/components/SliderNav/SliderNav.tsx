@@ -17,7 +17,7 @@ export default function SliderNav({
     <div className="flex justify-center items-center gap-4">
       <button onClick={prevSlide} className="p-1  bg-text-color rounded-full">
         <ChevronLeft
-          size={window.innerWidth <= 580 ? 36 : 24}
+          size={24}
           strokeWidth={4}
           className="text-counter-background"
         />
@@ -29,7 +29,7 @@ export default function SliderNav({
 
       <button onClick={nextSlide} className="p-1  bg-text-color rounded-full">
         <ChevronRight
-          size={window.innerWidth <= 580 ? 36 : 24}
+          size={24}
           strokeWidth={4}
           className="text-counter-background"
         />
