@@ -14,22 +14,22 @@ export default function SliderNav({
   items,
 }: SliderNavProps) {
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center gap-4">
       <button onClick={prevSlide} className="p-1  bg-text-color rounded-full">
         <ChevronLeft
-          size={24}
+          size={window.innerWidth <= 580 ? 36 : 24}
           strokeWidth={4}
           className="text-counter-background"
         />
       </button>
 
-      <span className="text-lg min-w-24 font-medium text-button-color text-center">
+      <span className="max-[580px]:text-3xl text-lg min-w-24 font-medium text-button-color text-center">
         {currentIndex + 1} / {items}
       </span>
 
       <button onClick={nextSlide} className="p-1  bg-text-color rounded-full">
         <ChevronRight
-          size={24}
+          size={window.innerWidth <= 580 ? 36 : 24}
           strokeWidth={4}
           className="text-counter-background"
         />
