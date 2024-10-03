@@ -108,7 +108,7 @@
                     className: m()['enter-button'],
                     children: (0, r.jsx)(x(), {
                       href: '/about',
-                      as: 'about',
+                      as: '/about',
                       prefetch: !1,
                       children: (0, r.jsx)(u.zx, {
                         styleName: 'rounded-btn-arrow',
