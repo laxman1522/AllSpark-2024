@@ -15,7 +15,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isFading, setISFading] = useState<Boolean>(true);
+  const [isFading, setISFading] = useState<boolean>(true);
   const handleDragStart = (
     e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
   ) => {
