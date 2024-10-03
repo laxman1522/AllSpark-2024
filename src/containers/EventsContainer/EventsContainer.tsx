@@ -1,25 +1,38 @@
-import ComingSoon from '@/components/ComingSoon/ComingSoon';
 import React from 'react';
-import Image from 'next/image';
-import cdwlogo from '../../../public/images/cdwLogo.png';
+import SectionHeader from '@/components/SectionHeader/SectionHeader';
+import { constructEventData, getEventDetails } from '@/utils/event-utils';
+import EventCard from '@/components/EventCard/EventCard';
+import EventDetailsCounter from '@/components/EventDetailsCounter/EventDetailsCounter';
 
 const EventsContainer = () => {
+  const eventData = constructEventData();
+  const categoriesData = getEventDetails();
   return (
-    <div className="h-screen relative">
-      <div
-        id="events-section"
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <ComingSoon />
+    <div className="h-screen relative flex flex-col w-[85%] mr-auto text-events-color justify-evenly">
+      <div className="mt-16">
+        <SectionHeader headerText="Events" />
       </div>
-      <div className="footer-logo p-10 absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center">
-        <Image
-          src={cdwlogo}
-          alt="cdw-logo"
-          className="object-contain"
-          width={105}
-          height={56}
-        />
+      <div className="event-categories w-full flex flex-row justify-around items-center ml-12">
+        {categoriesData.map((category, index) => {
+          return (
+            <EventCard
+              key={index}
+              title={category.name}
+              description={category.description}
+            />
+          );
+        })}
+      </div>
+      <div className="events-counter flex flex-row justify-center ml-12 items-center text-center gap-x-8 font-bold">
+        {eventData.map((event, index) => {
+          return (
+            <EventDetailsCounter
+              key={index}
+              count={event.count}
+              title={event.title}
+            />
+          );
+        })}
       </div>
     </div>
   );

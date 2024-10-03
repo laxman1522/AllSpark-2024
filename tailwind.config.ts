@@ -21,6 +21,8 @@ const config: Config = {
         'button-color': '#f9f0d5',
         'button-text-color': '#511717',
         'header-background': '#27021295',
+        'events-color': '#F9F0D5',
+        'events-counter-text-color': '#2E0818',
       },
       fontFamily: {
         dseg: ['DSEG7_Classic_Bold', 'sans-serif'],

@@ -19,7 +19,7 @@ import gsap from 'gsap';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
-  const [currentSection, setCurrentSection] = useState(0);
+  const [currentSection, setCurrentSection] = useState('#home-section');
   const navRef = useRef<HTMLUListElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,8 +30,8 @@ export default function SideNavigation() {
     if (navRef && navRef.current) {
       const section = navRef.current
         .querySelector('.is-selected')
-        ?.getAttribute('href');
-      setCurrentSection(section == '#home-section' ? 0 : 1);
+        ?.getAttribute('href') as string;
+      setCurrentSection(section);
     }
   };
   const { windowSize } = useWindowSize();
@@ -88,7 +88,7 @@ export default function SideNavigation() {
       </a>
 
       <CSSTransition
-        in={currentSection !== 0}
+        in={currentSection !== '#home-section'}
         timeout={1000}
         classNames="box"
         unmountOnExit
@@ -125,7 +125,7 @@ export default function SideNavigation() {
           data-section-id={1}
           className="navbar-section h-screen w-screen snap-start"
         >
-          <EventsContainer />
+          {currentSection === '#events-section' && <EventsContainer />}
         </section>
 
         <section

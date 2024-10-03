@@ -58,3 +58,13 @@ export const SECTIONS = [
   { label: 'Recap', number: '7', id: '#recap-section' },
   { label: 'Committee', number: '8', id: '#committee-section' },
 ];
+
+export const EVENT_COUNTER = {
+  DAYS: 'Days',
+  TECH_TALKS: 'Tech Talks',
+  SPEAKERS: 'Speakers',
+  TECHIES: 'Techies',
+  REGISTRATION: 'Solution Space',
+  REGISTRATION_COUNT: 60,
+  ATTENDEES_COUNT: 600,
+};
