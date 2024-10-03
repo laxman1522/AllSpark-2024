@@ -1,5 +1,5 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [46, 677, 967, 953, 841, 164],
+  [46, 677, 841, 164, 967, 953],
   { 3521: function () {} },
   function (n) {
     n.O(0, [971, 596, 744], function () {

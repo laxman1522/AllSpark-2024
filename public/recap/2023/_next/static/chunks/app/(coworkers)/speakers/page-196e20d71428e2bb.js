@@ -1,15 +1,15 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
   [498],
   {
-    27: function (e, a, r) {
+    5697: function (e, a, r) {
       Promise.resolve().then(r.bind(r, 8508)),
         Promise.resolve().then(r.bind(r, 3227)),
         Promise.resolve().then(r.bind(r, 7422)),
         Promise.resolve().then(r.t.bind(r, 3222, 23)),
-        Promise.resolve().then(r.bind(r, 3846)),
         Promise.resolve().then(r.bind(r, 2275)),
-        Promise.resolve().then(r.bind(r, 2511)),
+        Promise.resolve().then(r.bind(r, 3846)),
         Promise.resolve().then(r.bind(r, 7610)),
+        Promise.resolve().then(r.bind(r, 2511)),
         Promise.resolve().then(r.bind(r, 4159)),
         Promise.resolve().then(r.bind(r, 7810)),
         Promise.resolve().then(r.bind(r, 210)),
@@ -70,8 +70,8 @@
                           alt: l.b4,
                           className: s().knowMoreIcon,
                           loading: 'lazy',
-                          width: 100,
-                          height: 100,
+                          width: 50,
+                          height: 50,
                         }),
                         (0, o.jsx)('h3', {
                           className: ''.concat(s().knowMoreText),
@@ -535,7 +535,7 @@
   },
   function (e) {
     e.O(0, [922, 676, 222, 724, 504, 862, 271, 971, 596, 744], function () {
-      return e((e.s = 27));
+      return e((e.s = 5697));
     }),
       (_N_E = e.O());
   },
