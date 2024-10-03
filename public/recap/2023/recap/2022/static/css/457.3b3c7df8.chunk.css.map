@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/457.3b3c7df8.chunk.css","mappings":"AAAA,iCACI,WACA,wCAGI,SAFA,WAGA,qBAFA,UAEA","sources":["container/aboutPage/AboutPage.module.scss"],"sourcesContent":[".aboutContainer {\n    width: 100%;\n    iframe {\n        height: 80%;\n        width: 100%;\n        border: 0;\n        margin-bottom: 1.8rem;\n    }\n}"],"names":[],"sourceRoot":""}
