@@ -108,9 +108,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
     setTimeout(() => {
       setIsFading(true);
     }, SLIDER_CONSTANTS.fadingTime);
-  }, [currentIndex]);
 
-  useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex >= items?.length - 1 ? 0 : prevIndex + 1,
