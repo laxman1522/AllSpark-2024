@@ -1,0 +1,23 @@
+.CommitteePage_container__Fg2yl {
+  scroll-margin: 2rem;
+  width: 100%;
+}
+.CommitteePage_container__Fg2yl .CommitteePage_committeeTitle__Xs2zF {
+  font-family: Poppins-Medium;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.CommitteePage_container__Fg2yl .CommitteePage_committeeContainer__rX6X- {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 768px) {
+  .CommitteePage_container__Fg2yl .CommitteePage_committeeContainer__rX6X- {
+    margin-bottom: 1.8rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .CommitteePage_container__Fg2yl .CommitteePage_committeeContainer__rX6X- {
+    margin-bottom: 1.6rem;
+  }
+}
+/*# sourceMappingURL=915.7c33c21c.chunk.css.map*/

@@ -40,10 +40,10 @@ const GuestsContainer = () => {
               className="rounded-[40px]"
             />
             <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">
-              <p className="text-[20px] font-semibold uppercase text-center">
+              <p className="text-[20px] font-semibold uppercase text-center text-button-color">
                 {guest?.name}
               </p>
-              <p className="text-[16px] font-medium text-center">
+              <p className="text-[16px] font-medium text-center text-button-color">
                 {guest?.designation}
               </p>
             </div>
