@@ -58,3 +58,31 @@ export const SECTIONS = [
   { label: 'Recap', number: '7', id: '#recap-section' },
   { label: 'Committee', number: '8', id: '#committee-section' },
 ];
+
+export const MEMORIES = [
+  {
+    imageUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+    description: 'This is our wondefull leadership team at the all spark 22',
+    year: 2022,
+    recapUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+  },
+  {
+    imageUrl:
+      'https://img.freepik.com/free-photo/spectrum-flashes-coloured-light_23-2151792416.jpg?t=st=1727782242~exp=1727785842~hmac=56165d35d03fbc90401b461a759d5bb77be3051ad1442643eed41510a3b9ca8d&w=2000',
+    description: 'This is our wondefull leadership team at the all spark 23',
+    year: 2023,
+    recapUrl:
+      'https://img.freepik.com/free-photo/spectrum-flashes-coloured-light_23-2151792416.jpg?t=st=1727782242~exp=1727785842~hmac=56165d35d03fbc90401b461a759d5bb77be3051ad1442643eed41510a3b9ca8d&w=2000',
+  },
+  {
+    imageUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+    description: 'This is our wondefull leadership team at the all spark 22',
+    year: 2022,
+    recapUrl: 'https://jpeg.org/images/jpeg-home.jpg',
+  },
+];
+
+export const SLIDER_CONSTANTS = {
+  autoScrollTime: 4000,
+  fadingTime: 300,
+};
