@@ -4,6 +4,7 @@ import SliderNav from '../SliderNav/SliderNav';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import { ArrowUpRight } from 'lucide-react';
 import './Slider.scss';
+import { SLIDER_CONSTANTS } from '@/constants/constants';
 interface SliderProps {
   sliderName: string;
   items: {
@@ -106,7 +107,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
 
     setTimeout(() => {
       setIsFading(true);
-    }, 300);
+    }, SLIDER_CONSTANTS.fadingTime);
   }, [currentIndex]);
 
   useEffect(() => {
@@ -114,7 +115,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
       setCurrentIndex((prevIndex) =>
         prevIndex >= items?.length - 1 ? 0 : prevIndex + 1,
       );
-    }, 4000); // Auto-scroll every 4 seconds
+    }, SLIDER_CONSTANTS.autoScrollTime); // Auto-scroll every 4 seconds
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);

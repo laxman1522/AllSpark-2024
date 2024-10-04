@@ -81,3 +81,8 @@ export const MEMORIES = [
     recapUrl: 'https://jpeg.org/images/jpeg-home.jpg',
   },
 ];
+
+export const SLIDER_CONSTANTS = {
+  autoScrollTime: 4000,
+  fadingTime: 300,
+};
