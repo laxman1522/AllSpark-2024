@@ -2,7 +2,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import WAVES from 'vanta/dist/vanta.waves.min.js';
 import * as THREE from 'three';
-import { BACKGROUND_VANTA_OPTIONS } from '@/constants/constants';
+import { BACKGROUND_VANTA_OPTIONS } from '@/constants/option-constants';
 interface BackGroundProps {
   children: ReactNode;
 }
