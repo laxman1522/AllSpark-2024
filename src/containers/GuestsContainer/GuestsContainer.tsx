@@ -7,6 +7,7 @@ import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import SliderNav from '@/components/SliderNav/SliderNav';
 import { GUESTS } from '@/constants/constants';
 import { getAllGuests } from '@/utils/data-utils';
+import { GUEST_MOBILE_SPLIDE_OPTIONS } from '@/constants/option-constants';
 
 /**
  * @description A reusable component which displays the guest details
@@ -27,23 +28,23 @@ const GuestsContainer = () => {
   };
 
   const getSlides = () => {
-    return guests.map((guest, index) => {
+    return guests?.map((guest, index) => {
       return (
         <SplideSlide key={index}>
           <div className="h-full rounded-[40px] overflow-hidden">
             <Image
-              src={guest.imageUrl}
-              alt={guest.name}
+              src={guest?.imageUrl || ''}
+              alt={guest?.name || ''}
               fill
               objectFit="cover"
               className="rounded-[40px]"
             />
             <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">
               <p className="text-[20px] font-semibold uppercase text-center">
-                {guest.name}
+                {guest?.name}
               </p>
               <p className="text-[16px] font-medium text-center">
-                {guest.designation}
+                {guest?.designation}
               </p>
             </div>
           </div>
@@ -66,19 +67,7 @@ const GuestsContainer = () => {
                 splideRef.current = splide;
               }}
               aria-label={GUESTS.ourGuests}
-              options={{
-                type: 'loop',
-                drag: 'true',
-                snap: true,
-                gap: '1.5rem',
-                lazyLoad: 'nearby',
-                padding: '3rem',
-                height: '43.75vh',
-                arrows: false,
-                pagination: false,
-                speed: 1000,
-                easing: 'cubic-bezier( 0.25, 0.46, 0.45, 0.94 )',
-              }}
+              options={GUEST_MOBILE_SPLIDE_OPTIONS}
             >
               {getSlides()}
             </Splide>
