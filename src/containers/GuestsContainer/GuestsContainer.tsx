@@ -76,7 +76,8 @@ const GuestsContainer = () => {
             prevSlide={prevSlide}
             nextSlide={nextSlide}
             currentIndex={activeSlide}
-            items={guests.length}
+            itemsLength={guests?.length}
+            isLoop={true}
           />
         </div>
       </div>
