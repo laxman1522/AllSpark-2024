@@ -128,6 +128,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           nextSlide={nextSlide}
           currentIndex={currentIndex}
           itemsLength={items?.length}
+          isLoop={false}
         ></SliderNav>
       </div>
 

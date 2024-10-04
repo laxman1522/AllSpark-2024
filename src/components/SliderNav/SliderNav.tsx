@@ -6,6 +6,7 @@ interface SliderNavProps {
   nextSlide: () => void;
   currentIndex: number;
   itemsLength: number;
+  isLoop: boolean;
 }
 
 export default function SliderNav({
@@ -13,13 +14,14 @@ export default function SliderNav({
   nextSlide,
   currentIndex,
   itemsLength,
+  isLoop,
 }: SliderNavProps) {
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center gap-4">
       <button
         onClick={prevSlide}
         className="p-1  bg-text-color rounded-full"
-        disabled={currentIndex === 0}
+        disabled={!isLoop && currentIndex == 0}
       >
         <ChevronLeft
           size={24}
@@ -28,14 +30,14 @@ export default function SliderNav({
         />
       </button>
 
-      <span className="text-lg min-w-24 font-medium text-button-color text-center">
+      <span className="max-[580px]:text-3xl text-lg min-w-24 font-medium text-button-color text-center">
         {currentIndex + 1} / {itemsLength}
       </span>
 
       <button
         onClick={nextSlide}
         className="p-1  bg-text-color rounded-full"
-        disabled={currentIndex === itemsLength - 1}
+        disabled={!isLoop && currentIndex == itemsLength - 1}
       >
         <ChevronRight
           size={24}
