@@ -4,14 +4,20 @@ interface MemoriesYearProps {
   memoryYear: number;
   memoryURL: string;
 }
-
+/**
+ * @description A component for memories year
+ * @version 1.0.0
+ * @author [Ashok Natarajan]
+ */
 const MemoriesYear: React.FC<MemoriesYearProps> = ({
   memoryYear,
   memoryURL,
 }) => {
   return (
     <div className="flex items-center justify-center gap-3 pr-2">
-      <p className="text-button-color text-2xl font-semibold">{memoryYear}</p>
+      <p className="text-button-color text-2xl font-semibold italic">
+        {memoryYear}
+      </p>
       <a
         className="flex items-center justify-center p-[4px] bg-slate-100 rounded-full"
         href={memoryURL}
