@@ -79,10 +79,11 @@ const MemoriesMobile = () => {
 
       <div className="mt-8 memories-slider">
         <SliderNav
+          isLoop={true}
           prevSlide={prevSlide}
           nextSlide={nextSlide}
           currentIndex={(activeSlide + 1) * 2 - 1}
-          items={memories.flat(2).length}
+          itemsLength={memories.flat(2).length}
         />
       </div>
     </div>

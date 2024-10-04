@@ -46,6 +46,7 @@ export const SECTIONS = [
 
 export const MEMORIES = {
   ourMemories: 'Our Memories',
+  memories: 'Memories',
 };
 
 export const GUESTS = {
