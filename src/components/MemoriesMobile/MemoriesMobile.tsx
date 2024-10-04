@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import MemoriesYear from '../MemoriesYear/MemoriesYear';
-import { getMemories } from '@/utils/data-utils';
+import { getMobileMemories } from '@/utils/data-utils';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Splide as SplideInstance } from '@splidejs/splide';
 import SliderNav from '../SliderNav/SliderNav';
@@ -16,7 +16,7 @@ import './MemoriesMobile.scss';
  * @author [Ashok Natarajan]
  */
 const MemoriesMobile = () => {
-  const memories = getMemories();
+  const memories = getMobileMemories();
   const [activeSlide, setActiveSlide] = useState(0);
   const splideRef = useRef<SplideInstance | null>(null);
 

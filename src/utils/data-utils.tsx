@@ -1,18 +1,12 @@
 import memoriesData from '../../data/memories_data.json';
-
-interface Memories {
-  imageUrl: string;
-  description: string;
-  year: number;
-  recapUrl: string;
-}
+import guestsData from '../../data/guest_details.json';
 
 /**
  * @description An util to get the memories
  * @version 1.0.0
  * @author [Ashok Natarajan]
  */
-export const getMemories = () => {
+export const getMobileMemories = () => {
   const memories = processPairs(memoriesData.memories);
   return memories;
 };
@@ -31,4 +25,23 @@ const processPairs = (arr: any) => {
     }
     return acc;
   }, []);
+};
+
+/**
+ * @description An util to get all guests
+ * @version 1.0.0
+ * @author [Charanraj Thiyagarajan]
+ */
+export const getAllGuests = () => {
+  const allGuests = guestsData.guests || [];
+  allGuests.sort((a, b) => {
+    const nameA = a.name?.toLowerCase() || '';
+    const nameB = b.name?.toLowerCase() || '';
+    return nameA.localeCompare(nameB);
+  });
+  return allGuests;
+};
+
+export const getMemories = () => {
+  return memoriesData.memories || [];
 };
