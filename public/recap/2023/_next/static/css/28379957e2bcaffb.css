@@ -1,0 +1,22 @@
+.guests_memberCardsContainer__J23kp {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: none;
+  align-content: none;
+  justify-content: none;
+  gap: 0;
+  gap: 10px;
+  margin: 0 5%;
+}
+@media only screen and (max-width: 480px) {
+  .guests_memberCardsContainer__J23kp {
+    margin-top: 2.5%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .guests_memberCardsContainer__J23kp {
+    margin-top: 3%;
+    justify-content: center;
+  }
+}

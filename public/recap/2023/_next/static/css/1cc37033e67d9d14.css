@@ -1,0 +1,686 @@
+.UserInformationModal_userInformationModalWrapperClose__cwcsf,
+.UserInformationModal_userInformationModalWrapper__L1Bor {
+  z-index: 21;
+  margin: 0 -5%;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf:after,
+.UserInformationModal_userInformationModalWrapper__L1Bor:after {
+  content: '';
+  background: transparent linear-gradient(180deg, #ffc06c, #ff8c4e) 0 0
+    no-repeat padding-box;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM {
+  width: 65.5rem;
+  height: 33rem;
+  background-color: #18181b;
+  display: flex;
+  z-index: 1;
+  border-radius: 5px;
+  position: relative;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM {
+    width: 43.5rem;
+    height: 24.625rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM {
+    width: 650px;
+    height: 368px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM {
+    width: 550px;
+    height: 320px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM {
+    width: 480px;
+    height: 271px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM {
+    flex-direction: column-reverse;
+    width: 18.5rem;
+    height: 32.625rem;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 345px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM {
+    width: 260px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_ {
+  color: #111;
+  position: absolute;
+  top: -1.3rem;
+  right: -1.4rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_ {
+    top: -1.2rem;
+    right: -0.5rem;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_
+  .UserInformationModal_userInformationModalCloseIcon__JKh_8,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_
+  .UserInformationModal_userInformationModalCloseIcon__JKh_8 {
+  height: 25px;
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_
+    .UserInformationModal_userInformationModalCloseIcon__JKh_8,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalCloseIconWrapper__Ew7E_
+    .UserInformationModal_userInformationModalCloseIcon__JKh_8 {
+    height: 17px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt {
+  width: 60%;
+  padding: 2.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: scroll;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt {
+    gap: 1.2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt {
+    width: 100%;
+    height: 50%;
+    gap: 1rem;
+    padding: 34px 20px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalProfileName__cpv83,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalProfileName__cpv83 {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileName__cpv83,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileName__cpv83 {
+    font-weight: 800;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileName__cpv83,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileName__cpv83 {
+    font-size: 14px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalProfileEmail___TE73,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalProfileEmail___TE73 {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #e5e7eb;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileEmail___TE73,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileEmail___TE73 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileEmail___TE73,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalProfileEmail___TE73 {
+    font-size: 10px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTitlePresenting__fA3cc,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTitlePresenting__fA3cc {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitlePresenting__fA3cc,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitlePresenting__fA3cc {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitlePresenting__fA3cc,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitlePresenting__fA3cc {
+    font-size: 8px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalSessionWrapper___R_ea,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalSessionWrapper___R_ea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalSessionWrapper___R_ea,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalSessionWrapper___R_ea {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitle__AMzsf,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitle__AMzsf {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitle__AMzsf,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTitle__AMzsf {
+    font-size: 10px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalAlongWith__sJDLr,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalAlongWith__sJDLr {
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAlongWith__sJDLr,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAlongWith__sJDLr {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAlongWith__sJDLr,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAlongWith__sJDLr {
+    font-size: 8px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammatesWrapper__iHK56,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammatesWrapper__iHK56 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTeammates__mSndV,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTeammates__mSndV {
+    gap: 0.5rem;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV
+  .UserInformationModal_userInformationModalTeammatesProfileName__9RlWf,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV
+  .UserInformationModal_userInformationModalTeammatesProfileName__9RlWf {
+  font-size: 20px;
+  font-weight: 600;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTeammates__mSndV
+    .UserInformationModal_userInformationModalTeammatesProfileName__9RlWf,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTeammates__mSndV
+    .UserInformationModal_userInformationModalTeammatesProfileName__9RlWf {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTeammates__mSndV
+    .UserInformationModal_userInformationModalTeammatesProfileName__9RlWf,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalTeammates__mSndV
+    .UserInformationModal_userInformationModalTeammatesProfileName__9RlWf {
+    font-size: 10px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV
+  .UserInformationModal_userInformationModalTeammatesProfileImage__fC9dh,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV
+  .UserInformationModal_userInformationModalTeammatesProfileImage__fC9dh {
+  height: 30px;
+  width: 30px;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV
+  .UserInformationModal_userInformationModalTeammatesProfileImage__fC9dh
+  img,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalTeammates__mSndV
+  .UserInformationModal_userInformationModalTeammatesProfileImage__fC9dh
+  img {
+  border-radius: 50%;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAboutWrapper__HaB4r,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAboutWrapper__HaB4r {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAboutWrapper__HaB4r,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalAboutWrapper__HaB4r {
+    font-size: 8px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalAboutWrapper__HaB4r
+  .UserInformationModal_userInformationModalAbout__FZdc_,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalAboutWrapper__HaB4r
+  .UserInformationModal_userInformationModalAbout__FZdc_ {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalAboutWrapper__HaB4r
+  .UserInformationModal_userInformationModalAboutDesc__C6bpD,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalAboutWrapper__HaB4r
+  .UserInformationModal_userInformationModalAboutDesc__C6bpD {
+  font-weight: 300;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalWatchMe__H4oCL,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalWatchMe__H4oCL {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalWatchMe__H4oCL,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalWatchMe__H4oCL {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalWatchMe__H4oCL,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalWatchMe__H4oCL {
+    font-size: 8px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalEventDateTime__WaE4F,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationModalDescription__R71Mt
+  .UserInformationModal_userInformationModalEventDateTime__WaE4F {
+  font-weight: 600;
+  font-size: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalEventDateTime__WaE4F,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalEventDateTime__WaE4F {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalEventDateTime__WaE4F,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationModalDescription__R71Mt
+    .UserInformationModal_userInformationModalEventDateTime__WaE4F {
+    font-size: 10px;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationProfileImage__txxdW,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationProfileImage__txxdW {
+  width: 40%;
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationProfileImage__txxdW,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationProfileImage__txxdW {
+    width: 100%;
+    height: 50%;
+  }
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationProfileImage__txxdW
+  img,
+.UserInformationModal_userInformationModalWrapper__L1Bor
+  .UserInformationModal_userInformationModal__ryWZM
+  .UserInformationModal_userInformationProfileImage__txxdW
+  img {
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+@media screen and (max-width: 550px) {
+  .UserInformationModal_userInformationModalWrapperClose__cwcsf
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationProfileImage__txxdW
+    img,
+  .UserInformationModal_userInformationModalWrapper__L1Bor
+    .UserInformationModal_userInformationModal__ryWZM
+    .UserInformationModal_userInformationProfileImage__txxdW
+    img {
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+.UserInformationModal_userInformationModalWrapper__L1Bor {
+  animation: UserInformationModal_modal-scale-animation__ktHDm 0.2s ease-out
+    forwards;
+}
+.UserInformationModal_userInformationModalWrapperClose__cwcsf {
+  animation: UserInformationModal_modal-scale-animation-out__d9OIE 0.2s ease-in
+    forwards;
+}
+@keyframes UserInformationModal_modal-scale-animation__ktHDm {
+  0% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes UserInformationModal_modal-scale-animation-out__d9OIE {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+    display: none;
+    z-index: -1;
+  }
+}
+.SpeakerCardsContainer_memberCardsContainer__WWGnc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 5%;
+}
+@media only screen and (max-width: 480px) {
+  .SpeakerCardsContainer_memberCardsContainer__WWGnc {
+    margin-top: 2.5%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .SpeakerCardsContainer_memberCardsContainer__WWGnc {
+    margin-top: 3%;
+    justify-content: center;
+  }
+}
