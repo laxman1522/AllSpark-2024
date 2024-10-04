@@ -1,3 +1,4 @@
+import memoriesData from '../../data/memories_data.json';
 import guestsData from '../../data/guest_details.json';
 
 export const getAllGuests = () => {
@@ -8,4 +9,8 @@ export const getAllGuests = () => {
     return nameA.localeCompare(nameB);
   });
   return allGuests;
+};
+
+export const getMemories = () => {
+  return memoriesData.memories || [];
 };

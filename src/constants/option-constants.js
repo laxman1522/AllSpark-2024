@@ -25,4 +25,6 @@ export const GUEST_MOBILE_SPLIDE_OPTIONS = {
   pagination: false,
   speed: 1000,
   easing: 'cubic-bezier( 0.25, 0.46, 0.45, 0.94 )',
+  autoplay: 'true',
+  interval: 5000,
 };
