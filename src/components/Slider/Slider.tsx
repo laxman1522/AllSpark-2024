@@ -181,7 +181,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           {items[currentIndex]?.description}
         </p>
         <div className="flex items-center gap-3 pr-2">
-          <p className="text-button-color text-2xl font-semibold">
+          <p className="text-button-color text-2xl font-semibold ml-5">
             {items[currentIndex]?.year}
           </p>
           <a
