@@ -1,0 +1,100 @@
+.committee_committeesContainer__gC0zR {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: none;
+  align-content: none;
+  justify-content: center;
+  gap: 0;
+  row-gap: 45px;
+  margin: 0 4%;
+  padding-bottom: 20px;
+}
+@media only screen and (max-width: 480px) {
+  .committee_committeesContainer__gC0zR {
+    margin-top: 2%;
+  }
+}
+@media only screen and (max-width: 370px) {
+  .committee_committeesContainer__gC0zR {
+    margin-top: 3%;
+  }
+}
+.committee_committeesContainer__gC0zR .committee_committeeContainer__KcskU {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: none;
+  align-content: none;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+.committee_committeesContainer__gC0zR
+  .committee_committeeContainer__KcskU
+  .committee_committeeHeader__2lfUs {
+  width: 100%;
+  padding-bottom: 24px;
+}
+@media screen and (max-width: 768px) {
+  .committee_committeesContainer__gC0zR
+    .committee_committeeContainer__KcskU
+    .committee_committeeHeader__2lfUs {
+    padding-bottom: 10px;
+  }
+}
+.committee_committeesContainer__gC0zR
+  .committee_committeeContainer__KcskU
+  .committee_committeeHeader__2lfUs
+  .committee_headerRectangle___pGGd {
+  width: 132px;
+  height: 10px;
+  background: transparent linear-gradient(90deg, #ffc06c, #ff8c4e) 0 0 no-repeat
+    padding-box;
+}
+@media screen and (max-width: 768px) {
+  .committee_committeesContainer__gC0zR
+    .committee_committeeContainer__KcskU
+    .committee_committeeHeader__2lfUs
+    .committee_headerRectangle___pGGd {
+    width: 70px;
+    height: 7px;
+  }
+}
+.committee_committeesContainer__gC0zR
+  .committee_committeeContainer__KcskU
+  .committee_committeeHeader__2lfUs
+  .committee_headerText__WT_ka {
+  padding-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+}
+@media screen and (max-width: 768px) {
+  .committee_committeesContainer__gC0zR
+    .committee_committeeContainer__KcskU
+    .committee_committeeHeader__2lfUs
+    .committee_headerText__WT_ka {
+    padding-top: 4px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+.committee_committeesContainer__gC0zR
+  .committee_committeeContainer__KcskU
+  .committee_memberCardsContainer__ZRSMq {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: none;
+  align-content: none;
+  justify-content: none;
+  gap: 10px;
+  width: 100%;
+}
+@media only screen and (max-width: 370px) {
+  .committee_committeesContainer__gC0zR
+    .committee_committeeContainer__KcskU
+    .committee_memberCardsContainer__ZRSMq {
+    justify-content: center;
+  }
+}
