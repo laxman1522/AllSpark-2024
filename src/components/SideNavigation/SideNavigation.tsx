@@ -155,7 +155,7 @@ export default function SideNavigation() {
         <section
           id="recap-section"
           data-section-id={6}
-          className="navbar-section h-screen w-screen snap-start"
+          className="navbar-section h-screen w-screen snap-start flex justify-center items-center"
         >
           <RecapContainer />
         </section>

@@ -47,3 +47,8 @@ export const SECTIONS = [
 export const GUESTS = {
   ourGuests: 'Our Guests',
 };
+
+export const SLIDER_CONSTANTS = {
+  autoScrollTime: 4000,
+  fadingTime: 300,
+};
