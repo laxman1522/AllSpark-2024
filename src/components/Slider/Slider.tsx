@@ -6,7 +6,12 @@ import { ArrowUpRight } from 'lucide-react';
 import './Slider.scss';
 interface SliderProps {
   sliderName: string;
-  items: { imageUrl: string; description: string; year: number }[];
+  items: {
+    imageUrl: string;
+    description: string;
+    year: number;
+    recapUrl: string;
+  }[];
 }
 
 export default function Slider({ sliderName, items }: SliderProps) {
@@ -15,25 +20,34 @@ export default function Slider({ sliderName, items }: SliderProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isFading, setISFading] = useState<boolean>(true);
+  const [isFading, setIsFading] = useState<boolean>(true);
+  /**
+   * This function is used t handle the drag on the start
+   * @param e
+   */
   const handleDragStart = (
     e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
   ) => {
     setIsDragging(true);
     if ('touches' in e) {
-      setStartX(e.touches[0].pageX);
+      setStartX(e?.touches[0]?.pageX);
     } else {
-      setStartX(e.pageX);
+      setStartX(e?.pageX);
     }
   };
 
+  /**
+   * This function is used to handle the drag while moving
+   * @param e
+   * @returns void
+   */
   const handleDragMove = (
     e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
   ) => {
     if (!isDragging) return;
 
     e.preventDefault();
-    const currentX = 'touches' in e ? e.touches[0].pageX : e.pageX;
+    const currentX = 'touches' in e ? e?.touches[0]?.pageX : e?.pageX;
     const diff = currentX - startX;
     const containerWidth = containerRef?.current?.offsetWidth;
 
@@ -47,6 +61,10 @@ export default function Slider({ sliderName, items }: SliderProps) {
     }
   };
 
+  /**
+   * This functin is used to handle the drag at end
+   * @returns void
+   */
   const handleDragEnd = () => {
     if (!isDragging) return;
 
@@ -57,7 +75,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
     if (containerWidth && Math.abs(dragOffset) > containerWidth / 16) {
       if (dragOffset > 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
-      } else if (dragOffset < 0 && currentIndex < items.length - 1) {
+      } else if (dragOffset < 0 && currentIndex < items?.length - 1) {
         setCurrentIndex(currentIndex + 1);
       }
     }
@@ -65,12 +83,18 @@ export default function Slider({ sliderName, items }: SliderProps) {
     setDragOffset(0);
   };
 
+  /**
+   * This is used to switch to the next slide on click
+   */
   const nextSlide = () => {
-    if (currentIndex < items.length - 1) {
+    if (currentIndex < items?.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
+  /**
+   * This is used to switch to the previous slide on click
+   */
   const prevSlide = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -78,23 +102,24 @@ export default function Slider({ sliderName, items }: SliderProps) {
   };
 
   useEffect(() => {
-    setISFading(false);
+    setIsFading(false);
 
     setTimeout(() => {
-      setISFading(true);
+      setIsFading(true);
     }, 300);
   }, [currentIndex]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex >= items.length - 1 ? 0 : prevIndex + 1,
+        prevIndex >= items?.length - 1 ? 0 : prevIndex + 1,
       );
     }, 4000); // Auto-scroll every 4 seconds
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
-  }, []);
+  }, [currentIndex]);
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-between first-line:">
@@ -103,7 +128,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           prevSlide={prevSlide}
           nextSlide={nextSlide}
           currentIndex={currentIndex}
-          itemsLength={items.length}
+          itemsLength={items?.length}
         ></SliderNav>
       </div>
 
@@ -129,7 +154,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           onTouchEnd={handleDragEnd}
           onMouseLeave={handleDragEnd}
         >
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <div
               key={index}
               className={`flex-shrink-0 flex-col w-full flex items-center text-white text-xl font-bold select-none`}
@@ -137,9 +162,9 @@ export default function Slider({ sliderName, items }: SliderProps) {
               <div className="w-full h-full object-cover  m-0 ">
                 <img
                   className="w-full h-full max-w-full "
-                  src={item.imageUrl}
+                  src={item?.imageUrl}
                   draggable="false"
-                  alt={item.description}
+                  alt={item?.description}
                 ></img>
               </div>
             </div>
@@ -153,15 +178,15 @@ export default function Slider({ sliderName, items }: SliderProps) {
         }`}
       >
         <p className="text-button-color text-lg">
-          {items[currentIndex].description}
+          {items[currentIndex]?.description}
         </p>
         <div className="flex items-center gap-3 pr-2">
           <p className="text-button-color text-2xl font-semibold">
-            {items[currentIndex].year}
+            {items[currentIndex]?.year}
           </p>
           <a
             className="flex items-center justify-center p-[4px] bg-slate-100 rounded-full"
-            href={items[currentIndex].imageUrl}
+            href={items[currentIndex]?.recapUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
