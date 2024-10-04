@@ -37,18 +37,36 @@ interface Schedule {
 
 const schedule: Schedule = scheduleData;
 
-export const getSessionDetails = (sessionId: any) => {
+/**
+ * Retrieves the details of a session based on the provided session ID.
+ * @param {string} sessionId - The ID of the session to retrieve from the schedule.
+ * @return {Object} An object containing the session details.
+ */
+export const getSessionDetails = (sessionId: string) => {
   return schedule.sessions[`${sessionId}`];
 };
 
-export const getSpeakerDetails = (speakerId: any) => {
+/**
+ * Retrieves the details of a speaker based on the provided speaker ID.
+ * @param {string} speakerId - The ID of the speaker to retrieve from the schedule.
+ * @return {Object} An object containing the speaker details.
+ */
+export const getSpeakerDetails = (speakerId: string) => {
   return schedule.speakers[`${speakerId}`];
 };
 
+/**
+ * Retrieves all session details from the schedule.
+ * @return {Object} An object containing all session details, indexed by session ID.
+ */
 export const getSessions = () => {
   return schedule.sessions;
 };
 
+/**
+ * Retrieves and sorts all speaker details from the schedule by name.
+ * @return {Array<Object>} An array of speaker objects, sorted alphabetically by name.
+ */
 export const getAllSpeakers = () => {
   let allSpeakers = Object.values(schedule.speakers);
   allSpeakers.sort((a, b) => {
@@ -59,6 +77,11 @@ export const getAllSpeakers = () => {
   return allSpeakers;
 };
 
+/**
+ * Retrieves all sessions scheduled for a specific date.
+ * @param {string} date - The date to filter sessions by, in the format "Month Day".
+ * @return {Array<Object>} An array of session objects scheduled for the specified date.
+ */
 export const getSessionsByDate = (date: string) => {
   let resultSessions = [];
   const sessions = schedule.sessions;
@@ -73,6 +96,11 @@ export const getSessionsByDate = (date: string) => {
   return resultSessions;
 };
 
+/**
+ * Retrieves and sorts all guest details from the content data by name.
+ * @return {Array<Object>} An array of guest objects, sorted alphabetically by name.
+ */
+
 export const getAllGuests = () => {
   let allGuests = contentData.guests;
   allGuests.sort((a, b) => {
@@ -83,14 +111,26 @@ export const getAllGuests = () => {
   return allGuests;
 };
 
+/**
+ * Retrieves all committee details from the content data.
+ * @return {Array<Object>} An array of committee objects, each containing committee name and members.
+ */
 export const getAllCommittees = () => {
   return contentData.committee;
 };
 
+/**
+ * Retrieves all event categories and their descriptions from the content data.
+ * @return {Array<Object>} An array of category objects, each containing a name and description.
+ */
 export const getEventDetails = () => {
   return contentData.categories;
 };
 
+/**
+ * Constructs and retrieves event data statistics based on the schedule.
+ * @return {Array<Object>} An array of objects, each containing a count and a title related to event statistics.
+ */
 export const constructEventData = () => {
   let count = 0;
   Object.values(schedule.sessions).map((type) => {
