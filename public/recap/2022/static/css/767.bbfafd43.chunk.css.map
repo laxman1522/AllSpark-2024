@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/767.bbfafd43.chunk.css","mappings":"AAAA,iCAEE,mBADA,UACA","sources":["container/guestPage/GuestPage.module.scss"],"sourcesContent":[".guestContainer {\n  width: 100%;\n  scroll-margin: 2rem;\n}\n"],"names":[],"sourceRoot":""}
