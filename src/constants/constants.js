@@ -44,6 +44,11 @@ export const SECTIONS = [
   { label: 'Committee', number: '8', id: '#committee-section' },
 ];
 
+export const MEMORIES = {
+  ourMemories: 'Our Memories',
+  memories: 'Memories',
+};
+
 export const GUESTS = {
   ourGuests: 'Our Guests',
 };

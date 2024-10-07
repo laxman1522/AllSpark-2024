@@ -1,6 +1,5 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
 interface SliderNavProps {
   prevSlide: () => void;
   nextSlide: () => void;

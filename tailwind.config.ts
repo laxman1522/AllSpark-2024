@@ -23,6 +23,8 @@ const config: Config = {
         'header-background': '#27021295',
         'events-color': '#F9F0D5',
         'events-counter-text-color': '#2E0818',
+        'memories-background': '#27021295',
+        'memories-border-color': '#F2BAA7',
       },
       fontFamily: {
         dseg: ['DSEG7_Classic_Bold', 'sans-serif'],
