@@ -5,6 +5,7 @@ import '@splidejs/react-splide/css';
 import Image from 'next/image';
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import SliderNav from '@/components/SliderNav/SliderNav';
+import GuestsSlider from '@/components/GuestsSlider/GuestsSlider';
 import { GUESTS } from '@/constants/constants';
 import { getAllGuests } from '@/utils/data-utils';
 import { GUEST_MOBILE_SPLIDE_OPTIONS } from '@/constants/option-constants';
@@ -56,7 +57,7 @@ const GuestsContainer = () => {
   return (
     <div className="h-screen relative">
       <div id="guests-section" className="absolute h-full w-full">
-        <div className="guests-mobile my-40">
+        <div className="md:hidden guests-mobile my-40">
           <SectionHeader headerText={GUESTS.ourGuests} />
           <div className="mt-16 mb-12">
             <Splide
@@ -79,6 +80,9 @@ const GuestsContainer = () => {
             itemsLength={guests?.length}
             isLoop={true}
           />
+        </div>
+        <div className="hidden md:block">
+          <GuestsSlider guests={guests} heading={GUESTS.ourGuests} />
         </div>
       </div>
     </div>
