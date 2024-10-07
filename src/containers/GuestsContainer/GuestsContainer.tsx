@@ -31,12 +31,12 @@ const GuestsContainer = () => {
     return guests?.map((guest, index) => {
       return (
         <SplideSlide key={index}>
-          <div className="h-full rounded-[40px] overflow-hidden">
+          <div className="h-full rounded-[40px] overflow-hidden relative">
             <Image
               src={guest?.imageUrl || ''}
               alt={guest?.name || ''}
               fill
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               className="rounded-[40px]"
             />
             <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">

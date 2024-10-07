@@ -254,14 +254,14 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
         src={left}
         alt="left"
         className="left absolute hidden"
-        priority={true}
+        loading="lazy"
         ref={leftRef}
       />
       <Image
         src={right}
         alt="right"
         className="right absolute hidden"
-        priority={true}
+        loading="lazy"
         ref={rightRef}
       />
       <div
@@ -272,7 +272,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
           src={allspark}
           alt="allspark"
           className="allspark absolute hidden object-contain top-0 h-full w-full"
-          priority={true}
+          loading="lazy"
         />
         <Image
           src={star}
@@ -284,13 +284,13 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
           src={aLetter}
           alt="a"
           className="aLetter absolute hidden object-contain w-auto h-1/5 top-[-2%] left-[5%]"
-          priority={true}
+          loading="lazy"
         />
         <Image
           src={llspark}
           alt="llspark"
           className="llspark absolute object-contain opacity-0 top-0 h-full"
-          priority={true}
+          loading="lazy"
         />
       </div>
     </div>

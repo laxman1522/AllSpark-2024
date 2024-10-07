@@ -37,7 +37,7 @@ const MemoriesMobile = () => {
               src={memory[0]?.imageUrl}
               alt="Logo"
               fill
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               className="rounded-lg"
             />
           </div>
@@ -47,7 +47,7 @@ const MemoriesMobile = () => {
               src={memory[1]?.imageUrl}
               alt="Logo"
               fill
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               className="rounded-lg"
             />
           </div>

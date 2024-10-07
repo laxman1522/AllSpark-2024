@@ -25,6 +25,7 @@
     "react-fontawesome": "^1.7.1",
     "react-transition-group": "^4.4.5",
     "sass": "^1.78.0",
+    "sharp": "^0.33.5",
     "three": "^0.121.0",
     "vanta": "^0.5.24"
   },
