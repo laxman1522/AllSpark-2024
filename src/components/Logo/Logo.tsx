@@ -157,20 +157,24 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
       // Animate right and left elements
       gsap
         .timeline({ ease: 'power3.in' })
-        .set(rightRef.current, { display: 'block', x: 0, y: '90vh' })
+        .set(rightRef.current, { visibility: 'visible', x: 0, y: '90vh' })
         .to(rightRef.current, motionPathAnimation(paths.right))
-        .set(rightRef.current, { display: 'none' });
+        .set(rightRef.current, { visibility: 'hidden' });
       gsap
         .timeline({ ease: 'power3.in' })
-        .set(leftRef.current, { display: 'block', x: '100vw', y: '90vh' })
+        .set(leftRef.current, { visibility: 'visible', x: '100vw', y: '90vh' })
         .to(leftRef.current, motionPathAnimation(paths.left))
-        .set(leftRef.current, { display: 'none' });
+        .set(leftRef.current, { visibility: 'hidden' });
 
       // Star animation after 2.5 seconds
       gsap.delayedCall(2.5, () => {
         gsap
           .timeline({ ease: 'power2.in' })
-          .set(elements.star, { display: 'block', top: '-20vh', left: '44%' })
+          .set(elements.star, {
+            visibility: 'visible',
+            top: '-20vh',
+            left: '44%',
+          })
           .to(elements.star, {
             duration: 1,
             top: 0,
@@ -188,7 +192,7 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
             elements.aLetter,
             {
               duration: 1.2,
-              display: 'block',
+              visibility: 'visible',
               top: '1%',
               left: 0,
               height: '98%',
@@ -207,9 +211,9 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
             },
             0,
           )
-          .set(elements.aLetter, { display: 'none' }, 1.5)
-          .set(elements.llspark, { display: 'none' }, 1.5)
-          .set(elements.allspark, { display: 'block' }, 1.5);
+          .set(elements.aLetter, { visibility: 'hidden' }, 1.5)
+          .set(elements.llspark, { visibility: 'hidden' }, 1.5)
+          .set(elements.allspark, { visibility: 'visible' }, 1.5);
       });
 
       // Logo animation after 6 seconds
@@ -253,14 +257,14 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
       <Image
         src={left}
         alt="left"
-        className="left absolute hidden"
+        className="left absolute invisible"
         loading="lazy"
         ref={leftRef}
       />
       <Image
         src={right}
         alt="right"
-        className="right absolute hidden"
+        className="right absolute invisible"
         loading="lazy"
         ref={rightRef}
       />
@@ -271,26 +275,26 @@ const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
         <Image
           src={allspark}
           alt="allspark"
-          className="allspark absolute hidden object-contain top-0 h-full w-full"
-          loading="lazy"
+          className="allspark absolute invisible object-contain top-0 h-full w-full"
+          priority={true}
         />
         <Image
           src={star}
           alt="star"
-          className="star absolute hidden"
+          className="star absolute invisible"
           priority={true}
         />
         <Image
           src={aLetter}
           alt="a"
-          className="aLetter absolute hidden object-contain w-auto h-1/5 top-[-2%] left-[5%]"
-          loading="lazy"
+          className="aLetter absolute invisible object-contain w-auto h-1/5 top-[-2%] left-[5%]"
+          priority={true}
         />
         <Image
           src={llspark}
           alt="llspark"
           className="llspark absolute object-contain opacity-0 top-0 h-full"
-          loading="lazy"
+          priority={true}
         />
       </div>
     </div>
