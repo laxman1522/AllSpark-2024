@@ -68,7 +68,7 @@ export const getSessions = () => {
  * @return {Array<Object>} An array of speaker objects, sorted alphabetically by name.
  */
 export const getAllSpeakers = () => {
-  let allSpeakers = Object.values(schedule.speakers);
+  const allSpeakers = Object.values(schedule.speakers);
   allSpeakers.sort((a, b) => {
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();
@@ -83,7 +83,7 @@ export const getAllSpeakers = () => {
  * @return {Array<Object>} An array of session objects scheduled for the specified date.
  */
 export const getSessionsByDate = (date: string) => {
-  let resultSessions = [];
+  const resultSessions = [];
   const sessions = schedule.sessions;
   const sessionIds = Object.keys(sessions);
   for (const sessionId of sessionIds) {
@@ -102,7 +102,7 @@ export const getSessionsByDate = (date: string) => {
  */
 
 export const getAllGuests = () => {
-  let allGuests = contentData.guests;
+  const allGuests = contentData.guests;
   allGuests.sort((a, b) => {
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();
@@ -138,7 +138,7 @@ export const constructEventData = () => {
       count++;
     }
   });
-  let eventData = [
+  const eventData = [
     { count: Object.keys(schedule.agenda).length, title: EVENT_COUNTER.DAYS },
     {
       count: EVENT_COUNTER.REGISTRATION_COUNT,
