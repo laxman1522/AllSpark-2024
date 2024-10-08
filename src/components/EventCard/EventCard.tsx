@@ -23,9 +23,11 @@ const EventCard: React.FC<EventCardProps> = ({
 }: EventCardProps) => {
   return (
     <div
-      className={`event-card ${!windowWidth ? 'w-[32%] rounded-[25px]' : 'w-[100%] rounded-[20px]'} p-10 flex flex-col justify-between text-left items-center bg-events-background-color `}
+      className={`event-card h-full ${!windowWidth ? 'w-[32%] rounded-[25px]' : 'w-[100%] rounded-[20px]'} p-10 flex flex-col text-left items-center bg-events-background-color `}
     >
-      <h1 className="event-title lg:text-[35px] font-extrabold ">{title}</h1>
+      <h1 className="event-title lg:text-[35px] pb-4 font-extrabold ">
+        {title}
+      </h1>
       <p className="event-description lg:text-[20px] font-light ">
         {description}
       </p>

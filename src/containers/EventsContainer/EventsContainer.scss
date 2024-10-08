@@ -1,4 +1,10 @@
-@media screen and (min-width: 1024px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 800px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .event-section-header {
+    margin-bottom: 4vh;
+  }
+  .event-content {
+    gap: 3.5rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -28,6 +34,11 @@
   }
 }
 
+@media only screen and (width: 540px) {
+  .event-section-header {
+    margin-top: 18vh;
+  }
+}
 @media only screen and (max-width: 390px) {
   .event-content {
     gap: 2rem;

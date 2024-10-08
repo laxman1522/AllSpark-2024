@@ -47,7 +47,7 @@ const EventsContainer = () => {
         <SectionHeader headerText="Events" />
       </div>
       <div className="event-content flex flex-col w-[85%] mr-auto text-events-color h-full gap-[6rem]">
-        <div className="event-categories w-full flex flex-row justify-around items-center ml-10 text-events-counter-text-color">
+        <div className="event-categories w-full flex flex-row justify-around items-stretch ml-10 text-events-counter-text-color">
           {windowWidth < 1024 ? (
             <Splide options={EVENTS_MOBILE_SPLIDE_OPTIONS}>
               {getMobileCategorySlides()}
@@ -56,7 +56,7 @@ const EventsContainer = () => {
             getCategorySlides()
           )}
         </div>
-        <div className="events-counter flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-8 font-bold gap-y-8	">
+        <div className="events-counter flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-8 font-bold gap-y-4	">
           {eventData.map((event, index) => {
             return (
               <EventDetailsCounter
