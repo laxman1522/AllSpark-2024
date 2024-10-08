@@ -1,5 +1,6 @@
 import CountUp from 'react-countup';
 import { Figtree } from 'next/font/google';
+import './EventDetailsContainer.scss';
 
 interface EventDetailsCounterProps {
   count: number;
@@ -30,7 +31,7 @@ const EventDetailsCounter: React.FC<EventDetailsCounterProps> = ({
     <div
       className={`events-counter-card flex flex-col justify-center items-center gap-2 ${figTree.className}`}
     >
-      <div className="events-counter-count flex lg:w-44 lg:text-[54px] text-events-counter-text-color bg-events-color rounded-[20px] justify-center items-center font-black md:w-28 md:text-[36px]">
+      <div className="events-counter-count flex lg:w-44 lg:text-[54px] text-events-counter-text-color bg-events-counter-bg-color rounded-[20px] justify-center items-center font-black md:w-28 md:text-[36px] text-[20px]">
         <CountUp start={0} end={count} duration={3} />
         {title === 'Techies' && <span>+</span>}
       </div>

@@ -42,3 +42,19 @@ export const GUEST_MOBILE_SPLIDE_OPTIONS = {
   autoplay: 'true',
   interval: 5000,
 };
+
+export const EVENTS_MOBILE_SPLIDE_OPTIONS = {
+  type: 'fade',
+  drag: 'true',
+  snap: true,
+  lazyLoad: 'nearby',
+  arrows: false,
+  pagination: true,
+  speed: 2000,
+  // easing: 'cubic-bezier(0.6, 0.05, 0.2, 0.9)',
+  easing: 'cubic-bezier( 0.25, 0.46, 0.45, 0.94 )',
+  autoplay: 'true',
+  interval: 5000,
+  width: '85vw',
+  rewind: 'true',
+};
