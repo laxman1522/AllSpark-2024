@@ -14,7 +14,7 @@ export const BACKGROUND_VANTA_OPTIONS = {
 };
 // constants for memories mobile splide options
 export const MEMORIES_MOBILE_SPLIDE_OPTIONS = {
-  type: 'loop',
+  type: 'fade',
   drag: 'true',
   snap: true,
   height: 'auto',
