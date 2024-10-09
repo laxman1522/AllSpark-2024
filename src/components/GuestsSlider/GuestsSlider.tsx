@@ -68,17 +68,12 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
       <div className="mt-16 mb-12 mx-auto wrapper w-full h-[60vh] overflow-hidden">
         <Slider
           onReInit={() => {
+            const current = document.getElementsByClassName('slick-current')[0];
             const selectedIndex = Math.abs(
-              Number(
-                document
-                  .getElementsByClassName('slick-current')[0]
-                  .getAttribute('data-index'),
-              ),
+              Number(current.getAttribute('data-index')),
             );
             setSelectedSlideIndex(selectedIndex);
-            document
-              .getElementsByClassName('slick-current')[0]
-              .classList.add('active');
+            current.classList.add('active');
           }}
           ref={slideRef}
           {...GUEST_DESKTOP_SLICK_OPTIONS}
