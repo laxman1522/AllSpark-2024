@@ -46,7 +46,7 @@ const EventsContainer = () => {
       <div className="event-section-header mt-[18vh] mb-11">
         <SectionHeader headerText="Events" />
       </div>
-      <div className="event-content flex flex-col w-[85%] mr-auto text-events-color h-full gap-[6rem]">
+      <div className="event-content flex flex-col w-[85%] mr-auto text-events-color h-full gap-[6rem] lg:gap-[4rem]">
         <div className="event-categories w-full flex flex-row justify-around items-stretch ml-10 text-events-counter-text-color">
           {windowWidth < 1024 ? (
             <Splide options={EVENTS_MOBILE_SPLIDE_OPTIONS}>
