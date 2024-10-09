@@ -18,8 +18,6 @@ const Committee = () => {
     const firstButtonNav = document.querySelector('.button');
     if (firstButtonNav) {
       const event = new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
         view: window,
       });
       firstButtonNav.dispatchEvent(event);

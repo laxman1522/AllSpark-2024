@@ -23,10 +23,7 @@ export default function RootLayout({
       <head>
         <Script src="/js/modernizr.js" />
         <Script src="/js/jquery-2.1.1.js" strategy="beforeInteractive" />
-        <Script
-          src="//npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"
-          strategy="beforeInteractive"
-        />
+        <Script src="/js/isotope.pkgd.min.js" strategy="beforeInteractive" />
         <Script src="/js/main.js" />
       </head>
       <body className={poppins.className}>{children}</body>
