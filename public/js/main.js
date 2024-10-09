@@ -109,9 +109,7 @@ $(document).ready(function ($) {
 
   // Optionally, trigger layout reflow on window resize
   window.addEventListener('resize', function () {
-    this.setTimeout(() => {
-      isotopeImplement();
-    }, 1000);
+    isotopeImplement();
   });
 
   isotopeImplement();
