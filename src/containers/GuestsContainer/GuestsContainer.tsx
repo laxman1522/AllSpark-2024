@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useRef } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Splide as SplideInstance } from '@splidejs/splide';
@@ -38,9 +39,9 @@ const GuestsContainer = () => {
               alt={guest?.name || ''}
               fill
               objectFit="cover"
-              className="rounded-[40px]"
+              className="rounded-[40px] object-top"
             />
-            <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">
+            <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px]">
               <p className="text-[20px] font-semibold uppercase text-center text-button-color">
                 {guest?.name}
               </p>
@@ -57,7 +58,7 @@ const GuestsContainer = () => {
   return (
     <div className="h-screen relative">
       <div id="guests-section" className="absolute h-full w-full">
-        <div className="md:hidden guests-mobile my-40">
+        <div className="lg:hidden guests-mobile my-40">
           <SectionHeader headerText={GUESTS.ourGuests} />
           <div className="mt-16 mb-12">
             <Splide
@@ -81,7 +82,7 @@ const GuestsContainer = () => {
             isLoop={true}
           />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <GuestsSlider guests={guests} heading={GUESTS.ourGuests} />
         </div>
       </div>

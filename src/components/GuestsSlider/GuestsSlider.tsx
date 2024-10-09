@@ -1,39 +1,46 @@
+'use client';
 import React, { useRef, useState } from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import SliderNav from '@/components/SliderNav/SliderNav';
 import Image from 'next/image';
 import './GuestsSlider.scss';
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
+import { GUEST_DESKTOP_SLICK_OPTIONS } from '@/constants/option-constants';
 
-const GuestsSlider = ({ guests, heading }) => {
-  const slideRef = useRef(null);
+interface GuestsSliderProps {
+  guests: Array<guestType>;
+  heading: string;
+}
+
+type guestType = {
+  imageUrl: string;
+  name: string;
+  designation: string;
+};
+
+const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
+  const slideRef = useRef<Slider | null>(null);
   const [selectedSlideIndex, setSelectedSlideIndex] = useState(0);
-  const settings = {
-    speed: 300,
-    slidesToShow: 6,
-    slidesToScroll: 6,
-  };
-  const prevButtonClick = async () => {
+
+  const prevSlideHandler = async () => {
     slideRef.current?.slickPrev();
   };
 
-  const nextButtonClick = () => {
+  const nextSlideHandler = () => {
     slideRef.current?.slickNext();
   };
   const getSlides = () => {
-    return guests?.map((guest, index) => (
-      <div className="wrap" data-index={index + 1} key={index}>
-        <div className="tile-wrap">
+    return guests?.map((guest, index: number) => (
+      <div className="wrap px-5 w-full" data-index={index + 1} key={index}>
+        <div className="tile-wrap w-full float-left relative z-10 h-[60vh]">
           <Image
             src={guest?.imageUrl || ''}
             alt={guest?.name || ''}
             fill
             objectFit="cover"
-            className="rounded-[40px]"
+            className="rounded-[40px] object-top"
           />
-          <div className="details hidden absolute bottom-0 w-full items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">
+          <div className="details hidden absolute bottom-0 w-full items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px]">
             <p className="text-[20px] font-semibold uppercase text-center text-button-color">
               {guest?.name}
             </p>
@@ -46,22 +53,20 @@ const GuestsSlider = ({ guests, heading }) => {
     ));
   };
   return (
-    <div className="guests-desktop my-40 mx-auto p-16 pr-60 w-[75%]">
+    <div className="guests-desktop my-40 mx-auto px-16 pr-40">
       <div className="flex justify-between first-line:">
         <SectionHeader headerText={heading} />
 
         <SliderNav
-          prevSlide={prevButtonClick}
-          nextSlide={nextButtonClick}
+          prevSlide={prevSlideHandler}
+          nextSlide={nextSlideHandler}
           currentIndex={selectedSlideIndex}
           itemsLength={guests?.length}
           isLoop={true}
         />
       </div>
-      <div className="mt-16 mb-12 w-[600px] mx-auto wrapper">
+      <div className="mt-16 mb-12 mx-auto wrapper w-full h-[60vh] overflow-hidden">
         <Slider
-          infinite={true}
-          focusOnSelect={true}
           onReInit={() => {
             const selectedIndex = Math.abs(
               Number(
@@ -76,9 +81,7 @@ const GuestsSlider = ({ guests, heading }) => {
               .classList.add('active');
           }}
           ref={slideRef}
-          arrows={false}
-          centerMode={true}
-          {...settings}
+          {...GUEST_DESKTOP_SLICK_OPTIONS}
         >
           {getSlides()}
         </Slider>
