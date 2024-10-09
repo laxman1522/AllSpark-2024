@@ -1,4 +1,5 @@
 #events-section .splide__pagination {
+  bottom: -1.5em;
   .splide__pagination__page {
     background-color: #f2baa7b2;
   }
@@ -29,7 +30,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .events-counter,
   .event-categories {
     margin-left: 0;
