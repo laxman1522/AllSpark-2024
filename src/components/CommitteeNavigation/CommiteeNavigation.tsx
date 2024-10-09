@@ -1,7 +1,15 @@
 import { getCommitteeClassNames } from '@/utils/data-utils';
 import './CommitteeNavigation.scss';
+import { MouseEventHandler } from 'react';
 
-const CommitteeNavigation = () => {
+interface CommitteeNavigationProps {
+  setCommittee: (name: string) => void;
+}
+
+const CommitteeNavigation: React.FC<CommitteeNavigationProps> = ({
+  setCommittee,
+}) => {
+  //   () => {
   const committeeNames = getCommitteeClassNames();
 
   return (
@@ -11,6 +19,7 @@ const CommitteeNavigation = () => {
           key={index}
           className={`button px-4 text-[#F3BAA7] font-semibold text-xl text-left flex-1 w-[100%]${index == 0 ? ' is-checked' : ''}`}
           data-filter={`.${committee.className}`}
+          onClick={() => setCommittee(committee.name)}
         >
           {committee.name}
         </button>

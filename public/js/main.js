@@ -67,41 +67,52 @@ $(document).ready(function ($) {
     }
   }
 
-  // init Isotope
-  var iso = new Isotope('.members-grid', {
-    itemSelector: '.element-item',
-    layoutMode: 'fitRows',
-    filter: '.core-organisers',
-  });
+  function isotopeImplement() {
+    // Initialize Isotope after all images are loaded
+    var iso = new Isotope('.members-grid', {
+      itemSelector: '.element-item',
+      layoutMode: 'masonry',
+      filter: '.core-organisers', // Optional: Apply initial filter
+    });
 
-  // bind filter button click
-  var filtersElem = document.querySelector('.filters-button-group');
-  filtersElem.addEventListener('click', function (event) {
-    // only work with buttons
-    if (!matchesSelector(event.target, 'button')) {
-      return;
-    }
-    var filterValue = event.target.getAttribute('data-filter');
-    // use matching filter function
-    filterValue = filterValue;
-    iso.arrange({ filter: filterValue });
-  });
-
-  // change is-checked class on buttons
-  var buttonGroups = document.querySelectorAll('.button-group');
-  for (var i = 0, len = buttonGroups.length; i < len; i++) {
-    var buttonGroup = buttonGroups[i];
-    radioButtonGroup(buttonGroup);
-  }
-
-  function radioButtonGroup(buttonGroup) {
-    buttonGroup.addEventListener('click', function (event) {
+    // bind filter button click
+    var filtersElem = document.querySelector('.filters-button-group');
+    filtersElem.addEventListener('click', function (event) {
       // only work with buttons
       if (!matchesSelector(event.target, 'button')) {
         return;
       }
-      buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-      event.target.classList.add('is-checked');
+      var filterValue = event.target.getAttribute('data-filter');
+      // use matching filter function
+      filterValue = filterValue;
+      iso.arrange({ filter: filterValue });
     });
+
+    // change is-checked class on buttons
+    var buttonGroups = document.querySelectorAll('.button-group');
+    for (var i = 0, len = buttonGroups.length; i < len; i++) {
+      var buttonGroup = buttonGroups[i];
+      radioButtonGroup(buttonGroup);
+    }
+
+    function radioButtonGroup(buttonGroup) {
+      buttonGroup.addEventListener('click', function (event) {
+        // only work with buttons
+        if (!matchesSelector(event.target, 'button')) {
+          return;
+        }
+        buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+        event.target.classList.add('is-checked');
+      });
+    }
   }
+
+  // Optionally, trigger layout reflow on window resize
+  window.addEventListener('resize', function () {
+    this.setTimeout(() => {
+      isotopeImplement();
+    }, 1000);
+  });
+
+  isotopeImplement();
 });

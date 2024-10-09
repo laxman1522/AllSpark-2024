@@ -70,7 +70,7 @@ export const getCommitteeClassNames = () => {
  * @author [Rubesh Udayakumar]
  */
 export const getCommitteeAndMembersNames = () => {
-  let result: { committeeName: string; memberName: string }[] = [];
+  const result: { committeeName: string; memberName: string }[] = [];
   committeeData.committee.forEach((committee) => {
     committee.members.forEach((member) => {
       result.push({
