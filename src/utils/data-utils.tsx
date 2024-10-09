@@ -1,5 +1,6 @@
 import memoriesData from '../../data/memories_data.json';
 import guestsData from '../../data/guest_details.json';
+import committeeData from '../../data/committee_details.json';
 
 /**
  * @description An util to get the memories
@@ -44,4 +45,42 @@ export const getAllGuests = () => {
 
 export const getMemories = () => {
   return memoriesData.memories || [];
+};
+
+/**
+ * @description An util to get all committee names
+ * @version 1.0.0
+ * @author [Rubesh Udayakumar]
+ */
+export const getCommitteeClassNames = () => {
+  return committeeData.committee.map((committee) => {
+    return {
+      name: committee.committeeName,
+      className: committee.committeeName
+        .replaceAll(' ', '-')
+        .replaceAll('&', '-')
+        .toLowerCase(),
+    };
+  });
+};
+
+/**
+ * @description An util to get all member names and committee names
+ * @version 1.0.0
+ * @author [Rubesh Udayakumar]
+ */
+export const getCommitteeAndMembersNames = () => {
+  let result: { committeeName: string; memberName: string }[] = [];
+  committeeData.committee.forEach((committee) => {
+    committee.members.forEach((member) => {
+      result.push({
+        committeeName: committee.committeeName
+          .replaceAll(' ', '-')
+          .replaceAll('&', '-')
+          .toLowerCase(),
+        memberName: member.name,
+      });
+    });
+  });
+  return result;
 };
