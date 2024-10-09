@@ -12,13 +12,15 @@ import { useState } from 'react';
 const Committee = () => {
   const windowSize = useWindowSize();
 
-  const [committee, setCommittee] = useState('');
+  const [committee, setCommittee] = useState('Core Organisers');
 
   useEffect(() => {
     const firstButtonNav = document.querySelector('.button');
     if (firstButtonNav) {
       const event = new MouseEvent('click', {
         view: window,
+        bubbles: true,
+        cancelable: true,
       });
       firstButtonNav.dispatchEvent(event);
     }
