@@ -5,7 +5,8 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "AllSpark'24",
-  description: '',
+  description:
+    'A Grand CDW Tech Conference happening at Bengaluru on Oct 25 & 26',
 };
 
 const poppins = Poppins({
@@ -22,8 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script src="/js/modernizr.js" />
-        <Script src="/js/jquery-2.1.1.js" strategy="beforeInteractive" />
         <Script src="/js/isotope.pkgd.min.js" strategy="beforeInteractive" />
+        <Script src="/js/jquery-2.1.1.min.js" strategy="beforeInteractive" />
         <Script src="/js/main.js" />
       </head>
       <body className={poppins.className}>{children}</body>

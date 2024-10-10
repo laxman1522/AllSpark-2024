@@ -57,3 +57,13 @@ export const SLIDER_CONSTANTS = {
   autoScrollTime: 4000,
   fadingTime: 300,
 };
+
+export const EVENT_COUNTER = {
+  DAYS: 'Days',
+  TECH_TALKS: 'Tech Talks',
+  SPEAKERS: 'Speakers',
+  TECHIES: 'Techies',
+  REGISTRATION: 'Solution Space',
+  REGISTRATION_COUNT: 60,
+  ATTENDEES_COUNT: 600,
+};
