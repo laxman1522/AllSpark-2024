@@ -25,6 +25,7 @@ const config: Config = {
         'events-counter-text-color': '#270212',
         'memories-background': '#27021295',
         'memories-border-color': '#F2BAA7',
+        'committee-background': '#27021293',
         'events-background-color': '#F2BAA7B2',
         'events-counter-bg-color': '#F9F0D5',
       },

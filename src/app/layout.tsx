@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script src="/js/modernizr.js" />
+        <Script src="/js/isotope.pkgd.min.js" strategy="beforeInteractive" />
         <Script src="/js/jquery-2.1.1.min.js" strategy="beforeInteractive" />
         <Script src="/js/main.js" />
       </head>
