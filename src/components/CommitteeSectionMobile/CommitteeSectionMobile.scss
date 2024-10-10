@@ -1,0 +1,28 @@
+.members-grid {
+  height: 70vh !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .members-grid {
+    height: 52vh !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .members-grid {
+    height: 55vh !important;
+  }
+  .committee-section-header {
+    padding: 1rem 2rem;
+    span {
+      width: 20vw;
+      margin: 0 auto;
+    }
+    h3 {
+      font-size: 1.5rem;
+      text-wrap: nowrap;
+    }
+  }
+}
