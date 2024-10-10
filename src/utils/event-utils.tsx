@@ -157,3 +157,13 @@ export const constructEventData = () => {
 
   return eventData;
 };
+
+export const isSplideViewCompatible = (windowWidth: number) => {
+  return (
+    windowWidth < 1024 ||
+    (windowWidth >= 1024 &&
+      windowWidth < 1366 &&
+      window.innerHeight > 1024 &&
+      window.innerHeight <= 1366)
+  );
+};

@@ -1,6 +1,10 @@
 import React from 'react';
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
-import { constructEventData, getEventDetails } from '@/utils/event-utils';
+import {
+  constructEventData,
+  getEventDetails,
+  isSplideViewCompatible,
+} from '@/utils/event-utils';
 import EventCard from '@/components/EventCard/EventCard';
 import EventDetailsCounter from '@/components/EventDetailsCounter/EventDetailsCounter';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -12,6 +16,7 @@ const EventsContainer = () => {
   const { windowWidth } = useWindowSize();
   const eventData = constructEventData();
   const categoriesData = getEventDetails();
+  const isSplideViewSize = isSplideViewCompatible(windowWidth);
 
   const getMobileCategorySlides = () => {
     return categoriesData.map((category, index) => {
@@ -21,7 +26,7 @@ const EventsContainer = () => {
             key={index}
             title={category.name}
             description={category.description}
-            windowWidth={windowWidth < 1024}
+            windowWidth={isSplideViewSize}
           />
         </SplideSlide>
       );
@@ -35,7 +40,7 @@ const EventsContainer = () => {
           key={index}
           title={category.name}
           description={category.description}
-          windowWidth={windowWidth < 1024}
+          windowWidth={isSplideViewSize}
         />
       );
     });
@@ -48,7 +53,7 @@ const EventsContainer = () => {
       </div>
       <div className="event-content flex flex-col w-[85%] mr-auto text-events-color h-full gap-[6rem] lg:gap-[4rem]">
         <div className="event-categories w-full flex flex-row justify-around items-stretch ml-10 text-events-counter-text-color">
-          {windowWidth < 1024 ? (
+          {isSplideViewSize ? (
             <Splide options={EVENTS_MOBILE_SPLIDE_OPTIONS}>
               {getMobileCategorySlides()}
             </Splide>
