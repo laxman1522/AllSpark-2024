@@ -1,6 +1,5 @@
 import { getCommitteeClassNames } from '@/utils/data-utils';
 import './CommitteeNavigation.scss';
-import { MouseEventHandler } from 'react';
 
 interface CommitteeNavigationProps {
   setCommittee: (name: string) => void;
