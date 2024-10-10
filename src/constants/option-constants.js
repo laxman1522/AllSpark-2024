@@ -52,7 +52,6 @@ export const EVENTS_MOBILE_SPLIDE_OPTIONS = {
   pagination: true,
   speed: 1000,
   easing: 'cubic-bezier(0.6, 0.05, 0.2, 0.9)',
-  // easing: ' cubic-bezier(0.2, 1, 0.3, 1)',
   autoplay: 'true',
   interval: 5000,
   width: '85vw',
