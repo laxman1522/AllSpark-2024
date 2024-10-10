@@ -21,6 +21,7 @@ export default function SliderNav({
         onClick={prevSlide}
         className="p-1  bg-text-color rounded-full"
         disabled={!isLoop && currentIndex == 0}
+        aria-label="previous slide"
       >
         <ChevronLeft
           size={24}
@@ -37,6 +38,7 @@ export default function SliderNav({
         onClick={nextSlide}
         className="p-1  bg-text-color rounded-full"
         disabled={!isLoop && currentIndex == itemsLength - 1}
+        aria-label="next slide"
       >
         <ChevronRight
           size={24}

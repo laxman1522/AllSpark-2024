@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import allspark from '../../../public/images/Allsparktext.png';
+import allspark from '../../../public/images/Allspark.svg';
 import cdwlogo from '../../../public/images/cdwLogo.png';
 
 /**

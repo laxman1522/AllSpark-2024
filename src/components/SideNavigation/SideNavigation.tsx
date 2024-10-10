@@ -77,7 +77,11 @@ export default function SideNavigation() {
         </div>
       </nav>
 
-      <a className="navbar-nav-trigger navbar-img-replace">
+      <a
+        className="navbar-nav-trigger navbar-img-replace"
+        href="#"
+        aria-label="nav-menu"
+      >
         {rows.map((_, rowIndex) => (
           <span className="row" key={`row-${rowIndex}`}>
             {boxes.map((_, boxIndex) => (
