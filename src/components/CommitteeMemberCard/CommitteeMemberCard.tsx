@@ -22,7 +22,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
 }) => {
   return (
     <div
-      className={`h-[${wrapperHeight}] w-[${wrapperWidth}] ${wrapperClassName} rounded-[10px] border-[3px] border-button-color relative m-5 max-[767px]:my-0 max-[767px]:mt-4 max-[767px]:mx-3`}
+      className={`${wrapperHeight} ${wrapperWidth} ${wrapperClassName} rounded-[10px] border-[3px] border-button-color relative m-5 max-[767px]:my-0 max-[767px]:mt-4 max-[767px]:mx-3`}
     >
       <Image
         src={imageSrc || ''}

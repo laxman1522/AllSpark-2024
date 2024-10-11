@@ -32,8 +32,8 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
             <CommitteeMemberCard
               memberName={member.memberName}
               imageSrc={`/images/committee/${member.memberName}.jpeg`}
-              wrapperWidth={'12vw'}
-              wrapperHeight={'12'}
+              wrapperWidth={'w-[12vw]'}
+              wrapperHeight={''}
               wrapperClassName={'member-card'}
             />
           </div>
