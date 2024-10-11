@@ -30,7 +30,13 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
             data-category={member.committeeName}
           >
             {/*  */}
-            <CommitteeMemberCard memberName={member.memberName} />
+            <CommitteeMemberCard
+              memberName={member.memberName}
+              imageSrc={`/images/committee/${member.memberName}.jpeg`}
+              wrapperHeight="h-[200px]"
+              wrapperWidth="w-[300px]"
+              wrapperClassName="member-card"
+            />
           </div>
         ))}
       </div>
