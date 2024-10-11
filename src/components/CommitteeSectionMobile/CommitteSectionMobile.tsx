@@ -38,7 +38,13 @@ const CommitteeSectionMobile: React.FC<CommitteeSectionMobileProps> = ({
               key={index}
             >
               <div className="mt-[-15px]">
-                <CommitteeMemberCard memberName={committee.memberName} />
+                <CommitteeMemberCard
+                  memberName={committee.memberName}
+                  imageSrc={`/images/committee/${committee.memberName}.jpeg`}
+                  wrapperWidth={''}
+                  wrapperHeight={''}
+                  wrapperClassName={'member-card'}
+                />
               </div>
             </div>
           );

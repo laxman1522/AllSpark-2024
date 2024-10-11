@@ -29,8 +29,13 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
             className={`element-item ${member.committeeName} absolute left-1/2`}
             data-category={member.committeeName}
           >
-            {/*  */}
-            <CommitteeMemberCard memberName={member.memberName} />
+            <CommitteeMemberCard
+              memberName={member.memberName}
+              imageSrc={`/images/committee/${member.memberName}.jpeg`}
+              wrapperWidth={'12vw'}
+              wrapperHeight={'12'}
+              wrapperClassName={'member-card'}
+            />
           </div>
         ))}
       </div>
