@@ -1,4 +1,3 @@
-import CommitteeMemberCard from '../CommitteeMemberCard/CommitteeMemberCard';
 import CommitteeMemberList from '../CommitteMemberList/CommitteeMemberList';
 import './CommitteeSectionMobile.scss';
 
