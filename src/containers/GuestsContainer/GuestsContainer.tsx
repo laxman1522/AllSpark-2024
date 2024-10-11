@@ -56,7 +56,7 @@ const GuestsContainer = () => {
   return (
     <div className="h-screen relative">
       <div id="guests-section" className="absolute h-full w-full">
-        <div className="guests-mobile my-40">
+        <div className="guests-mobile my-40 px-12">
           <SectionHeader headerText={GUESTS.ourGuests} />
           <div className="mt-16 mb-12">
             <Splide

@@ -53,6 +53,10 @@ export const GUESTS = {
   ourGuests: 'Our Guests',
 };
 
+export const COMMITTEE = {
+  committee: 'Committee',
+};
+
 export const SLIDER_CONSTANTS = {
   autoScrollTime: 4000,
   fadingTime: 300,
