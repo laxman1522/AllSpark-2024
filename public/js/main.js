@@ -67,13 +67,13 @@ $(document).ready(function ($) {
     }
   }
 
-  function isotopeImplement() {
+  function isotopeImplement(currentSelected) {
     // Initialize Isotope after all images are loaded
     if (document.querySelector('.members-grid')) {
       var iso = new Isotope('.members-grid', {
         itemSelector: '.element-item',
         layoutMode: 'masonry',
-        filter: '.core-organisers',
+        filter: currentSelected,
       });
 
       // bind filter button click
@@ -126,7 +126,8 @@ $(document).ready(function ($) {
             }),
         ),
     ).then(() => {
-      isotopeImplement();
+      var currentClass = document.querySelector('.is-checked').getAttribute('data-filter');
+      isotopeImplement(currentClass);
     });
   });
 
@@ -140,6 +141,6 @@ $(document).ready(function ($) {
           }),
       ),
   ).then(() => {
-    isotopeImplement();
+    isotopeImplement('.core-organisers');
   });
 });
