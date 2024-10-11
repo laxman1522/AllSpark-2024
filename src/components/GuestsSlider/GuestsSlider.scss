@@ -3,6 +3,9 @@
 }
 .slick-slide.active {
   width: 7% !important;
+  .tile-wrap {
+    opacity: 1;
+  }
   img {
     border-radius: 60px;
   }

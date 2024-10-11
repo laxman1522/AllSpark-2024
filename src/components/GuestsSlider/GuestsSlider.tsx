@@ -32,7 +32,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
   const getSlides = () => {
     return guests?.map((guest, index: number) => (
       <div className="wrap px-5 w-full" data-index={index + 1} key={index}>
-        <div className="tile-wrap w-full float-left relative z-10 h-[60vh]">
+        <div className="tile-wrap w-full float-left relative z-10 h-[60vh] bg-[#AD6B8780] rounded-[140px] opacity-80">
           <Image
             src={guest?.imageUrl || ''}
             alt={guest?.name || ''}
@@ -53,7 +53,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
     ));
   };
   return (
-    <div className="guests-desktop my-40 mx-auto px-16 pr-40">
+    <div className="guests-desktop my-40 mx-auto px-16 pr-40 xl:pr-60">
       <div className="flex justify-between first-line:">
         <SectionHeader headerText={heading} />
 
