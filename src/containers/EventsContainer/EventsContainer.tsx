@@ -48,7 +48,7 @@ const EventsContainer = () => {
 
   return (
     <div className="event-container h-screen relative flex flex-col justify-around">
-      <div className="event-section-header mt-[18vh] mb-11">
+      <div className="event-section-header mt-[18vh] mb-11 px-12">
         <SectionHeader headerText="Events" />
       </div>
       <div className="event-content flex flex-col w-[85%] mr-auto text-events-color h-full gap-[6rem] lg:gap-[4rem]">
