@@ -23,7 +23,17 @@ const Committee = () => {
         bubbles: true,
         cancelable: true,
       });
-      firstButtonNav.dispatchEvent(event);
+      let start;
+      function dispatchAfterDelay(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        if (elapsed >= 1000) {
+          firstButtonNav.dispatchEvent(event);
+        } else {
+          requestAnimationFrame(dispatchAfterDelay);
+        }
+      }
+      requestAnimationFrame(dispatchAfterDelay);
     }
   }, [windowSize]);
 
