@@ -1,5 +1,5 @@
 import { getCommitteeAndMembersNames } from '@/utils/data-utils';
-import CommitteeMemberCard from '../CommitteeMemberCard/CommitteeMemberCard';
+import CommitteeMemberList from '../CommitteMemberList/CommitteeMemberList';
 
 interface CommitteeSectionProps {
   committee: string;
@@ -12,6 +12,7 @@ interface CommitteeSectionProps {
  */
 const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
   const committeeMembersAndNames = getCommitteeAndMembersNames();
+  const committeeMembersClassName = 'element-item absolute left-1/2';
 
   return (
     <div className="relative w-[78%] h-[100%] flex flex-col gap-4 px-[60px] pt-[50px]">
@@ -23,16 +24,10 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
         <span className="header-line h-[0.4vh] bg-[#F3BAA7] w-[4.5vw] max-[767px]:w-[20vw] max-[767px]:h-[4px]"></span>
       </div>
       <div className="members-grid w-[100%]">
-        {committeeMembersAndNames.map((member, index) => (
-          <div
-            key={index}
-            className={`element-item ${member.committeeName} absolute left-1/2`}
-            data-category={member.committeeName}
-          >
-            {/*  */}
-            <CommitteeMemberCard memberName={member.memberName} />
-          </div>
-        ))}
+        <CommitteeMemberList
+          committeeMembersAndNames={committeeMembersAndNames}
+          committeeMembersClassName={committeeMembersClassName}
+        />
       </div>
     </div>
   );

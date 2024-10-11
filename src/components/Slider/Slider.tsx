@@ -17,6 +17,31 @@ interface SliderProps {
   }[];
 }
 
+const generateImageSlides = (
+  items: {
+    imageUrl: string;
+    description: string;
+    year: number;
+    recapUrl: string;
+  }[],
+) => {
+  return items?.map((item, index) => (
+    <div
+      key={index}
+      className={`flex-shrink-0 flex-col w-full h-full flex items-center text-white text-xl font-bold select-none`}
+    >
+      <div className="w-full h-full object-cover m-0 relative">
+        <Image
+          src={item?.imageUrl}
+          alt={item?.description}
+          fill
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
+    </div>
+  ));
+};
+
 export default function Slider({ sliderName, items }: SliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -104,6 +129,8 @@ export default function Slider({ sliderName, items }: SliderProps) {
     }
   };
 
+  const imageSlides = generateImageSlides(items);
+
   useEffect(() => {
     setIsFading(false);
 
@@ -156,21 +183,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           onTouchEnd={handleDragEnd}
           onMouseLeave={handleDragEnd}
         >
-          {items?.map((item, index) => (
-            <div
-              key={index}
-              className={`flex-shrink-0 flex-col w-full h-full flex items-center text-white text-xl font-bold select-none`}
-            >
-              <div className="w-full h-full object-cover m-0 relative">
-                <Image
-                  src={item?.imageUrl}
-                  alt={item?.description}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-          ))}
+          {imageSlides}
         </div>
       </div>
 

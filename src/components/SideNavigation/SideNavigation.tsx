@@ -36,6 +36,31 @@ export default function SideNavigation() {
   };
   const { windowSize } = useWindowSize();
 
+  const generateSections = () => {
+    return SECTIONS?.map((section) => (
+      <li key={section?.number} className="text-center">
+        <a
+          href={section?.id}
+          data-number={section?.number}
+          aria-label={section?.label}
+        >
+          <span className="navbar-dot cursor-pointer"></span>
+          <span className="navbar-label">{section?.label}</span>
+        </a>
+      </li>
+    ));
+  };
+
+  const generateMobileNavigator = () => {
+    return rows.map((_, rowIndex) => (
+      <span className="row" key={`row-${rowIndex}`}>
+        {boxes.map((_, boxIndex) => (
+          <span className="box" key={`box-${boxIndex}`}></span>
+        ))}
+      </span>
+    ));
+  };
+
   useEffect(() => {
     if (navRef.current) {
       gsap.set(navRef.current, {
@@ -53,18 +78,7 @@ export default function SideNavigation() {
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
         <ul ref={navRef} className="hidden">
-          {SECTIONS?.map((section) => (
-            <li key={section.number} className="text-center">
-              <a
-                href={section.id}
-                data-number={section.number}
-                aria-label={section.label}
-              >
-                <span className="navbar-dot cursor-pointer"></span>
-                <span className="navbar-label">{section.label}</span>
-              </a>
-            </li>
-          ))}
+          {generateSections()}
         </ul>
         <div
           className="x-icon justify-end items-center cursor-pointer text-[#f9f1d5] hidden"
@@ -82,13 +96,7 @@ export default function SideNavigation() {
         href="#"
         aria-label="nav-menu"
       >
-        {rows.map((_, rowIndex) => (
-          <span className="row" key={`row-${rowIndex}`}>
-            {boxes.map((_, boxIndex) => (
-              <span className="box" key={`box-${boxIndex}`}></span>
-            ))}
-          </span>
-        ))}
+        {generateMobileNavigator()}
       </a>
 
       <CSSTransition

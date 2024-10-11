@@ -15,7 +15,6 @@ const figTree = Figtree({
 /**
  * EventDetailsCounter component displays a counting animation for event statistics.
  *
- * @component
  * @param {EventDetailsCounterProps} props - The properties for the EventDetailsCounter component.
  * @param {number} props.count - The count value to be displayed.
  * @param {string} props.title - The title of the statistic.
@@ -29,7 +28,7 @@ const EventDetailsCounter: React.FC<EventDetailsCounterProps> = ({
 }: EventDetailsCounterProps) => {
   return (
     <div
-      className={`events-counter-card flex flex-col justify-center items-center gap-2 ${figTree.className}`}
+      className={`events-counter-card flex flex-col justify-center items-center gap-2 ${figTree?.className}`}
     >
       <div className="events-counter-count flex lg:w-44 lg:text-[54px] text-events-counter-text-color bg-events-counter-bg-color rounded-[20px] justify-center items-center font-black md:w-28 md:text-[36px] text-[20px]">
         <CountUp start={0} end={count} duration={3} />

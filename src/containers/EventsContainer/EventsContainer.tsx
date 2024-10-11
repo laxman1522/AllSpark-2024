@@ -24,8 +24,8 @@ const EventsContainer = () => {
         <SplideSlide key={index}>
           <EventCard
             key={index}
-            title={category.name}
-            description={category.description}
+            title={category?.name}
+            description={category?.description}
             windowWidth={isSplideViewSize}
           />
         </SplideSlide>
@@ -34,12 +34,12 @@ const EventsContainer = () => {
   };
 
   const getCategorySlides = () => {
-    return categoriesData.map((category, index) => {
+    return categoriesData?.map((category, index) => {
       return (
         <EventCard
           key={index}
-          title={category.name}
-          description={category.description}
+          title={category?.name}
+          description={category?.description}
           windowWidth={isSplideViewSize}
         />
       );
@@ -66,8 +66,8 @@ const EventsContainer = () => {
             return (
               <EventDetailsCounter
                 key={index}
-                count={event.count}
-                title={event.title}
+                count={event?.count}
+                title={event?.title}
               />
             );
           })}

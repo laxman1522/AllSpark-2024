@@ -8,7 +8,6 @@ interface EventCardProps {
 /**
  * EventCard component displays the title and description of an event category.
  *
- * @component
  * @param {EventCardProps} props - The properties for the EventCard component.
  * @param {string} props.title - The title of the event category.
  * @param {string} props.description - A brief description of the event category.

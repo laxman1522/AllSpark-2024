@@ -48,6 +48,6 @@ export const calculateTarget = (
   targetDate.setDate(targetDate.getDate() + days);
   targetDate.setHours(targetDate.getHours() + hours);
   targetDate.setMinutes(targetDate.getMinutes() + minutes);
-  targetDate.setSeconds(targetDate.getMonth() + seconds);
+  targetDate.setSeconds(targetDate.getSeconds() + seconds);
   return targetDate;
 };
