@@ -1,6 +1,6 @@
 import memoriesData from '../../data/memories_data.json';
 import guestsData from '../../data/guest_details.json';
-
+import { speakers } from '../../data/speakers.json';
 /**
  * @description An util to get the memories
  * @version 1.0.0
@@ -44,4 +44,15 @@ export const getAllGuests = () => {
 
 export const getMemories = () => {
   return memoriesData.memories || [];
+};
+
+export const getAllSpeakers = () => {
+  let allSpeakers = Object.values(speakers);
+  allSpeakers.sort((a, b) => {
+    console.log(a, b);
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    return nameA.localeCompare(nameB);
+  });
+  return allSpeakers;
 };
