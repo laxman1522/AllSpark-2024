@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import SliderNav from '../SliderNav/SliderNav';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import { ArrowUpRight } from 'lucide-react';
-import './Slider.scss';
 import { SLIDER_CONSTANTS } from '@/constants/constants';
 import Image from 'next/image';
 
@@ -135,7 +134,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
       </div>
 
       <div
-        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[55vh] w-[80vw] image-slider"
+        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[55vh] w-[80vw]"
         ref={containerRef}
       >
         <div

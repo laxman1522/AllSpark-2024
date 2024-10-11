@@ -86,9 +86,8 @@ export const getCommitteeAndMembersNames = () => {
 };
 
 export const getAllSpeakers = () => {
-  let allSpeakers = Object.values(speakers);
+  const allSpeakers = Object.values(speakers);
   allSpeakers.sort((a, b) => {
-    console.log(a, b);
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();
     return nameA.localeCompare(nameB);
