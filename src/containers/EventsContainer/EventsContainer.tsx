@@ -1,25 +1,77 @@
-import ComingSoon from '@/components/ComingSoon/ComingSoon';
 import React from 'react';
-import Image from 'next/image';
-import cdwlogo from '../../../public/images/cdwLogo.png';
+import SectionHeader from '@/components/SectionHeader/SectionHeader';
+import {
+  constructEventData,
+  getEventDetails,
+  isSplideViewCompatible,
+} from '@/utils/event-utils';
+import EventCard from '@/components/EventCard/EventCard';
+import EventDetailsCounter from '@/components/EventDetailsCounter/EventDetailsCounter';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { EVENTS_MOBILE_SPLIDE_OPTIONS } from '@/constants/option-constants';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
+import './EventsContainer.scss';
 
 const EventsContainer = () => {
-  return (
-    <div className="h-screen relative">
-      <div
-        id="events-section"
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      >
-        <ComingSoon />
-      </div>
-      <div className="footer-logo p-10 absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center">
-        <Image
-          src={cdwlogo}
-          alt="cdw-logo"
-          className="object-contain"
-          width={105}
-          height={56}
+  const { windowWidth } = useWindowSize();
+  const eventData = constructEventData();
+  const categoriesData = getEventDetails();
+  const isSplideViewSize = isSplideViewCompatible(windowWidth);
+
+  const getMobileCategorySlides = () => {
+    return categoriesData.map((category, index) => {
+      return (
+        <SplideSlide key={index}>
+          <EventCard
+            key={index}
+            title={category.name}
+            description={category.description}
+            windowWidth={isSplideViewSize}
+          />
+        </SplideSlide>
+      );
+    });
+  };
+
+  const getCategorySlides = () => {
+    return categoriesData.map((category, index) => {
+      return (
+        <EventCard
+          key={index}
+          title={category.name}
+          description={category.description}
+          windowWidth={isSplideViewSize}
         />
+      );
+    });
+  };
+
+  return (
+    <div className="event-container h-screen relative flex flex-col justify-around">
+      <div className="event-section-header mt-[18vh] mb-11 px-12">
+        <SectionHeader headerText="Events" />
+      </div>
+      <div className="event-content flex flex-col w-[85%] mr-auto text-events-color h-full gap-[6rem] lg:gap-[4rem]">
+        <div className="event-categories w-full flex flex-row justify-around items-stretch ml-10 text-events-counter-text-color">
+          {isSplideViewSize ? (
+            <Splide options={EVENTS_MOBILE_SPLIDE_OPTIONS}>
+              {getMobileCategorySlides()}
+            </Splide>
+          ) : (
+            getCategorySlides()
+          )}
+        </div>
+        <div className="events-counter flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-12 font-bold gap-y-4	">
+          {eventData.map((event, index) => {
+            return (
+              <EventDetailsCounter
+                key={index}
+                count={event.count}
+                title={event.title}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import SectionHeader from '../SectionHeader/SectionHeader';
 import { ArrowUpRight } from 'lucide-react';
 import './Slider.scss';
 import { SLIDER_CONSTANTS } from '@/constants/constants';
+import Image from 'next/image';
+
 interface SliderProps {
   sliderName: string;
   items: {
@@ -133,11 +135,11 @@ export default function Slider({ sliderName, items }: SliderProps) {
       </div>
 
       <div
-        className=" relative overflow-hidden rounded-lg border-4 border-text-color max-[1024px]:h-[80%] max-[1440px]:h-[70%]  h-[55%] image-slider"
+        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[55vh] w-[80vw] image-slider"
         ref={containerRef}
       >
         <div
-          className={`flex transition-transform duration-300 ease-in-out ${
+          className={`flex transition-transform duration-300 ease-in-out w-full h-full ${
             isDragging ? 'transition-none' : ''
           }`}
           style={{
@@ -157,15 +159,15 @@ export default function Slider({ sliderName, items }: SliderProps) {
           {items?.map((item, index) => (
             <div
               key={index}
-              className={`flex-shrink-0 flex-col w-full flex items-center text-white text-xl font-bold select-none`}
+              className={`flex-shrink-0 flex-col w-full h-full flex items-center text-white text-xl font-bold select-none`}
             >
-              <div className="w-full h-full object-cover  m-0 ">
-                <img
-                  className="w-full h-full max-w-full "
+              <div className="w-full h-full object-cover m-0 relative">
+                <Image
                   src={item?.imageUrl}
-                  draggable="false"
                   alt={item?.description}
-                ></img>
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             </div>
           ))}
@@ -189,6 +191,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
             href={items[currentIndex]?.recapUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Go to ${items[currentIndex]?.year}`}
           >
             <ArrowUpRight
               size={16}

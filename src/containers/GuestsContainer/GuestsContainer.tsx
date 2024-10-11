@@ -33,13 +33,13 @@ const GuestsContainer = () => {
     return guests?.map((guest, index) => {
       return (
         <SplideSlide key={index}>
-          <div className="h-full rounded-[40px] overflow-hidden">
+          <div className="h-full rounded-[40px] overflow-hidden relative">
             <Image
               src={guest?.imageUrl || ''}
               alt={guest?.name || ''}
               fill
-              objectFit="cover"
-              className="rounded-[40px] object-top"
+              style={{ objectFit: 'cover' }}
+              className="rounded-[40px]  object-top"
             />
             <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">
               <p className="text-[20px] font-semibold uppercase text-center text-button-color">
@@ -58,7 +58,7 @@ const GuestsContainer = () => {
   return (
     <div className="h-screen relative">
       <div id="guests-section" className="absolute h-full w-full">
-        <div className="lg:hidden guests-mobile my-40">
+        <div className="lg:hidden guests-mobile my-40 px-12">
           <SectionHeader headerText={GUESTS.ourGuests} />
           <div className="mt-16 mb-12">
             <Splide

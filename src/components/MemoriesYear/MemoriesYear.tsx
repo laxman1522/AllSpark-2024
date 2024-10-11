@@ -23,6 +23,7 @@ const MemoriesYear: React.FC<MemoriesYearProps> = ({
         href={memoryURL}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={`Go to ${memoryYear}`}
       >
         <ArrowUpRight
           size={16}

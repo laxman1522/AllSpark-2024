@@ -1,0 +1,58 @@
+{
+  "guests": [
+    {
+      "name": "Mike Gutknecht",
+      "designation": "Director Global Service Delivery",
+      "imageUrl": ""
+    },
+    {
+      "name": "Stephen Morris",
+      "designation": "Practice VP Global Delivery",
+      "imageUrl": ""
+    },
+    {
+      "name": "Nam Ahuja",
+      "designation": "Senior Practice Manager, Global Delivery",
+      "imageUrl": ""
+    }
+  ],
+  "committee": [
+    {
+      "committeeName": "Core Organisers",
+      "members": [
+        {
+          "name": "Jeyanthi Veeramani",
+          "imageUrl": ""
+        },
+        {
+          "name": "Soumya Vikram",
+          "imageUrl": ""
+        }
+      ]
+    },
+
+    {
+      "committeeName": "Website Developers",
+      "members": [
+        {
+          "name": "Rubesh Udayakumar",
+          "imageUrl": ""
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "TECH TALKS",
+      "description": "Designed to inspire and educate everyone on the latest solutions, frameworks and future prospects across various technologies including Generative AI, LLM, Bots, DevOps, AWS Cloud, Networking, Digital Commerce, UX etc.,"
+    },
+    {
+      "name": "PARTNER SESSIONS",
+      "description": "Special partner sessions presented by ServiceNow and Snowflake will provide an opportunity to acquire fresh perspectives, get expert insights, know the latest developments and broaden your understanding in both the domains"
+    },
+    {
+      "name": "TECH TALKS",
+      "description": "Designed to inspire and educate everyone on the latest solutions, frameworks and future prospects across various technologies including Generative AI, LLM, Bots, DevOps, AWS Cloud, Networking, Digital Commerce, UX etc.,"
+    }
+  ]
+}

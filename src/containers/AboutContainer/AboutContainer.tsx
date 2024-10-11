@@ -8,7 +8,6 @@ const AboutContainer = () => {
   return (
     <div className="h-screen relative">
       <div id="about-section" className="pt-[18vh]">
-        {/* <SectionHeader headerText="About AllSpark'24" /> */}
         <VideoPlayer videoUrl={ALLSPARK_VIDEO} />
       </div>
     </div>

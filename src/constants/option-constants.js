@@ -70,3 +70,18 @@ export const GUEST_DESKTOP_SLICK_OPTIONS = {
   arrows: false,
   infinite: true,
 };
+
+export const EVENTS_MOBILE_SPLIDE_OPTIONS = {
+  type: 'fade',
+  drag: 'true',
+  snap: true,
+  lazyLoad: 'nearby',
+  arrows: false,
+  pagination: true,
+  speed: 1000,
+  easing: 'cubic-bezier(0.6, 0.05, 0.2, 0.9)',
+  autoplay: 'true',
+  interval: 5000,
+  width: '85vw',
+  rewind: 'true',
+};
