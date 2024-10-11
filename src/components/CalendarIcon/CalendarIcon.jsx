@@ -16,7 +16,7 @@ const CalendarIcon = () => {
       className={`${changa.className} cursor-pointer text-center font-bold  md:text-[0.6rem] text-[0.3rem] uppercase`}
     >
       <div className="relative inline-block">
-        <div className="absolute flex justify-between top-0 md:left-[11px] left-[6px] md:w-[25px] w-[12px]">
+        <div className="absolute flex justify-between top-0 md:left-[8px] left-[6px] md:w-[25px] w-[12px]">
           <div className="relative md:w-[7px] w-[3px] md:h-[7px] h-[2.5px] border border-[#faf1d5] rounded-full bg-[#370f1f]">
             <div className="absolute md:left-[1px] top-[-4px] md:w-[3px] w-[1px] md:h-[8px] h-[4px] bg-[#faf1d5] rounded-[15px]"></div>
           </div>
