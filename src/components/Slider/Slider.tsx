@@ -166,6 +166,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
                   src={item?.imageUrl}
                   alt={item?.description}
                   fill
+                  draggable="false"
                   style={{ objectFit: 'cover' }}
                 />
               </div>
