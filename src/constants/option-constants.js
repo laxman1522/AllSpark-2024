@@ -31,16 +31,44 @@ export const GUEST_MOBILE_SPLIDE_OPTIONS = {
   type: 'loop',
   drag: 'true',
   snap: true,
-  gap: '1.5rem',
+  gap: '2rem',
   lazyLoad: 'nearby',
   padding: '3rem',
-  height: '43.75vh',
+  height: '50vh',
   arrows: false,
   pagination: false,
   speed: 1000,
   easing: 'cubic-bezier( 0.25, 0.46, 0.45, 0.94 )',
-  autoplay: 'true',
   interval: 5000,
+  clones: 4,
+  breakpoints: {
+    1024: {
+      perPage: 2,
+    },
+    767: {
+      perPage: 1,
+    },
+  },
+};
+
+export const GUEST_DESKTOP_SLICK_OPTIONS = {
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 5,
+  speed: 500,
+  focusOnSelect: true,
+  responsive: [
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 3,
+        centerMode: true,
+        infinite: true,
+      },
+    },
+  ],
+  arrows: false,
+  infinite: true,
 };
 
 export const EVENTS_MOBILE_SPLIDE_OPTIONS = {
