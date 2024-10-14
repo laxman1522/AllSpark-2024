@@ -36,6 +36,9 @@ const CommitteeSectionMobile: React.FC<CommitteeSectionMobileProps> = ({
         <CommitteeMemberList
           committeeMembersAndNames={committeeAndMembersList}
           committeeMembersClassName={committeeMembersClassName}
+          wrapperWidth={''}
+          wrapperHeight={''}
+          wrapperClassName={'member-card'}
         />
       </div>
     </div>

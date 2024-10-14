@@ -46,6 +46,18 @@ const EventsContainer = () => {
     });
   };
 
+  const generateEventCounter = () => {
+    return eventData.map((event, index) => {
+      return (
+        <EventDetailsCounter
+          key={index}
+          count={event?.count}
+          title={event?.title}
+        />
+      );
+    });
+  };
+
   return (
     <div className="event-container h-screen relative flex flex-col justify-around">
       <div className="event-section-header mt-[18vh] mb-11 px-12">
@@ -62,15 +74,7 @@ const EventsContainer = () => {
           )}
         </div>
         <div className="events-counter flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-12 font-bold gap-y-4	">
-          {eventData.map((event, index) => {
-            return (
-              <EventDetailsCounter
-                key={index}
-                count={event?.count}
-                title={event?.title}
-              />
-            );
-          })}
+          {generateEventCounter()}
         </div>
       </div>
     </div>

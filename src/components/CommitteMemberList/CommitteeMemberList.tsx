@@ -3,6 +3,9 @@ import CommitteeMemberCard from '../CommitteeMemberCard/CommitteeMemberCard';
 interface CommitteeMemberListProps {
   committeeMembersAndNames: Array<Committee>;
   committeeMembersClassName: string;
+  wrapperWidth: string;
+  wrapperHeight: string;
+  wrapperClassName: string;
 }
 
 interface Committee {
@@ -18,6 +21,9 @@ interface Committee {
 const generateCommitteeMembers = (
   committeeMembersAndNames: Array<Committee>,
   committeeMembersClassName: string,
+  wrapperClassName: string,
+  wrapperHeight: string,
+  wrapperWidth: string,
 ) => {
   return committeeMembersAndNames?.map((member: Committee, index: number) => (
     <div
@@ -25,7 +31,13 @@ const generateCommitteeMembers = (
       className={`${member.committeeName} ${committeeMembersClassName}`}
       data-category={member.committeeName}
     >
-      <CommitteeMemberCard memberName={member.memberName} />
+      <CommitteeMemberCard
+        memberName={member.memberName}
+        imageSrc={`/images/committee/${member.memberName}.jpeg`}
+        wrapperWidth={wrapperWidth}
+        wrapperHeight={wrapperHeight}
+        wrapperClassName={wrapperClassName}
+      />
     </div>
   ));
 };
@@ -38,10 +50,16 @@ const generateCommitteeMembers = (
 const CommitteeMemberList: React.FC<CommitteeMemberListProps> = ({
   committeeMembersAndNames,
   committeeMembersClassName,
+  wrapperWidth,
+  wrapperHeight,
+  wrapperClassName,
 }) => {
   const committeMembers = generateCommitteeMembers(
     committeeMembersAndNames,
     committeeMembersClassName,
+    wrapperClassName,
+    wrapperHeight,
+    wrapperWidth,
   );
 
   return <>{committeMembers}</>;

@@ -27,6 +27,9 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
         <CommitteeMemberList
           committeeMembersAndNames={committeeMembersAndNames}
           committeeMembersClassName={committeeMembersClassName}
+          wrapperWidth={'w-[12vw]'}
+          wrapperHeight={''}
+          wrapperClassName={'member-card'}
         />
       </div>
     </div>
