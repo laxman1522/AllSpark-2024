@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import './CommitteeMemberCard.scss';
-
+import Image from 'next/image';
 interface CommitteeMemberCardProps {
   memberName: string;
   imageSrc: string;
@@ -27,7 +26,6 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
     >
       <Image
         src={imageSrc || ''}
-        alt={memberName || ''}
         width={0}
         height={0}
         sizes="100vw"
@@ -38,6 +36,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
           borderRadius: '6px',
         }}
         objectFit="cover"
+        alt={memberName || ''}
         loading={'lazy'}
       />
       <div className="absolute bottom-0 w-full flex items-center p-1 justify-center flex-col gap-1 bg-committee-background bg-no-repeat bg-opacity-10 rounded-b-[6px]">
