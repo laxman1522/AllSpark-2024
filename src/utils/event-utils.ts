@@ -69,7 +69,7 @@ export const getSessions = () => {
 /**
  * Retrieves and sorts all speaker details from the schedule by name.
  * @return {Array<Object>} An array of speaker objects, sorted alphabetically by name.
- * @author [Hariharan Muralidharan]
+ * @author [Praneash Krishnamurthi]
  */
 export const getAllSpeakers = () => {
   const allSpeakers = Object.values(schedule?.speakers);

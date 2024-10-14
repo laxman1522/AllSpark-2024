@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import SectionHeader from '../SectionHeader/SectionHeader';
-import { getAllSpeakers } from '@/utils/data-utils';
+import { getAllSpeakers } from '@/utils/event-utils';
 import './Speakers.scss';
 import CommitteeMemberCard from '../CommitteeMemberCard/CommitteeMemberCard';
 import SpeakersModal from '../SpeakersModal/SpeakersModal';
