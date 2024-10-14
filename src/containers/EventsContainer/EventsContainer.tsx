@@ -24,8 +24,8 @@ const EventsContainer = () => {
         <SplideSlide key={index}>
           <EventCard
             key={index}
-            title={category.name}
-            description={category.description}
+            title={category?.name}
+            description={category?.description}
             windowWidth={isSplideViewSize}
           />
         </SplideSlide>
@@ -34,13 +34,25 @@ const EventsContainer = () => {
   };
 
   const getCategorySlides = () => {
-    return categoriesData.map((category, index) => {
+    return categoriesData?.map((category, index) => {
       return (
         <EventCard
           key={index}
-          title={category.name}
-          description={category.description}
+          title={category?.name}
+          description={category?.description}
           windowWidth={isSplideViewSize}
+        />
+      );
+    });
+  };
+
+  const generateEventCounter = () => {
+    return eventData.map((event, index) => {
+      return (
+        <EventDetailsCounter
+          key={index}
+          count={event?.count}
+          title={event?.title}
         />
       );
     });
@@ -62,15 +74,7 @@ const EventsContainer = () => {
           )}
         </div>
         <div className="events-counter flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-12 font-bold gap-y-4	">
-          {eventData.map((event, index) => {
-            return (
-              <EventDetailsCounter
-                key={index}
-                count={event.count}
-                title={event.title}
-              />
-            );
-          })}
+          {generateEventCounter()}
         </div>
       </div>
     </div>

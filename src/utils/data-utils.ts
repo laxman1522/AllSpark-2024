@@ -1,14 +1,14 @@
 import memoriesData from '../../data/memories_data.json';
 import guestsData from '../../data/guest_details.json';
 import committeeData from '../../data/committee_details.json';
-import { speakers } from '../../data/speakers.json';
+
 /**
  * @description An util to get the memories
  * @version 1.0.0
  * @author [Ashok Natarajan]
  */
 export const getMobileMemories = () => {
-  const memories = processPairs(memoriesData.memories);
+  const memories = processPairs(memoriesData?.memories);
   return memories;
 };
 
@@ -21,7 +21,7 @@ const processPairs = (arr: any) => {
   return arr.reduce((acc: any, _: any, index: number) => {
     if (index % 2 === 0) {
       // Check if the index is even
-      const pair = arr.slice(index, index + 2); // Get the current pair
+      const pair = arr?.slice(index, index + 2); // Get the current pair
       acc.push(pair); // Add the pair to the accumulator
     }
     return acc;
@@ -34,7 +34,7 @@ const processPairs = (arr: any) => {
  * @author [Charanraj Thiyagarajan]
  */
 export const getAllGuests = () => {
-  const allGuests = guestsData.guests || [];
+  const allGuests = guestsData?.guests || [];
   allGuests.sort((a, b) => {
     const nameA = a.name?.toLowerCase() || '';
     const nameB = b.name?.toLowerCase() || '';
@@ -44,7 +44,7 @@ export const getAllGuests = () => {
 };
 
 export const getMemories = () => {
-  return memoriesData.memories || [];
+  return memoriesData?.memories || [];
 };
 
 /**
@@ -53,10 +53,10 @@ export const getMemories = () => {
  * @author [Rubesh Udayakumar]
  */
 export const getCommitteeClassNames = () => {
-  return committeeData.committee.map((committee) => {
+  return committeeData?.committee?.map((committee) => {
     return {
-      name: committee.committeeName,
-      className: committee.committeeName
+      name: committee?.committeeName,
+      className: committee?.committeeName
         .replaceAll(' ', '-')
         .replaceAll('&', '-')
         .toLowerCase(),
@@ -71,26 +71,16 @@ export const getCommitteeClassNames = () => {
  */
 export const getCommitteeAndMembersNames = () => {
   const result: { committeeName: string; memberName: string }[] = [];
-  committeeData.committee.forEach((committee) => {
-    committee.members.forEach((member) => {
+  committeeData?.committee?.forEach((committee) => {
+    committee?.members?.forEach((member) => {
       result.push({
-        committeeName: committee.committeeName
+        committeeName: committee?.committeeName
           .replaceAll(' ', '-')
           .replaceAll('&', '-')
           .toLowerCase(),
-        memberName: member.name,
+        memberName: member?.name,
       });
     });
   });
   return result;
-};
-
-export const getAllSpeakers = () => {
-  const allSpeakers = Object.values(speakers);
-  allSpeakers.sort((a, b) => {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    return nameA.localeCompare(nameB);
-  });
-  return allSpeakers;
 };

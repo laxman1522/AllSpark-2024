@@ -42,12 +42,11 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
           objectPosition: 'top',
           borderRadius: '6px',
         }}
-        objectFit="cover"
         alt={memberName || ''}
         loading={'lazy'}
-      ></Image>
+      />
       <div className="absolute bottom-0 w-full flex items-center p-1 justify-center flex-col gap-1 bg-committee-background bg-no-repeat bg-opacity-10 rounded-b-[6px]">
-        <p className="text-[1rem] max-[767px]:text-[12px] max-[1024px]:text-[0.6rem]  text-center text-[#F3BAA7] p-1">
+        <p className="text-[1rem] max-[767px]:text-[12px] max-[1024px]:text-[0.6rem]  text-center text-counter-color p-1">
           {memberName}
         </p>
       </div>

@@ -71,3 +71,7 @@ export const EVENT_COUNTER = {
   REGISTRATION_COUNT: 60,
   ATTENDEES_COUNT: 600,
 };
+
+export const TIMER = {
+  TARGET_DATE: 'Oct 25, 2024 10:00:00',
+};
