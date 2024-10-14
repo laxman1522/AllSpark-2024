@@ -37,19 +37,6 @@ const CommitteeSectionMobile: React.FC<CommitteeSectionMobileProps> = ({
           committeeMembersAndNames={committeeAndMembersList}
           committeeMembersClassName={committeeMembersClassName}
         />
-        {/* {committeeAndMembersList.map((committee: Committee, index: number) => {
-          return (
-            <div
-              className={`element-item w-[50%] m-auto mt-4 overflow-y-scroll pb-4 committee-section-mobile ${committee.committeeName}`}
-              data-category={committee.committeeName}
-              key={index}
-            >
-              <div className=" mt-[-15px]">
-                <CommitteeMemberCard memberName={committee.memberName} />
-              </div>
-            </div>
-          );
-        })} */}
       </div>
     </div>
   );
