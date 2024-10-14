@@ -11,6 +11,7 @@ interface CommitteeMemberListProps {
 interface Committee {
   committeeName: string;
   memberName: string;
+  imageSrc: string;
 }
 
 /**
@@ -33,7 +34,7 @@ const generateCommitteeMembers = (
     >
       <CommitteeMemberCard
         memberName={member.memberName}
-        imageSrc={`/images/committee/${member.memberName}.jpeg`}
+        imageSrc={member.imageSrc}
         wrapperWidth={wrapperWidth}
         wrapperHeight={wrapperHeight}
         wrapperClassName={wrapperClassName}

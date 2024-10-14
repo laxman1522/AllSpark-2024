@@ -9,6 +9,7 @@ interface CommitteeSectionMobileProps {
 interface Committee {
   committeeName: string;
   memberName: string;
+  imageSrc: string;
 }
 
 /**
