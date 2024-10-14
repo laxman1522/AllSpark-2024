@@ -1,7 +1,7 @@
 import memoriesData from '../../data/memories_data.json';
 import guestsData from '../../data/guest_details.json';
 import committeeData from '../../data/committee_details.json';
-
+import { speakers } from '../../data/speakers.json';
 /**
  * @description An util to get the memories
  * @version 1.0.0
@@ -83,4 +83,14 @@ export const getCommitteeAndMembersNames = () => {
     });
   });
   return result;
+};
+
+export const getAllSpeakers = () => {
+  const allSpeakers = Object.values(speakers);
+  allSpeakers.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    return nameA.localeCompare(nameB);
+  });
+  return allSpeakers;
 };

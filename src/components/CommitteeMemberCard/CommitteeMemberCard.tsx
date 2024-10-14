@@ -1,3 +1,4 @@
+'use client';
 import './CommitteeMemberCard.scss';
 import Image from 'next/image';
 interface CommitteeMemberCardProps {
@@ -6,6 +7,8 @@ interface CommitteeMemberCardProps {
   wrapperWidth: string;
   wrapperHeight: string;
   wrapperClassName: string;
+  enableOnClick?: boolean;
+  handleClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 /**
@@ -19,10 +22,13 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
   wrapperWidth,
   wrapperHeight,
   wrapperClassName,
+  enableOnClick = false,
+  handleClick,
 }) => {
   return (
     <div
       className={`${wrapperHeight} ${wrapperWidth} ${wrapperClassName} rounded-[10px] border-[3px] border-button-color relative m-5 max-[767px]:my-0 max-[767px]:mt-4 max-[767px]:mx-3`}
+      onClick={enableOnClick ? handleClick : (): void => {}}
     >
       <Image
         src={imageSrc || ''}
@@ -33,6 +39,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
           width: '100%',
           height: '100%',
           objectFit: 'cover',
+          objectPosition: 'top',
           borderRadius: '6px',
         }}
         objectFit="cover"
