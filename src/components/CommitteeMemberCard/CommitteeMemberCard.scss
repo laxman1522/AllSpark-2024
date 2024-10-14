@@ -1,3 +1,82 @@
+.image-wrapper {
+  // Responsiveness of cards for different screens
+  @media only screen and (min-width: 2561px) {
+    flex-basis: calc(17.28% + 2px);
+  }
+  @media only screen and (max-width: 2644px) {
+    flex-basis: calc(16% + 21px);
+  }
+  @media only screen and (max-width: 2396px) {
+    flex-basis: calc(15.4% + 26px);
+  }
+  @media only screen and (max-width: 2226px) {
+    flex-basis: calc(16% + 10px);
+  }
+  @media only screen and (max-width: 2069px) {
+    flex-basis: calc(20% + 19px);
+  }
+  @media only screen and (max-width: 1920px) {
+    flex-basis: calc(20.5% + 5px);
+    height: calc(100% / 2);
+  }
+  @media only screen and (max-width: 1760px) {
+    flex-basis: calc(19% + 22px);
+    height: calc(100% / 2.2);
+  }
+  @media only screen and (max-width: 1632px) {
+    flex-basis: calc(28% + 7.5px);
+    height: calc(100% / 2.3);
+  }
+  @media only screen and (max-width: 1462px) {
+    flex-basis: calc(26.7% + 13px);
+  }
+  @media only screen and (max-width: 1295px) {
+    flex-basis: calc(25.7% + 13px);
+  }
+  @media only screen and (max-width: 1139px) {
+    flex-basis: calc(24.4% + 13px);
+    height: calc(100% / 4);
+  }
+  @media only screen and (max-width: 989px) {
+    flex-basis: calc(24% + 5px);
+    height: calc(100% / 3.9);
+  }
+  @media only screen and (max-width: 848px) {
+    flex-basis: calc(24% + 2px);
+  }
+  @media only screen and (max-width: 810px) {
+    flex-basis: calc(23.3% + 1px);
+    height: calc(100% / 4);
+  }
+  @media only screen and (max-width: 789px) {
+    flex-basis: calc(40% + 1px);
+    height: calc(100% / 2.9);
+  }
+  @media only screen and (max-width: 764px) {
+    flex-basis: calc(40% + 13px);
+  }
+  @media only screen and (max-width: 667px) {
+    flex-basis: calc(42% + 9px);
+    margin-bottom: 10px;
+  }
+  @media only screen and (max-width: 595px) {
+    flex-basis: calc(39.5% + 13px);
+    height: calc(100% / 3.9);
+  }
+  @media only screen and (max-width: 524px) {
+    flex-basis: calc(36.5% + 13px);
+    height: calc(100% / 4);
+  }
+  @media only screen and (max-width: 431px) {
+    flex-basis: calc(100% + 13px);
+    height: calc(100% / 2.3);
+  }
+  @media only screen and (max-width: 375px) {
+    flex-basis: calc(100% + 13px);
+    height: 215px;
+  }
+}
+
 @media screen and (min-width: 1180px) and (max-width: 1280px) {
   .member-card {
     margin: 27px;
