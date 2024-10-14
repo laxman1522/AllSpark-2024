@@ -39,6 +39,7 @@ export const GUEST_MOBILE_SPLIDE_OPTIONS = {
   pagination: false,
   speed: 1000,
   easing: 'cubic-bezier( 0.25, 0.46, 0.45, 0.94 )',
+  autoplay: true,
   interval: 5000,
   clones: 4,
   breakpoints: {
@@ -64,11 +65,15 @@ export const GUEST_DESKTOP_SLICK_OPTIONS = {
         slidesToShow: 3,
         centerMode: true,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
       },
     },
   ],
   arrows: false,
   infinite: true,
+  autoplay: true,
+  autoplaySpeed: 4000,
 };
 
 export const EVENTS_MOBILE_SPLIDE_OPTIONS = {
