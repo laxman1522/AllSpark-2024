@@ -8,16 +8,16 @@ interface UserInformationModalProps {
   profileName: string;
   profileEmail: string;
   profileUrl: string;
-  teammates: Array<TeammateProfile>;
-  titlePresenting: string;
-  titleDescription: string;
-  eventDateTime: string;
-  closeUserInformationModal: Function;
+  teammates?: Array<TeammateProfile>;
+  titlePresenting?: string;
+  titleDescription?: string;
+  eventDateTime?: string;
+  closeModal: Function;
 }
 
 interface TeammateProfile {
   imageUrl: string;
-  teammateName: string;
+  name: string;
 }
 
 /**
@@ -33,25 +33,28 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
   titlePresenting,
   titleDescription,
   eventDateTime,
-  closeUserInformationModal,
+  closeModal,
 }) => {
-  const teammateProfiles = teammates.map((teammate) => {
+  const teammateProfiles = teammates?.map((teammate, index) => {
     return (
       <TeammateProfile
+        key={index}
         imageUrl={teammate.imageUrl}
-        teammateName={teammate.teammateName}
+        teammateName={teammate.name}
       />
     );
   });
   return (
-    <div className="relative w-full">
-      <div className="backdrop-blur-sm speaker-overlay w-full h-full"></div>
-      <div className="userInformationModalDescription border-2 pl-[10rem] p-8 text-wrap h-[70%] absolute top-1/2 left-[55%] transform -translate-x-1/2 -translate-y-1/2 border-events-color">
+    <div className="relative w-full h-full">
+      <div className="backdrop-blur-lg speaker-overlay w-full h-full"></div>
+      <div className="userInformationModalDescription border-2 pl-[10rem] p-8 text-wrap h-[70%] absolute top-1/2 left-[55%] transform -translate-x-1/2 -translate-y-1/2 border-events-color bg-speaker-background-color">
         <div className="userInformationModalClose absolute top-[-30px] right-[-35px] text-3xl text-events-color">
           <FontAwesomeIcon
             icon={faXmark}
             className="cursor-pointer"
-            onClick={() => closeUserInformationModal()}
+            onClick={() => {
+              closeModal(-1);
+            }}
           />
         </div>
         <div className="userInformationProfileImage absolute w-[50%] h-4/5 top-1/2 -left-1/3 transform -translate-y-1/2 border-2 rounded-xl border-events-color">

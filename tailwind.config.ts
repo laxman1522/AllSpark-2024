@@ -28,6 +28,7 @@ const config: Config = {
         'committee-background': '#27021293',
         'events-background-color': '#F2BAA7B2',
         'events-counter-bg-color': '#F9F0D5',
+        'speaker-background-color': '#22000b',
       },
       fontFamily: {
         dseg: ['DSEG7_Classic_Bold', 'sans-serif'],

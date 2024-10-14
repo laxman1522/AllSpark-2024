@@ -4,53 +4,322 @@
       "date": "October 11",
       "startTime": "10:30 AM",
       "endTime": "10:40 AM",
+      "eventDateTime": "October 11th at 10:30PM",
       "duration": 10,
       "title": "Welcome to AllSpark",
+      "description": "Supercharge your business by crafting applications for a data-driven destiny!",
       "category": ""
     },
     "2": {
       "date": "October 11",
       "startTime": "10:45 AM",
       "endTime": "11:45 AM",
+      "eventDateTime": "October 11th at 10:45PM",
       "duration": 60,
       "title": "Keynote by Mike and Ravi",
+      "description": "Supercharge your business by crafting applications for a data-driven destiny!",
       "category": ""
     },
     "3": {
       "date": "October 11",
       "startTime": "12:00 PM",
       "endTime": "12:30 PM",
+      "eventDateTime": "October 11th at 12:00PM",
       "duration": 30,
       "title": "All About Power Platform",
       "category": "Tech Talk",
-      "sessionDescription": "Supercharge your business by crafting applications for a data-driven destiny!",
+      "description": "Supercharge your business by crafting applications for a data-driven destiny!",
       "tags": ["Apps", "Automation", "Bots", "Reports"],
       "speakersId": [1, 2, 3]
     }
   },
   "speakers": {
     "1": {
-      "name": "Charanraj Thiyagarajan",
-      "email": "charanraj.thiyagarajan@cdw.com",
-      "imageUrl": "",
+      "name": "Akshaya Dhanraj",
+      "email": "akshaya.dhanraj@cdw.com",
+      "imageUrl": "/images/speakers/Akshaya Dhanraj.jpg",
       "sessionDetails": {
-        "1": [2, 3]
+        "3": [2, 3]
       }
     },
     "2": {
-      "name": "Naveen kumar Nallasamy",
-      "email": "naveenkumar.nallasamy@cdw.com",
-      "imageUrl": "",
+      "name": "Ridesh Raj",
+      "email": "ridesh.raj@cdw.com",
+      "imageUrl": "/images/speakers/Ridesh Raj.jpg",
       "sessionDetails": {
-        "1": [1, 3]
+        "3": [1, 3]
       }
     },
     "3": {
-      "name": "KavinKumar Baskar",
-      "email": "kavinkumar.baskar@cdw.com",
-      "imageUrl": "",
+      "name": "Sai Krishna Babu",
+      "email": "saikrishna.babu@cdw.com",
+      "imageUrl": "/images/speakers/Sai Krishna Babu.jpg",
       "sessionDetails": {
-        "1": [1, 2]
+        "3": [1, 2]
+      }
+    },
+    "4": {
+      "name": "Prarthana Ponnath",
+      "email": "prarthana.ponnath@cdw.com",
+      "imageUrl": "/images/speakers/Prarthana Ponnath.jpg",
+      "sessionDetails": {
+        "3": [5, 6]
+      }
+    },
+    "5": {
+      "name": "Akash Sabu",
+      "email": "akash.sabu@cdw.com",
+      "imageUrl": "/images/speakers/Akash Sabu.jpg",
+      "sessionDetails": {
+        "3": [4, 6]
+      }
+    },
+    "6": {
+      "name": "Yeshwant Rajaraman",
+      "email": "yeshwant.rajaraman@cdw.com",
+      "imageUrl": "/images/speakers/Yeshwant Rajaraman.jpg",
+      "sessionDetails": {
+        "3": [4, 5]
+      }
+    },
+    "7": {
+      "name": "Avinash Bembavarapu",
+      "email": "avinash.bembavarapu@cdw.com",
+      "imageUrl": "/images/speakers/Avinash Bembavarapu.jpg",
+      "sessionDetails": {
+        "3": [8, 9]
+      }
+    },
+    "8": {
+      "name": "Veerappan Muthuraman",
+      "email": "veerappan.muthuraman@cdw.com",
+      "imageUrl": "/images/speakers/Veerappan Muthuraman.jpg",
+      "sessionDetails": {
+        "3": [7, 9]
+      }
+    },
+    "9": {
+      "name": "Rajiv Kumar",
+      "email": "rajiv.kumar@cdw.com",
+      "imageUrl": "/images/speakers/Rajiv Kumar.jpg",
+      "sessionDetails": {
+        "3": [7, 8]
+      }
+    },
+    "10": {
+      "name": "Gladstone Abraham Rajan",
+      "email": "gladstoneabraham.rajan@cdw.com",
+      "imageUrl": "/images/speakers/Gladstone Abraham Rajan.jpg",
+      "sessionDetails": {
+        "3": [11, 12]
+      }
+    },
+    "11": {
+      "name": "Kevin Jacob Selvan",
+      "email": "kevinjacob.selvan@cdw.com",
+      "imageUrl": "/images/speakers/Kevin Jacob Selvan.jpg",
+      "sessionDetails": {
+        "3": [10, 12]
+      }
+    },
+    "12": {
+      "name": "Veena Kumaran",
+      "email": "veena.kumaran@cdw.com",
+      "imageUrl": "/images/speakers/Veena Kumaran.jpg",
+      "sessionDetails": {
+        "3": [10, 11]
+      }
+    },
+    "13": {
+      "name": "Vijay Krishna Pothuganti",
+      "email": "vijay.pothuganti@cdw.com",
+      "imageUrl": "/images/speakers/Vijay Krishna Pothuganti.jpg",
+      "sessionDetails": {
+        "3": [14]
+      }
+    },
+    "14": {
+      "name": "Sreekumar Nandakumar",
+      "email": "sreenan@cdw.com",
+      "imageUrl": "/images/speakers/Sreekumar Nandakumar.jpg",
+      "sessionDetails": {
+        "3": [13]
+      }
+    },
+    "15": {
+      "name": "Rahul Arora",
+      "email": "rahul.arora@cdw.com",
+      "imageUrl": "/images/speakers/Rahul Arora.jpg",
+      "sessionDetails": {
+        "3": [16, 17]
+      }
+    },
+    "16": {
+      "name": "Manoj Prabhu",
+      "email": "manoj.prabhu@cdw.com",
+      "imageUrl": "/images/speakers/Manoj Prabhu.jpg",
+      "sessionDetails": {
+        "3": [15, 17]
+      }
+    },
+    "17": {
+      "name": "Swaathi Suresh",
+      "email": "swaathi.suresh@cdw.com",
+      "imageUrl": "/images/speakers/Swaathi Suresh.jpg",
+      "sessionDetails": {
+        "3": [15, 16]
+      }
+    },
+    "18": {
+      "name": "Harish Murugaiyan",
+      "email": "harish.murugaiyan@cdw.com",
+      "imageUrl": "/images/speakers/Harish Murugaiyan.jpg",
+      "sessionDetails": {
+        "3": [19, 20]
+      }
+    },
+    "19": {
+      "name": "Shivani Anbumozhi",
+      "email": "shivani.anbumozhi@cdw.com",
+      "imageUrl": "/images/speakers/Shivani Anbumozhi.jpg",
+      "sessionDetails": {
+        "3": [18, 20]
+      }
+    },
+    "20": {
+      "name": "Naveen Gowthaman",
+      "email": "naveen.gowthaman@cdw.com",
+      "imageUrl": "/images/speakers/Naveen Gowthaman.jpg",
+      "sessionDetails": {
+        "3": [18, 19]
+      }
+    },
+    "21": {
+      "name": "Mukesh Ravi",
+      "email": "mukesh.ravi@cdw.com",
+      "imageUrl": "/images/speakers/Mukesh Ravi.jpg",
+      "sessionDetails": {
+        "3": [22, 23]
+      }
+    },
+    "22": {
+      "name": "Hemapriya Nagarajan",
+      "email": "hemapriya.nagarajan@cdw.com",
+      "imageUrl": "/images/speakers/Hemapriya Nagarajan.jpg",
+      "sessionDetails": {
+        "3": [21, 23]
+      }
+    },
+    "23": {
+      "name": "Dineshkumar Ravi",
+      "email": "dineshkumar.ravi@cdw.com",
+      "imageUrl": "/images/speakers/Dineshkumar Ravi.jpg",
+      "sessionDetails": {
+        "3": [21, 22]
+      }
+    },
+    "24": {
+      "name": "Narendhiran Neelakandan",
+      "email": "narendhiran.neelakandan@cdw.com",
+      "imageUrl": "/images/speakers/Narendhiran Neelakandan.jpg",
+      "sessionDetails": {
+        "3": [25, 26]
+      }
+    },
+    "25": {
+      "name": "Praveen Rathinavel",
+      "email": "praveen.rathinavel@cdw.com",
+      "imageUrl": "/images/speakers/Praveen Rathinavel.jpg",
+      "sessionDetails": {
+        "3": [24, 26]
+      }
+    },
+    "26": {
+      "name": "Gnana Sarathy Alagesan",
+      "email": "gnanasarathy.alagesan@cdw.com",
+      "imageUrl": "/images/speakers/Gnana Sarathy Alagesan.jpg",
+      "sessionDetails": {
+        "3": [24, 25]
+      }
+    },
+    "27": {
+      "name": "Anbezhil Marban",
+      "email": "anbezhil.marban@cdw.com",
+      "imageUrl": "/images/speakers/Anbezhil Marban.jpg",
+      "sessionDetails": {
+        "3": [28, 29]
+      }
+    },
+    "28": {
+      "name": "Arunjunai Selvi Murugan jjhvjhvjh jhhjvj hchffhxfxfghxfhg",
+      "email": "arunjunaiselvi.murugan@cdw.com",
+      "imageUrl": "/images/speakers/Arunjunai Selvi Murugan.jpg",
+      "sessionDetails": {
+        "3": [27, 29]
+      }
+    },
+    "29": {
+      "name": "Hareesh Raj Ramanathan",
+      "email": "hareeshraja.ramanathan@cdw.com",
+      "imageUrl": "/images/speakers/Hareesh Raj Ramanathan.jpg",
+      "sessionDetails": {
+        "3": [27, 28]
+      }
+    },
+    "30": {
+      "name": "Vimala Devi Gerrela",
+      "email": "vimaladevi.gerrela@cdw.com",
+      "imageUrl": "/images/speakers/Vimala Devi Gerrela.jpg",
+      "sessionDetails": {
+        "3": [31, 32]
+      }
+    },
+    "31": {
+      "name": "Murali Krishna Vujji",
+      "email": "muralikrishna.vujji@cdw.com",
+      "imageUrl": "/images/speakers/Murali Krishna Vujji.jpg",
+      "sessionDetails": {
+        "3": [30, 32]
+      }
+    },
+    "32": {
+      "name": "Prakruthi Itagalli",
+      "email": "prakruthi.itagalli@cdw.com",
+      "imageUrl": "/images/speakers/Prakruthi Itagalli.jpg",
+      "sessionDetails": {
+        "3": [30, 31]
+      }
+    },
+    "33": {
+      "name": "Madhu Nandya Naik",
+      "email": "madhu.nandyanaik@cdw.com",
+      "imageUrl": "/images/speakers/Madhu Nandya Naik.jpg",
+      "sessionDetails": {
+        "3": [34, 35]
+      }
+    },
+    "34": {
+      "name": "Sasikumar Loganathan",
+      "email": "sasikumar.loganathan@cdw.com",
+      "imageUrl": "/images/speakers/Sasikumar Loganathan.jpg",
+      "sessionDetails": {
+        "3": [33, 35]
+      }
+    },
+    "35": {
+      "name": "Ilancheran Muthumari",
+      "email": "ilancheran.muthumari@cdw.com",
+      "imageUrl": "/images/speakers/Ilancheran Muthumari.jpg",
+      "sessionDetails": {
+        "3": [33, 34]
+      }
+    },
+    "36": {
+      "name": "Ilancheran Muthumari",
+      "email": "ilancheran.muthumari@cdw.com",
+      "imageUrl": "/images/speakers/Ilancheran Muthumari.jpg",
+      "sessionDetails": {
+        "3": [33, 34]
       }
     }
   },

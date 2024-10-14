@@ -4,7 +4,7 @@
   overflow-x: hidden;
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 767px) {
   .members-grid {
     height: 52vh !important;
   }
@@ -24,5 +24,11 @@
       font-size: 1.5rem;
       text-wrap: nowrap;
     }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .core-organisers {
+    margin-top: 1px;
   }
 }

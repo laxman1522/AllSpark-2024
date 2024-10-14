@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import SliderNav from '../SliderNav/SliderNav';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import { ArrowUpRight } from 'lucide-react';
-import './Slider.scss';
 import { SLIDER_CONSTANTS } from '@/constants/constants';
 import Image from 'next/image';
 
@@ -16,6 +15,32 @@ interface SliderProps {
     recapUrl: string;
   }[];
 }
+
+const generateImageSlides = (
+  items: {
+    imageUrl: string;
+    description: string;
+    year: number;
+    recapUrl: string;
+  }[],
+) => {
+  return items?.map((item, index) => (
+    <div
+      key={index}
+      className={`flex-shrink-0 flex-col w-full h-full flex items-center text-white text-xl font-bold select-none`}
+    >
+      <div className="w-full h-full object-cover m-0 relative">
+        <Image
+          src={item?.imageUrl}
+          alt={item?.description}
+          fill
+          draggable="false"
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
+    </div>
+  ));
+};
 
 export default function Slider({ sliderName, items }: SliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -104,6 +129,8 @@ export default function Slider({ sliderName, items }: SliderProps) {
     }
   };
 
+  const imageSlides = generateImageSlides(items);
+
   useEffect(() => {
     setIsFading(false);
 
@@ -135,7 +162,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
       </div>
 
       <div
-        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[55vh] w-[80vw] image-slider"
+        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[55vh] w-[80vw]"
         ref={containerRef}
       >
         <div
@@ -156,21 +183,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
           onTouchEnd={handleDragEnd}
           onMouseLeave={handleDragEnd}
         >
-          {items?.map((item, index) => (
-            <div
-              key={index}
-              className={`flex-shrink-0 flex-col w-full h-full flex items-center text-white text-xl font-bold select-none`}
-            >
-              <div className="w-full h-full object-cover m-0 relative">
-                <Image
-                  src={item?.imageUrl}
-                  alt={item?.description}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-            </div>
-          ))}
+          {imageSlides}
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useRef } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Splide as SplideInstance } from '@splidejs/splide';
@@ -5,6 +6,7 @@ import '@splidejs/react-splide/css';
 import Image from 'next/image';
 import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import SliderNav from '@/components/SliderNav/SliderNav';
+import GuestsSlider from '@/components/GuestsSlider/GuestsSlider';
 import { GUESTS } from '@/constants/constants';
 import { getAllGuests } from '@/utils/data-utils';
 import { GUEST_MOBILE_SPLIDE_OPTIONS } from '@/constants/option-constants';
@@ -37,7 +39,7 @@ const GuestsContainer = () => {
               alt={guest?.name || ''}
               fill
               style={{ objectFit: 'cover' }}
-              className="rounded-[40px]"
+              className="rounded-[40px]  object-top"
             />
             <div className="absolute bottom-0 w-full flex items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px] backdrop-blur-[20px]">
               <p className="text-[20px] font-semibold uppercase text-center text-button-color">
@@ -56,7 +58,7 @@ const GuestsContainer = () => {
   return (
     <div className="h-screen relative">
       <div id="guests-section" className="absolute h-full w-full">
-        <div className="guests-mobile my-40 px-12">
+        <div className="lg:hidden guests-mobile my-40">
           <SectionHeader headerText={GUESTS.ourGuests} />
           <div className="mt-16 mb-12">
             <Splide
@@ -79,6 +81,9 @@ const GuestsContainer = () => {
             itemsLength={guests?.length}
             isLoop={true}
           />
+        </div>
+        <div className="hidden lg:block">
+          <GuestsSlider guests={guests} heading={GUESTS.ourGuests} />
         </div>
       </div>
     </div>
