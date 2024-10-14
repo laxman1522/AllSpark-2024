@@ -71,6 +71,10 @@
     flex-basis: calc(100% + 13px);
     height: calc(100% / 2.3);
   }
+  @media only screen and (max-width: 375px) {
+    flex-basis: calc(100% + 13px);
+    height: 215px;
+  }
 }
 
 @media screen and (min-width: 1180px) and (max-width: 1280px) {
@@ -96,5 +100,11 @@
     p {
       font-size: 1.4rem;
     }
+  }
+}
+
+@media screen and (min-width: 1290px) and (max-width: 1366px) {
+  .member-card {
+    margin: 38px;
   }
 }

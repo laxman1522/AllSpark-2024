@@ -40,6 +40,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
           height: '100%',
           objectFit: 'cover',
           objectPosition: 'top',
+          borderRadius: '6px',
         }}
         objectFit="cover"
         alt={memberName || ''}

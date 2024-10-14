@@ -37,13 +37,13 @@ const CommitteeSectionMobile: React.FC<CommitteeSectionMobileProps> = ({
               data-category={committee.committeeName}
               key={index}
             >
-              <div className="flex justify-center items-center flex-wrap gap-4 mt-[-15px]">
+              <div className="mt-[-15px]">
                 <CommitteeMemberCard
                   memberName={committee.memberName}
                   imageSrc={`/images/committee/${committee.memberName}.jpeg`}
-                  wrapperHeight="h-[200px]"
-                  wrapperWidth="w-[300px]"
-                  wrapperClassName="member-card"
+                  wrapperWidth={''}
+                  wrapperHeight={''}
+                  wrapperClassName={'member-card'}
                 />
               </div>
             </div>

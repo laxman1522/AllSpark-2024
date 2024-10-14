@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import CommitteeNavigation from '../CommitteeNavigation/CommiteeNavigation';
 import CommitteeSection from '../CommitteeSection/CommitteeSection';
-import { useWindowSize } from '@/contexts/WindowSizeContext';
 import { useState } from 'react';
 import './Committee.scss';
 
@@ -11,23 +9,9 @@ import './Committee.scss';
  * @author [Rubesh Udayakumar]
  */
 const Committee = () => {
-  const windowSize = useWindowSize();
-
   const [committee, setCommittee] = useState('Core Organisers');
 
-  useEffect(() => {
-    const firstButtonNav = document.querySelector('.button');
-    if (firstButtonNav) {
-      const event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-      });
-      firstButtonNav.dispatchEvent(event);
-    }
-  }, [windowSize]);
-
-  const setCommitteeName = (committee) => {
+  const setCommitteeName = (committee: string) => {
     setCommittee(committee);
   };
 

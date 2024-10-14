@@ -67,79 +67,58 @@ $(document).ready(function ($) {
     }
   }
 
-  function isotopeImplement() {
-    // Initialize Isotope after all images are loaded
+  function isotopeImplement(currentSelected) {
     if (document.querySelector('.members-grid')) {
-      var iso = new Isotope('.members-grid', {
-        itemSelector: '.element-item',
-        layoutMode: 'masonry',
-        filter: '.core-organisers',
-      });
-
-      // bind filter button click
-      var filtersElem = document.querySelector('.filters-button-group');
-
-      if (filtersElem) {
-        filtersElem.addEventListener('click', function (event) {
-          // only work with buttons
-          if (!matchesSelector(event.target, 'button')) {
-            return;
+      const images = document.querySelectorAll('.members-grid img');
+      const loadedImages = [];
+      const imagePromises = Array.from(images).map((img) => {
+        return new Promise((resolve) => {
+          if (img.complete) {
+            resolve();
+          } else {
+            img.onload = img.onerror = resolve; 
           }
-          var filterValue = event.target.getAttribute('data-filter');
-          // use matching filter function
-          filterValue = filterValue;
-          iso.arrange({ filter: filterValue });
         });
-
-        // change is-checked class on buttons
-        var buttonGroups = document.querySelectorAll('.button-group');
-        for (var i = 0, len = buttonGroups.length; i < len; i++) {
-          var buttonGroup = buttonGroups[i];
-          radioButtonGroup(buttonGroup);
-        }
-
-        function radioButtonGroup(buttonGroup) {
-          buttonGroup.addEventListener('click', function (event) {
-            // only work with buttons
+      });
+      Promise.all(imagePromises).then(() => {
+        const iso = new Isotope('.members-grid', {
+          itemSelector: '.element-item',
+          layoutMode: 'masonry',
+          filter: currentSelected,
+        });
+        const filtersElem = document.querySelector('.filters-button-group');
+  
+        if (filtersElem) {
+          filtersElem.addEventListener('click', function (event) {
             if (!matchesSelector(event.target, 'button')) {
               return;
             }
-            buttonGroup
-              .querySelector('.is-checked')
-              .classList.remove('is-checked');
-            event.target.classList.add('is-checked');
+            const filterValue = event.target.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
           });
+          const buttonGroups = document.querySelectorAll('.button-group');
+          buttonGroups.forEach((buttonGroup) => {
+            radioButtonGroup(buttonGroup);
+          });
+          function radioButtonGroup(buttonGroup) {
+            buttonGroup.addEventListener('click', function (event) {
+              if (!matchesSelector(event.target, 'button')) {
+                return;
+              }
+              buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+              event.target.classList.add('is-checked');
+            });
+          }
         }
-      }
+      });
     }
   }
 
-  // Optionally, trigger layout reflow on window resize
   window.addEventListener('resize', function () {
-    Promise.all(
-      Array.from(document.images)
-        .filter((img) => !img.complete)
-        .map(
-          (img) =>
-            new Promise((resolve) => {
-              img.onload = img.onerror = resolve;
-            }),
-        ),
-    ).then(() => {
-      isotopeImplement();
-    });
+    const currentClass = document.querySelector('.is-checked').getAttribute('data-filter');
+    isotopeImplement(currentClass);
   });
 
-  Promise.all(
-    Array.from(document.images)
-      .filter((img) => !img.complete)
-      .map(
-        (img) =>
-          new Promise((resolve) => {
-            img.onload = img.onerror = resolve;
-          }),
-      ),
-  ).then(() => {
-    isotopeImplement();
-  });
+  isotopeImplement('.core-organisers');
+  
 });
