@@ -71,3 +71,10 @@ export const EVENT_COUNTER = {
   REGISTRATION_COUNT: 60,
   ATTENDEES_COUNT: 600,
 };
+
+export const USER_INFORMATION_MODAL = {
+  PRESENTING_TECH_TALK_ON: 'Presenting Tech Talk On',
+  ALONG_WITH: 'Along with',
+  ABOUT: 'About',
+  WATCH_ME_ON: 'Watch Me On',
+};
