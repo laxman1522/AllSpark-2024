@@ -1,46 +1,4 @@
 {
-  "guests": [
-    {
-      "name": "Mike Gutknecht",
-      "designation": "Director Global Service Delivery",
-      "imageUrl": ""
-    },
-    {
-      "name": "Stephen Morris",
-      "designation": "Practice VP Global Delivery",
-      "imageUrl": ""
-    },
-    {
-      "name": "Nam Ahuja",
-      "designation": "Senior Practice Manager, Global Delivery",
-      "imageUrl": ""
-    }
-  ],
-  "committee": [
-    {
-      "committeeName": "Core Organisers",
-      "members": [
-        {
-          "name": "Jeyanthi Veeramani",
-          "imageUrl": ""
-        },
-        {
-          "name": "Soumya Vikram",
-          "imageUrl": ""
-        }
-      ]
-    },
-
-    {
-      "committeeName": "Website Developers",
-      "members": [
-        {
-          "name": "Rubesh Udayakumar",
-          "imageUrl": ""
-        }
-      ]
-    }
-  ],
   "categories": [
     {
       "name": "TECH TALKS",

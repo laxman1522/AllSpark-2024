@@ -1,6 +1,6 @@
 'use client';
 import CountDownTimer from '@/components/countDownTimer/CountDownTimer';
-import { TIMER } from '@/constants/count-down-constants';
+import { TIMER } from '@/constants/constants';
 import { useEffect, useState } from 'react';
 import './CountDown.scss';
 

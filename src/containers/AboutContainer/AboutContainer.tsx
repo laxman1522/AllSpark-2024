@@ -1,5 +1,4 @@
 import React from 'react';
-// import SectionHeader from '@/components/SectionHeader/SectionHeader';
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import './AboutContainer.scss';
 import { ALLSPARK_VIDEO } from '@/constants/constants';
