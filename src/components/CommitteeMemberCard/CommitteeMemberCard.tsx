@@ -42,7 +42,6 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
           objectPosition: 'top',
           borderRadius: '6px',
         }}
-        objectFit="cover"
         alt={memberName || ''}
         loading={'lazy'}
       />
