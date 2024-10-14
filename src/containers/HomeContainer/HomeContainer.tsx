@@ -12,6 +12,10 @@ const HomeContainer = () => {
   return (
     <div className="home" id="home-section">
       <Logo isCountDownDisplayed={isCountDownDisplayed} />
+      <a
+        target="_blank"
+        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NDRsbmlnZm5lN3RrMmlybWswZzhybGRsMmEgbGF4aXMxNTk4QG0&amp;tmsrc=laxis1598%40gmail.com"
+      ></a>
       {windowWidth < 768 && (
         <LocationTime isCountDownDisplayed={isCountDownDisplayed} />
       )}
