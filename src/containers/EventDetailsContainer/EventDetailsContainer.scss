@@ -66,7 +66,7 @@
     margin-top: 400px;
   }
 
-  @media only screen and (min-height: 600px) and (max-height: 1000px) and (min-width: 1000px) {
+  @media only screen and (min-height: 600px) and (max-height: 920px) and (min-width: 1000px) {
     margin-top: 310px;
   }
 
@@ -77,6 +77,9 @@
 .social-icons {
   @media screen and (min-width: 1024px) and (min-height: 600px) and (max-height: 767px) {
     margin-top: 4vh;
+  }
+  @media screen and (max-width: 767px) {
+    gap: 1rem;
   }
 }
 .cdw-logo {

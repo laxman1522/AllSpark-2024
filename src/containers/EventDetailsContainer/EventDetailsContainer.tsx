@@ -48,7 +48,7 @@ const EventDetailsContainer: React.FC<EventDetailsContainerProps> = ({
         </div>
       )}
       <div
-        className={`social-icons flex  items-center gap-8 mt-[6vh] ${windowWidth < 1024 ? 'flex-col absolute right-[5.5%] bottom-32 text-3xl' : 'flex-row justify-center w-full text-4xl'}`}
+        className={`social-icons flex items-center mt-[6vh] gap-8 ${windowWidth < 1024 ? 'flex-col absolute right-[7%] bottom-32 text-3xl' : 'flex-row justify-center w-full text-4xl'}`}
       >
         <a
           href="https://www.facebook.com/AllSparkTX/"
