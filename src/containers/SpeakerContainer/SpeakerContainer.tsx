@@ -2,6 +2,11 @@ import React from 'react';
 import Speakers from '@/components/Speakers/Speakers';
 import { getAllSpeakers } from '@/utils/event-utils';
 
+/**
+ * @description A container for speaker information
+ * @version 1.0.0
+ * @author [Ashok Natarajan]
+ */
 const SpeakerContainer = () => {
   const speakers = getAllSpeakers();
 

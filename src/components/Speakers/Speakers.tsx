@@ -19,7 +19,7 @@ interface Speaker {
 
 const generateSpeakersCard = (
   speakers: Speaker[],
-  handleClick: ((e: React.MouseEvent<HTMLDivElement>) => void) | undefined,
+  handleClick: (index: number) => void,
 ) => {
   return speakers?.map((speaker, index) => (
     <CommitteeMemberCard
@@ -30,7 +30,7 @@ const generateSpeakersCard = (
       wrapperWidth="w-[300px]"
       wrapperClassName="image-wrapper"
       enableOnClick={true}
-      handleClick={handleClick}
+      handleClick={() => handleClick(index)}
     ></CommitteeMemberCard>
   ));
 };
@@ -39,16 +39,17 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [scrollAmount, setScrollAmount] = useState(0);
   const [isModelOpened, setIsModelOpened] = useState<boolean>(false);
+  const [speaker, setSpeaker] = useState<Speaker | null>(null);
 
   /**
    * handles the opening and closing of the modal on click
    * @param e
    */
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    if (setIsModelOpened) {
-      setIsModelOpened(!isModelOpened);
+  const handleClick = (index: number) => {
+    if (index != -1) {
+      setSpeaker(speakers[index]);
     }
+    setIsModelOpened(!isModelOpened);
   };
 
   /**
@@ -64,7 +65,7 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
   const speakerProfiles = generateSpeakersCard(speakers, handleClick);
 
   return (
-    <div className="flex flex-col justify-center relative ml-[2%] lg:ml-[3%] max-[1400px]:mt-[15vh] max-[712px]:mt[10vh] max-[1024px]:mt-[2vh] lg:mt-[0vh] w-[84%] p-2  max-[1024px]:m-auto  rounded border-0 h-[90%] gap-[20px]">
+    <div className="speakers-wrapper flex flex-col justify-center relative ml-[2%] lg:ml-[3%] max-[1400px]:mt-[15vh] max-[712px]:mt[10vh] max-[1024px]:mt-[2vh] lg:mt-[0vh] w-[84%] p-2  max-[1024px]:m-auto  rounded border-0 h-[90%] gap-[20px]">
       <SectionHeader headerText={'Speakers'}></SectionHeader>
       <div
         ref={scrollContainerRef}
@@ -76,6 +77,7 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
           isModelOpened={isModelOpened}
           scrollAmount={scrollAmount}
           handleClick={handleClick}
+          speaker={speaker}
         ></SpeakersModal>
       </div>
     </div>
