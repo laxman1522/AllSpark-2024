@@ -201,6 +201,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
               className=" text-counter-background"
             ></ArrowUpRight>
           </a>
+          {isFading && <></>}
         </div>
       </div>
     </div>

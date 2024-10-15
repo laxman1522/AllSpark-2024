@@ -8,7 +8,7 @@ interface CommitteeMemberCardProps {
   wrapperHeight: string;
   wrapperClassName: string;
   enableOnClick?: boolean;
-  imageStyles: Object;
+  imageStyles: object;
   handleClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
