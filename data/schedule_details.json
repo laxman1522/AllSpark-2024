@@ -1,28 +1,31 @@
 {
   "sessions": {
     "1": {
-      "date": "October 11",
-      "startTime": "10:30 AM",
-      "endTime": "10:40 AM",
+      "date": "October 16",
+      "startTime": "02:33 AM",
+      "endTime": "02:34 AM",
       "duration": 10,
       "title": "Welcome to AllSpark",
-      "category": ""
+      "category": "Partner Session",
+      "isLive": true
     },
     "2": {
-      "date": "October 11",
-      "startTime": "10:45 AM",
-      "endTime": "11:45 AM",
+      "date": "October 16",
+      "startTime": "02:35 AM",
+      "endTime": "02:36 AM",
       "duration": 60,
       "title": "Keynote by Mike and Ravi",
-      "category": ""
+      "category": "Tech Talk",
+      "isLive": false
     },
     "3": {
-      "date": "October 11",
-      "startTime": "12:00 PM",
-      "endTime": "12:30 PM",
+      "date": "October 16",
+      "startTime": "02:37 AM",
+      "endTime": "02:38 AM",
       "duration": 30,
       "title": "All About Power Platform",
-      "category": "Tech Talk",
+      "category": "Solution space",
+      "isLive": false,
       "sessionDescription": "Supercharge your business by crafting applications for a data-driven destiny!",
       "tags": ["Apps", "Automation", "Bots", "Reports"],
       "speakersId": [1, 2, 3]

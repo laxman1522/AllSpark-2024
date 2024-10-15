@@ -75,3 +75,16 @@ export const EVENT_COUNTER = {
 export const TIMER = {
   TARGET_DATE: 'Oct 25, 2024 10:00:00',
 };
+
+export const SCHEDULE_CONSTANTS = {
+  ADD_TO_CALENDAR: 'Add to Calendar',
+  LIVE_NOW: 'Live Now',
+  LOCATION: 'Bengaluru',
+};
+
+export const ICS_CONSTANTS = {
+  YEAR: '2023',
+  TYPE: 'text/calendar',
+  ELEMENT: 'a',
+  ATTRIBUTE: 'download',
+};
