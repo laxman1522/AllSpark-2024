@@ -13,7 +13,7 @@ interface UserInformationModalProps {
   titlePresenting?: string;
   titleDescription?: string;
   eventDateTime?: string;
-  closeModal: Function;
+  closeModal: (index: number) => void;
 }
 
 interface TeammateProfile {
