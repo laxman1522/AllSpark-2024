@@ -1,3 +1,12 @@
+.user-card {
+  transition: 0.5s;
+}
+
+.user-card:hover {
+  transform: scale(1.13);
+  box-shadow: 0 0 12px #f9f0d5;
+}
+
 .image-wrapper {
   // Responsiveness of cards for different screens
   @media only screen and (min-width: 2561px) {
