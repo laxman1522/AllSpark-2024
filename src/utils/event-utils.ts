@@ -157,3 +157,7 @@ export const isSplideViewCompatible = (windowWidth: number) => {
       window.innerHeight <= 1366)
   );
 };
+
+export const getAgenda = () => {
+  return Object.values(scheduleData.agenda);
+};
