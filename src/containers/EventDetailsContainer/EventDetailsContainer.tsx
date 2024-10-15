@@ -39,7 +39,7 @@ const EventDetailsContainer: React.FC<EventDetailsContainerProps> = ({
 
   return (
     <div
-      className={`bottom-container opacity-0 ${isCountDownDisplayed && ' min-[540px]:mt-[47vh] mt-[62vh] location-bottom-tab'}`}
+      className={`bottom-container opacity-0 ${isCountDownDisplayed && ' min-[540px]:mt-[40vh] mt-[62vh] location-bottom-tab'}`}
       ref={container}
     >
       {windowWidth > 767 && (
