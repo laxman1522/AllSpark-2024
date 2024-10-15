@@ -18,6 +18,7 @@ export const MEMORIES_MOBILE_SPLIDE_OPTIONS = {
   drag: 'true',
   snap: true,
   height: 'auto',
+  rewind: true,
   width: '83vw',
   gap: '1.5rem',
   lazyLoad: 'nearby',
