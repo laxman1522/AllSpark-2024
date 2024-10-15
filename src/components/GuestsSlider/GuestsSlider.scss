@@ -1,8 +1,13 @@
 .slick-slide {
   transition: width 300ms 50ms ease-in-out;
+  img {
+    border-radius: 140px;
+    cursor: pointer;
+  }
 }
+
 .slick-slide.active {
-  width: 7% !important;
+  width: 10% !important;
   .tile-wrap {
     opacity: 1;
   }
@@ -12,8 +17,4 @@
   .details {
     display: flex;
   }
-}
-
-.slick-slide img {
-  border-radius: 140px;
 }
