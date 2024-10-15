@@ -185,18 +185,8 @@ export default function Slider({ sliderName, items }: SliderProps) {
         >
           {imageSlides}
         </div>
-      </div>
-
-      <div
-        className={`flex items-center font-poppins italic justify-between transition-opacity duration-800 ease-in ${
-          isFading ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <p className="text-button-color text-lg">
-          {items[currentIndex]?.description}
-        </p>
-        <div className="flex items-center gap-3 pr-2">
-          <p className="text-button-color text-2xl font-semibold ml-5">
+        <div className="flex items-center justify-between gap-4 pr-2 absolute bottom-[1vh] right-[1vh] bg-[#270212] backdrop-blur-md rounded-lg py-2 px-5 bg-opacity-70">
+          <p className="text-button-color text-2xl font-semibold italic">
             {items[currentIndex]?.year}
           </p>
           <a

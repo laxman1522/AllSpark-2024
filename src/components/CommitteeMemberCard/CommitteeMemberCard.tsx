@@ -8,6 +8,7 @@ interface CommitteeMemberCardProps {
   wrapperHeight: string;
   wrapperClassName: string;
   enableOnClick?: boolean;
+  imageStyles: Object;
   handleClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -23,6 +24,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
   wrapperHeight,
   wrapperClassName,
   enableOnClick = false,
+  imageStyles,
   handleClick,
 }) => {
   return (
@@ -35,13 +37,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
         width={0}
         height={0}
         sizes="100vw"
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'top',
-          borderRadius: '6px',
-        }}
+        style={imageStyles}
         alt={memberName || ''}
         loading={'lazy'}
       />

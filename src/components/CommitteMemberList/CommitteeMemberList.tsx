@@ -6,6 +6,7 @@ interface CommitteeMemberListProps {
   wrapperWidth: string;
   wrapperHeight: string;
   wrapperClassName: string;
+  imageStyles: object;
 }
 
 interface Committee {
@@ -25,6 +26,7 @@ const generateCommitteeMembers = (
   wrapperClassName: string,
   wrapperHeight: string,
   wrapperWidth: string,
+  imageStyles: object,
 ) => {
   return committeeMembersAndNames?.map((member: Committee, index: number) => (
     <div
@@ -38,6 +40,7 @@ const generateCommitteeMembers = (
         wrapperWidth={wrapperWidth}
         wrapperHeight={wrapperHeight}
         wrapperClassName={wrapperClassName}
+        imageStyles={imageStyles}
       />
     </div>
   ));
@@ -54,6 +57,7 @@ const CommitteeMemberList: React.FC<CommitteeMemberListProps> = ({
   wrapperWidth,
   wrapperHeight,
   wrapperClassName,
+  imageStyles,
 }) => {
   const committeMembers = generateCommitteeMembers(
     committeeMembersAndNames,
@@ -61,6 +65,7 @@ const CommitteeMemberList: React.FC<CommitteeMemberListProps> = ({
     wrapperClassName,
     wrapperHeight,
     wrapperWidth,
+    imageStyles,
   );
 
   return <>{committeMembers}</>;
