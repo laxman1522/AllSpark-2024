@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~aos/src/sass/aos.scss';
 
 :root {
   --background: #3f0d15;
@@ -58,4 +59,59 @@ body {
 
 .vanta-canvas {
   height: 100% !important;
+}
+
+[data-aos='reveal-right'],
+[data-aos='reveal-left'],
+[data-aos='reveal-up'],
+[data-aos='reveal-down'] {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+    transition-delay: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #451329;
+  }
+}
+
+[data-aos='reveal-right'] {
+  &.aos-animate {
+    &:after {
+      transform: translateX(100%);
+    }
+  }
+}
+
+[data-aos='reveal-left'] {
+  &.aos-animate {
+    &:after {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+[data-aos='reveal-up'] {
+  &.aos-animate {
+    &:after {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+[data-aos='reveal-down'] {
+  &.aos-animate {
+    &:after {
+      transform: translateY(100%);
+    }
+  }
 }

@@ -1,5 +1,8 @@
 import { getCommitteeAndMembersNames } from '@/utils/data-utils';
 import CommitteeMemberList from '../CommitteMemberList/CommitteeMemberList';
+import { useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 interface CommitteeSectionProps {
   committee: string;
@@ -13,6 +16,22 @@ interface CommitteeSectionProps {
 const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
   const committeeMembersAndNames = getCommitteeAndMembersNames();
   const committeeMembersClassName = 'element-item absolute left-1/2';
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 0,
+    });
+    const speakerContainer = scrollContainerRef.current;
+    const handleScroll = () => {
+      AOS.refresh();
+    };
+    speakerContainer?.addEventListener('scroll', handleScroll);
+    return () => {
+      speakerContainer?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="relative w-[78%] h-[100%] flex flex-col gap-4 px-[60px] pt-[50px]">
@@ -23,7 +42,7 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
         </h3>
         <span className="header-line h-[0.4vh] bg-[#F3BAA7] w-[4.5vw] max-[767px]:w-[20vw] max-[767px]:h-[4px]"></span>
       </div>
-      <div className="members-grid w-[100%]">
+      <div className="members-grid w-[100%]" ref={scrollContainerRef}>
         <CommitteeMemberList
           committeeMembersAndNames={committeeMembersAndNames}
           committeeMembersClassName={committeeMembersClassName}
