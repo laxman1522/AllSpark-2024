@@ -54,7 +54,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
   };
   return (
     <div className="guests-desktop my-40 mx-auto px-16 pr-40 xl:pr-60">
-      <div className="flex justify-between first-line:">
+      <div className="flex justify-between">
         <SectionHeader headerText={heading} />
 
         <SliderNav
