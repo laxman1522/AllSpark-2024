@@ -65,15 +65,32 @@
   @media screen and (min-width: 1024px) and (max-width: 1300px) and (min-height: 768px) and (max-height: 1000px) {
     margin-top: 400px;
   }
-}
 
+  @media only screen and (min-height: 600px) and (max-height: 1000px) and (min-width: 1000px) {
+    margin-top: 310px;
+  }
+
+  @media screen and (min-width: 1024px) and (min-height: 600px) and (max-height: 767px) {
+    margin-top: 220px;
+  }
+}
+.social-icons {
+  @media screen and (min-width: 1024px) and (min-height: 600px) and (max-height: 767px) {
+    margin-top: 4vh;
+  }
+}
+.cdw-logo {
+  @media screen and (min-width: 1024px) and (min-height: 600px) and (max-height: 767px) {
+    margin-top: 4vh;
+  }
+}
 .circle-arrow {
   @media screen and (min-width: 1024px) {
     margin-top: 4vh;
   }
 
-  @media screen and (min-width: 1024px) and (min-height: 600px) and (max-height: 800px) {
-    margin-top: 6vh;
+  @media screen and (min-width: 1024px) and (min-height: 600px) and (max-height: 700px) {
+    margin-top: 4vh;
   }
 
   @media screen and (max-width: 539px) {
