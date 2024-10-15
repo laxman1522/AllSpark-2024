@@ -3,6 +3,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import TeammateProfile from '../TeammateProfile/TeammateProfile';
 import { USER_INFORMATION_MODAL } from '@/constants/constants';
+import './UserInformationModal.scss';
 
 interface UserInformationModalProps {
   profileName: string;
@@ -47,7 +48,7 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
   return (
     <div className="relative w-full h-full">
       <div className="backdrop-blur-lg speaker-overlay w-full h-full"></div>
-      <div className="userInformationModalDescription border-2 pl-[10rem] p-8 text-wrap h-[70%] absolute top-1/2 left-[55%] transform -translate-x-1/2 -translate-y-1/2 border-events-color bg-speaker-background-color">
+      <div className="userInformationModalDescription border-2 rounded-md pl-[10rem] p-8 text-wrap h-[70%] absolute top-1/2 left-[55%] transform -translate-x-1/2 -translate-y-1/2 border-events-color bg-speaker-background-color">
         <div className="userInformationModalClose absolute top-[-30px] right-[-35px] text-3xl text-events-color">
           <FontAwesomeIcon
             icon={faXmark}
@@ -57,7 +58,7 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
             }}
           />
         </div>
-        <div className="userInformationProfileImage absolute w-[50%] h-4/5 top-1/2 -left-1/3 transform -translate-y-1/2 border-2 rounded-xl border-events-color">
+        <div className="userInformationProfileImage absolute w-[50%] h-4/5 top-1/2 -left-1/3 transform -translate-y-1/2 border-2 rounded-xl border-events-color z-10">
           <Image
             alt={profileName}
             src={profileUrl}
@@ -67,7 +68,7 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
             className="rounded-lg"
           />
         </div>
-        <div className="h-[100%] overflow-y-scroll">
+        <div className="h-[100%] overflow-y-scroll userInformationArea">
           <div className="userInformationModalProfile">
             <h1 className="userInformationModalProfileName text-4xl font-medium pt-2 text-events-color">
               {profileName}

@@ -18,7 +18,7 @@ const TeammateProfile: React.FC<TeammateProfileProps> = ({
     <div className="userInformationModalTeammates flex items-center">
       <div className="userInformationModalTeammatesProfileImage relative w-9 h-9">
         <Image
-          alt="profile-image"
+          alt={teammateName}
           src={imageUrl}
           fill
           objectFit="cover"

@@ -85,7 +85,6 @@ export const getAllSpeakers = () => {
     .map((speaker) => {
       let speakerDetails = { ...speaker };
       Object.keys(speaker.sessionDetails).forEach((session) => {
-        console.log(session);
         const { eventDateTime, title, description } =
           getSessionDetails(session);
         const teammates = speaker.sessionDetails[session].map((speakerId) => {
