@@ -6,10 +6,11 @@ interface Session {
   date: string;
   startTime: string;
   endTime: string;
+  eventDateTime: string;
   duration: number | string;
   title: string;
   category: string;
-  sessionDescription?: string;
+  description?: string;
   tags?: string[];
   speakersId?: number[];
   speakers?: { name: string; description: string }[];
@@ -22,6 +23,13 @@ interface Speaker {
   sessionDetails: {
     [sessionId: string]: number[];
   };
+  eventDateTime?: string;
+  title?: string;
+  description?: string;
+  teammates?: {
+    name: string;
+    imageUrl: string;
+  }[];
 }
 
 interface Agenda {
@@ -53,7 +61,7 @@ export const getSessionDetails = (sessionId: string) => {
  * @return {Object} An object containing the speaker details.
  * @author [Hariharan Muralidharan]
  */
-export const getSpeakerDetails = (speakerId: string) => {
+export const getSpeakerDetails = (speakerId: number) => {
   return schedule?.speakers[`${speakerId}`];
 };
 
@@ -72,13 +80,27 @@ export const getSessions = () => {
  * @author [Praneash Krishnamurthi]
  */
 export const getAllSpeakers = () => {
-  const allSpeakers = Object.values(schedule?.speakers);
-  allSpeakers.sort((a, b) => {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    return nameA.localeCompare(nameB);
-  });
-  return allSpeakers;
+  return Object.values(schedule?.speakers || [])
+    .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+    .map((speaker) => {
+      let speakerDetails = { ...speaker };
+      Object.keys(speaker.sessionDetails).forEach((session) => {
+        const { eventDateTime, title, description } =
+          getSessionDetails(session);
+        const teammates = speaker.sessionDetails[session].map((speakerId) => {
+          const { name, imageUrl } = getSpeakerDetails(speakerId);
+          return { name, imageUrl };
+        });
+        speakerDetails = {
+          ...speakerDetails,
+          eventDateTime,
+          title,
+          description,
+          teammates,
+        };
+      });
+      return speakerDetails;
+    });
 };
 
 /**

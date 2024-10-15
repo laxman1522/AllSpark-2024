@@ -1,14 +1,34 @@
 import React from 'react';
+import UserInformationModal from '../UserInformationModal/UserInformationModal';
+
+interface Speaker {
+  name: string;
+  email: string;
+  imageUrl: string;
+  sessionDetails: {
+    [sessionId: string]: number[];
+  };
+  eventDateTime?: string;
+  title?: string;
+  description?: string;
+  teammates?: {
+    name: string;
+    imageUrl: string;
+  }[];
+}
+
 interface SpeakersModalProps {
   isModelOpened: boolean;
   scrollAmount: number;
-  handleClick: (e: React.MouseEvent<HTMLDivElement>) => void;
+  handleClick: (index: number) => void;
+  speaker: Speaker | null;
 }
 
 export default function SpeakersModal({
   isModelOpened = false,
   scrollAmount = 0,
   handleClick,
+  speaker,
 }: SpeakersModalProps) {
   return (
     <div
@@ -17,10 +37,18 @@ export default function SpeakersModal({
         top: `${scrollAmount}px`,
       }}
     >
-      <div
-        className="w-[50px] h-[50px] bg-red-500 self-end"
-        onClick={handleClick}
-      ></div>
+      {speaker && (
+        <UserInformationModal
+          profileName={speaker.name}
+          profileEmail={speaker.email}
+          profileUrl={speaker.imageUrl}
+          teammates={speaker.teammates}
+          titlePresenting={speaker.title}
+          titleDescription={speaker.description}
+          eventDateTime={speaker.eventDateTime}
+          closeModal={handleClick}
+        />
+      )}
     </div>
   );
 }

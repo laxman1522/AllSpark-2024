@@ -70,7 +70,11 @@ export const getCommitteeClassNames = () => {
  * @author [Rubesh Udayakumar]
  */
 export const getCommitteeAndMembersNames = () => {
-  const result: { committeeName: string; memberName: string }[] = [];
+  const result: {
+    committeeName: string;
+    memberName: string;
+    imageSrc: string;
+  }[] = [];
   committeeData?.committee?.forEach((committee) => {
     committee?.members?.forEach((member) => {
       result.push({
@@ -79,6 +83,7 @@ export const getCommitteeAndMembersNames = () => {
           .replaceAll('&', '-')
           .toLowerCase(),
         memberName: member?.name,
+        imageSrc: member.imageUrl,
       });
     });
   });
