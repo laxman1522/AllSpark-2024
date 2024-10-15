@@ -32,3 +32,9 @@
     margin-top: 1px;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .members-grid {
+    height: 50vh !important;
+  }
+}
