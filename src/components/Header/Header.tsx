@@ -9,9 +9,25 @@ import cdwlogo from '../../../public/images/cdwLogo.png';
  */
 
 const Header = () => {
+  const navigateToPage = () => {
+    const aboutNav = document.querySelector(
+      '#navbar-vertical-nav a[href="#home-section"]',
+    );
+    if (aboutNav) {
+      const event = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+      });
+      aboutNav.dispatchEvent(event);
+    }
+  };
   return (
     <div className="flex justify-center md:justify-between px-12 py-10 fixed top-0 z-50 w-screen">
-      <div className="flex items-center bg-header-background justify-center w-[280px] h-[85px] rounded-[50px] p-4">
+      <div
+        className="flex items-center bg-header-background justify-center w-[280px] h-[85px] rounded-[50px] p-4 cursor-pointer"
+        onClick={navigateToPage}
+      >
         <Image
           src={allspark}
           alt="allspark-logo"
