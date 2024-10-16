@@ -16,7 +16,6 @@ import { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useWindowSize } from '@/contexts/WindowSizeContext';
 import gsap from 'gsap';
-import AOS from 'aos';
 
 //NOTE: For Mobile View style - Have to refresh screen
 export default function SideNavigation() {
@@ -33,7 +32,6 @@ export default function SideNavigation() {
         .querySelector('.is-selected')
         ?.getAttribute('href') as string;
       setCurrentSection(section);
-      AOS.refresh();
     }
   };
   const { windowSize } = useWindowSize();

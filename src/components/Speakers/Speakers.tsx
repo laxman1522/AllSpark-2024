@@ -4,7 +4,6 @@ import './Speakers.scss';
 import CommitteeMemberCard from '../CommitteeMemberCard/CommitteeMemberCard';
 import SpeakersModal from '../SpeakersModal/SpeakersModal';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 interface SpeakerProps {
   speakers: Speaker[];
@@ -39,6 +38,7 @@ const generateSpeakersCard = (
         borderRadius: '6px',
       }}
       handleClick={() => handleClick(index)}
+      animateOnScroll={true}
     />
   ));
 };
@@ -54,14 +54,6 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
       duration: 800,
       offset: 0,
     });
-    const speakerContainer = scrollContainerRef.current;
-    const handleScroll = () => {
-      AOS.refresh();
-    };
-    speakerContainer?.addEventListener('scroll', handleScroll);
-    return () => {
-      speakerContainer?.removeEventListener('scroll', handleScroll);
-    };
   }, []);
 
   const handleClick = (index: number) => {
