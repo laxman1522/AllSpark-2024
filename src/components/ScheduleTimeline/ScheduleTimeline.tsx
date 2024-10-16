@@ -1,9 +1,5 @@
 import React from 'react';
 import './ScheduleTimeline.scss';
-import CalendarIcon from '@/components/CalendarIcon/CalendarIcon';
-import Profile from '../Profile/Profile';
-import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
-import { dateToISOFormat } from '@/utils/date-utils';
 import ScheduleCard from '../ScheduleCard/ScheduleCard';
 
 interface SessionsProps {
@@ -27,8 +23,8 @@ const ScheduleTimeline = ({ sessions }: SessionsProps) => {
     return <ScheduleCard key={key} {...session} />;
   };
   return (
-    <div className="h-[90%] overflow-scroll">
-      <div className="timeline h-full">
+    <div className="h-full overflow-scroll">
+      <div className="timeline h-full mx-auto">
         {Object.entries(sessions).map(([key, session]) =>
           constructSessionHTML(session, key),
         )}

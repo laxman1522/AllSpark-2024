@@ -1,37 +1,172 @@
 {
   "sessions": {
     "1": {
-      "date": "October 16",
-      "startTime": "02:33 AM",
-      "endTime": "02:34 AM",
-      "eventDateTime": "October 11th at 10:30PM",
-      "duration": 10,
-      "title": "Welcome to AllSpark",
-      "category": "Partner Session",
-      "isLive": true
+      "date": "October 25",
+      "startTime": "10:30 AM",
+      "endTime": "11:00 AM",
+      "eventDateTime": "October 25th at 10:30AM",
+      "duration": 30,
+      "title": "ePro AI",
+      "category": "Solution Space",
+      "description": "",
+      "tags": [],
+      "speakersId": [3]
     },
     "2": {
-      "date": "October 16",
-      "startTime": "02:35 AM",
-      "endTime": "02:36 AM",
-      "eventDateTime": "October 11th at 10:30PM",
-      "duration": 60,
-      "title": "Keynote by Mike and Ravi",
-      "category": "Tech Talk",
-      "isLive": false
+      "date": "October 25",
+      "startTime": "12:00 PM",
+      "endTime": "12:30 PM",
+      "eventDateTime": "October 25th at 12:00PM",
+      "duration": 30,
+      "title": "Energizing E-commerce Platforms with Augmented Reality",
+      "category": "Solution Space",
+      "description": "",
+      "tags": [],
+      "speakersId": [13, 14, 15, 16, 17]
     },
     "3": {
-      "date": "October 16",
-      "startTime": "02:37 AM",
-      "endTime": "02:38 AM",
-      "eventDateTime": "October 11th at 10:30PM",
+      "date": "October 25",
+      "startTime": "12:45 PM",
+      "endTime": "01:15 PM",
+      "eventDateTime": "October 25th at 12:45PM",
       "duration": 30,
-      "title": "All About Power Platform",
-      "category": "Solution space",
-      "isLive": false,
-      "description": "Supercharge your business by crafting applications for a data-driven destiny!",
-      "tags": ["Apps", "Automation", "Bots", "Reports"],
-      "speakersId": [1, 2, 3]
+      "title": "Data FM + Data QA",
+      "category": "Solution Space",
+      "description": "",
+      "tags": [],
+      "speakersId": [1, 2]
+    },
+    "4": {
+      "date": "October 25",
+      "startTime": "04:15 PM",
+      "endTime": "04:45 PM",
+      "eventDateTime": "October 25th at 04:15PM",
+      "duration": 30,
+      "title": "WatchSense",
+      "category": "Solution Space",
+      "description": "",
+      "tags": [],
+      "speakersId": [8, 9, 10, 11, 12]
+    },
+    "5": {
+      "date": "October 25",
+      "startTime": "05:30 PM",
+      "endTime": "06:00 PM",
+      "eventDateTime": "October 25th at 05:30PM",
+      "duration": 30,
+      "title": "The Sales Wizard - Data Driven Sales Accelerator",
+      "category": "Solution Space",
+      "description": "",
+      "tags": [],
+      "speakersId": [4, 5, 6, 7]
+    },
+    "6": {
+      "date": "October 26",
+      "startTime": "10:45 AM",
+      "endTime": "11:15 AM",
+      "eventDateTime": "October 26th at 10:45PM",
+      "duration": 30,
+      "title": "AI-based Ransomware Protection On Storage",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [18, 19]
+    },
+    "7": {
+      "date": "October 26",
+      "startTime": "10:45 AM",
+      "endTime": "11:15 AM",
+      "eventDateTime": "October 26th at 10:45PM",
+      "duration": 30,
+      "title": "FutureReady Immersive: Gamified Employee Training",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [33, 34, 35]
+    },
+    "8": {
+      "date": "October 26",
+      "startTime": "11:45 AM",
+      "endTime": "12:15 PM",
+      "eventDateTime": "October 26th at 11:45PM",
+      "duration": 30,
+      "title": "Federated Learning-Privacy First Models",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [14, 25, 26]
+    },
+    "9": {
+      "date": "October 26",
+      "startTime": "11:45 AM",
+      "endTime": "12:15 PM",
+      "eventDateTime": "October 26th at 11:45PM",
+      "duration": 30,
+      "title": "Gen AI and its demand for Intelligent Data Infrastructure",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [19, 23, 24]
+    },
+    "10": {
+      "date": "October 26",
+      "startTime": "03:15 PM",
+      "endTime": "03:45 PM",
+      "eventDateTime": "October 26th at 03:15PM",
+      "duration": 30,
+      "title": "Memory as a Service-Emotions in the cloud",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [20, 21, 22]
+    },
+    "11": {
+      "date": "October 26",
+      "startTime": "03:15 PM",
+      "endTime": "03:45 PM",
+      "eventDateTime": "October 26th at 03:15PM",
+      "duration": 30,
+      "title": "From Data Chaos to Data Castle: Designing your Data Kingdom",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [36, 37, 4]
+    },
+    "12": {
+      "date": "October 26",
+      "startTime": "04:15 PM",
+      "endTime": "04:45 PM",
+      "eventDateTime": "October 26th at 04:15PM",
+      "duration": 30,
+      "title": "How AI-Driven Platforms and Tools are Redefining Application Development",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [38, 39, 40]
+    },
+    "13": {
+      "date": "October 26",
+      "startTime": "05:15 PM",
+      "endTime": "05:45 PM",
+      "eventDateTime": "October 26th at 05:15PM",
+      "duration": 30,
+      "title": "Transforming Business Intelligence with RAG and Agentic RAG: A Path to Smarter Operations and Insights",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [30, 31, 32]
+    },
+    "14": {
+      "date": "October 26",
+      "startTime": "05:15 PM",
+      "endTime": "05:45 PM",
+      "eventDateTime": "October 26th at 05:15PM",
+      "duration": 30,
+      "title": "LangFlow Begins: A Journey Through Emerging Trends",
+      "category": "Tech Talk",
+      "description": "",
+      "tags": [],
+      "speakersId": [27, 28, 29]
     }
   },
   "speakers": {
@@ -321,6 +456,38 @@
       "imageUrl": "/images/speakers/Ilancheran Muthumari.jpg",
       "sessionDetails": {
         "3": [33, 34]
+      }
+    },
+    "37": {
+      "name": "Balakumaran Prabhu",
+      "email": "balakumaran.prabhu@cdw.com",
+      "imageUrl": "/images/speakers/Balakumaran Prabhu.jpg",
+      "sessionDetails": {
+        "11": [4, 36]
+      }
+    },
+    "38": {
+      "name": "Swetha Prakashan",
+      "email": "swetha.prakashan@cdw.com",
+      "imageUrl": "/images/speakers/Swetha Prakashan.jpg",
+      "sessionDetails": {
+        "12": [39, 40]
+      }
+    },
+    "39": {
+      "name": "Alagu Bala Ganapathy",
+      "email": "alagu.balaganapathy@cdw.com",
+      "imageUrl": "/images/speakers/Alagu Bala Ganapathy.jpg",
+      "sessionDetails": {
+        "12": [38, 40]
+      }
+    },
+    "40": {
+      "name": "Arun Kumar Ponnusamy",
+      "email": "a.ponnusamy@cdw.com",
+      "imageUrl": "/images/speakers/Arun Kumar Ponnusamy.jpg",
+      "sessionDetails": {
+        "12": [38, 39]
       }
     }
   },
