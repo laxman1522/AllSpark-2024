@@ -10,16 +10,16 @@ import cdwlogo from '../../../public/images/cdwLogo.png';
 
 const Header = () => {
   const navigateToPage = () => {
-    const aboutNav = document.querySelector(
+    const homeNav = document.querySelector(
       '#navbar-vertical-nav a[href="#home-section"]',
     );
-    if (aboutNav) {
+    if (homeNav) {
       const event = new MouseEvent('click', {
         bubbles: true,
         cancelable: true,
         view: window,
       });
-      aboutNav.dispatchEvent(event);
+      homeNav.dispatchEvent(event);
     }
   };
   return (
