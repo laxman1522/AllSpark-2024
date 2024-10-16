@@ -110,7 +110,6 @@ export const getAllSpeakers = () => {
  * @author [Hariharan Muralidharan]
  */
 export const getSessionsByDate = (date: string) => {
-  console.log('date', date);
   const resultSessions = [];
   const sessions = schedule?.sessions;
   const sessionIds = Object.keys(sessions);

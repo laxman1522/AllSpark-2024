@@ -14,20 +14,17 @@ type sessionType = {
   title: string;
   category: string;
   isLive: boolean;
-  sessionDescription?: string;
+  description?: string;
   speakersId?: Array<number>;
 };
 
 const ScheduleTimeline = ({ sessions }: SessionsProps) => {
-  const constructSessionHTML = (session: sessionType, key: string) => {
-    return <ScheduleCard key={key} {...session} />;
-  };
   return (
     <div className="h-full overflow-scroll">
       <div className="timeline h-full mx-auto">
-        {Object.entries(sessions).map(([key, session]) =>
-          constructSessionHTML(session, key),
-        )}
+        {Object.entries(sessions).map(([key, session]) => (
+          <ScheduleCard key={key} {...session} />
+        ))}
       </div>
     </div>
   );

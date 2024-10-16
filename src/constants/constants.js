@@ -86,7 +86,6 @@ export const TIMER = {
 export const SCHEDULE_CONSTANTS = {
   ADD_TO_CALENDAR: 'Add to Calendar',
   LIVE_NOW: 'Live Now',
-  LOCATION: 'Bengaluru',
 };
 
 export const ICS_CONSTANTS = {

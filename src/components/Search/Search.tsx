@@ -20,7 +20,7 @@ const Search: React.FC<SearchProps> = ({ searchHandler, searchKeyword }) => {
         type="text"
         placeholder="Search in the schedule..."
         value={search}
-        className="w-full md:w-[35vw] placeholder:italic border-[1.5px] md:border-[3px] border-events-color rounded-md bg-schedule-tab-background text-schedule-color placeholder-schedule-color outline-0  p-1.5 md:p-3 text-sm md:text-xl"
+        className="w-full md:w-[35vw] placeholder:italic border-[1.5px] md:border-[3px] border-events-color rounded-md bg-schedule-tab-background text-schedule-color placeholder-schedule-color outline-0  p-1.5 md:p-3 text-sm lg:text-xl"
         onKeyDown={(e) => {
           e.key === 'Enter' && searchHandler(search);
         }}

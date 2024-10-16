@@ -19,7 +19,6 @@ const ScheduleContainer = () => {
     60000 - new Date().getSeconds() * 1000,
   );
 
-  console.log('agenda[0].date', agenda[0].date);
   const createDateFromWords = (day: string, time: string) => {
     const currentYear = new Date().getFullYear();
     const dateString = `${day}, ${currentYear} ${time}`;
@@ -32,48 +31,20 @@ const ScheduleContainer = () => {
       if (limit !== 60000) {
         setLimit(60000);
       }
-      const updatedSession = sessions.map((value: any) => {
-        console.log('value', value);
+      const updatedSessions = sessions.map((value: any) => {
         const sessionStartTime = createDateFromWords(
           value.date,
           value.startTime,
         );
         const sessionEndTime = createDateFromWords(value.date, value.endTime);
-
         const currentTime = new Date();
         currentTime.setSeconds(0, 0);
-        if (
+        value.isLive =
           sessionStartTime.getTime() <= currentTime.getTime() &&
-          sessionEndTime.getTime() >= currentTime.getTime()
-        ) {
-          value.isLive = true;
-        } else {
-          value.isLive = false;
-        }
+          sessionEndTime.getTime() >= currentTime.getTime();
         return value;
       });
-      // const updatedSession = Object.fromEntries(
-      //   Object.entries(sessions).map(([key, value]: any) => {
-      //     const sessionStartTime = createDateFromWords(
-      //       value.date,
-      //       value.startTime,
-      //     );
-      //     const sessionEndTime = createDateFromWords(value.date, value.endTime);
-
-      //     const currentTime = new Date();
-      //     currentTime.setSeconds(0, 0);
-      //     if (
-      //       sessionStartTime.getTime() <= currentTime.getTime() &&
-      //       sessionEndTime.getTime() >= currentTime.getTime()
-      //     ) {
-      //       value.isLive = true;
-      //     } else {
-      //       value.isLive = false;
-      //     }
-      //     return [key, value];
-      //   }),
-      // );
-      setSessions(updatedSession);
+      setSessions(updatedSessions);
     };
     const timer = setTimeout(() => {
       console.log('1 min', time, sessions);

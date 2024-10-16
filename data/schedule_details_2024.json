@@ -1,9 +1,9 @@
 {
   "sessions": {
     "1": {
-      "date": "October 16",
-      "startTime": "08:40 PM",
-      "endTime": "08:41 PM",
+      "date": "October 25",
+      "startTime": "10:00 AM",
+      "endTime": "10:15 AM",
       "eventDateTime": "October 25th at 10:00AM",
       "duration": 15,
       "title": "Introduction to US Guests",
@@ -14,9 +14,9 @@
       "isLive": false
     },
     "2": {
-      "date": "October 16",
-      "startTime": "08:42 PM",
-      "endTime": "08:43 PM",
+      "date": "October 25",
+      "startTime": "10:30 AM",
+      "endTime": "11:00 AM",
       "eventDateTime": "October 25th at 10:30AM",
       "duration": 30,
       "title": "ePro AI",
@@ -27,9 +27,9 @@
       "isLive": false
     },
     "3": {
-      "date": "October 16",
-      "startTime": "08:44 PM",
-      "endTime": "08:45 PM",
+      "date": "October 25",
+      "startTime": "11:15 AM",
+      "endTime": "11:45 AM",
       "eventDateTime": "October 25th at 11:15AM",
       "duration": 30,
       "title": "Engagement Activity",
@@ -40,9 +40,9 @@
       "isLive": false
     },
     "4": {
-      "date": "October 16",
-      "startTime": "08:46 PM",
-      "endTime": "08:47 PM",
+      "date": "October 25",
+      "startTime": "12:00 PM",
+      "endTime": "12:30 PM",
       "eventDateTime": "October 25th at 12:00PM",
       "duration": 30,
       "title": "Energizing E-commerce Platforms with Augmented Reality",
@@ -53,7 +53,7 @@
       "isLive": false
     },
     "5": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "12:45 PM",
       "endTime": "01:15 PM",
       "eventDateTime": "October 25th at 12:45PM",
@@ -66,7 +66,7 @@
       "isLive": false
     },
     "6": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "01:15 PM",
       "endTime": "02:15 PM",
       "eventDateTime": "October 25th at 01:15PM",
@@ -79,7 +79,7 @@
       "isLive": false
     },
     "7": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "02:15 PM",
       "endTime": "03:45 PM",
       "eventDateTime": "October 25th at 02:30PM",
@@ -92,7 +92,7 @@
       "isLive": false
     },
     "8": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "04:15 PM",
       "endTime": "04:45 PM",
       "eventDateTime": "October 25th at 04:15PM",
@@ -105,7 +105,7 @@
       "isLive": false
     },
     "9": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "04:45 PM",
       "endTime": "05:15 PM",
       "eventDateTime": "October 25th at 04:45PM",
@@ -118,7 +118,7 @@
       "isLive": false
     },
     "10": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "05:30 PM",
       "endTime": "06:00 PM",
       "eventDateTime": "October 25th at 05:30PM",
@@ -131,7 +131,7 @@
       "isLive": false
     },
     "11": {
-      "date": "October 16",
+      "date": "October 25",
       "startTime": "06:00 PM",
       "endTime": "06:45 PM",
       "eventDateTime": "October 25th at 06:00PM",
@@ -692,7 +692,7 @@
   },
   "agenda": {
     "1": {
-      "date": "October 16",
+      "date": "October 25",
       "sessions": [1, 2, 3, 4, 5]
     },
     "2": {
