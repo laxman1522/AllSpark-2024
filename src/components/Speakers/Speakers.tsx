@@ -78,7 +78,7 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
   const speakerProfiles = generateSpeakersCard(speakers, handleClick);
 
   return (
-    <div className="speakers-wrapper flex flex-col justify-center relative ml-[2%] lg:ml-[3%] max-[1400px]:mt-[15vh] max-[712px]:mt[10vh] max-[1024px]:mt-[2vh] lg:mt-[0vh] w-[84%] p-2 max-[1024px]:m-auto rounded border-0 h-[90%] gap-[20px]">
+    <div className="speakers-wrapper flex flex-col justify-center relative ml-[2%] lg:ml-[3%] max-[1400px]:mt-[15vh] max-[712px]:mt[10vh] max-[1024px]:mt-[4vh] lg:mt-[4vh] w-[84%] p-2 max-[1024px]:m-auto rounded border-0 h-[90%] gap-[20px]">
       <SectionHeader headerText={'Speakers'} />
       <div
         ref={scrollContainerRef}
