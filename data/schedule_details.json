@@ -1,10 +1,10 @@
 {
   "sessions": {
     "1": {
-      "date": "October 25",
-      "startTime": "10:30 AM",
-      "endTime": "11:00 AM",
-      "eventDateTime": "October 25th at 10:30AM",
+      "date": "October 16",
+      "startTime": "09:35 PM",
+      "endTime": "09:36 PM",
+      "eventDateTime": "October 16th at 10:30AM",
       "duration": 30,
       "title": "ePro AI",
       "category": "Solution Space",
@@ -13,10 +13,10 @@
       "speakersId": [3]
     },
     "2": {
-      "date": "October 25",
-      "startTime": "12:00 PM",
-      "endTime": "12:30 PM",
-      "eventDateTime": "October 25th at 12:00PM",
+      "date": "October 16",
+      "startTime": "09:37 PM",
+      "endTime": "09:38 PM",
+      "eventDateTime": "October 16th at 12:00PM",
       "duration": 30,
       "title": "Energizing E-commerce Platforms with Augmented Reality",
       "category": "Solution Space",
@@ -25,10 +25,10 @@
       "speakersId": [13, 14, 15, 16, 17]
     },
     "3": {
-      "date": "October 25",
-      "startTime": "12:45 PM",
-      "endTime": "01:15 PM",
-      "eventDateTime": "October 25th at 12:45PM",
+      "date": "October 16",
+      "startTime": "09:37 PM",
+      "endTime": "09:39 PM",
+      "eventDateTime": "October 16th at 12:45PM",
       "duration": 30,
       "title": "Data FM + Data QA",
       "category": "Solution Space",
@@ -37,10 +37,10 @@
       "speakersId": [1, 2]
     },
     "4": {
-      "date": "October 25",
-      "startTime": "04:15 PM",
-      "endTime": "04:45 PM",
-      "eventDateTime": "October 25th at 04:15PM",
+      "date": "October 16",
+      "startTime": "09:41 PM",
+      "endTime": "09:42 PM",
+      "eventDateTime": "October 16th at 04:15PM",
       "duration": 30,
       "title": "WatchSense",
       "category": "Solution Space",
@@ -49,10 +49,10 @@
       "speakersId": [8, 9, 10, 11, 12]
     },
     "5": {
-      "date": "October 25",
+      "date": "October 16",
       "startTime": "05:30 PM",
       "endTime": "06:00 PM",
-      "eventDateTime": "October 25th at 05:30PM",
+      "eventDateTime": "October 16th at 05:30PM",
       "duration": 30,
       "title": "The Sales Wizard - Data Driven Sales Accelerator",
       "category": "Solution Space",
@@ -493,7 +493,7 @@
   },
   "agenda": {
     "1": {
-      "date": "October 25",
+      "date": "October 16",
       "sessions": [1, 2]
     },
     "2": {
