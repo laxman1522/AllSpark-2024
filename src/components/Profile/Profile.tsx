@@ -10,7 +10,10 @@ interface ProfileProps {
 const Profile = ({ speaker, index }: ProfileProps) => {
   const { imageUrl, name } = getSpeakerDetails(speaker);
   return (
-    <div key={index} className="flex items-center gap-3 profile">
+    <div
+      key={index}
+      className="flex items-center gap-3 flex-1 basis-[calc(33.33%-2.5rem)] max-[1024px]:basis-[calc(50%-2rem)] max-[400px]:basis-full flex-shrink-0"
+    >
       <Image
         src={imageUrl}
         alt={name}

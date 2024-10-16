@@ -8,6 +8,7 @@ import {
 import ScheduleTimeline from '@/components/ScheduleTimeline/ScheduleTimeline';
 import Search from '@/components/Search/Search';
 import Button from '@/components/Button/Button';
+import './ScheduleContainer.scss';
 
 const ScheduleContainer = () => {
   const agenda = getAgenda();
@@ -74,7 +75,7 @@ const ScheduleContainer = () => {
 
   return (
     <div className="h-screen relative">
-      <div className="pt-[14vh] md:pt-[16vh] mb-11 px-8 lg:pl-16 lg:pr-40 xl:pr-52">
+      <div className="schedule-container pt-[14vh] md:pt-[16vh] mb-11 px-8 lg:pl-16 lg:pr-40 xl:pr-52">
         <SectionHeader headerText="Schedule" />
         <div className="flex w-full justify-between md:pt-[2vh] items-center flex-col md:flex-row gap-4">
           <div className="flex gap-3 flex-wrap items-center w-full">
@@ -92,7 +93,7 @@ const ScheduleContainer = () => {
           </div>
           <Search searchHandler={searchHandler} searchKeyword={searchKeyword} />
         </div>
-        <div className="w-full h-[60vh] mt-[2vh] bg-memories-background rounded-md">
+        <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md">
           {sessions.length === 0 ? (
             <div className="flex flex-col gap-6 items-center justify-center h-full">
               <span className="text-schedule-color italic text-[18px] text-center">{`No event found for the search "${searchKeyword}"`}</span>

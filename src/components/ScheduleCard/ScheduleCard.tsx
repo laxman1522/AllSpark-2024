@@ -3,7 +3,6 @@ import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
 import { createICSContent, dateToISOFormat } from '@/utils/date-utils';
-import './ScheduleCard.scss';
 
 type sessionType = {
   date: string;
@@ -76,33 +75,35 @@ const ScheduleCard = (session: sessionType) => {
 
         <div className="flex flex-col max-[1024px]:p-4 p-5 gap-1.5">
           <div className="flex items-center text-[#F9F0D5] max-[768px]:flex-col max-[768px]:items-start max-[768px]:min-h-[50px]">
-            <span className="max-[768px]:text-sm text-base">{`${startTime} -  ${endTime}`}</span>
+            <span className="max-[400px]:text-xs max-[768px]:text-sm text-base">{`${startTime} -  ${endTime}`}</span>
             {isLive ? constructLiveNow() : ''}
           </div>
           <p className="max-[768px]:text-base max-[1024px]:text-[22px] text-xl text-[#F2BAA7] font-medium max-[768px]:w-full w-[80%]">
             {title}
           </p>
-          <p className="max-[768px]:text-sm text-base text-[#FFDBCF] max-[768px]:w-full max-[1024px]:w-[80%] w-[85%]">
+          <p className="max-[400px]:text-xs max-[768px]:text-sm text-base text-[#FFDBCF] max-[768px]:w-full max-[1024px]:w-[80%] w-[85%]">
             {description}
           </p>
-          <div className="flex flex-wrap gap-2 gap-y-4 max-[1024px]:gap-5 mt-3">
+          <div className="flex flex-wrap gap-2 gap-y-4 max-[400px]:gap-3 max-[1024px]:gap-5 mt-3">
             {speakersId ? constructSpeakersHtml(speakersId) : ''}
           </div>
           <div className="flex flex-col-reverse absolute right-4 top-4 max-[1024px]:flex-col items-end max-[1024px]:gap-1 max-[768px]:gap-2">
-            <span className="text-[#F9F0D5] max-[768px]:text-sm max-[1024px]:text-lg text-base lg:font-semibold">
+            <span className="text-[#F9F0D5] max-[400px]:text-xs max-[768px]:text-sm max-[1024px]:text-lg text-base lg:font-semibold">
               {category}
             </span>
-            <div
-              className="flex items-center border-[1px] border-[#F2BAA7] rounded-[100px] lg:rounded-[10px] cursor-pointer mb-2"
-              onClick={addEventToCalendar}
-            >
-              <div className="max-[1024px]:scale-[0.4] scale-[0.5]">
-                <CalendarIcon />
+            {!isLive && (
+              <div
+                className="flex items-center border-[1px] border-[#F2BAA7] rounded-[100px] lg:rounded-[10px] cursor-pointer mb-2"
+                onClick={addEventToCalendar}
+              >
+                <div className="max-[1024px]:scale-[0.4] scale-[0.5]">
+                  <CalendarIcon />
+                </div>
+                <span className="max-[1024px]:text-[10px] text-xs max-[1024px]:mr-2 mr-1">
+                  {ADD_TO_CALENDAR}
+                </span>
               </div>
-              <span className="max-[1024px]:text-[10px] text-xs max-[1024px]:mr-2 mr-1">
-                {ADD_TO_CALENDAR}
-              </span>
-            </div>
+            )}
           </div>
         </div>
       </div>
