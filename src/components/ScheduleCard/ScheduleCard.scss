@@ -1,0 +1,6 @@
+.profile {
+  width: calc((100% - (1.25rem * 2)) / 3);
+  @media only screen and (max-width: 1024px) {
+    width: calc((100% - 0.5rem) / 2);
+  }
+}

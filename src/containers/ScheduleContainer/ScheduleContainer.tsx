@@ -88,7 +88,7 @@ const ScheduleContainer = () => {
           </div>
           <Search searchHandler={searchHandler} />
         </div>
-        <div className="w-full h-[60vh] lg:mt-[2vh] bg-memories-background rounded-md">
+        <div className="w-full h-[60vh] mt-[2vh] bg-memories-background rounded-md">
           <ScheduleTimeline sessions={sessions} />
         </div>
       </div>

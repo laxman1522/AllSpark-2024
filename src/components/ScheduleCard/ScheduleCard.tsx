@@ -3,6 +3,7 @@ import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
 import { dateToISOFormat } from '@/utils/date-utils';
+import './ScheduleCard.scss';
 
 type sessionType = {
   date: string;
@@ -71,22 +72,47 @@ END:VCALENDAR
     link.click();
     document.body.removeChild(link);
   };
+  console.log('isLive', isLive);
   return (
     <div
-      className={`timeline__event  animated fadeInUp delay-3s ${isLive && 'active'}`}
+      className={`timeline__event  animated fadeInUp delay-3s ${!isLive && 'active'}`}
     >
       <div className="w-full">
         <div className="event_time">{startTime}</div>
         <div className="flex flex-col">
-          <div
-            className="flex items-center gap-4 ml-auto border-[1px] border-[#F2BAA7] rounded-[100px] md:rounded-[10px] p-2 cursor-pointer"
-            onClick={() => addEventToCalendar(session)}
-          >
-            <CalendarIcon />
-            <span>{ADD_TO_CALENDAR}</span>
+          <div className="ml-auto mt-[-12px] text-[#F9F0D5] text-xs block lg:hidden">
+            {category}
           </div>
-          <div className="ml-auto">{category}</div>
-          <div className="flex items-center gap-2 text-[#F9F0D5]">
+          <div className="flex items-center gap-2 text-[#F9F0D5] lg:hidden">
+            <span className="text-sm">{`${startTime} -  ${endTime}`}</span>
+            {!isLive ? (
+              <div className="flex items-center">
+                <svg height="40" width="40" className="blinking">
+                  <circle
+                    cx="20"
+                    cy="20"
+                    r="8"
+                    fill="red"
+                    stroke="#F9F0D5"
+                    strokeWidth={1}
+                  />
+                </svg>
+                <span className="text-sm ml-[-5px]">{LIVE_NOW}</span>
+              </div>
+            ) : (
+              ''
+            )}
+          </div>
+          <div
+            className="flex items-center gap-2 ml-auto border-[1px] border-[#F2BAA7] rounded-[100px] lg:rounded-[10px] py-1 px-2 lg:py-1 lg:pr-2 cursor-pointer"
+            onClick={() => addEventToCalendar()}
+          >
+            <div className="scale-50 lg:scale-[0.65]">
+              <CalendarIcon />
+            </div>
+            <span className="text-[10px] lg:text-sm">{ADD_TO_CALENDAR}</span>
+          </div>
+          <div className="lg:flex items-center gap-2 text-[#F9F0D5] hidden">
             <span className="text-lg">{`${startTime} -  ${endTime}`}</span>
             {isLive ? (
               <div className="flex items-center">
@@ -106,11 +132,14 @@ END:VCALENDAR
               ''
             )}
           </div>
+          <div className="ml-auto text-lg mt-[-12px] text-[#F9F0D5] hidden lg:block">
+            {category}
+          </div>
           <div className="text-[#F2BAA7]">
-            <p className=" text-2xl">{title}</p>
+            <p className="text-sm lg:text-2xl">{title}</p>
             <p className="text-lg">{sessionDescription}</p>
           </div>
-          <div className="flex flex-wrap md:flex-nowrap justify-evenly md:justify-between my-5">
+          <div className="flex flex-wrap gap-2 gap-y-4 lg:gap-5 my-5">
             {speakersId ? constructSpeakersHtml(speakersId) : ''}
           </div>
         </div>
