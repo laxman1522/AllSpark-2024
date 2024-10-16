@@ -37,6 +37,7 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
             objectPosition: '',
             borderRadius: '6px',
           }}
+          animateOnScroll={false}
         />
       </div>
     </div>

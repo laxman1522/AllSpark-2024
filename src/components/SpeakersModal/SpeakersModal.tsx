@@ -32,7 +32,7 @@ export default function SpeakersModal({
 }: SpeakersModalProps) {
   return (
     <div
-      className={`${isModelOpened === true ? 'open' : 'out'} absolute  left-[0] flex flex-col w-full h-[100%] z-10`}
+      className={`${isModelOpened === true ? 'modal-open' : 'modal-close'} absolute  left-[0] flex flex-col w-full h-[100%] z-10`}
       style={{
         top: `${scrollAmount}px`,
       }}

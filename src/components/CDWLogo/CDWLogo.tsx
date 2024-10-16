@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const CDWLogo = () => {
   return (
-    <div className="cdw-logo flex justify-center items-center mt-[8vh]">
+    <div className="cdw-logo flex justify-center items-center mt-[6vh]">
       <Image
         src={logo}
         alt="Logo"
