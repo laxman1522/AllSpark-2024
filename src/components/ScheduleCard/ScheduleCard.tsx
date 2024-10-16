@@ -72,10 +72,9 @@ END:VCALENDAR
     link.click();
     document.body.removeChild(link);
   };
-  console.log('isLive', isLive);
   return (
     <div
-      className={`timeline__event  animated fadeInUp delay-3s ${!isLive && 'active'}`}
+      className={`timeline__event  animated fadeInUp delay-3s ${isLive && 'active'}`}
     >
       <div className="w-full">
         <div className="event_time">{startTime}</div>
@@ -85,7 +84,7 @@ END:VCALENDAR
           </div>
           <div className="flex items-center gap-2 text-[#F9F0D5] lg:hidden">
             <span className="text-sm">{`${startTime} -  ${endTime}`}</span>
-            {!isLive ? (
+            {isLive ? (
               <div className="flex items-center">
                 <svg height="40" width="40" className="blinking">
                   <circle
