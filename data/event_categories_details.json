@@ -1,16 +1,20 @@
 {
+  "some": {
+    "short_description": "Rajnil is a Partner with the Advisory practice and leads the Go To Market strategy for Generative AI for PwC India. He has nearly 25 years experience in advanced analytics and AI",
+    "description": "Rajnil is a Partner with the Advisory practice and leads the Go To Market strategy for Generative AI for PwC India. He has nearly 25 years experience in advanced analytics and AI and has advised CXOs at the Fortune 1000 and at large privately-held enterprises in North America, UK, Australia, and Asia. His forte is rapid profit improvement through the application of AI-led applications."
+  },
   "categories": [
     {
       "name": "TECH TALKS",
       "description": "Designed to inspire and educate everyone on the latest solutions, frameworks and future prospects across various technologies including Generative AI, LLM, Bots, DevOps, AWS Cloud, Networking, Digital Commerce, UX etc.,"
     },
     {
-      "name": "PARTNER SESSIONS",
-      "description": "Special partner sessions presented by ServiceNow and Snowflake will provide an opportunity to acquire fresh perspectives, get expert insights, know the latest developments and broaden your understanding in both the domains"
+      "name": "SOLUTIONS SPACE",
+      "description": "Explore the various innovations, best practices and frameworks that our consultants have built as accelerators and solutions to some of the critical problems in the industries that we serve."
     },
     {
-      "name": "TECH TALKS",
-      "description": "Designed to inspire and educate everyone on the latest solutions, frameworks and future prospects across various technologies including Generative AI, LLM, Bots, DevOps, AWS Cloud, Networking, Digital Commerce, UX etc.,"
+      "name": "GUEST TALK - Rajnil Mallik",
+      "description": "Rajnil is a Partner with the Advisory practice and leads the Go To Market strategy for Generative AI for PwC India. He has nearly 25 years experience in advanced analytics and AI."
     }
   ]
 }

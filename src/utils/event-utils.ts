@@ -1,6 +1,7 @@
 import { EVENT_COUNTER } from '@/constants/constants';
 import scheduleData from '@/../data/schedule_details.json';
 import contentData from '@/../data/event_categories_details.json';
+import { title } from 'process';
 
 interface Session {
   date: string;
@@ -138,27 +139,36 @@ export const getEventDetails = () => {
  * @author [Hariharan Muralidharan]
  */
 export const constructEventData = () => {
-  let count = 0;
-  Object.values(schedule?.sessions).map((type) => {
-    if (type?.category === 'Tech Talk') {
-      count++;
-    }
-  });
-  const eventData = [
-    { count: Object.keys(schedule?.agenda).length, title: EVENT_COUNTER.DAYS },
-    {
-      count: EVENT_COUNTER.REGISTRATION_COUNT,
-      title: EVENT_COUNTER.REGISTRATION,
+  const sessionCounts = Object.values(schedule?.sessions || []).reduce(
+    (acc, type) => {
+      if (type?.category === 'Tech Talk') {
+        acc.techTalkCount++;
+      } else if (type?.category === 'Solution Space') {
+        acc.solutionSpaceCount++;
+      } else if (type?.category === 'Guest Speaker') {
+        acc.guestSpeakerCount++;
+      }
+      return acc;
     },
-    { count: count, title: EVENT_COUNTER.TECH_TALKS },
+    { techTalkCount: 0, solutionSpaceCount: 0, guestSpeakerCount: 0 },
+  );
+
+  const eventData = [
     {
-      count: Object.keys(schedule?.speakers).length,
+      count: Object.keys(schedule?.agenda || {}).length,
+      title: EVENT_COUNTER.DAYS,
+    },
+    {
+      count: sessionCounts.solutionSpaceCount,
+      title: EVENT_COUNTER.SOLUTION_SPACE,
+    },
+    { count: sessionCounts.techTalkCount, title: EVENT_COUNTER.TECH_TALKS },
+    { count: sessionCounts.guestSpeakerCount, title: EVENT_COUNTER.GUESTS },
+    {
+      count: Object.keys(schedule?.speakers || {}).length,
       title: EVENT_COUNTER.SPEAKERS,
     },
-    {
-      count: EVENT_COUNTER.ATTENDEES_COUNT,
-      title: EVENT_COUNTER.TECHIES,
-    },
+    { count: EVENT_COUNTER.ATTENDEES_COUNT, title: EVENT_COUNTER.TECHIES },
   ];
 
   return eventData;

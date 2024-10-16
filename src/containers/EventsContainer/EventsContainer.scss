@@ -47,6 +47,9 @@
 }
 
 @media only screen and (width: 1024px) and (height: 600px) {
+  .events-counter {
+    column-gap: 1.5rem;
+  }
   .event-section-header {
     margin-top: 22vh;
     margin-bottom: 2vh;

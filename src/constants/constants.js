@@ -67,8 +67,8 @@ export const EVENT_COUNTER = {
   TECH_TALKS: 'Tech Talks',
   SPEAKERS: 'Speakers',
   TECHIES: 'Techies',
-  REGISTRATION: 'Solution Space',
-  REGISTRATION_COUNT: 60,
+  SOLUTION_SPACE: 'Solution Space',
+  GUESTS: 'Guests',
   ATTENDEES_COUNT: 600,
 };
 
