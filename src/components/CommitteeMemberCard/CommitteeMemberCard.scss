@@ -35,7 +35,6 @@
   }
   @media only screen and (max-width: 1139px) {
     flex-basis: calc(24.4% + 13px);
-    height: calc(100% / 4);
   }
   @media only screen and (max-width: 989px) {
     flex-basis: calc(24% + 5px);
@@ -61,7 +60,7 @@
   }
   @media only screen and (max-width: 595px) {
     flex-basis: calc(39.5% + 13px);
-    height: calc(100% / 3.9);
+    height: calc(100% / 3);
   }
   @media only screen and (max-width: 524px) {
     flex-basis: calc(36.5% + 13px);
