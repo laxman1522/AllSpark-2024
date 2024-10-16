@@ -9,6 +9,7 @@ interface CommitteeSectionMobileProps {
 interface Committee {
   committeeName: string;
   memberName: string;
+  imageSrc: string;
 }
 
 /**
@@ -37,8 +38,16 @@ const CommitteeSectionMobile: React.FC<CommitteeSectionMobileProps> = ({
           committeeMembersAndNames={committeeAndMembersList}
           committeeMembersClassName={committeeMembersClassName}
           wrapperWidth={''}
-          wrapperHeight={''}
+          wrapperHeight={'h-[45vw]'}
           wrapperClassName={'member-card'}
+          imageStyles={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: '',
+            borderRadius: '6px',
+          }}
+          animateOnScroll={false}
         />
       </div>
     </div>

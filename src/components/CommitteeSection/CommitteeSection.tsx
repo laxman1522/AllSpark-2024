@@ -28,8 +28,16 @@ const CommitteeSection: React.FC<CommitteeSectionProps> = ({ committee }) => {
           committeeMembersAndNames={committeeMembersAndNames}
           committeeMembersClassName={committeeMembersClassName}
           wrapperWidth={'w-[12vw]'}
-          wrapperHeight={''}
+          wrapperHeight={'h-[14vw]'}
           wrapperClassName={'member-card'}
+          imageStyles={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: '',
+            borderRadius: '6px',
+          }}
+          animateOnScroll={false}
         />
       </div>
     </div>

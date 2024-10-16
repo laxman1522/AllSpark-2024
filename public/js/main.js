@@ -68,55 +68,55 @@ $(document).ready(function ($) {
   }
 
   function isotopeImplement(currentSelected) {
-    if (document.querySelector('.members-grid')) {
-      const images = document.querySelectorAll('.members-grid img');
-      const loadedImages = [];
-      const imagePromises = Array.from(images).map((img) => {
-        return new Promise((resolve) => {
-          if (img.complete) {
-            resolve();
-          } else {
-            img.onload = img.onerror = resolve; 
-          }
-        });
-      });
-      Promise.all(imagePromises).then(() => {
-        const iso = new Isotope('.members-grid', {
-          itemSelector: '.element-item',
-          layoutMode: 'masonry',
-          filter: currentSelected,
-        });
-        const filtersElem = document.querySelector('.filters-button-group');
-  
-        if (filtersElem) {
-          filtersElem.addEventListener('click', function (event) {
-            if (!matchesSelector(event.target, 'button')) {
-              return;
+    const membersGrid = document.querySelector('.members-grid');
+
+    if (membersGrid) {
+        const images = membersGrid.querySelectorAll('img');
+        let firstImageLoaded = false;
+
+        const onImageLoad = () => {
+            if (!firstImageLoaded) {
+                firstImageLoaded = true;
+                const iso = new Isotope(membersGrid, {
+                    itemSelector: '.element-item',
+                    layoutMode: 'masonry',
+                    filter: currentSelected,
+                });
+                const filtersElem = document.querySelector('.filters-button-group');
+                if (filtersElem) {
+                    filtersElem.addEventListener('click', (event) => {
+                        const target = event.target;
+                        if (!matchesSelector(target, 'button')) return;
+
+                        const filterValue = target.getAttribute('data-filter');
+                        iso.arrange({ filter: filterValue });
+                        const buttons = filtersElem.querySelectorAll('button');
+                        buttons.forEach((btn) => {
+                            btn.classList.remove('is-checked');
+                        });
+                        target.classList.add('is-checked'); 
+                    });
+                }
             }
-            const filterValue = event.target.getAttribute('data-filter');
-            iso.arrange({ filter: filterValue });
-          });
-          const buttonGroups = document.querySelectorAll('.button-group');
-          buttonGroups.forEach((buttonGroup) => {
-            radioButtonGroup(buttonGroup);
-          });
-          function radioButtonGroup(buttonGroup) {
-            buttonGroup.addEventListener('click', function (event) {
-              if (!matchesSelector(event.target, 'button')) {
-                return;
-              }
-              buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-              event.target.classList.add('is-checked');
-            });
-          }
-        }
-      });
+        };
+        images.forEach((img) => {
+            if (img.complete) {
+                onImageLoad();
+            } else {
+                img.onload = onImageLoad;
+                img.onerror = onImageLoad;
+            }
+        });
     }
   }
 
   window.addEventListener('resize', function () {
     const currentClass = document.querySelector('.is-checked').getAttribute('data-filter');
     isotopeImplement(currentClass);
+    this.setTimeout(()=> {
+      const currentElement = document.querySelector('.is-checked');
+      $(currentElement).click(); 
+    },500);
   });
 
   isotopeImplement('.core-organisers');

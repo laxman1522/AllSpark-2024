@@ -37,7 +37,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
             src={guest?.imageUrl || ''}
             alt={guest?.name || ''}
             fill
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
             className="rounded-[40px] object-top"
           />
           <div className="details hidden absolute bottom-0 w-full items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px]">
@@ -53,7 +53,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
     ));
   };
   return (
-    <div className="guests-desktop my-40 mx-auto px-16 pr-40 xl:pr-60">
+    <div className="guests-desktop my-40 mt-36 mx-auto px-16 pr-40 xl:pr-60">
       <div className="flex justify-between">
         <SectionHeader headerText={heading} />
 
@@ -65,7 +65,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
           isLoop={true}
         />
       </div>
-      <div className="mt-16 mb-12 mx-auto wrapper w-full h-[60vh] overflow-hidden">
+      <div className="mt-8 xl:mt-16 mb-12 mx-auto wrapper w-full h-[60vh] overflow-hidden">
         <Slider
           onReInit={() => {
             const current = document.getElementsByClassName('slick-current')[0];

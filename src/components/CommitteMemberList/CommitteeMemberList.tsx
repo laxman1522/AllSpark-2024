@@ -6,11 +6,14 @@ interface CommitteeMemberListProps {
   wrapperWidth: string;
   wrapperHeight: string;
   wrapperClassName: string;
+  imageStyles: object;
+  animateOnScroll: boolean;
 }
 
 interface Committee {
   committeeName: string;
   memberName: string;
+  imageSrc: string;
 }
 
 /**
@@ -24,6 +27,8 @@ const generateCommitteeMembers = (
   wrapperClassName: string,
   wrapperHeight: string,
   wrapperWidth: string,
+  imageStyles: object,
+  animateOnScroll: boolean,
 ) => {
   return committeeMembersAndNames?.map((member: Committee, index: number) => (
     <div
@@ -33,10 +38,12 @@ const generateCommitteeMembers = (
     >
       <CommitteeMemberCard
         memberName={member.memberName}
-        imageSrc={`/images/committee/${member.memberName}.jpeg`}
+        imageSrc={member.imageSrc}
         wrapperWidth={wrapperWidth}
         wrapperHeight={wrapperHeight}
         wrapperClassName={wrapperClassName}
+        imageStyles={imageStyles}
+        animateOnScroll={animateOnScroll}
       />
     </div>
   ));
@@ -53,6 +60,8 @@ const CommitteeMemberList: React.FC<CommitteeMemberListProps> = ({
   wrapperWidth,
   wrapperHeight,
   wrapperClassName,
+  imageStyles,
+  animateOnScroll,
 }) => {
   const committeMembers = generateCommitteeMembers(
     committeeMembersAndNames,
@@ -60,6 +69,8 @@ const CommitteeMemberList: React.FC<CommitteeMemberListProps> = ({
     wrapperClassName,
     wrapperHeight,
     wrapperWidth,
+    imageStyles,
+    animateOnScroll,
   );
 
   return <>{committeMembers}</>;
