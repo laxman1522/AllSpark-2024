@@ -59,3 +59,89 @@ body {
 .vanta-canvas {
   height: 100% !important;
 }
+
+[data-aos='reveal-right'],
+[data-aos='reveal-left'],
+[data-aos='reveal-up'],
+[data-aos='reveal-down'] {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    transition-property: transform, border-width;
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+    transition-delay: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #451329;
+    border: 3px solid transparent;
+  }
+  img {
+    transition: transform 0.5s ease-in;
+    transform: scale(2);
+  }
+
+  &.aos-animate {
+    img {
+      transform: scale(1);
+    }
+
+    &:after {
+      border-color: #451329;
+    }
+  }
+}
+
+[data-aos='reveal-right'] {
+  &:after {
+    transform: translateX(0);
+  }
+
+  &.aos-animate {
+    &:after {
+      transform: translateX(100%);
+    }
+  }
+}
+
+[data-aos='reveal-left'] {
+  &:after {
+    transform: translateX(0);
+  }
+
+  &.aos-animate {
+    &:after {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+[data-aos='reveal-up'] {
+  &:after {
+    transform: translateY(0);
+  }
+
+  &.aos-animate {
+    &:after {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+[data-aos='reveal-down'] {
+  &:after {
+    transform: translateY(0);
+  }
+
+  &.aos-animate {
+    &:after {
+      transform: translateY(100%);
+    }
+  }
+}
