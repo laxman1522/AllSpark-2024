@@ -5,12 +5,10 @@ import {
   getSessionsByDate,
   getSessionsByKeyword,
 } from '@/utils/event-utils';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ScheduleTimeline from '@/components/ScheduleTimeline/ScheduleTimeline';
+import Search from '@/components/Search/Search';
 
 const ScheduleContainer = () => {
-  const [search, setSearch] = useState<string>('');
   const agenda = getAgenda();
   const [activeTab, setActiveTab] = useState<string>(agenda[0].date);
   const [time, setTime] = useState(0);
@@ -66,7 +64,7 @@ const ScheduleContainer = () => {
     setSessions(getSessionsByDate(activeTab));
   }, [activeTab]);
 
-  const searchHandler = () => {
+  const searchHandler = (search: string) => {
     setSessions(getSessionsByKeyword(getSessionsByDate(activeTab), search));
   };
 
@@ -88,23 +86,7 @@ const ScheduleContainer = () => {
               );
             })}
           </div>
-          <div className="relative max-[767px]:w-full">
-            <input
-              type="text"
-              placeholder="Search in the schedule..."
-              value={search}
-              className="w-full lg:w-[30vw] placeholder:italic border-[1.5px] lg:border-[3px] border-events-color rounded-md bg-schedule-tab-background text-schedule-color placeholder-schedule-color outline-0  p-1.5 lg:p-3 text-sm lg:text-xl"
-              onKeyDown={(e) => {
-                e.key === 'Enter' && searchHandler();
-              }}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <FontAwesomeIcon
-              icon={faSearch}
-              className="cursor-pointer absolute right-5 top-1/2 -translate-y-1/2 text-sm lg:text-xl text-schedule-color"
-              onClick={searchHandler}
-            />
-          </div>
+          <Search searchHandler={searchHandler} />
         </div>
         <div className="w-full h-[60vh] lg:mt-[2vh] bg-memories-background rounded-md">
           <ScheduleTimeline sessions={sessions} />
