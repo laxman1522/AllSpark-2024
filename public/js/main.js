@@ -108,16 +108,15 @@ $(document).ready(function ($) {
             }
         });
     }
-}
-
-
-
-
-
+  }
 
   window.addEventListener('resize', function () {
     const currentClass = document.querySelector('.is-checked').getAttribute('data-filter');
     isotopeImplement(currentClass);
+    this.setTimeout(()=> {
+      const currentElement = document.querySelector('.is-checked');
+      $(currentElement).click(); 
+    },500);
   });
 
   isotopeImplement('.core-organisers');

@@ -47,6 +47,7 @@ const CommitteeSectionMobile: React.FC<CommitteeSectionMobileProps> = ({
             objectPosition: '',
             borderRadius: '6px',
           }}
+          animateOnScroll={false}
         />
       </div>
     </div>

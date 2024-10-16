@@ -1,3 +1,13 @@
+.user-card {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.user-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #f9f0d5;
+}
+
 .image-wrapper {
   // Responsiveness of cards for different screens
   @media only screen and (min-width: 2561px) {
@@ -35,7 +45,6 @@
   }
   @media only screen and (max-width: 1139px) {
     flex-basis: calc(24.4% + 13px);
-    height: calc(100% / 4);
   }
   @media only screen and (max-width: 989px) {
     flex-basis: calc(24% + 5px);
@@ -61,7 +70,7 @@
   }
   @media only screen and (max-width: 595px) {
     flex-basis: calc(39.5% + 13px);
-    height: calc(100% / 3.9);
+    height: calc(100% / 3);
   }
   @media only screen and (max-width: 524px) {
     flex-basis: calc(36.5% + 13px);
@@ -119,12 +128,6 @@
 
 #committee-section .member-card {
   @media screen and (max-width: 1280px) {
-    p {
-      font-size: 18px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
     p {
       font-size: 12px;
     }
