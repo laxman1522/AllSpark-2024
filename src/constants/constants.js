@@ -72,6 +72,13 @@ export const EVENT_COUNTER = {
   ATTENDEES_COUNT: 600,
 };
 
+export const USER_INFORMATION_MODAL = {
+  PRESENTING_TECH_TALK_ON: 'Presenting Tech Talk On',
+  ALONG_WITH: 'Along with',
+  ABOUT: 'About',
+  WATCH_ME_ON: 'Watch Me On',
+};
+
 export const TIMER = {
   TARGET_DATE: 'Oct 25, 2024 10:00:00',
 };
