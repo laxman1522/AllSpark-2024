@@ -40,7 +40,7 @@ const GuestsSlider = ({ guests, heading }: GuestsSliderProps) => {
             style={{ objectFit: 'cover' }}
             className="rounded-[40px] object-top"
           />
-          <div className="details hidden absolute bottom-0 w-full items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[40px]">
+          <div className="details hidden absolute bottom-0 w-full items-center justify-center flex-col py-4 gap-1 bg-[#270212] bg-no-repeat bg-opacity-80 rounded-b-[60px]">
             <p className="text-[20px] font-semibold uppercase text-center text-button-color">
               {guest?.name}
             </p>
