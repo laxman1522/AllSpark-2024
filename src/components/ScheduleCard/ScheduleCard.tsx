@@ -1,6 +1,6 @@
 import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
-import { SCHEDULE_CONSTANTS } from '@/constants/constants';
+import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
 import { createEvent } from 'ics';
 
@@ -19,6 +19,7 @@ const ScheduleCard = (session: sessionType) => {
   const { LIVE_NOW, ADD_TO_CALENDAR, SOLUTION_SPACE, TECH_TALK } =
     SCHEDULE_CONSTANTS;
   const {
+    date,
     startTime,
     endTime,
     title,
@@ -71,39 +72,75 @@ const ScheduleCard = (session: sessionType) => {
   // };
 
   // Function to convert time to UTC from Asia/Kolkata
-  const convertToUTC = (
-    year: number,
-    month: number,
-    day: number,
-    hour: number,
-    minute: number,
-  ) => {
-    const localDate = new Date(Date.UTC(year, month - 1, day, hour, minute)); // Create a date with Kolkata time
-    const timeOffset = 5 * 60 + 30; // India Standard Time (UTC +05:30)
-    localDate.setUTCMinutes(localDate.getUTCMinutes() - timeOffset); // Convert to UTC
+  // const convertToUTC = (
+  //   year: number,
+  //   month: number,
+  //   day: number,
+  //   hour: number,
+  //   minute: number,
+  // ) => {
+  //   const localDate = new Date(Date.UTC(year, month - 1, day, hour, minute)); // Create a date with Kolkata time
+  //   const timeOffset = 5 * 60 + 30; // India Standard Time (UTC +05:30)
+  //   localDate.setUTCMinutes(localDate.getUTCMinutes() - timeOffset); // Convert to UTC
+  //   return [
+  //     localDate.getUTCFullYear(),
+  //     localDate.getUTCMonth() + 1,
+  //     localDate.getUTCDate(),
+  //     localDate.getUTCHours(),
+  //     localDate.getUTCMinutes(),
+  //   ];
+  // };
+
+  // Function to parse and convert the date string to [year, month, day, hour, minute]
+  const convertToDateArray = (datee: string, startTime: string) => {
+    // Create a new Date object by combining the date and time strings
+    const dateTimeStr = `${datee}, ${ICS_CONSTANTS.YEAR} ${startTime}`;
+
+    const date = new Date(dateTimeStr);
+
+    // Format the date into the required array
     return [
-      localDate.getUTCFullYear(),
-      localDate.getUTCMonth() + 1,
-      localDate.getUTCDate(),
-      localDate.getUTCHours(),
-      localDate.getUTCMinutes(),
+      date.getFullYear(), // Year
+      date.getMonth() + 1, // Month (getMonth() returns 0-indexed month, so +1)
+      date.getDate(), // Day of the month
+      date.getHours(), // Hour (24-hour format)
+      date.getMinutes(), // Minutes
     ];
   };
 
-  const addEventToCalendar = () => {
-    // Convert Asia/Kolkata time to UTC
-    const startTime = convertToUTC(2024, 10, 25, 10, 0); // 10:00 AM India time
-    const duration = { hours: 0, minutes: 15 }; // Duration of the event
+  // Function to parse time string and calculate the difference
+  const getTimeDifference = (
+    datee: string,
+    startTime: string,
+    endTime: string,
+  ) => {
+    // Parse the time strings into Date objects (using a fixed date for comparison)
+    const startDate = new Date(`${datee}, ${ICS_CONSTANTS.YEAR} ${startTime}`);
+    const endDate = new Date(`${datee}, ${ICS_CONSTANTS.YEAR} ${endTime}`);
 
-    // Define the event details
+    // Calculate the difference in milliseconds
+    const timeDiffMs = endDate.getTime() - startDate.getTime();
+
+    // Convert milliseconds to minutes and hours
+    const timeDiffMinutes = Math.floor(timeDiffMs / (1000 * 60));
+    const hours = Math.floor(timeDiffMinutes / 60);
+    const minutes = timeDiffMinutes % 60;
+
+    return { hours, minutes };
+  };
+
+  const addEventToCalendar = () => {
+    const { hours, minutes } = getTimeDifference(date, startTime, endTime);
+    // Define the event details (without explicitly specifying timeZone)
     const event: any = {
-      start: startTime, // UTC time
-      duration: duration, // Event duration
-      title: 'My Event', // Event title
-      description: 'Event description here', // Event description
-      location: 'Bengaluru', // Event location
-      status: 'CONFIRMED', // Optional event status
-      alarms: [{ action: 'display', trigger: { minutes: 15, before: true } }], // Reminder 15 minutes before
+      start: convertToDateArray(date, startTime), // Year, Month, Day, Hour, Minute
+      duration: { hours: hours, minutes: minutes }, // Event duration
+      title: 'My Event',
+      description: 'Event description here',
+      location: 'Bengaluru',
+      status: 'CONFIRMED',
+      alarms: [{ action: 'display', trigger: { minutes: 15, before: true } }], // Reminder
+      startInputType: 'local', // This means the time is in local time, not UTC
       productId: '//my.calendar',
     };
 
@@ -120,7 +157,7 @@ const ScheduleCard = (session: sessionType) => {
       // Create a download link
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.download = 'event.ics'; // Filename for the downloaded .ics file
+      link.download = 'event.ics';
 
       // Append the link to the DOM and trigger the download
       document.body.appendChild(link);
