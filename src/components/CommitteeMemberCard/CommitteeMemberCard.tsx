@@ -47,7 +47,7 @@ const CommitteeMemberCard: React.FC<CommitteeMemberCardProps> = ({
         onLoad={animateOnScroll ? () => AOS.refresh() : () => {}}
       />
       <div className="absolute bottom-0 w-full flex items-center p-1 justify-center flex-col gap-1 bg-committee-background bg-no-repeat bg-opacity-10 rounded-b-[6px] border-[3px] border-button-color border-t-0">
-        <p className="text-[1rem] max-[767px]:text-[12px] max-[1024px]:text-[0.6rem]  text-center text-counter-color p-1">
+        <p className="text-[1rem] max-[767px]:text-[10px] max-[1024px]:text-[0.9rem]  text-center text-counter-color p-1">
           {memberName}
         </p>
       </div>
