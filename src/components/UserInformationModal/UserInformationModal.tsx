@@ -87,12 +87,16 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
               </h1>
             </div>
             <div>
-              <div className="userInformationModalAlongWith text-memories-border-color italic pt-4 pb-2">
-                {USER_INFORMATION_MODAL.ALONG_WITH}
-              </div>
-              <div className="userInformationModalTeammatesWrapper flex gap-6 flex-wrap">
-                {teammateProfiles}
-              </div>
+              {teammates?.length !== 0 && (
+                <>
+                  <div className="userInformationModalAlongWith text-memories-border-color italic pt-4 pb-2">
+                    {USER_INFORMATION_MODAL.ALONG_WITH}
+                  </div>
+                  <div className="userInformationModalTeammatesWrapper flex gap-6 flex-wrap">
+                    {teammateProfiles}
+                  </div>
+                </>
+              )}
               <div className="userInformationModalAboutWrapper">
                 <div className="userInformationModalAbout text-memories-border-color italic pt-4">
                   {USER_INFORMATION_MODAL.ABOUT}
