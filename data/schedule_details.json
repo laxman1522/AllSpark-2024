@@ -434,7 +434,7 @@
     "9": {
       "name": "Pranay Lakshmanan",
       "email": "pranay.lakshmanan@cdw.com",
-      "imageUrl": "/images/speakers/Pranay Lakshmanan.jpg",
+      "imageUrl": "/images/speakers/Pranay Lakshmanan.JPG",
       "sessionDetails": {
         "8": [8, 10, 11, 12]
       }
@@ -474,7 +474,7 @@
     "14": {
       "name": "Nandha Kumar Kumaran",
       "email": "nandhakumar.kumaran@cdw.com",
-      "imageUrl": "/images/speakers/Nandha Kumar Kumaran.jpg",
+      "imageUrl": "/images/speakers/Nandha Kumar Kumaran.JPG",
       "sessionDetails": {
         "4": [13, 15, 16, 17],
         "16": [25, 26]
@@ -580,7 +580,7 @@
     "27": {
       "name": "Kavinkumar Baskar",
       "email": "kavinkumar.baskar@cdw.com",
-      "imageUrl": "/images/speakers/Kavinkumar Baskar.jpg",
+      "imageUrl": "/images/speakers/KavinKumar Baskar.jpg",
       "sessionDetails": {
         "27": [28, 29]
       }
@@ -604,7 +604,7 @@
     "30": {
       "name": "Vinishah Nagarajan",
       "email": "vinishah.nagarajan@cdw.com",
-      "imageUrl": "/images/speakers/Vinishah Nagarajan.jpg",
+      "imageUrl": "/images/speakers/Vinishah Nagarajan.JPG",
       "sessionDetails": {
         "26": [31, 32]
       }
@@ -612,7 +612,7 @@
     "31": {
       "name": "Naveen Kumar Nallasamy",
       "email": "naveenkumar.nallasamy@cdw.com",
-      "imageUrl": "/images/speakers/Naveen Kumar Nallasamy.jpg",
+      "imageUrl": "/images/speakers/Naveen kumar Nallasamy.jpg",
       "sessionDetails": {
         "26": [30, 32]
       }
@@ -684,7 +684,7 @@
     "40": {
       "name": "Arun Kumar Ponnusamy",
       "email": "a.ponnusamy@cdw.com",
-      "imageUrl": "/images/speakers/Arun Kumar Ponnusamy.jpeg",
+      "imageUrl": "/images/speakers/Arun kumar Ponnusamy.jpeg",
       "sessionDetails": {
         "24": [38, 39]
       }
