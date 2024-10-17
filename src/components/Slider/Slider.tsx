@@ -162,7 +162,7 @@ export default function Slider({ sliderName, items }: SliderProps) {
       </div>
 
       <div
-        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[55vh] w-[80vw]"
+        className=" relative overflow-hidden rounded-lg border-4 border-text-color h-[65vh] w-[80vw]"
         ref={containerRef}
       >
         <div
