@@ -75,7 +75,9 @@ const ScheduleCard = (session: sessionType) => {
         <div className="event_time">{startTime}</div>
 
         <div className="flex flex-col max-[1024px]:p-4 p-5 gap-1.5">
-          <div className="flex items-center text-[#F9F0D5] max-[768px]:flex-col max-[768px]:items-start max-[768px]:min-h-[50px]">
+          <div
+            className={`flex items-center text-[#F9F0D5] max-[768px]:flex-col max-[768px]:items-start ${category.length !== 0 ? 'max-[768px]:min-h-[50px]' : 'min-h-[30px]'}`}
+          >
             <span className="max-[400px]:text-xs max-[768px]:text-sm text-base">{`${startTime} -  ${endTime}`}</span>
             {(category === SOLUTION_SPACE || category === TECH_TALK) && isLive
               ? constructLiveNow()
@@ -87,10 +89,14 @@ const ScheduleCard = (session: sessionType) => {
           <p className="max-[400px]:text-xs max-[768px]:text-sm text-base text-[#FFDBCF] max-[768px]:w-full max-[1024px]:w-[80%] w-[85%]">
             {description}
           </p>
-          <div className="flex flex-wrap gap-2 gap-y-4 max-[400px]:gap-3 max-[1024px]:gap-5 mt-3">
-            {speakersId ? constructSpeakersHtml(speakersId) : ''}
-          </div>
-          <div className="flex flex-col-reverse absolute right-4 top-4 max-[1024px]:flex-col items-end max-[1024px]:gap-1 max-[768px]:gap-2">
+          {speakersId?.length !== 0 && (
+            <div className="flex flex-wrap gap-2 gap-y-4 max-[400px]:gap-3 max-[1024px]:gap-5 mt-3">
+              {speakersId ? constructSpeakersHtml(speakersId) : ''}
+            </div>
+          )}
+          <div
+            className={`flex flex-col-reverse absolute right-4 top-4 max-[1024px]:flex-col items-end ${category.length !== 0 ? 'max-[1024px]:gap-1 max-[768px]:gap-2' : ''}`}
+          >
             <span className="text-[#F9F0D5] max-[400px]:text-xs max-[768px]:text-sm max-[1024px]:text-lg text-base lg:font-semibold">
               {category}
             </span>
@@ -102,7 +108,7 @@ const ScheduleCard = (session: sessionType) => {
                 <div className="max-[1024px]:scale-[0.4] scale-[0.5]">
                   <CalendarIcon />
                 </div>
-                <span className="max-[1024px]:text-[10px] text-xs max-[1024px]:mr-2 mr-1">
+                <span className="max-[1024px]:text-[10px] text-xs max-[1024px]:mr-2 mr-1 text-white">
                   {ADD_TO_CALENDAR}
                 </span>
               </div>

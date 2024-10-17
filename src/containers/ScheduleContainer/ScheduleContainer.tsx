@@ -61,11 +61,12 @@ const ScheduleContainer = () => {
   }, []);
 
   useEffect(() => {
-    setSessions(getSessionsByDate(activeTab));
-  }, [activeTab]);
+    setSessions(
+      getSessionsByKeyword(getSessionsByDate(activeTab), searchKeyword),
+    );
+  }, [activeTab, searchKeyword]);
 
   const searchHandler = (search: string) => {
-    setSessions(getSessionsByKeyword(getSessionsByDate(activeTab), search));
     setSearchKeyword(search);
   };
 
@@ -92,7 +93,7 @@ const ScheduleContainer = () => {
               );
             })}
           </div>
-          <Search searchHandler={searchHandler} searchKeyword={searchKeyword} />
+          <Search searchHandler={searchHandler} />
         </div>
         <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md">
           {sessions.length === 0 ? (
