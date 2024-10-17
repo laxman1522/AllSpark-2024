@@ -91,7 +91,7 @@ export const SCHEDULE_CONSTANTS = {
 };
 
 export const ICS_CONSTANTS = {
-  YEAR: '2023',
+  YEAR: '2024',
   TYPE: 'text/calendar',
   ELEMENT: 'a',
   ATTRIBUTE: 'download',
