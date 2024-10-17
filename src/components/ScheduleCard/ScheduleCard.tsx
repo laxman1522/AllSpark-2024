@@ -91,12 +91,54 @@ const ScheduleCard = (session: sessionType) => {
   //   ];
   // };
 
+  const convertTime = () => {
+    // Parse the IST input to a date object
+    const istDate = new Date(`${istInput} GMT+0530`); // Convert IST input to a Date object
+
+    // Check if the date is valid
+    if (isNaN(istDate)) {
+      setLocalTime('Invalid IST time format. Please use "YYYY-MM-DD HH:mm".');
+      return;
+    }
+
+    // Format the date to the user's local time zone
+    const options = {
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, // User's local time zone
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false, // Set to true for 12-hour format
+    };
+  };
+
   // Function to parse and convert the date string to [year, month, day, hour, minute]
   const convertToDateArray = (datee: string, startTime: string) => {
     // Create a new Date object by combining the date and time strings
     const dateTimeStr = `${datee}, ${ICS_CONSTANTS.YEAR} ${startTime}`;
 
-    const date = new Date(dateTimeStr);
+    // const date = new Date(`${dateTimeStr} GMT+0530`);
+
+    const options: any = {
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, // User's local time zone
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false, // Set to true for 12-hour format
+    };
+
+    const formattedLocalTime = new Intl.DateTimeFormat('en-US', options).format(
+      new Date(`${dateTimeStr} GMT+0530`),
+    );
+
+    const date = new Date(formattedLocalTime);
+
+    console.log(date, new Date(formattedLocalTime), date.getHours());
 
     // Format the date into the required array
     return [
@@ -130,7 +172,11 @@ const ScheduleCard = (session: sessionType) => {
   };
 
   const addEventToCalendar = () => {
+    console.log(convertToDateArray(date, startTime));
     const { hours, minutes } = getTimeDifference(date, startTime, endTime);
+
+    console.log(hours, minutes);
+
     // Define the event details (without explicitly specifying timeZone)
     const event: any = {
       start: convertToDateArray(date, startTime), // Year, Month, Day, Hour, Minute
