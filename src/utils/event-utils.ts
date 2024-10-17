@@ -1,7 +1,6 @@
 import { EVENT_COUNTER } from '@/constants/constants';
 import scheduleData from '@/../data/schedule_details.json';
 import contentData from '@/../data/event_categories_details.json';
-import { title } from 'process';
 
 interface Session {
   date: string;
