@@ -369,7 +369,7 @@
     "1": {
       "name": "Ramprassana Thirumalaisamy",
       "email": "ramprassana.thirumalaisamy@cdw.com",
-      "imageUrl": "/images/speakers/sample-image-three.png",
+      "imageUrl": "/images/speakers/Ramprassana Thirumalaisamy.jpg",
       "sessionDetails": {
         "5": [2]
       }
@@ -393,7 +393,7 @@
     "4": {
       "name": "Mukesh Ravi",
       "email": "mukesh.ravi@cdw.com",
-      "imageUrl": "/images/speakers/Mukesh Ravi.jpg",
+      "imageUrl": "/images/speakers/Mukesh Ravi.jpeg",
       "sessionDetails": {
         "10": [5, 6, 7],
         "23": [36, 37]
@@ -418,7 +418,7 @@
     "7": {
       "name": "Hemapriya Nagarajan",
       "email": "hemapriya.nagarajan@cdw.com",
-      "imageUrl": "/images/speakers/Hemapriya Nagarajan.jpg",
+      "imageUrl": "/images/speakers/Hemapriya Nagarajan.jpeg",
       "sessionDetails": {
         "10": [4, 5, 6]
       }
@@ -450,7 +450,7 @@
     "11": {
       "name": "Francis Bell Ajay",
       "email": "francisbell.ajay@cdw.com",
-      "imageUrl": "/images/speakers/sample-image-three.png",
+      "imageUrl": "/images/speakers/Francis Bell Ajay.jpeg",
       "sessionDetails": {
         "8": [8, 9, 10, 12]
       }
@@ -458,7 +458,7 @@
     "12": {
       "name": "Ankit Dixit",
       "email": "ankit.dixit@cdw.com",
-      "imageUrl": "/images/speakers/sample-image-three.png",
+      "imageUrl": "/images/speakers/Ankit Dixit.png",
       "sessionDetails": {
         "8": [8, 9, 10, 11]
       }
@@ -532,7 +532,7 @@
     "21": {
       "name": "Poornima Ravichandran",
       "email": "poornima.ravichandran@cdw.com",
-      "imageUrl": "/images/speakers/sample-image-two.png",
+      "imageUrl": "/images/speakers/Poornima Ravichandran.jpg",
       "sessionDetails": {
         "22": [10, 12]
       }
@@ -620,7 +620,7 @@
     "32": {
       "name": "Jayamaharaja Alagesan",
       "email": "jayamaharaja.alagesan@cdw.com",
-      "imageUrl": "/images/speakers/sample-image-one.png",
+      "imageUrl": "/images/speakers/Jayamaharaja Alagesan.jpeg",
       "sessionDetails": {
         "26": [30, 31]
       }
