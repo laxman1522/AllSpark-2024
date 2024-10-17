@@ -28,6 +28,8 @@ const config: Config = {
         'committee-background': '#27021293',
         'events-background-color': '#F2BAA7B2',
         'events-counter-bg-color': '#F9F0D5',
+        'schedule-tab-background': '#270212',
+        'schedule-color': '#F2BAA7',
         'speaker-background-color': '#22000b99',
       },
       fontFamily: {

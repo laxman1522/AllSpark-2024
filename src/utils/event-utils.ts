@@ -138,27 +138,36 @@ export const getEventDetails = () => {
  * @author [Hariharan Muralidharan]
  */
 export const constructEventData = () => {
-  let count = 0;
-  Object.values(schedule?.sessions).map((type) => {
-    if (type?.category === 'Tech Talk') {
-      count++;
-    }
-  });
-  const eventData = [
-    { count: Object.keys(schedule?.agenda).length, title: EVENT_COUNTER.DAYS },
-    {
-      count: EVENT_COUNTER.REGISTRATION_COUNT,
-      title: EVENT_COUNTER.REGISTRATION,
+  const sessionCounts = Object.values(schedule?.sessions || []).reduce(
+    (acc, type) => {
+      if (type?.category === 'Tech Talk') {
+        acc.techTalkCount++;
+      } else if (type?.category === 'Solution Space') {
+        acc.solutionSpaceCount++;
+      } else if (type?.category === 'Guest Speaker') {
+        acc.guestSpeakerCount++;
+      }
+      return acc;
     },
-    { count: count, title: EVENT_COUNTER.TECH_TALKS },
+    { techTalkCount: 0, solutionSpaceCount: 0, guestSpeakerCount: 0 },
+  );
+
+  const eventData = [
     {
-      count: Object.keys(schedule?.speakers).length,
+      count: Object.keys(schedule?.agenda || {}).length,
+      title: EVENT_COUNTER.DAYS,
+    },
+    {
+      count: sessionCounts.solutionSpaceCount,
+      title: EVENT_COUNTER.SOLUTION_SPACE,
+    },
+    { count: sessionCounts.techTalkCount, title: EVENT_COUNTER.TECH_TALKS },
+    { count: sessionCounts.guestSpeakerCount, title: EVENT_COUNTER.GUESTS },
+    {
+      count: Object.keys(schedule?.speakers || {}).length,
       title: EVENT_COUNTER.SPEAKERS,
     },
-    {
-      count: EVENT_COUNTER.ATTENDEES_COUNT,
-      title: EVENT_COUNTER.TECHIES,
-    },
+    { count: EVENT_COUNTER.ATTENDEES_COUNT, title: EVENT_COUNTER.TECHIES },
   ];
 
   return eventData;
@@ -178,4 +187,28 @@ export const isSplideViewCompatible = (windowWidth: number) => {
       window.innerHeight > 1024 &&
       window.innerHeight <= 1366)
   );
+};
+
+export const getAgenda = () => {
+  return Object.values(scheduleData.agenda);
+};
+
+export const getSessionsByKeyword = (sessions: Session[], keyword: string) => {
+  const filteredSessions = [];
+  if (keyword === '' || keyword === undefined) return sessions;
+  const searchTerm = keyword?.toLowerCase();
+  for (const sessionId in sessions) {
+    const session = sessions[sessionId];
+    if (
+      session.title.toLowerCase().includes(searchTerm) ||
+      session.category.toLowerCase().includes(searchTerm) ||
+      (session.speakersId &&
+        session.speakersId.some((id) =>
+          getSpeakerDetails(id).name.toLowerCase().includes(searchTerm),
+        ))
+    ) {
+      filteredSessions.push(session);
+    }
+  }
+  return filteredSessions;
 };
