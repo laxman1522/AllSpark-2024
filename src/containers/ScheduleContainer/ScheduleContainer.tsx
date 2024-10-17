@@ -94,7 +94,7 @@ const ScheduleContainer = () => {
           </div>
           <Search searchHandler={searchHandler} />
         </div>
-        <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md">
+        <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md max-[1024px]:border-2 max-[1024px]:border-[#F2BAA7]">
           {sessions.length === 0 ? (
             <div className="flex flex-col gap-6 items-center justify-center h-full">
               <span className="text-schedule-color italic text-[18px] text-center">{`No event found for the search "${searchKeyword}"`}</span>
