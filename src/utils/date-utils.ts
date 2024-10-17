@@ -6,8 +6,15 @@ export const dateToISOFormat = (inputDateString: string) => {
   const hour = inputDate.getHours().toString().padStart(2, '0');
   const minute = inputDate.getMinutes().toString().padStart(2, '0');
   const second = inputDate.getSeconds().toString().padStart(2, '0');
-  const formattedDateString = `${year}${month}${day}T${hour}${minute}${second}Z`;
+
+  // No 'Z' at the end, and include timezone if required
+  const formattedDateString = `${year}${month}${day}T${hour}${minute}${second}`;
   return formattedDateString;
+};
+
+export const dateToISOFormatt = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toISOString().replace(/[-:]/g, '').split('.')[0]; // Format like 20231017T120000
 };
 
 export const createICSContent = (
@@ -22,8 +29,6 @@ VERSION:2.0
 METHOD:PUBLISH
 BEGIN:VEVENT
 TZID:Asia/Kolkata
-TZOFFSETFROM:+0530
-TZOFFSETTO:+0530
 DTSTART;TZID=Asia/Kolkata:${start}
 DTEND;TZID=Asia/Kolkata:${end}
 LOCATION:Bengaluru

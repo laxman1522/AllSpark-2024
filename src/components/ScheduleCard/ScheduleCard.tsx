@@ -2,7 +2,11 @@ import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
-import { createICSContent, dateToISOFormat } from '@/utils/date-utils';
+import {
+  createICSContent,
+  dateToISOFormat,
+  dateToISOFormatt,
+} from '@/utils/date-utils';
 
 type sessionType = {
   date: string;
@@ -57,7 +61,9 @@ const ScheduleCard = (session: sessionType) => {
     const start = dateToISOFormat(`${ICS_CONSTANTS.YEAR} ${date} ${startTime}`);
     const end = dateToISOFormat(`${ICS_CONSTANTS.YEAR} ${date} ${endTime}`);
     const icsContent = createICSContent(start, end, title, description);
-    const blob = new Blob([icsContent], { type: ICS_CONSTANTS.TYPE });
+    const blob = new Blob([icsContent], {
+      type: 'text/calendar;charset=utf-8',
+    });
     const url = window.URL.createObjectURL(blob);
     const link: any = document.createElement(ICS_CONSTANTS.ELEMENT);
     link.href = url;
