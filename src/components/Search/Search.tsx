@@ -9,7 +9,6 @@ interface SearchProps {
 
 const Search: React.FC<SearchProps> = ({ searchHandler, searchKeyword }) => {
   const [search, setSearch] = useState('');
-  console.log('search');
 
   useEffect(() => {
     setSearch(searchKeyword);
