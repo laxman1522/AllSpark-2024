@@ -72,7 +72,6 @@ const ScheduleContainer = () => {
 
   const resetHandler = () => {
     setSearchKeyword('');
-    setSessions(getSessionsByDate(activeTab));
   };
 
   return (
