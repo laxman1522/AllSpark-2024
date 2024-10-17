@@ -12,7 +12,7 @@ const Profile = ({ speaker, index }: ProfileProps) => {
   return (
     <div
       key={index}
-      className="flex items-center gap-3 flex-1 basis-[calc(33.33%-2.5rem)] max-[1024px]:basis-[calc(50%-2rem)] max-[400px]:basis-full flex-shrink-0"
+      className="flex items-center gap-3 max-[1024px]:flex-1 basis-[calc(33.33%-2.5rem)] max-[1024px]:basis-[calc(50%-2rem)] max-[400px]:basis-full flex-shrink-0"
     >
       <Image
         src={imageUrl}

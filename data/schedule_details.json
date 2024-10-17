@@ -2,16 +2,15 @@
   "sessions": {
     "1": {
       "date": "October 17",
-      "startTime": "12:00 AM",
-      "endTime": "02:00 AM",
+      "startTime": "10:00 AM",
+      "endTime": "12:00 PM",
       "eventDateTime": "October 16th at 10:30AM",
       "duration": 30,
       "title": "ePro AI",
       "category": "Solution Space",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "tags": [],
-      "speakersId": [3],
-      "isLive": true
+      "speakersId": [3]
     },
     "2": {
       "date": "October 17",
