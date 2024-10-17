@@ -61,17 +61,17 @@ const ScheduleContainer = () => {
   }, []);
 
   useEffect(() => {
-    setSessions(getSessionsByDate(activeTab));
-  }, [activeTab]);
+    setSessions(
+      getSessionsByKeyword(getSessionsByDate(activeTab), searchKeyword),
+    );
+  }, [activeTab, searchKeyword]);
 
   const searchHandler = (search: string) => {
-    setSessions(getSessionsByKeyword(getSessionsByDate(activeTab), search));
     setSearchKeyword(search);
   };
 
   const resetHandler = () => {
     setSearchKeyword('');
-    setSessions(getSessionsByDate(activeTab));
   };
 
   return (
@@ -92,9 +92,9 @@ const ScheduleContainer = () => {
               );
             })}
           </div>
-          <Search searchHandler={searchHandler} searchKeyword={searchKeyword} />
+          <Search searchHandler={searchHandler} />
         </div>
-        <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md">
+        <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md max-[1024px]:border-2 max-[1024px]:border-[#F2BAA7]">
           {sessions.length === 0 ? (
             <div className="flex flex-col gap-6 items-center justify-center h-full">
               <span className="text-schedule-color italic text-[18px] text-center">{`No event found for the search "${searchKeyword}"`}</span>
