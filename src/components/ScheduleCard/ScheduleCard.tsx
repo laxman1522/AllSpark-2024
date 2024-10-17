@@ -58,8 +58,6 @@ const ScheduleCard = (session: sessionType) => {
     // Create a new Date object by combining the date and time strings
     const dateTimeStr = `${datee}, ${ICS_CONSTANTS.YEAR} ${startTime}`;
 
-    // const date = new Date(`${dateTimeStr} GMT+0530`);
-
     const options: any = {
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, // User's local time zone
       year: 'numeric',
