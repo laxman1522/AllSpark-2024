@@ -57,17 +57,78 @@ const ScheduleCard = (session: sessionType) => {
     );
   };
 
+  // Function to convert input date strings to ISO format
+  const convertToISOFormat = (inputDateString: string) => {
+    const date = new Date(inputDateString);
+    if (isNaN(date.getTime())) {
+      throw new Error(`Invalid date string: ${inputDateString}`);
+    }
+
+    // Extract date components
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = '00';
+
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  };
+
+  // Function to add event to calendar
   const addEventToCalendar = () => {
-    const start = dateToISOFormat(`${ICS_CONSTANTS.YEAR} ${date} ${startTime}`);
-    const end = dateToISOFormat(`${ICS_CONSTANTS.YEAR} ${date} ${endTime}`);
-    const icsContent = createICSContent(start, end, title, description);
-    const blob = new Blob([icsContent], {
-      type: 'text/calendar;charset=utf-8',
-    });
+    const formatDateToICS = (timestamp: string) => {
+      const date = new Date(timestamp);
+      const year = date.getUTCFullYear();
+      const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+      const day = date.getUTCDate().toString().padStart(2, '0');
+      const hour = date.getUTCHours().toString().padStart(2, '0');
+      const minute = date.getUTCMinutes().toString().padStart(2, '0');
+      const second = '00'; // Set seconds to '00' if not needed
+
+      return `${year}${month}${day}T${hour}${minute}${second}Z`;
+    };
+
+    // Construct the full date string for start and end
+    const start = convertToISOFormat(`${date} ${startTime}`);
+    const end = convertToISOFormat(`${date} ${endTime}`);
+
+    // Format dates to UTC
+    const formattedStartDate = formatDateToICS(start);
+    const formattedEndDate = formatDateToICS(end);
+
+    // Create the .ics content
+    const icsContent = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//My Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:${new Date().getTime()}@example.com
+DTSTAMP:${formatDateToICS(new Date().toISOString())}
+DTSTART:${formattedStartDate}
+DTEND:${formattedEndDate}
+SUMMARY:${title}
+DESCRIPTION:${description || 'No description available'}
+LOCATION:${location}
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder for ${title}
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+`;
+
+    console.log(icsContent); // Log content for debugging
+
+    // Create a Blob and download link for the .ics file
+    const blob = new Blob([icsContent], { type: 'text/calendar' });
     const url = window.URL.createObjectURL(blob);
-    const link: any = document.createElement(ICS_CONSTANTS.ELEMENT);
+    const link = document.createElement('a');
     link.href = url;
-    link.setAttribute(ICS_CONSTANTS.ATTRIBUTE, `${title}.ics`);
+    link.download = `${title.replace(/ /g, '_')}.ics`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
