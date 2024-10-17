@@ -49,7 +49,7 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
     <div className="relative w-full h-full">
       <div className="backdrop-blur-lg speaker-overlay w-full h-full"></div>
       <div className="userInformationModalDescription border-2 rounded-md pl-[10rem] p-8 text-wrap h-[70%] absolute top-1/2 left-[55%] transform -translate-x-1/2 -translate-y-1/2 border-events-color bg-speaker-background-color">
-        <div className="userInformationModalClose absolute top-[-30px] right-[-35px] text-3xl text-events-color">
+        <div className="userInformationModalClose absolute top-[-30px] right-[-35px] text-3xl text-memories-background">
           <FontAwesomeIcon
             icon={faXmark}
             className="cursor-pointer"

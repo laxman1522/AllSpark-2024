@@ -53,44 +53,6 @@ const ScheduleCard = (session: sessionType) => {
     );
   };
 
-  // Function to convert input date strings to ISO format
-  // const convertToISOFormat = (inputDateString: string) => {
-  //   const date = new Date(inputDateString);
-  //   if (isNaN(date.getTime())) {
-  //     throw new Error(`Invalid date string: ${inputDateString}`);
-  //   }
-
-  //   // Extract date components
-  //   const year = date.getFullYear();
-  //   const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  //   const day = date.getDate().toString().padStart(2, '0');
-  //   const hours = date.getHours().toString().padStart(2, '0');
-  //   const minutes = date.getMinutes().toString().padStart(2, '0');
-  //   const seconds = '00';
-
-  //   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
-  // };
-
-  // Function to convert time to UTC from Asia/Kolkata
-  // const convertToUTC = (
-  //   year: number,
-  //   month: number,
-  //   day: number,
-  //   hour: number,
-  //   minute: number,
-  // ) => {
-  //   const localDate = new Date(Date.UTC(year, month - 1, day, hour, minute)); // Create a date with Kolkata time
-  //   const timeOffset = 5 * 60 + 30; // India Standard Time (UTC +05:30)
-  //   localDate.setUTCMinutes(localDate.getUTCMinutes() - timeOffset); // Convert to UTC
-  //   return [
-  //     localDate.getUTCFullYear(),
-  //     localDate.getUTCMonth() + 1,
-  //     localDate.getUTCDate(),
-  //     localDate.getUTCHours(),
-  //     localDate.getUTCMinutes(),
-  //   ];
-  // };
-
   // Function to parse and convert the date string to [year, month, day, hour, minute]
   const convertToDateArray = (datee: string, startTime: string) => {
     // Create a new Date object by combining the date and time strings
@@ -114,8 +76,6 @@ const ScheduleCard = (session: sessionType) => {
     );
 
     const date = new Date(formattedLocalTime);
-
-    console.log(date, new Date(formattedLocalTime), date.getHours());
 
     // Format the date into the required array
     return [
@@ -149,17 +109,14 @@ const ScheduleCard = (session: sessionType) => {
   };
 
   const addEventToCalendar = () => {
-    console.log(convertToDateArray(date, startTime));
     const { hours, minutes } = getTimeDifference(date, startTime, endTime);
-
-    console.log(hours, minutes);
 
     // Define the event details (without explicitly specifying timeZone)
     const event: any = {
       start: convertToDateArray(date, startTime), // Year, Month, Day, Hour, Minute
       duration: { hours: hours, minutes: minutes }, // Event duration
-      title: 'My Event',
-      description: 'Event description here',
+      title: title,
+      description: description,
       location: 'Bengaluru',
       status: 'CONFIRMED',
       alarms: [{ action: 'display', trigger: { minutes: 15, before: true } }], // Reminder
@@ -180,7 +137,7 @@ const ScheduleCard = (session: sessionType) => {
       // Create a download link
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.download = 'event.ics';
+      link.download = `${title}.ics`;
 
       // Append the link to the DOM and trigger the download
       document.body.appendChild(link);

@@ -16,7 +16,7 @@ const config: Config = {
         'counter-color': '#f3baa7',
         'label-color': '#f3baa7',
         'counter-text-color': '#332723',
-        'animation-background': 'f2baa740',
+        'animation-background': '#f2baa740',
         'text-color': '#f2bba7',
         'button-color': '#f9f0d5',
         'button-text-color': '#511717',
