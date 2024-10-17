@@ -6,6 +6,7 @@ import { BACKGROUND_VANTA_OPTIONS } from '@/constants/option-constants';
 interface BackGroundProps {
   children: ReactNode;
 }
+
 /**
  * @description Vanta js background component
  * @version 1.0.0
