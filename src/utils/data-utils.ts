@@ -75,17 +75,22 @@ export const getCommitteeAndMembersNames = () => {
     memberName: string;
     imageSrc: string;
   }[] = [];
-  committeeData?.committee?.forEach((committee) => {
-    committee?.members?.forEach((member) => {
-      result.push({
-        committeeName: committee?.committeeName
-          .replaceAll(' ', '-')
-          .replaceAll('&', '-')
-          .toLowerCase(),
-        memberName: member?.name,
-        imageSrc: member.imageUrl,
-      });
+  committeeData?.committee
+    ?.sort((a, b) => a.committeeName.localeCompare(b.committeeName)) // Sort committees by name
+    .forEach((committee) => {
+      committee?.members
+        ?.sort((a, b) => a.name.localeCompare(b.name)) // Sort members by name within each committee
+        .forEach((member) => {
+          result.push({
+            committeeName: committee?.committeeName
+              .replaceAll(' ', '-')
+              .replaceAll('&', '-')
+              .toLowerCase(),
+            memberName: member?.name,
+            imageSrc: member.imageUrl,
+          });
+        });
     });
-  });
+
   return result;
 };
