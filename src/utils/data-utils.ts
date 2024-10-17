@@ -44,7 +44,7 @@ export const getAllGuests = () => {
 };
 
 export const getMemories = () => {
-  return memoriesData?.memories || [];
+  return memoriesData?.memories?.sort((a, b) => b?.year - a?.year) || [];
 };
 
 /**
