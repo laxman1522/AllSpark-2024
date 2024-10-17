@@ -179,3 +179,27 @@ export const isSplideViewCompatible = (windowWidth: number) => {
       window.innerHeight <= 1366)
   );
 };
+
+export const getAgenda = () => {
+  return Object.values(scheduleData.agenda);
+};
+
+export const getSessionsByKeyword = (sessions: Session[], keyword: string) => {
+  const filteredSessions = [];
+  if (keyword === '' || keyword === undefined) return sessions;
+  const searchTerm = keyword?.toLowerCase();
+  for (const sessionId in sessions) {
+    const session = sessions[sessionId];
+    if (
+      session.title.toLowerCase().includes(searchTerm) ||
+      session.category.toLowerCase().includes(searchTerm) ||
+      (session.speakersId &&
+        session.speakersId.some((id) =>
+          getSpeakerDetails(id).name.toLowerCase().includes(searchTerm),
+        ))
+    ) {
+      filteredSessions.push(session);
+    }
+  }
+  return filteredSessions;
+};
