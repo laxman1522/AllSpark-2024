@@ -86,6 +86,8 @@ export const TIMER = {
 export const SCHEDULE_CONSTANTS = {
   ADD_TO_CALENDAR: 'Add to Calendar',
   LIVE_NOW: 'Live Now',
+  SOLUTION_SPACE: 'Solution Space',
+  TECH_TALK: 'Tech Talk',
 };
 
 export const ICS_CONSTANTS = {

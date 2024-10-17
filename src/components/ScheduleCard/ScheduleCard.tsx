@@ -16,7 +16,8 @@ type sessionType = {
   speakersId?: Array<number>;
 };
 const ScheduleCard = (session: sessionType) => {
-  const { LIVE_NOW, ADD_TO_CALENDAR } = SCHEDULE_CONSTANTS;
+  const { LIVE_NOW, ADD_TO_CALENDAR, SOLUTION_SPACE, TECH_TALK } =
+    SCHEDULE_CONSTANTS;
   const {
     date,
     startTime,
@@ -76,7 +77,9 @@ const ScheduleCard = (session: sessionType) => {
         <div className="flex flex-col max-[1024px]:p-4 p-5 gap-1.5">
           <div className="flex items-center text-[#F9F0D5] max-[768px]:flex-col max-[768px]:items-start max-[768px]:min-h-[50px]">
             <span className="max-[400px]:text-xs max-[768px]:text-sm text-base">{`${startTime} -  ${endTime}`}</span>
-            {isLive ? constructLiveNow() : ''}
+            {(category === SOLUTION_SPACE || category === TECH_TALK) && isLive
+              ? constructLiveNow()
+              : ''}
           </div>
           <p className="max-[768px]:text-base max-[1024px]:text-[22px] text-xl text-[#F2BAA7] font-medium max-[768px]:w-full w-[80%]">
             {title}

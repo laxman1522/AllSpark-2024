@@ -27,37 +27,38 @@ const ScheduleContainer = () => {
     return date;
   };
 
+  const updateLiveSession = () => {
+    const updatedSessions = sessions.map((value: any) => {
+      const sessionStartTime = createDateFromWords(value.date, value.startTime);
+      const sessionEndTime = createDateFromWords(value.date, value.endTime);
+      const currentTime = new Date();
+      currentTime.setSeconds(0, 0);
+      value.isLive =
+        sessionStartTime.getTime() <= currentTime.getTime() &&
+        sessionEndTime.getTime() >= currentTime.getTime();
+      return value;
+    });
+    setSessions(updatedSessions);
+  };
+
   useEffect(() => {
-    const updateLiveSession = () => {
-      if (limit !== 60000) {
-        setLimit(60000);
-      }
-      const updatedSessions = sessions.map((value: any) => {
-        const sessionStartTime = createDateFromWords(
-          value.date,
-          value.startTime,
-        );
-        const sessionEndTime = createDateFromWords(value.date, value.endTime);
-        const currentTime = new Date();
-        currentTime.setSeconds(0, 0);
-        value.isLive =
-          sessionStartTime.getTime() <= currentTime.getTime() &&
-          sessionEndTime.getTime() >= currentTime.getTime();
-        return value;
-      });
-      setSessions(updatedSessions);
-    };
     const timer = setTimeout(() => {
-      console.log('1 min', time, sessions);
       setTime(time + 1);
-      if (sessions.length !== 0) updateLiveSession();
+      if (sessions.length !== 0) {
+        if (limit !== 60000) {
+          setLimit(60000);
+        }
+        updateLiveSession();
+      }
     }, limit);
     return () => {
       clearTimeout(timer);
     };
   }, [time, sessions, limit]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    updateLiveSession();
+  }, []);
 
   useEffect(() => {
     setSessions(getSessionsByDate(activeTab));
