@@ -1,8 +1,4 @@
 {
-  "some": {
-    "short_description": "Rajnil is a Partner with the Advisory practice and leads the Go To Market strategy for Generative AI for PwC India. He has nearly 25 years experience in advanced analytics and AI",
-    "description": "Rajnil is a Partner with the Advisory practice and leads the Go To Market strategy for Generative AI for PwC India. He has nearly 25 years experience in advanced analytics and AI and has advised CXOs at the Fortune 1000 and at large privately-held enterprises in North America, UK, Australia, and Asia. His forte is rapid profit improvement through the application of AI-led applications."
-  },
   "categories": [
     {
       "name": "TECH TALKS",
@@ -13,8 +9,8 @@
       "description": "Explore the various innovations, best practices and frameworks that our consultants have built as accelerators and solutions to some of the critical problems in the industries that we serve."
     },
     {
-      "name": "GUEST TALK - Rajnil Mallik",
-      "description": "Rajnil is a Partner with the Advisory practice and leads the Go To Market strategy for Generative AI for PwC India. He has nearly 25 years experience in advanced analytics and AI."
+      "name": "GUEST TALK",
+      "description": "Rajnil is a Partner at PwC India, leading Generative AI strategy. With 25 years of experience in advanced analytics, he advises Fortune 1000 CXOs and specializes in profit improvement through AI applications."
     }
   ]
 }
