@@ -78,11 +78,18 @@
       }
     }
 
+    &:last-child:after,
+    &:last-child:before {
+      @media only screen and (min-width: 1025px) {
+        display: none;
+      }
+    }
+
     &:before {
       content: '';
       position: absolute;
       width: 10px;
-      height: 150%;
+      height: 200%;
       display: block;
       border-radius: 0px;
       border: 2px solid #f9f0d5;
@@ -95,6 +102,7 @@
       }
     }
   }
+
   .active {
     border: 3px solid #f9f0d5;
     border-radius: 10px;

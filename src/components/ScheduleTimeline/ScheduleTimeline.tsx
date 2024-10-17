@@ -25,6 +25,7 @@ const ScheduleTimeline = ({ sessions }: SessionsProps) => {
         {Object.entries(sessions).map(([key, session]) => (
           <ScheduleCard key={key} {...session} />
         ))}
+        <div className="hidden max-[1024px]:block timeline__event"></div>
       </div>
     </div>
   );
