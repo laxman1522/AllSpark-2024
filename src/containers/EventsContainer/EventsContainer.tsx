@@ -73,7 +73,7 @@ const EventsContainer = () => {
             getCategorySlides()
           )}
         </div>
-        <div className="events-counter flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-12 font-bold gap-y-4	">
+        <div className="events-counter w-full flex flex-row flex-wrap justify-center ml-10 items-center text-center gap-x-12 font-bold gap-y-4	">
           {generateEventCounter()}
         </div>
       </div>
