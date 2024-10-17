@@ -92,7 +92,7 @@ const ScheduleContainer = () => {
               );
             })}
           </div>
-          <Search searchHandler={searchHandler} />
+          <Search searchHandler={searchHandler} searchKeyword={searchKeyword} />
         </div>
         <div className="w-full max-[400px]:h-[58vh] h-[60vh] mt-[2vh] bg-memories-background rounded-md max-[1024px]:border-2 max-[1024px]:border-[#F2BAA7]">
           {sessions.length === 0 ? (
