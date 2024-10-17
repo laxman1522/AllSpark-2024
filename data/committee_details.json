@@ -8,10 +8,6 @@
           "imageUrl": "/images/committee/Shweta Srivastava.jpg"
         },
         {
-          "name": "Mandadi Udaykumar Reddy",
-          "imageUrl": "/images/committee/Mandadi Udaykumar.jpg"
-        },
-        {
           "name": "Suhel Ahamed Kunjan Yousuf",
           "imageUrl": "/images/committee/Suhel Ahamed Kunjan Yousuf.jpeg"
         },
@@ -26,12 +22,24 @@
         {
           "name": "Xavier Cardoz",
           "imageUrl": "/images/committee/Xavier Cardoz.jpeg"
+        },
+        {
+          "name": "Nagaraj Ethirajulu",
+          "imageUrl": "/images/committee/Nagaraj Ethirajulu.jpg"
         }
       ]
     },
     {
-      "committeeName": "Event Co-Ordinators",
+      "committeeName": "Main Coordinators",
       "members": [
+        {
+          "name": "Ashwin Karthikeyan",
+          "imageUrl": "/images/committee/Ashwin Karthikeyan.png"
+        },
+        {
+          "name": "Mandadi Udaykumar Reddy",
+          "imageUrl": "/images/committee/Mandadi Udaykumar.jpg"
+        },
         {
           "name": "Vivekanandan Raju",
           "imageUrl": "/images/committee/Vivekanandan Raju.jpg"
@@ -47,11 +55,19 @@
         {
           "name": "Gokul Kannan",
           "imageUrl": "/images/committee/Gokul Kannan.png"
+        },
+        {
+          "name": "Shree vaishnavi Rangarajan",
+          "imageUrl": "/images/committee/Shree vaishnavi Rangarajan.jpg"
+        },
+        {
+          "name": "Suraj kumar Shettigar",
+          "imageUrl": "/images/committee/Suraj kumar Shettigar.jpg"
         }
       ]
     },
     {
-      "committeeName": "Tech & Reviewers",
+      "committeeName": "Tech & Review",
       "members": [
         {
           "name": "Indrajith Rajan",
@@ -88,7 +104,7 @@
       ]
     },
     {
-      "committeeName": "Designers",
+      "committeeName": "Design Team",
       "members": [
         {
           "name": "Sharvesh Sathish Kumar",
@@ -125,7 +141,7 @@
       ]
     },
     {
-      "committeeName": "Website Developers",
+      "committeeName": "Website Development",
       "members": [
         {
           "name": "Laxmanapandi Baskaran",
@@ -166,7 +182,7 @@
       ]
     },
     {
-      "committeeName": "Food & Goodies",
+      "committeeName": "Goodies Team",
       "members": [
         {
           "name": "Krishnakanth Dega",
@@ -179,6 +195,10 @@
         {
           "name": "Shakthi Priya Palani",
           "imageUrl": "/images/committee/Shakthi Priya Palani.jpeg"
+        },
+        {
+          "name": "Dhivya Baskaran",
+          "imageUrl": "/images/committee/Dhivya Baskaran.png"
         }
       ]
     },
@@ -194,13 +214,13 @@
           "imageUrl": "/images/committee/Prakash RameshKumar.jpg"
         },
         {
-          "name": "Shuvethram Ayyasamy Ragupathy",
-          "imageUrl": "/images/committee/Shuvethram Ayyasamy Ragupathy.png"
+          "name": "Dineshkumar Ravi",
+          "imageUrl": "/images/committee/Dineshkumar Ravi.png"
         }
       ]
     },
     {
-      "committeeName": "Engagement & Communication",
+      "committeeName": "Engagement Committee",
       "members": [
         {
           "name": "Thanushree Srinivasan",
@@ -241,15 +261,11 @@
       ]
     },
     {
-      "committeeName": "Event Set-Up",
+      "committeeName": "Event Set Up",
       "members": [
         {
           "name": "Sampath Kumar Chikkamarigowda",
           "imageUrl": "/images/committee/Sampath Kumar Chikkamarigowda.jpeg"
-        },
-        {
-          "name": "Suraj Kumar Shettigar",
-          "imageUrl": "/images/committee/Suraj Kumar Shettigar.jpg"
         },
         {
           "name": "Rajagurunathan Selvam",
@@ -266,6 +282,14 @@
         {
           "name": "Minju Mohan",
           "imageUrl": "/images/committee/Minju Mohan.jpeg"
+        },
+        {
+          "name": "Venkata Sravan Kumar",
+          "imageUrl": "/images/committee/Venkata Sravan Kumar.jpeg"
+        },
+        {
+          "name": "Shuvethram Ayyasamy Ragupathy",
+          "imageUrl": "/images/committee/Shuvethram Ayyasamy Ragupathy.png"
         }
       ]
     }

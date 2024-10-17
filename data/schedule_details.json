@@ -267,7 +267,7 @@
       "eventDateTime": "October 26th at 02:00PM",
       "duration": 60,
       "title": "Guest Speaker",
-      "category": "",
+      "category": "Guest Speaker",
       "description": "",
       "tags": [],
       "speakersId": [],
@@ -383,9 +383,9 @@
       }
     },
     "3": {
-      "name": "Rakhesh Bowtham Ramachandranath",
+      "name": "Rakhesh Bowtham Ramachandran",
       "email": "r.ramachandranath@cdw.com",
-      "imageUrl": "/images/speakers/Rakhesh Bowtham Ramachandranath.jpg",
+      "imageUrl": "/images/speakers/Rakhesh Bowtham Ramachandran.png",
       "sessionDetails": {
         "2": []
       }
@@ -393,7 +393,7 @@
     "4": {
       "name": "Mukesh Ravi",
       "email": "mukesh.ravi@cdw.com",
-      "imageUrl": "/images/speakers/Mukesh Ravi.jpg",
+      "imageUrl": "/images/speakers/Mukesh Ravi.jpeg",
       "sessionDetails": {
         "10": [5, 6, 7],
         "23": [36, 37]
@@ -418,7 +418,7 @@
     "7": {
       "name": "Hemapriya Nagarajan",
       "email": "hemapriya.nagarajan@cdw.com",
-      "imageUrl": "/images/speakers/Hemapriya Nagarajan.jpg",
+      "imageUrl": "/images/speakers/Hemapriya Nagarajan.jpeg",
       "sessionDetails": {
         "10": [4, 5, 6]
       }
@@ -442,7 +442,7 @@
     "10": {
       "name": "Raam Praneeth Parameswara Rao",
       "email": "raampraneeth.parameswararao@cdw.com",
-      "imageUrl": "/images/speakers/Raam Praneeth Parameswara Rao.jpg",
+      "imageUrl": "/images/speakers/Raam Praneeth Parameswara Rao.png",
       "sessionDetails": {
         "8": [8, 9, 11, 12]
       }
@@ -450,7 +450,7 @@
     "11": {
       "name": "Francis Bell Ajay",
       "email": "francisbell.ajay@cdw.com",
-      "imageUrl": "/images/speakers/Francis Bell Ajay.jpg",
+      "imageUrl": "/images/speakers/Francis Bell Ajay.jpeg",
       "sessionDetails": {
         "8": [8, 9, 10, 12]
       }
@@ -458,7 +458,7 @@
     "12": {
       "name": "Ankit Dixit",
       "email": "ankit.dixit@cdw.com",
-      "imageUrl": "/images/speakers/Ankit Dixit.jpg",
+      "imageUrl": "/images/speakers/Ankit Dixit.png",
       "sessionDetails": {
         "8": [8, 9, 10, 11]
       }
@@ -483,7 +483,7 @@
     "15": {
       "name": "Karthik Kantam",
       "email": "karthik.kantam@cdw.com",
-      "imageUrl": "/images/speakers/Karthik Kantam.jpg",
+      "imageUrl": "/images/speakers/Karthik Kantam.jpeg",
       "sessionDetails": {
         "4": [13, 14, 16, 17]
       }
@@ -491,15 +491,15 @@
     "16": {
       "name": "Adheesh Arumugam",
       "email": "adheesh.arumugam@cdw.com",
-      "imageUrl": "/images/speakers/Adheesh Arumugam.jpg",
+      "imageUrl": "/images/speakers/sample-image-one.png",
       "sessionDetails": {
         "4": [13, 14, 15, 17]
       }
     },
     "17": {
-      "name": "Ramesh Manikam",
+      "name": "Ramesh Manickam",
       "email": "ramesh.manickam@cdw.com",
-      "imageUrl": "/images/speakers/Ramesh Manikam.jpg",
+      "imageUrl": "/images/speakers/Ramesh Manickam.jpeg",
       "sessionDetails": {
         "4": [13, 14, 15, 16]
       }
@@ -507,7 +507,7 @@
     "18": {
       "name": "Renu Rajaraman",
       "email": "renu.rajaraman@cdw.com",
-      "imageUrl": "/images/speakers/Renu Rajaraman.jpg",
+      "imageUrl": "/images/speakers/sample-image-one.png",
       "sessionDetails": {
         "14": [19]
       }
@@ -515,7 +515,7 @@
     "19": {
       "name": "Ashok Gowtham Arul",
       "email": "ashokgowtham.arul@cdw.com",
-      "imageUrl": "/images/speakers/Ashok Gowtham Arul.jpg",
+      "imageUrl": "/images/speakers/sample-image-one.png",
       "sessionDetails": {
         "14": [18],
         "17": [23, 24]
@@ -524,7 +524,7 @@
     "20": {
       "name": "Rajalakshmi Ramesh",
       "email": "rajalakshmi.ramesh@cdw.com",
-      "imageUrl": "/images/speakers/Rajalakshmi Ramesh.jpg",
+      "imageUrl": "/images/speakers/Rajalakshmi Ramesh.jpeg",
       "sessionDetails": {
         "22": [11, 12]
       }
@@ -540,7 +540,7 @@
     "22": {
       "name": "Prakruthi Itagalli",
       "email": "prakruthi.itagalli@cdw.com",
-      "imageUrl": "/images/speakers/Prakruthi Itagalli.jpg",
+      "imageUrl": "/images/speakers/Prakruthi Itagalli.jpeg",
       "sessionDetails": {
         "22": [10, 11]
       }
@@ -548,7 +548,7 @@
     "23": {
       "name": "Vijay kumar Nandamudi",
       "email": "vijaykumar.nandamudi@cdw.com",
-      "imageUrl": "/images/speakers/Vijay kumar Nandamudi.jpg",
+      "imageUrl": "/images/speakers/sample-image-one.png",
       "sessionDetails": {
         "17": [24, 19]
       }
@@ -556,7 +556,7 @@
     "24": {
       "name": "Karthikeyan Arcot RadhaKrishnan",
       "email": "karthikeyan.arcotradhakrishnan@cdw.com",
-      "imageUrl": "/images/speakers/Karthikeyan Arcot RadhaKrishnan.jpg",
+      "imageUrl": "/images/speakers/sample-image-three.png",
       "sessionDetails": {
         "17": [23, 19]
       }
@@ -564,15 +564,15 @@
     "25": {
       "name": "Bharath Mikkilineni",
       "email": "bharath.mikkilineni@cdw.com",
-      "imageUrl": "/images/speakers/Bharath Mikkilineni.jpg",
+      "imageUrl": "/images/speakers/Bharath Mikkilineni.jpeg",
       "sessionDetails": {
         "16": [26, 14]
       }
     },
     "26": {
-      "name": "Pavithra Govindsamy",
+      "name": "Pavithra Govindasamy",
       "email": "pavithra.govindasamy@cdw.com",
-      "imageUrl": "/images/speakers/Pavithra Govindsamy.jpg",
+      "imageUrl": "/images/speakers/Pavithra Govindasamy.jpeg",
       "sessionDetails": {
         "16": [25, 14]
       }
@@ -620,7 +620,7 @@
     "32": {
       "name": "Jayamaharaja Alagesan",
       "email": "jayamaharaja.alagesan@cdw.com",
-      "imageUrl": "/images/speakers/Jayamaharaja Alagesan.jpg",
+      "imageUrl": "/images/speakers/Jayamaharaja Alagesan.jpeg",
       "sessionDetails": {
         "26": [30, 31]
       }
@@ -634,9 +634,9 @@
       }
     },
     "34": {
-      "name": "Prajnya Shetty",
+      "name": "Prajnya Bhaskar Shetty",
       "email": "prajnya.bhaskarshetty@cdw.com",
-      "imageUrl": "/images/speakers/Prajnya Shetty.jpg",
+      "imageUrl": "/images/speakers/Prajnya Bhaskar Shetty.jpeg",
       "sessionDetails": {
         "15": [33, 35]
       }
@@ -644,7 +644,7 @@
     "35": {
       "name": "Kshitiz Mohan",
       "email": "kshitiz.mohan@cdw.com",
-      "imageUrl": "/images/speakers/Kshitiz Mohan.jpg",
+      "imageUrl": "/images/speakers/Kshitiz Mohan.jpeg",
       "sessionDetails": {
         "15": [33, 34]
       }
@@ -660,7 +660,7 @@
     "37": {
       "name": "Balakumaran Prabhu",
       "email": "balakumaran.prabhu@cdw.com",
-      "imageUrl": "/images/speakers/Balakumaran Prabhu.jpg",
+      "imageUrl": "/images/speakers/Balakumaran Prabhu.jpeg",
       "sessionDetails": {
         "23": [4, 36]
       }
@@ -676,7 +676,7 @@
     "39": {
       "name": "Alagu Bala Ganapathy",
       "email": "alagu.balaganapathy@cdw.com",
-      "imageUrl": "/images/speakers/Alagu Bala Ganapathy.jpg",
+      "imageUrl": "/images/speakers/Alagu Bala Ganapathy.jpeg",
       "sessionDetails": {
         "24": [38, 40]
       }
@@ -684,7 +684,7 @@
     "40": {
       "name": "Arun Kumar Ponnusamy",
       "email": "a.ponnusamy@cdw.com",
-      "imageUrl": "/images/speakers/Arun Kumar Ponnusamy.jpg",
+      "imageUrl": "/images/speakers/Arun Kumar Ponnusamy.jpeg",
       "sessionDetails": {
         "24": [38, 39]
       }
@@ -693,11 +693,13 @@
   "agenda": {
     "1": {
       "date": "October 25",
-      "sessions": [1, 2, 3, 4, 5]
+      "sessions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     },
     "2": {
       "date": "October 26",
-      "sessions": [6, 7, 8, 9, 10, 11, 12, 13]
+      "sessions": [
+        12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28
+      ]
     }
   }
 }

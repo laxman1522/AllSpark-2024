@@ -74,7 +74,6 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
       setScrollAmount(scrollTop);
     }
   };
-
   const speakerProfiles = generateSpeakersCard(speakers, handleClick);
 
   return (
