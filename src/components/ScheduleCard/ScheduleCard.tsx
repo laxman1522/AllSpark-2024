@@ -1,12 +1,7 @@
 import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
-import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
+import { SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
-import {
-  createICSContent,
-  dateToISOFormat,
-  dateToISOFormatt,
-} from '@/utils/date-utils';
 
 type sessionType = {
   date: string;
