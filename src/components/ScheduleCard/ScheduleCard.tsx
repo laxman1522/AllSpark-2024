@@ -1,6 +1,6 @@
 import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
-import { SCHEDULE_CONSTANTS } from '@/constants/constants';
+import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
 
 type sessionType = {
@@ -52,84 +52,66 @@ const ScheduleCard = (session: sessionType) => {
     );
   };
 
-  // Function to convert input date strings to ISO format
-  const convertToISOFormat = (inputDateString: string) => {
-    // Create a Date object from the input string
-    const date = new Date(inputDateString);
-
-    // Check if the date is valid
-    if (isNaN(date.getTime())) {
-      throw new Error(`Invalid date string: ${inputDateString}`);
-    }
-
-    // Extract year, month, day, hours, minutes
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based
-    const day = date.getDate().toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const seconds = '00'; // Set seconds to 00
-
-    // Return the formatted date string in ISO format
-    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  const dateToISOFormat = (inputDateString: string) => {
+    const inputDate = new Date(inputDateString);
+    const year = inputDate.getFullYear();
+    const month = (inputDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = inputDate.getDate().toString().padStart(2, '0');
+    const hour = inputDate.getHours().toString().padStart(2, '0');
+    const minute = inputDate.getMinutes().toString().padStart(2, '0');
+    const second = inputDate.getSeconds().toString().padStart(2, '0');
+    const formattedDateString = `${year}${month}${day}T${hour}${minute}${second}Z`;
+    return formattedDateString;
   };
 
-  // Function to add event to calendar
   const addEventToCalendar = () => {
-    // Helper function to convert date to iCalendar format (UTC)
-    const formatDateToICS = (timestamp: string) => {
-      const date = new Date(timestamp);
-      const year = date.getUTCFullYear();
-      const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
-      const day = date.getUTCDate().toString().padStart(2, '0');
-      const hour = date.getUTCHours().toString().padStart(2, '0');
-      const minute = date.getUTCMinutes().toString().padStart(2, '0');
-      const second = date.getUTCSeconds().toString().padStart(2, '0');
+    // Adjust the input date strings to include the correct end time
+    const start = dateToISOFormat(
+      `${date}, ${ICS_CONSTANTS.YEAR} ${startTime}`,
+    );
+    const end = dateToISOFormat(`${date}, ${ICS_CONSTANTS.YEAR} ${endTime}`);
 
-      // Return formatted date string
-      return `${year}${month}${day}T${hour}${minute}${second}Z`;
-    };
-
-    // Construct the full date string for start and end
-    const start = convertToISOFormat(`${date} ${startTime}`);
-    const end = convertToISOFormat(`${date} ${endTime}`);
-
-    // Format dates to UTC as required by iCalendar (ICS) files
-    const formattedStartDate = formatDateToICS(start);
-    const formattedEndDate = formatDateToICS(end);
-
-    // Create the .ics content
     const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//My Calendar//EN
-CALSCALE:GREGORIAN
+METHOD:PUBLISH
 BEGIN:VEVENT
-DTSTAMP:${formatDateToICS(new Date().toISOString())}
-DTSTART:${formattedStartDate}
-DTEND:${formattedEndDate}
+TZID:Asia/Kolkata
+TZOFFSETFROM:+0530
+TZOFFSETTO:+0530
+DTSTART;TZID=Asia/Kolkata:${start}
+DTEND;TZID=Asia/Kolkata:${end}
+LOCATION:Bengaluru
+TRANSP:OPAQUE
 SUMMARY:${title}
-DESCRIPTION:${description || 'No description available'}
-LOCATION:${location}
-STATUS:CONFIRMED
+DESCRIPTION:${description}
+PRIORITY:5
+CLASS:PUBLIC
 BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
-DESCRIPTION:Reminder for ${title}
+title:Reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR
 `;
 
-    // Create a Blob and download link for the .ics file
+    // Creating a Blob and using a file download link
     const blob = new Blob([icsContent], { type: 'text/calendar' });
     const url = window.URL.createObjectURL(blob);
+
+    // Create a link element
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${title.replace(/ /g, '_')}.ics`;
+    link.download = `${title}.ics`;
+
+    // Append to the document, trigger the download, and then remove the link
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    // Revoke the Blob URL after download
+    window.URL.revokeObjectURL(url);
   };
 
   return (
