@@ -35,54 +35,77 @@
   }
   @media only screen and (max-width: 1632px) {
     flex-basis: calc(28% + 7.5px);
-    height: calc(100% / 2.3);
+    height: calc(100% / 3.2);
   }
   @media only screen and (max-width: 1462px) {
     flex-basis: calc(26.7% + 13px);
   }
+  @media screen and (max-width: 1368px) {
+    height: 25vw;
+  }
   @media only screen and (max-width: 1295px) {
-    flex-basis: calc(25.7% + 13px);
+    flex-basis: calc(17.8% + 13px);
+    height: calc(100% / 2.2);
   }
   @media only screen and (max-width: 1139px) {
     flex-basis: calc(24.4% + 13px);
+    height: 28%;
+  }
+  @media only screen and (max-width: 1180px) and (max-height: 820px) {
+    flex-basis: 27%;
+    height: 50%;
+  }
+  @media only screen and (max-width: 1024px) {
+    flex-basis: 26%;
+    height: 20vw;
   }
   @media only screen and (max-width: 989px) {
-    flex-basis: calc(24% + 5px);
+    flex-basis: 24.5%;
     height: calc(100% / 3.9);
   }
   @media only screen and (max-width: 848px) {
-    flex-basis: calc(24% + 2px);
+    flex-basis: 24%;
   }
   @media only screen and (max-width: 810px) {
-    flex-basis: calc(23.3% + 1px);
+    flex-basis: 30.5%;
     height: calc(100% / 4);
+    margin: auto;
   }
   @media only screen and (max-width: 789px) {
-    flex-basis: calc(40% + 1px);
-    height: calc(100% / 2.9);
+    flex-basis: 30.5%;
+    height: 100% / 3.5;
+  }
+  @media screen and (min-width: 767) and (max-width: 768px) {
+    flex-basis: 27.2%;
+    margin: 15px;
   }
   @media only screen and (max-width: 764px) {
-    flex-basis: calc(40% + 13px);
+    flex-basis: 40%;
   }
   @media only screen and (max-width: 667px) {
-    flex-basis: calc(42% + 9px);
+    flex-basis: 42%;
     margin-bottom: 10px;
   }
   @media only screen and (max-width: 595px) {
-    flex-basis: calc(39.5% + 13px);
-    height: calc(100% / 3);
+    flex-basis: 30.5%;
+    height: 30vw;
   }
   @media only screen and (max-width: 524px) {
-    flex-basis: calc(36.5% + 13px);
-    height: calc(100% / 4);
+    flex-basis: 36.5%;
+    height: 100% / 4;
   }
   @media only screen and (max-width: 431px) {
-    flex-basis: calc(100% + 13px);
-    height: calc(100% / 2.3);
+    flex-basis: 46%;
+    height: 36vw;
   }
   @media only screen and (max-width: 375px) {
-    flex-basis: calc(100% + 13px);
-    height: 215px;
+    flex-basis: 46%;
+    height: 180px;
+  }
+  @media only screen and (max-width: 344px) {
+    flex-basis: 46%;
+    height: 150px;
+    font-size: 10px;
   }
 }
 
@@ -123,6 +146,12 @@
     p {
       font-size: 15px;
     }
+  }
+  .speakers-container {
+    padding: 1vh;
+    padding-top: 2vh;
+    display: flex;
+    gap: 1vh;
   }
 }
 

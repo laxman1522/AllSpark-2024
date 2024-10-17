@@ -52,7 +52,7 @@ const Speakers: React.FC<SpeakerProps> = ({ speakers }) => {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      offset: 0,
+      offset: -100,
     });
   }, []);
 
