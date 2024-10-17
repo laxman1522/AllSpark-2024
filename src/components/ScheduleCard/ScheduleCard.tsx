@@ -2,6 +2,7 @@ import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
+import { createEvent } from 'ics';
 
 type sessionType = {
   date: string;
@@ -69,53 +70,66 @@ const ScheduleCard = (session: sessionType) => {
   //   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
   // };
 
-  const addEventToCalendar = () => {
-    // Helper function to format dates in required UTC format
-    const formatDateToICS = (date: Date) => {
-      const year = date.getUTCFullYear();
-      const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-      const day = String(date.getUTCDate()).padStart(2, '0');
-      const hours = String(date.getUTCHours()).padStart(2, '0');
-      const minutes = String(date.getUTCMinutes()).padStart(2, '0');
-      const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+  // Function to convert time to UTC from Asia/Kolkata
+  const convertToUTC = (
+    year: number,
+    month: number,
+    day: number,
+    hour: number,
+    minute: number,
+  ) => {
+    const localDate = new Date(Date.UTC(year, month - 1, day, hour, minute)); // Create a date with Kolkata time
+    const timeOffset = 5 * 60 + 30; // India Standard Time (UTC +05:30)
+    localDate.setUTCMinutes(localDate.getUTCMinutes() - timeOffset); // Convert to UTC
+    return [
+      localDate.getUTCFullYear(),
+      localDate.getUTCMonth() + 1,
+      localDate.getUTCDate(),
+      localDate.getUTCHours(),
+      localDate.getUTCMinutes(),
+    ];
+  };
 
-      return `${year}${month}${day}T${hours}${minutes}${seconds}Z`; // Z for UTC
+  const addEventToCalendar = () => {
+    // Convert Asia/Kolkata time to UTC
+    const startTime = convertToUTC(2024, 10, 25, 10, 0); // 10:00 AM India time
+    const duration = { hours: 0, minutes: 15 }; // Duration of the event
+
+    // Define the event details
+    const event: any = {
+      start: startTime, // UTC time
+      duration: duration, // Event duration
+      title: 'My Event', // Event title
+      description: 'Event description here', // Event description
+      location: 'Bengaluru', // Event location
+      status: 'CONFIRMED', // Optional event status
+      alarms: [{ action: 'display', trigger: { minutes: 15, before: true } }], // Reminder 15 minutes before
+      productId: '//my.calendar',
     };
 
-    const startDate = new Date('2024-10-25T10:00:00Z'); // Adjust to UTC if necessary
-    const endDate = new Date('2024-10-25T11:00:00Z'); // Adjust to UTC if necessary
+    // Create the ICS event
+    createEvent(event, (error, value) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
 
-    const icsContent = `
-  BEGIN:VCALENDAR
-  VERSION:2.0
-  PRODID:-//My Calendar//EN
-  CALSCALE:GREGORIAN
-  BEGIN:VEVENT
-  UID:${new Date().getTime()}@example.com
-  DTSTAMP:${formatDateToICS(new Date())}
-  DTSTART:${formatDateToICS(startDate)}
-  DTEND:${formatDateToICS(endDate)}
-  SUMMARY:Your Event Title
-  DESCRIPTION:Event description goes here.
-  LOCATION:Event location here.
-  STATUS:CONFIRMED
-  BEGIN:VALARM
-  TRIGGER:-PT15M
-  ACTION:DISPLAY
-  DESCRIPTION:Reminder for Your Event Title
-  END:VALARM
-  END:VEVENT
-  END:VCALENDAR
-  `;
+      // Create a Blob for the ICS file
+      const blob = new Blob([value], { type: 'text/calendar' });
 
-    const blob = new Blob([icsContent], { type: 'text/calendar' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `event.ics`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      // Create a download link
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'event.ics'; // Filename for the downloaded .ics file
+
+      // Append the link to the DOM and trigger the download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Revoke the Blob URL after the download
+      window.URL.revokeObjectURL(link.href);
+    });
   };
 
   return (
