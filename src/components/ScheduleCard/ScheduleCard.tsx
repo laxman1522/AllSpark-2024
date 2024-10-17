@@ -2,6 +2,7 @@ import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
+import { createEvent } from 'ics';
 
 type sessionType = {
   date: string;
@@ -52,66 +53,98 @@ const ScheduleCard = (session: sessionType) => {
     );
   };
 
-  const dateToISOFormat = (inputDateString: string) => {
-    const inputDate = new Date(inputDateString);
-    const year = inputDate.getFullYear();
-    const month = (inputDate.getMonth() + 1).toString().padStart(2, '0');
-    const day = inputDate.getDate().toString().padStart(2, '0');
-    const hour = inputDate.getHours().toString().padStart(2, '0');
-    const minute = inputDate.getMinutes().toString().padStart(2, '0');
-    const second = inputDate.getSeconds().toString().padStart(2, '0');
-    const formattedDateString = `${year}${month}${day}T${hour}${minute}${second}Z`;
-    return formattedDateString;
+  // Function to parse and convert the date string to [year, month, day, hour, minute]
+  const convertToDateArray = (datee: string, startTime: string) => {
+    // Create a new Date object by combining the date and time strings
+    const dateTimeStr = `${datee}, ${ICS_CONSTANTS.YEAR} ${startTime}`;
+
+    const options: any = {
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, // User's local time zone
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false, // Set to true for 12-hour format
+    };
+
+    const formattedLocalTime = new Intl.DateTimeFormat('en-US', options).format(
+      new Date(`${dateTimeStr} GMT+0530`),
+    );
+
+    const date = new Date(formattedLocalTime);
+
+    // Format the date into the required array
+    return [
+      date.getFullYear(), // Year
+      date.getMonth() + 1, // Month (getMonth() returns 0-indexed month, so +1)
+      date.getDate(), // Day of the month
+      date.getHours(), // Hour (24-hour format)
+      date.getMinutes(), // Minutes
+    ];
+  };
+
+  // Function to parse time string and calculate the difference
+  const getTimeDifference = (
+    datee: string,
+    startTime: string,
+    endTime: string,
+  ) => {
+    // Parse the time strings into Date objects (using a fixed date for comparison)
+    const startDate = new Date(`${datee}, ${ICS_CONSTANTS.YEAR} ${startTime}`);
+    const endDate = new Date(`${datee}, ${ICS_CONSTANTS.YEAR} ${endTime}`);
+
+    // Calculate the difference in milliseconds
+    const timeDiffMs = endDate.getTime() - startDate.getTime();
+
+    // Convert milliseconds to minutes and hours
+    const timeDiffMinutes = Math.floor(timeDiffMs / (1000 * 60));
+    const hours = Math.floor(timeDiffMinutes / 60);
+    const minutes = timeDiffMinutes % 60;
+
+    return { hours, minutes };
   };
 
   const addEventToCalendar = () => {
-    // Adjust the input date strings to include the correct end time
-    const start = dateToISOFormat(
-      `${date}, ${ICS_CONSTANTS.YEAR} ${startTime}`,
-    );
-    const end = dateToISOFormat(`${date}, ${ICS_CONSTANTS.YEAR} ${endTime}`);
+    const { hours, minutes } = getTimeDifference(date, startTime, endTime);
 
-    const icsContent = `
-BEGIN:VCALENDAR
-VERSION:2.0
-METHOD:PUBLISH
-BEGIN:VEVENT
-TZID:Asia/Kolkata
-TZOFFSETFROM:+0530
-TZOFFSETTO:+0530
-DTSTART;TZID=Asia/Kolkata:${start}
-DTEND;TZID=Asia/Kolkata:${end}
-LOCATION:Bengaluru
-TRANSP:OPAQUE
-SUMMARY:${title}
-DESCRIPTION:${description}
-PRIORITY:5
-CLASS:PUBLIC
-BEGIN:VALARM
-TRIGGER:-PT15M
-ACTION:DISPLAY
-title:Reminder
-END:VALARM
-END:VEVENT
-END:VCALENDAR
-`;
+    // Define the event details (without explicitly specifying timeZone)
+    const event: any = {
+      start: convertToDateArray(date, startTime), // Year, Month, Day, Hour, Minute
+      duration: { hours: hours, minutes: minutes }, // Event duration
+      title: title,
+      description: description,
+      location: 'Bengaluru',
+      status: 'CONFIRMED',
+      alarms: [{ action: 'display', trigger: { minutes: 15, before: true } }], // Reminder
+      startInputType: 'local', // This means the time is in local time, not UTC
+      productId: '//my.calendar',
+    };
 
-    // Creating a Blob and using a file download link
-    const blob = new Blob([icsContent], { type: 'text/calendar' });
-    const url = window.URL.createObjectURL(blob);
+    // Create the ICS event
+    createEvent(event, (error, value) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
 
-    // Create a link element
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `${title}.ics`;
+      // Create a Blob for the ICS file
+      const blob = new Blob([value], { type: 'text/calendar' });
 
-    // Append to the document, trigger the download, and then remove the link
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      // Create a download link
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = `${title}.ics`;
 
-    // Revoke the Blob URL after download
-    window.URL.revokeObjectURL(url);
+      // Append the link to the DOM and trigger the download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Revoke the Blob URL after the download
+      window.URL.revokeObjectURL(link.href);
+    });
   };
 
   return (
