@@ -18,7 +18,6 @@ const ScheduleCard = (session: sessionType) => {
   const { LIVE_NOW, ADD_TO_CALENDAR, SOLUTION_SPACE, TECH_TALK } =
     SCHEDULE_CONSTANTS;
   const {
-    date,
     startTime,
     endTime,
     title,
@@ -53,77 +52,67 @@ const ScheduleCard = (session: sessionType) => {
   };
 
   // Function to convert input date strings to ISO format
-  const convertToISOFormat = (inputDateString: string) => {
-    const date = new Date(inputDateString);
-    if (isNaN(date.getTime())) {
-      throw new Error(`Invalid date string: ${inputDateString}`);
-    }
+  // const convertToISOFormat = (inputDateString: string) => {
+  //   const date = new Date(inputDateString);
+  //   if (isNaN(date.getTime())) {
+  //     throw new Error(`Invalid date string: ${inputDateString}`);
+  //   }
 
-    // Extract date components
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const seconds = '00';
+  //   // Extract date components
+  //   const year = date.getFullYear();
+  //   const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  //   const day = date.getDate().toString().padStart(2, '0');
+  //   const hours = date.getHours().toString().padStart(2, '0');
+  //   const minutes = date.getMinutes().toString().padStart(2, '0');
+  //   const seconds = '00';
 
-    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
-  };
+  //   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  // };
 
-  // Function to add event to calendar
   const addEventToCalendar = () => {
-    const formatDateToICS = (timestamp: string) => {
-      const date = new Date(timestamp);
+    // Helper function to format dates in required UTC format
+    const formatDateToICS = (date: Date) => {
       const year = date.getUTCFullYear();
-      const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
-      const day = date.getUTCDate().toString().padStart(2, '0');
-      const hour = date.getUTCHours().toString().padStart(2, '0');
-      const minute = date.getUTCMinutes().toString().padStart(2, '0');
-      const second = '00'; // Set seconds to '00' if not needed
+      const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+      const day = String(date.getUTCDate()).padStart(2, '0');
+      const hours = String(date.getUTCHours()).padStart(2, '0');
+      const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(date.getUTCSeconds()).padStart(2, '0');
 
-      return `${year}${month}${day}T${hour}${minute}${second}Z`;
+      return `${year}${month}${day}T${hours}${minutes}${seconds}Z`; // Z for UTC
     };
 
-    // Construct the full date string for start and end
-    const start = convertToISOFormat(`${date} ${startTime}`);
-    const end = convertToISOFormat(`${date} ${endTime}`);
+    const startDate = new Date('2024-10-25T10:00:00Z'); // Adjust to UTC if necessary
+    const endDate = new Date('2024-10-25T11:00:00Z'); // Adjust to UTC if necessary
 
-    // Format dates to UTC
-    const formattedStartDate = formatDateToICS(start);
-    const formattedEndDate = formatDateToICS(end);
-
-    // Create the .ics content
     const icsContent = `
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//My Calendar//EN
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-UID:${new Date().getTime()}@example.com
-DTSTAMP:${formatDateToICS(new Date().toISOString())}
-DTSTART:${formattedStartDate}
-DTEND:${formattedEndDate}
-SUMMARY:${title}
-DESCRIPTION:${description || 'No description available'}
-LOCATION:${location}
-STATUS:CONFIRMED
-BEGIN:VALARM
-TRIGGER:-PT15M
-ACTION:DISPLAY
-DESCRIPTION:Reminder for ${title}
-END:VALARM
-END:VEVENT
-END:VCALENDAR
-`;
+  BEGIN:VCALENDAR
+  VERSION:2.0
+  PRODID:-//My Calendar//EN
+  CALSCALE:GREGORIAN
+  BEGIN:VEVENT
+  UID:${new Date().getTime()}@example.com
+  DTSTAMP:${formatDateToICS(new Date())}
+  DTSTART:${formatDateToICS(startDate)}
+  DTEND:${formatDateToICS(endDate)}
+  SUMMARY:Your Event Title
+  DESCRIPTION:Event description goes here.
+  LOCATION:Event location here.
+  STATUS:CONFIRMED
+  BEGIN:VALARM
+  TRIGGER:-PT15M
+  ACTION:DISPLAY
+  DESCRIPTION:Reminder for Your Event Title
+  END:VALARM
+  END:VEVENT
+  END:VCALENDAR
+  `;
 
-    console.log(icsContent); // Log content for debugging
-
-    // Create a Blob and download link for the .ics file
     const blob = new Blob([icsContent], { type: 'text/calendar' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${title.replace(/ /g, '_')}.ics`;
+    link.download = `event.ics`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
