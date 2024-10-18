@@ -198,7 +198,7 @@
         },
         {
           "name": "Dhivya Baskaran",
-          "imageUrl": "/images/committee/Dhivya Baskaran.png"
+          "imageUrl": "/images/committee/Dhivya Baskaran.jpg"
         }
       ]
     },
@@ -216,6 +216,14 @@
         {
           "name": "Dineshkumar Ravi",
           "imageUrl": "/images/committee/Dineshkumar Ravi.png"
+        },
+        {
+          "name": "Venkata Kanula",
+          "imageUrl": "/images/committee/sample-image-one.png"
+        },
+        {
+          "name": "Karthik Gowda",
+          "imageUrl": "/images/committee/sample-image-one.png"
         }
       ]
     },
