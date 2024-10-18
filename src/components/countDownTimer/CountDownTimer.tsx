@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import TimeSection from '@/components/timeSection/TimeSection';
 import '../timeSegment/TimeSegment.scss';
 import { SCREEN_SIZES } from '@/constants/constants';
+import './CountDownTimer.scss';
+
 interface CountDownTimerProps {
   targetTime: number;
   updateAnimationKey: () => void;
@@ -45,7 +47,7 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({
     const screenWidth = window.innerWidth;
 
     // Check if the screen width has crossed any of the breakpoints
-    const crossedBreakpoint = breakpoints.some(
+    const crossedBreakpoint = breakpoints?.some(
       (bp) =>
         (prevScreenWidth > bp && screenWidth <= bp) ||
         (prevScreenWidth <= bp && screenWidth > bp),
@@ -99,16 +101,16 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({
 
   return (
     <div
-      className={`counter-container animate flex flex-col min-[540px]:flex-row justify-center items-center md:gap-[5rem] gap-5 w-100 p-10 mt-5 xl:mt-8 md:mt-12 mx-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+      className={`counter-container animate flex flex-col min-[540px]:flex-row justify-center items-center md:gap-[3rem] gap-5 w-100 p-10 mt-20 xl:mt-8 md:mt-12  mx-auto absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
     >
-      <div className="flex flex-col xl:flex-row md:gap-[4rem] gap-5">
-        <TimeSection label="Days" value={timeRemaining.days} />
-        <TimeSection label="Hours" value={timeRemaining.hours} />
+      <div className="flex count-down-top flex-col xl:flex-row md:gap-[3rem] gap-5">
+        <TimeSection label="Days" value={timeRemaining?.days} />
+        <TimeSection label="Hours" value={timeRemaining?.hours} />
       </div>
 
-      <div className="flex flex-col xl:flex-row md:gap-[4rem] gap-5">
-        <TimeSection label="Minutes" value={timeRemaining.minutes} />
-        <TimeSection label="Seconds" value={timeRemaining.seconds} />
+      <div className="flex count-down-bottom flex-col xl:flex-row md:gap-[3rem] gap-5">
+        <TimeSection label="Minutes" value={timeRemaining?.minutes} />
+        <TimeSection label="Seconds" value={timeRemaining?.seconds} />
       </div>
     </div>
   );

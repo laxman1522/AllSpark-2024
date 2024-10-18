@@ -1,0 +1,27 @@
+@media only screen and (max-width: 539px) {
+  .location-time {
+    margin-top: 5vh;
+  }
+}
+
+@media only screen and (min-width: 540px) and (max-width: 767px) {
+  .location-time {
+    margin-top: 7.5vh;
+  }
+}
+
+@media only screen and (max-width: 580px) and (min-height: 900px) {
+  .location-time {
+    margin-top: 7.5vh;
+  }
+}
+
+@media screen and (width: 375px) and (height: 667px) {
+  .location-time {
+    margin-top: 3vh;
+  }
+  .location-text-wrapper,
+  .location-place-date {
+    font-size: 14px;
+  }
+}

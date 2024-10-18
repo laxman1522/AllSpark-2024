@@ -1,20 +1,19 @@
-import CountDown from '@/components/countDown/CountDown';
-import Logo from '@/components/Logo/Logo';
-import BackgroundAnimation from '@/components/BackgroundAnimation/BackgroundAnimation';
 import LandscapeFallback from '@/components/LandscapeFallback/LandscapeFallback';
+import BackGround from '@/components/BackGround/BackGround';
+import { WindowSizeProvider } from '../contexts/WindowSizeContext';
+import SideNavigation from '@/components/SideNavigation/SideNavigation';
 
 export default function Home() {
   return (
-    <div className="home-page h-screen w-screen">
-      <div className="home">
-        <BackgroundAnimation />
-        <Logo />
-        <CountDown />
-      </div>
-      <div className="landscape-fallback-page justify-center min-h-screen items-center">
-        <BackgroundAnimation />
-        <LandscapeFallback></LandscapeFallback>
-      </div>
-    </div>
+    <WindowSizeProvider>
+      <BackGround>
+        <div className="main-screen">
+          <SideNavigation />
+        </div>
+        <div className="landscape-fallback-page justify-center min-h-screen items-center">
+          <LandscapeFallback />
+        </div>
+      </BackGround>
+    </WindowSizeProvider>
   );
 }

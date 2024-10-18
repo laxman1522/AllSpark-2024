@@ -1,0 +1,213 @@
+@media screen and (min-width: 1024px) and (max-width: 1168px) and (min-height: 1168px) and (max-height: 1366px) {
+  .userInformationProfileImage {
+    width: 70%;
+    height: 65%;
+    left: -38%;
+  }
+  .userInformationModalDescription {
+    padding-top: 96px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .userInformationModalDescription {
+    padding: 1rem;
+    width: 80%;
+    left: 50%;
+    top: 60%;
+  }
+
+  .userInformationArea {
+    margin-top: 24%;
+    height: 79%;
+    padding-bottom: 2rem;
+  }
+
+  .userInformationProfileImage {
+    width: 75%;
+    height: 16rem;
+    left: 12.5%;
+    top: -5%;
+  }
+
+  .userInformationModalClose {
+    top: -32%;
+    right: -2px;
+  }
+
+  .userInformationModalProfileName {
+    font-size: 2rem;
+  }
+
+  .userInformationModalProfileEmail {
+    font-size: 1rem;
+  }
+
+  .userInformationModalTitlePresenting {
+    font-size: 1.3rem;
+  }
+
+  .userInformationModalTitle {
+    font-size: 0.8rem;
+  }
+
+  .userInformationModalAlongWith {
+    font-size: 1.3rem;
+  }
+
+  .userInformationModalTeammatesProfileName {
+    font-size: 1rem;
+  }
+
+  .userInformationModalTeammatesWrapper {
+    gap: 1rem;
+  }
+
+  .userInformationModalAbout {
+    font-size: 1.3rem;
+  }
+
+  .userInformationModalAboutDesc {
+    font-size: 1rem;
+  }
+
+  .userInformationModalWatchMe {
+    font-size: 1.3rem;
+  }
+
+  .userInformationModalEventDateTime {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 344px) and (max-width: 767px) {
+  .userInformationModalDescription {
+    padding: 1rem;
+    width: 80%;
+    left: 50%;
+    top: 60%;
+  }
+
+  .userInformationArea {
+    margin-top: 32%;
+    height: 84%;
+    padding-bottom: 1rem;
+  }
+
+  .userInformationProfileImage {
+    width: 75%;
+    height: 13rem;
+    left: 12.5%;
+    top: -5%;
+  }
+
+  .userInformationModalClose {
+    top: -35%;
+    right: -25px;
+  }
+
+  .userInformationModalProfileName {
+    font-size: 1.3rem;
+  }
+
+  .userInformationModalProfileEmail {
+    font-size: 0.8rem;
+  }
+  .userInformationModalTitlePresenting {
+    font-size: 1rem;
+  }
+
+  .userInformationModalTitle {
+    font-size: 0.8rem;
+  }
+
+  .userInformationModalAlongWith {
+    font-size: 1rem;
+  }
+
+  .userInformationModalTeammatesProfileName {
+    font-size: 0.7rem;
+  }
+
+  .userInformationModalTeammatesWrapper {
+    gap: 0.7rem;
+  }
+
+  .userInformationModalAbout {
+    font-size: 1rem;
+  }
+
+  .userInformationModalAboutDesc {
+    font-size: 0.8rem;
+  }
+
+  .userInformationModalWatchMe {
+    font-size: 1rem;
+  }
+
+  .userInformationModalEventDateTime {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .userInformationArea {
+    margin-top: 26%;
+  }
+
+  .userInformationProfileImage {
+    height: 9rem;
+  }
+
+  .userInformationModalClose {
+    right: -18px;
+  }
+
+  .userInformationModalProfileName {
+    line-height: 1.4rem;
+    font-size: 1rem;
+  }
+
+  .userInformationModalProfileEmail {
+    word-wrap: break-word;
+    font-size: 0.6rem;
+  }
+
+  .userInformationModalTitlePresenting,
+  .userInformationModalAlongWith,
+  .userInformationModalAbout,
+  .userInformationModalAboutDesc,
+  .userInformationModalWatchMe,
+  .userInformationModalEventDateTime {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 912px) and (max-width: 1024px) and (min-height: 1280px) and (max-height: 1368px) {
+  .userInformationProfileImage {
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 800px) {
+  .speakers-wrapper {
+    width: 82%;
+  }
+
+  .userInformationModalDescription {
+    padding-left: 10%;
+  }
+
+  .userInformationModalProfileName {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) and (min-height: 700px) and (max-height: 800px) {
+  .userInformationProfileImage {
+    height: 11rem;
+  }
+  .userInformationArea {
+    margin-top: 17%;
+  }
+}

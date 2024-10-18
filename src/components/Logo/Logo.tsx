@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
-
 import './Logo.scss';
 import Image from 'next/image';
 import left from '../../../public/images/left.png';
@@ -9,10 +7,11 @@ import star from '../../../public/images/star.png';
 import aLetter from '../../../public/images/letter-A.png';
 import llspark from '../../../public/images/Text-without-A.png';
 import allspark from '../../../public/images/Allsparktext.png';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { SCREEN_NAMES, SCREEN_SIZES } from '../../constants/constants';
+import { SCREEN_SIZES } from '../../constants/constants';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
 
 // Register GSAP MotionPath plugin
 gsap.registerPlugin(MotionPathPlugin);
@@ -21,6 +20,10 @@ gsap.registerPlugin(MotionPathPlugin);
 interface Size {
   height: string;
   width: string;
+}
+
+interface LogoProps {
+  isCountDownDisplayed: boolean;
 }
 
 // Function to calculate dynamic values based on screen width
@@ -33,11 +36,7 @@ const getDynamicValues = (
 } => {
   let starSize: Size, logoSize: Size, logoStarSize: Size;
 
-  if (width <= SCREEN_SIZES.mobile) {
-    starSize = { height: '24px', width: '30px' };
-    logoSize = { height: '44.27px', width: '160px' };
-    logoStarSize = { height: '12.39px', width: '11.8px' };
-  } else if (width <= SCREEN_SIZES.lgMobile) {
+  if (width <= SCREEN_SIZES.lgMobile) {
     starSize = { height: '32.22px', width: '40.25px' };
     logoSize = { height: '60.42px', width: '217.5px' };
     logoStarSize = { height: '16.91px', width: '16.11px' };
@@ -58,28 +57,16 @@ const getDynamicValues = (
   return { starSize, logoSize, logoStarSize };
 };
 
-// Function to determine window size category
-const getWindowSizeCategory = (width: number): string => {
-  if (width > SCREEN_SIZES.desktop) return SCREEN_NAMES.lgDesktop;
-  if (width <= SCREEN_SIZES.desktop && width > SCREEN_SIZES.tablet)
-    return SCREEN_NAMES.desktop;
-  if (width <= SCREEN_SIZES.tablet && width > SCREEN_SIZES.lgMobile)
-    return SCREEN_NAMES.tablet;
-  if (width <= SCREEN_SIZES.lgMobile && width > SCREEN_SIZES.mobile)
-    return SCREEN_NAMES.lgMobile;
-  return SCREEN_NAMES.mobile;
-};
-
 /**
  * @description An component to animate the main logo
  * @version 1.0.0
  * @author [Charanraj Thiyagarajan]
  */
-const Logo = () => {
+const Logo: React.FC<LogoProps> = ({ isCountDownDisplayed }) => {
   const leftRef = useRef<HTMLImageElement>(null);
   const rightRef = useRef<HTMLImageElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
-  const [windowSize, setWindowSize] = useState<string>('');
+  const { windowSize } = useWindowSize();
 
   // Reusable functions for common animations
   const motionPathAnimation = (path: any) => ({
@@ -98,10 +85,8 @@ const Logo = () => {
       return (17 * 2.5) / 2;
     } else if (windowWidth > SCREEN_SIZES.lgMobile) {
       return (12.8 * 2.5) / 2;
-    } else if (windowWidth > SCREEN_SIZES.mobile) {
-      return (9.6 * 2.5) / 2;
     } else {
-      return (7.2 * 2.5) / 2;
+      return (9.6 * 2.5) / 2;
     }
   };
 
@@ -114,19 +99,6 @@ const Logo = () => {
   const calculateRightPath = (windowWidth: number) => {
     return 50 - (calculateElementWidth(windowWidth) / windowWidth) * 100;
   };
-
-  const resizeHandler = () => {
-    const newSizeCategory = getWindowSizeCategory(window.innerWidth);
-    if (newSizeCategory !== windowSize) setWindowSize(newSizeCategory);
-  };
-  // Handle window resize event
-  useEffect(() => {
-    resizeHandler();
-    window.addEventListener('resize', resizeHandler);
-    return () => {
-      window.removeEventListener('resize', resizeHandler);
-    };
-  }, []);
 
   // Animation logic
   useEffect(() => {
@@ -185,20 +157,24 @@ const Logo = () => {
       // Animate right and left elements
       gsap
         .timeline({ ease: 'power3.in' })
-        .set(rightRef.current, { display: 'block', x: 0, y: '90vh' })
+        .set(rightRef.current, { visibility: 'visible', x: 0, y: '90vh' })
         .to(rightRef.current, motionPathAnimation(paths.right))
-        .set(rightRef.current, { display: 'none' });
+        .set(rightRef.current, { visibility: 'hidden' });
       gsap
         .timeline({ ease: 'power3.in' })
-        .set(leftRef.current, { display: 'block', x: '100vw', y: '90vh' })
+        .set(leftRef.current, { visibility: 'visible', x: '100vw', y: '90vh' })
         .to(leftRef.current, motionPathAnimation(paths.left))
-        .set(leftRef.current, { display: 'none' });
+        .set(leftRef.current, { visibility: 'hidden' });
 
       // Star animation after 2.5 seconds
       gsap.delayedCall(2.5, () => {
         gsap
           .timeline({ ease: 'power2.in' })
-          .set(elements.star, { display: 'block', top: '-20vh', left: '44%' })
+          .set(elements.star, {
+            visibility: 'visible',
+            top: '-20vh',
+            left: '44%',
+          })
           .to(elements.star, {
             duration: 1,
             top: 0,
@@ -216,7 +192,7 @@ const Logo = () => {
             elements.aLetter,
             {
               duration: 1.2,
-              display: 'block',
+              visibility: 'visible',
               top: '1%',
               left: 0,
               height: '98%',
@@ -235,81 +211,83 @@ const Logo = () => {
             },
             0,
           )
-          .set(elements.aLetter, { display: 'none' }, 1.5)
-          .set(elements.llspark, { display: 'none' }, 1.5)
-          .set(elements.allspark, { display: 'block' }, 1.5);
+          .set(elements.aLetter, { visibility: 'hidden' }, 1.5)
+          .set(elements.llspark, { visibility: 'hidden' }, 1.5)
+          .set(elements.allspark, { visibility: 'visible' }, 1.5);
       });
 
       // Logo animation after 6 seconds
-      gsap.delayedCall(6, () => {
-        gsap
-          .timeline({ ease: 'power2.out' })
-          .to(
-            logoContainerRef.current,
-            {
-              duration: 1,
-              top:
-                window.innerWidth <= SCREEN_SIZES.mobile
-                  ? '7vh'
-                  : window.innerWidth <= SCREEN_SIZES.tablet
-                    ? '10vh'
-                    : '15vh',
-              height: logoSize.height,
-              width: logoSize.width,
-            },
-            0,
-          )
-          .to(
-            elements.star,
-            {
-              duration: 1,
-              top: '3%',
-              left: '3.2%',
-              height: logoStarSize.height,
-              width: logoStarSize.width,
-            },
-            0,
-          );
-      });
+      if (isCountDownDisplayed) {
+        gsap.delayedCall(5.5, () => {
+          gsap
+            .timeline({ ease: 'power2.out' })
+            .to(
+              logoContainerRef.current,
+              {
+                duration: 1,
+                top:
+                  window.innerWidth <= SCREEN_SIZES.mobile
+                    ? '7vh'
+                    : window.innerWidth <= SCREEN_SIZES.tablet
+                      ? '10vh'
+                      : '15vh',
+                height: logoSize.height,
+                width: logoSize.width,
+              },
+              0,
+            )
+            .to(
+              elements.star,
+              {
+                duration: 1,
+                top: '3%',
+                left: '3.2%',
+                height: logoStarSize.height,
+                width: logoStarSize.width,
+              },
+              0,
+            );
+        });
+      }
     }
-  }, [windowSize]);
+  }, [windowSize, isCountDownDisplayed]);
 
   return (
     <div className="logo">
       <Image
         src={left}
         alt="left"
-        className="left absolute hidden"
-        priority={true}
+        className="left absolute invisible"
+        loading="lazy"
         ref={leftRef}
       />
       <Image
         src={right}
         alt="right"
-        className="right absolute hidden"
-        priority={true}
+        className="right absolute invisible"
+        loading="lazy"
         ref={rightRef}
       />
       <div
-        className="logo-container relative top-[50vh] left-[50vw] -translate-x-1/2 -translate-y-1/2"
+        className={`logo-container relative top-[45vh] top-${!isCountDownDisplayed && '[50vh]'} left-[50vw] -translate-x-1/2 -translate-y-1/2`}
         ref={logoContainerRef}
       >
         <Image
           src={allspark}
           alt="allspark"
-          className="allspark absolute hidden object-contain top-0 h-full w-full"
+          className="allspark absolute invisible object-contain top-0 h-full w-full"
           priority={true}
         />
         <Image
           src={star}
           alt="star"
-          className="star absolute hidden"
+          className="star absolute invisible"
           priority={true}
         />
         <Image
           src={aLetter}
           alt="a"
-          className="aLetter absolute hidden object-contain w-auto h-1/5 top-[-2%] left-[5%]"
+          className="aLetter absolute invisible object-contain w-auto h-1/5 top-[-2%] left-[5%]"
           priority={true}
         />
         <Image

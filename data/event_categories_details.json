@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "name": "TECH TALKS",
+      "description": "Designed to inspire and educate everyone on the latest solutions, frameworks and future prospects across various technologies including Generative AI, LLM, Bots, DevOps, AWS Cloud, Networking, Digital Commerce, UX etc.,"
+    },
+    {
+      "name": "SOLUTIONS SPACE",
+      "description": "Explore the various innovations, best practices and frameworks that our consultants have built as accelerators and solutions to some of the critical problems in the industries that we serve."
+    },
+    {
+      "name": "GUEST TALK",
+      "description": "Himadri Ganguly is a seasoned Data & Analytics consultant with 18+ years of experience, leading large-scale transformation programs for global clients. He specializes in technology and retail sectors."
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "committee": [
+    {
+      "committeeName": "Core Organisers",
+      "members": [
+        {
+          "name": "Shweta Srivastava",
+          "imageUrl": "/images/committee/Shweta Srivastava.jpg"
+        },
+        {
+          "name": "Suhel Ahamed Kunjan Yousuf",
+          "imageUrl": "/images/committee/Suhel Ahamed Kunjan Yousuf.jpeg"
+        },
+        {
+          "name": "Soumya Vikram",
+          "imageUrl": "/images/committee/Soumya Vikram.jpg"
+        },
+        {
+          "name": "Jeyanthi Veeramani",
+          "imageUrl": "/images/committee/Jeyanthi Veeramani.jpg"
+        },
+        {
+          "name": "Xavier Cardoz",
+          "imageUrl": "/images/committee/Xavier Cardoz.jpeg"
+        },
+        {
+          "name": "Nagaraj Ethirajulu",
+          "imageUrl": "/images/committee/Nagaraj Ethirajulu.jpg"
+        }
+      ]
+    },
+    {
+      "committeeName": "Main Coordinators",
+      "members": [
+        {
+          "name": "Ashwin Karthikeyan",
+          "imageUrl": "/images/committee/Ashwin Karthikeyan.png"
+        },
+        {
+          "name": "Mandadi Udaykumar Reddy",
+          "imageUrl": "/images/committee/Mandadi Udaykumar.jpg"
+        },
+        {
+          "name": "Vivekanandan Raju",
+          "imageUrl": "/images/committee/Vivekanandan Raju.jpg"
+        },
+        {
+          "name": "Premraj Sathishkumar",
+          "imageUrl": "/images/committee/Premraj Sathishkumar.png"
+        },
+        {
+          "name": "Peddineni Suresh",
+          "imageUrl": "/images/committee/Peddineni Suresh.jpg"
+        },
+        {
+          "name": "Gokul Kannan",
+          "imageUrl": "/images/committee/Gokul Kannan.png"
+        },
+        {
+          "name": "Shree vaishnavi Rangarajan",
+          "imageUrl": "/images/committee/Shree vaishnavi Rangarajan.jpg"
+        },
+        {
+          "name": "Suraj kumar Shettigar",
+          "imageUrl": "/images/committee/Suraj Kumar Shettigar.jpg"
+        }
+      ]
+    },
+    {
+      "committeeName": "Tech & Review",
+      "members": [
+        {
+          "name": "Indrajith Rajan",
+          "imageUrl": "/images/committee/Indrajith Rajan.jpg"
+        },
+        {
+          "name": "Rameshkumar Ayyasamy",
+          "imageUrl": "/images/committee/Rameshkumar Ayyasamy.jpg"
+        },
+        {
+          "name": "Rajiv Kumar",
+          "imageUrl": "/images/committee/Rajiv Kumar.jpg"
+        },
+        {
+          "name": "Kavyapriya Govindarajan",
+          "imageUrl": "/images/committee/Kavyapriya Govindarajan.jpg"
+        },
+        {
+          "name": "Gokulnath Prasuna Venkatachalam",
+          "imageUrl": "/images/committee/Gokulnath Prasuna Venkatachalam.jpg"
+        },
+        {
+          "name": "Pranay Lakshmanan",
+          "imageUrl": "/images/committee/Pranay Lakshmanan.jpeg"
+        },
+        {
+          "name": "Gaurav Rai",
+          "imageUrl": "/images/committee/Gaurav Rai.png"
+        },
+        {
+          "name": "Sepuri Srinivasulu",
+          "imageUrl": "/images/committee/Sepuri Srinivasulu.png"
+        }
+      ]
+    },
+    {
+      "committeeName": "Design Team",
+      "members": [
+        {
+          "name": "Sharvesh Sathish Kumar",
+          "imageUrl": "/images/committee/Sharvesh Sathish Kumar.png"
+        },
+        {
+          "name": "Chandra Sekhar Bodasingu",
+          "imageUrl": "/images/committee/Chandra Sekhar Bodasingu.jpg"
+        },
+        {
+          "name": "Sakthivel Kannan",
+          "imageUrl": "/images/committee/Sakthivel Kannan.jpeg"
+        },
+        {
+          "name": "Anu Gayathri Sharavanan",
+          "imageUrl": "/images/committee/Anu Gayathri Sharavanan.jpeg"
+        },
+        {
+          "name": "Gokul Ananth Mohana Sundaram",
+          "imageUrl": "/images/committee/Gokul Ananth Mohana Sundaram.jpeg"
+        },
+        {
+          "name": "Abirami Kannan",
+          "imageUrl": "/images/committee/Abirami Kannan.jpeg"
+        },
+        {
+          "name": "Mathiarasi Nagaraj",
+          "imageUrl": "/images/committee/Mathiarasi Nagaraj.jpeg"
+        },
+        {
+          "name": "Joel Moses Sundarrajan Devara",
+          "imageUrl": "/images/committee/Joel Moses Sundarrajan Devara.jpeg"
+        }
+      ]
+    },
+    {
+      "committeeName": "Website Development",
+      "members": [
+        {
+          "name": "Laxmanapandi Baskaran",
+          "imageUrl": "/images/committee/Laxmanapandi Baskaran.png"
+        },
+        {
+          "name": "Ashok Natarajan",
+          "imageUrl": "/images/committee/Ashok Natarajan.jpg"
+        },
+        {
+          "name": "Swetha Prakashan",
+          "imageUrl": "/images/committee/Swetha Prakashan.jpg"
+        },
+        {
+          "name": "Praneash Krishnamurthi",
+          "imageUrl": "/images/committee/Praneash Krishnamurthi.jpeg"
+        },
+        {
+          "name": "Sharankumar Madanagopal",
+          "imageUrl": "/images/committee/Sharankumar Madanagopal.jpeg"
+        },
+        {
+          "name": "Hariharan Muralidharan",
+          "imageUrl": "/images/committee/Hariharan Muralidharan.jpg"
+        },
+        {
+          "name": "Charanraj Thiyagarajan",
+          "imageUrl": "/images/committee/Charanraj Thiyagarajan.jpg"
+        },
+        {
+          "name": "Rubesh Udayakumar",
+          "imageUrl": "/images/committee/Rubesh Udayakumar.jpeg"
+        },
+        {
+          "name": "Pooja Manikandan",
+          "imageUrl": "/images/committee/Pooja Manikandan.jpeg"
+        }
+      ]
+    },
+    {
+      "committeeName": "Goodies Team",
+      "members": [
+        {
+          "name": "Krishnakanth Dega",
+          "imageUrl": "/images/committee/Krishnakanth Dega.jpg"
+        },
+        {
+          "name": "Praveen Rathinavel",
+          "imageUrl": "/images/committee/Praveen Rathinavel.jpg"
+        },
+        {
+          "name": "Shakthi Priya Palani",
+          "imageUrl": "/images/committee/Shakthi Priya Palani.jpeg"
+        },
+        {
+          "name": "Dhivya Baskaran",
+          "imageUrl": "/images/committee/Dhivya Baskaran.jpg"
+        }
+      ]
+    },
+    {
+      "committeeName": "Transport & Accommodation",
+      "members": [
+        {
+          "name": "Hareesh Raj Ramanathan",
+          "imageUrl": "/images/committee/Hareesh Raj Ramanathan.jpeg"
+        },
+        {
+          "name": "Prakash RameshKumar",
+          "imageUrl": "/images/committee/Prakash RameshKumar.jpg"
+        },
+        {
+          "name": "Dineshkumar Ravi",
+          "imageUrl": "/images/committee/Dineshkumar Ravi.png"
+        },
+        {
+          "name": "Venkata Kanula",
+          "imageUrl": "/images/committee/sample-image-one.png"
+        },
+        {
+          "name": "Karthik Gowda",
+          "imageUrl": "/images/committee/sample-image-one.png"
+        }
+      ]
+    },
+    {
+      "committeeName": "Engagement Committee",
+      "members": [
+        {
+          "name": "Thanushree Srinivasan",
+          "imageUrl": "/images/committee/Thanushree Srinivasan.jpg"
+        },
+        {
+          "name": "Hemapriya Nagarajan",
+          "imageUrl": "/images/committee/Hemapriya Nagarajan.jpeg"
+        },
+        {
+          "name": "Murapu Harish Reddy",
+          "imageUrl": "/images/committee/Murapu Harish Reddy.png"
+        },
+        {
+          "name": "Venkata Sai Lakshmi Ravali Guda",
+          "imageUrl": "/images/committee/Venkata Sai Lakshmi Ravali Guda.jpeg"
+        },
+        {
+          "name": "Deepana Shanmugam",
+          "imageUrl": "/images/committee/Deepana Shanmugam.png"
+        },
+        {
+          "name": "Nandha Kumar Kumaran",
+          "imageUrl": "/images/committee/Nandha Kumar Kumaran.jpeg"
+        },
+        {
+          "name": "Naveen kumar Nallasamy",
+          "imageUrl": "/images/committee/Naveen kumar Nallasamy.jpg"
+        },
+        {
+          "name": "Srujini Dulipalla",
+          "imageUrl": "/images/committee/Srujini Dulipalla.jpg"
+        },
+        {
+          "name": "Muralikrishnan Palanisamy",
+          "imageUrl": "/images/committee/Muralikrishnan Palanisamy.png"
+        }
+      ]
+    },
+    {
+      "committeeName": "Event Set Up",
+      "members": [
+        {
+          "name": "Sampath Kumar Chikkamarigowda",
+          "imageUrl": "/images/committee/Sampath Kumar Chikkamarigowda.jpeg"
+        },
+        {
+          "name": "Rajagurunathan Selvam",
+          "imageUrl": "/images/committee/Rajagurunathan Selvam.png"
+        },
+        {
+          "name": "Karthik Kantam",
+          "imageUrl": "/images/committee/Karthik Kantam.jpeg"
+        },
+        {
+          "name": "Allan Baptist Dsouza",
+          "imageUrl": "/images/committee/Allan Baptist Dsouza.jpeg"
+        },
+        {
+          "name": "Minju Mohan",
+          "imageUrl": "/images/committee/Minju Mohan.jpeg"
+        },
+        {
+          "name": "Venkata Sravan Kumar",
+          "imageUrl": "/images/committee/Venkata Sravan Kumar.jpeg"
+        },
+        {
+          "name": "Shuvethram Ayyasamy Ragupathy",
+          "imageUrl": "/images/committee/Shuvethram Ayyasamy Ragupathy.png"
+        }
+      ]
+    }
+  ]
+}

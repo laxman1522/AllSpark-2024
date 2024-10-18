@@ -1,0 +1,9 @@
+<svg  width="25.221" height="28.7" viewBox="0 0 25.221 28.7">
+  <defs>
+    <linearGradient id="linear-gradient-yellow" x1="0.033" y1="0.709" x2="1" y2="0.69" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc06c"/>
+      <stop offset="1" stop-color="#ff8c4e"/>
+    </linearGradient>
+  </defs>
+  <path id="arrow-yellow" d="M14.35,0,28.7,25.222s-6.34-6.245-13.515-6.245S0,25.222,0,25.222Z" transform="translate(25.221) rotate(90)" fill="url(#linear-gradient-yellow)"/>
+</svg>
