@@ -227,11 +227,11 @@
       "endTime": "11:30 AM",
       "eventDateTime": "October 26th at 10:45AM",
       "duration": 45,
-      "title": "FutureReady Immersive: Gamified Employee Training",
+      "title": "Federated Learning-Privacy First Models",
       "category": "Tech Talk",
-      "description": "Empowering Tomorrow’s Workforce with Gamified Learning Solutions",
+      "description": "AI while keeping your data private with Federated Learning!",
       "tags": [],
-      "speakersId": [33, 34, 35],
+      "speakersId": [14, 25, 26],
       "isLive": false
     },
     "19": {
@@ -250,14 +250,14 @@
     "20": {
       "date": "October 26",
       "startTime": "11:45 AM",
-      "endTime": "12:30 PM",
+      "endTime": "12:30 AM",
       "eventDateTime": "October 26th at 11:45AM",
       "duration": 45,
-      "title": "Federated Learning-Privacy First Models",
+      "title": "FutureReady Immersive: Gamified Employee Training",
       "category": "Tech Talk",
-      "description": "AI while keeping your data private with Federated Learning!",
+      "description": "Empowering Tomorrow’s Workforce with Gamified Learning Solutions",
       "tags": [],
-      "speakersId": [14, 25, 26],
+      "speakersId": [33, 34, 35],
       "isLive": false
     },
     "21": {
@@ -529,7 +529,7 @@
       "imageUrl": "/images/speakers/Nandha Kumar Kumaran.png",
       "sessionDetails": {
         "5": [13, 15, 16, 17],
-        "20": [25, 26]
+        "18": [25, 26]
       }
     },
     "15": {
@@ -618,7 +618,7 @@
       "email": "bharath.mikkilineni@cdw.com",
       "imageUrl": "/images/speakers/Bharath Mikkilineni.jpeg",
       "sessionDetails": {
-        "20": [26, 14]
+        "18": [26, 14]
       }
     },
     "26": {
@@ -626,7 +626,7 @@
       "email": "pavithra.govindasamy@cdw.com",
       "imageUrl": "/images/speakers/Pavithra Govindasamy.jpeg",
       "sessionDetails": {
-        "20": [25, 14]
+        "18": [25, 14]
       }
     },
     "27": {
@@ -682,7 +682,7 @@
       "email": "hebel.nadugaddi@cdw.com",
       "imageUrl": "/images/speakers/Hebel Nadugaddi.jpg",
       "sessionDetails": {
-        "18": [34, 35]
+        "20": [34, 35]
       }
     },
     "34": {
@@ -690,7 +690,7 @@
       "email": "prajnya.bhaskarshetty@cdw.com",
       "imageUrl": "/images/speakers/Prajnya Bhaskar Shetty.jpeg",
       "sessionDetails": {
-        "18": [33, 35]
+        "20": [33, 35]
       }
     },
     "35": {
@@ -698,7 +698,7 @@
       "email": "kshitiz.mohan@cdw.com",
       "imageUrl": "/images/speakers/Kshitiz Mohan.jpeg",
       "sessionDetails": {
-        "18": [33, 34]
+        "20": [33, 34]
       }
     },
     "36": {
