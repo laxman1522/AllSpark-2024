@@ -15,7 +15,6 @@ const CommitteeNavigation: React.FC<CommitteeNavigationProps> = ({
   setCommittee,
 }) => {
   const committeeNames = getCommitteeClassNames();
-  console.log(committeeNames);
   const committeButtonClassName =
     'button px-4 cursor-pointer text-[#F3BAA7] font-semibold text-xl max-[1366px]:text-base  max-[1366px]:leading-6 leading-8 text-left flex-1 w-[100%]';
 
