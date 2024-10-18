@@ -29,13 +29,13 @@ const generateImageSlides = (
       key={index}
       className={`flex-shrink-0 flex-col w-full h-full flex items-center text-white text-xl font-bold select-none`}
     >
-      <div className="w-full h-full object-cover m-0 relative object-top">
+      <div className="w-full h-full object-cover m-0 relative">
         <Image
           src={item?.imageUrl}
           alt={item?.description}
           fill
           draggable="false"
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', objectPosition: 'top' }}
         />
       </div>
     </div>
