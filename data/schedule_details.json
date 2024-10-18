@@ -28,7 +28,7 @@
     },
     "3": {
       "date": "October 25",
-      "startTime": "11.15 AM",
+      "startTime": "11:15 AM",
       "endTime": "11:30 AM",
       "eventDateTime": "October 25th at 11.15 AM",
       "duration": 15,
@@ -236,7 +236,7 @@
     },
     "19": {
       "date": "October 26",
-      "startTime": "11.30 AM",
+      "startTime": "11:30 AM",
       "endTime": "11:45 AM",
       "eventDateTime": "October 26th at 11:30AM",
       "duration": 15,
@@ -353,7 +353,7 @@
     },
     "28": {
       "date": "October 26",
-      "startTime": "04.15 PM",
+      "startTime": "04:15 PM",
       "endTime": "04:30 PM",
       "eventDateTime": "October 26th at 04:15PM",
       "duration": 15,
