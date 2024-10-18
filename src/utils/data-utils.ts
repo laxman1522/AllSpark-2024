@@ -53,15 +53,21 @@ export const getMemories = () => {
  * @author [Rubesh Udayakumar]
  */
 export const getCommitteeClassNames = () => {
-  return committeeData?.committee?.map((committee) => {
-    return {
-      name: committee?.committeeName,
-      className: committee?.committeeName
-        .replaceAll(' ', '-')
-        .replaceAll('&', '-')
-        .toLowerCase(),
-    };
-  });
+  return committeeData?.committee
+    ?.map((committee) => {
+      return {
+        name: committee?.committeeName,
+        className: committee?.committeeName
+          .replaceAll(' ', '-')
+          .replaceAll('&', '-')
+          .toLowerCase(),
+      };
+    })
+    .sort((a, b) => {
+      const nameA = a.name?.toLowerCase() || '';
+      const nameB = b.name?.toLowerCase() || '';
+      return nameA.localeCompare(nameB);
+    });
 };
 
 /**
