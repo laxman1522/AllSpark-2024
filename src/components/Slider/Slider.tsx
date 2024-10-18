@@ -35,7 +35,7 @@ const generateImageSlides = (
           alt={item?.description}
           fill
           draggable="false"
-          style={{ objectFit: 'cover', objectPosition: 'top' }}
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>
