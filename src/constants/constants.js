@@ -68,7 +68,7 @@ export const EVENT_COUNTER = {
   SPEAKERS: 'Speakers',
   TECHIES: 'Techies',
   SOLUTION_SPACE: 'Solution Space',
-  GUESTS: 'Guests',
+  GUESTS: 'Guest Talk',
   ATTENDEES_COUNT: 600,
 };
 
