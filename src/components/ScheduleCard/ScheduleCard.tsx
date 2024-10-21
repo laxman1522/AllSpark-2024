@@ -114,10 +114,16 @@ const ScheduleCard = (session: sessionType) => {
       start: convertToDateArray(date, startTime), // Year, Month, Day, Hour, Minute
       duration: { hours: hours, minutes: minutes }, // Event duration
       title: title,
-      description: description,
+      description: 'enjoy the event',
       location: 'Bengaluru',
       status: 'CONFIRMED',
-      alarms: [{ action: 'display', trigger: { minutes: 15, before: true } }], // Reminder
+      alarms: [
+        {
+          action: 'display',
+          trigger: { minutes: 15, before: true },
+          description: 'join the event',
+        },
+      ], // Reminder
       startInputType: 'local', // This means the time is in local time, not UTC
       productId: '//my.calendar',
     };
