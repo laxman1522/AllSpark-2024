@@ -8,7 +8,7 @@ import ScheduleContainer from '@/containers/ScheduleContainer/ScheduleContainer'
 import SpeakerContainer from '@/containers/SpeakerContainer/SpeakerContainer';
 import RecapContainer from '@/containers/RecapContainer/RecapContainer';
 import CommitteeContainer from '@/containers/CommitteeContainer/CommitteeContainer';
-import { SECTIONS } from '@/constants/constants';
+// import { SECTIONS } from '@/constants/constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import Header from '../Header/Header';
@@ -23,8 +23,8 @@ export default function SideNavigation() {
   const navRef = useRef<HTMLUListElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
 
-  const rows = new Array(3).fill(null);
-  const boxes = new Array(3).fill(null);
+  // const rows = new Array(3).fill(null);
+  // const boxes = new Array(3).fill(null);
 
   const handleScroll = () => {
     if (navRef && navRef.current) {
@@ -36,30 +36,30 @@ export default function SideNavigation() {
   };
   const { windowSize } = useWindowSize();
 
-  const generateSections = () => {
-    return SECTIONS?.map((section) => (
-      <li key={section?.number} className="text-center">
-        <a
-          href={section?.id}
-          data-number={section?.number}
-          aria-label={section?.label}
-        >
-          <span className="navbar-dot cursor-pointer"></span>
-          <span className="navbar-label">{section?.label}</span>
-        </a>
-      </li>
-    ));
-  };
+  // const generateSections = () => {
+  //   return SECTIONS?.map((section) => (
+  //     <li key={section?.number} className="text-center">
+  //       <a
+  //         href={section?.id}
+  //         data-number={section?.number}
+  //         aria-label={section?.label}
+  //       >
+  //         <span className="navbar-dot cursor-pointer"></span>
+  //         <span className="navbar-label">{section?.label}</span>
+  //       </a>
+  //     </li>
+  //   ));
+  // };
 
-  const generateMobileNavigator = () => {
-    return rows.map((_, rowIndex) => (
-      <span className="row" key={`row-${rowIndex}`}>
-        {boxes.map((_, boxIndex) => (
-          <span className="box" key={`box-${boxIndex}`}></span>
-        ))}
-      </span>
-    ));
-  };
+  // const generateMobileNavigator = () => {
+  //   return rows.map((_, rowIndex) => (
+  //     <span className="row" key={`row-${rowIndex}`}>
+  //       {boxes.map((_, boxIndex) => (
+  //         <span className="box" key={`box-${boxIndex}`}></span>
+  //       ))}
+  //     </span>
+  //   ));
+  // };
 
   useEffect(() => {
     if (navRef.current) {
@@ -78,7 +78,7 @@ export default function SideNavigation() {
     <div id="nav-wrapper">
       <nav id="navbar-vertical-nav">
         <ul ref={navRef} className="hidden">
-          {generateSections()}
+          {/* {generateSections()} */}
         </ul>
         <div
           className="x-icon justify-end items-center cursor-pointer text-[#f9f1d5] hidden"
@@ -96,7 +96,7 @@ export default function SideNavigation() {
         href="#"
         aria-label="nav-menu"
       >
-        {generateMobileNavigator()}
+        {/* {generateMobileNavigator()} */}
       </a>
 
       <CSSTransition
