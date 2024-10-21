@@ -172,9 +172,9 @@
     "14": {
       "date": "October 26",
       "startTime": "08:00 AM",
-      "endTime": "09:30 AM",
+      "endTime": "09:00 AM",
       "eventDateTime": "October 26th at 08:00AM",
-      "duration": 90,
+      "duration": 60,
       "title": "Breakfast",
       "category": "",
       "description": "",
@@ -184,9 +184,9 @@
     },
     "15": {
       "date": "October 26",
-      "startTime": "09:30 AM",
-      "endTime": "10:30 AM",
-      "eventDateTime": "October 26th at 09:30AM",
+      "startTime": "09:00 AM",
+      "endTime": "10:00 AM",
+      "eventDateTime": "October 26th at 09:00AM",
       "duration": 60,
       "title": "Keynote",
       "category": "",
@@ -197,10 +197,10 @@
     },
     "16": {
       "date": "October 26",
-      "startTime": "10:30 AM",
+      "startTime": "10:00 AM",
       "endTime": "10:45 AM",
-      "eventDateTime": "October 26th at 10:30AM",
-      "duration": 15,
+      "eventDateTime": "October 26th at 10:00AM",
+      "duration": 45,
       "title": "AllSpark presentation Kick Off",
       "category": "",
       "description": "",
@@ -276,60 +276,8 @@
     "22": {
       "date": "October 26",
       "startTime": "12:30 PM",
-      "endTime": "12:45 PM",
+      "endTime": "01:15 PM",
       "eventDateTime": "October 26th at 12:30PM",
-      "duration": 15,
-      "title": "Engagement Activity",
-      "category": "",
-      "description": "",
-      "tags": [],
-      "speakersId": [],
-      "isLive": false
-    },
-    "23": {
-      "date": "October 26",
-      "startTime": "12:45 PM",
-      "endTime": "02:00 PM",
-      "eventDateTime": "October 26th at 12:45PM",
-      "duration": 75,
-      "title": "Lunch",
-      "category": "",
-      "description": "",
-      "tags": [],
-      "speakersId": [],
-      "isLive": false
-    },
-    "24": {
-      "date": "October 26",
-      "startTime": "02:00 PM",
-      "endTime": "02:30 PM",
-      "eventDateTime": "October 26th at 02:00PM",
-      "duration": 30,
-      "title": "Engagement Activity (Skit)",
-      "category": "",
-      "description": "",
-      "tags": [],
-      "speakersId": [],
-      "isLive": false
-    },
-    "25": {
-      "date": "October 26",
-      "startTime": "02:30 PM",
-      "endTime": "03:30 PM",
-      "eventDateTime": "October 26th at 02:30PM",
-      "duration": 60,
-      "title": "Guest Speaker",
-      "category": "Guest Speaker",
-      "description": "",
-      "tags": [],
-      "speakersId": [],
-      "isLive": false
-    },
-    "26": {
-      "date": "October 26",
-      "startTime": "03:30 PM",
-      "endTime": "04:15 PM",
-      "eventDateTime": "October 26th at 03:30PM",
       "duration": 45,
       "title": "Memory as a Service-Emotions in the cloud",
       "category": "Tech Talk",
@@ -338,11 +286,11 @@
       "speakersId": [20, 21, 22],
       "isLive": false
     },
-    "27": {
+    "23": {
       "date": "October 26",
-      "startTime": "03:30 PM",
-      "endTime": "04:15 PM",
-      "eventDateTime": "October 26th at 03:30PM",
+      "startTime": "12:30 PM",
+      "endTime": "01:15 PM",
+      "eventDateTime": "October 26th at 12:30PM",
       "duration": 45,
       "title": "From Data Chaos to Data Castle: Designing your Data Kingdom",
       "category": "Tech Talk",
@@ -351,7 +299,46 @@
       "speakersId": [36, 37, 4],
       "isLive": false
     },
-    "28": {
+    "24": {
+      "date": "October 26",
+      "startTime": "01:15 PM",
+      "endTime": "02:15 PM",
+      "eventDateTime": "October 26th at 01:15PM",
+      "duration": 60,
+      "title": "Lunch",
+      "category": "",
+      "description": "",
+      "tags": [],
+      "speakersId": [],
+      "isLive": false
+    },
+    "25": {
+      "date": "October 26",
+      "startTime": "02:15 PM",
+      "endTime": "03:00 PM",
+      "eventDateTime": "October 26th at 02:15PM",
+      "duration": 45,
+      "title": "Engagement Activity (Skit)",
+      "category": "",
+      "description": "",
+      "tags": [],
+      "speakersId": [],
+      "isLive": false
+    },
+    "26": {
+      "date": "October 26",
+      "startTime": "03:00 PM",
+      "endTime": "04:00 PM",
+      "eventDateTime": "October 26th at 03:00PM",
+      "duration": 60,
+      "title": "Guest Speaker",
+      "category": "Guest Speaker",
+      "description": "",
+      "tags": [],
+      "speakersId": [],
+      "isLive": false
+    },
+    "27": {
       "date": "October 26",
       "startTime": "04:15 PM",
       "endTime": "04:30 PM",
@@ -364,7 +351,7 @@
       "speakersId": [],
       "isLive": false
     },
-    "29": {
+    "28": {
       "date": "October 26",
       "startTime": "04:30 PM",
       "endTime": "05:15 PM",
@@ -377,24 +364,11 @@
       "speakersId": [38, 39, 40],
       "isLive": false
     },
-    "30": {
+    "29": {
       "date": "October 26",
       "startTime": "05:15 PM",
-      "endTime": "05:30 PM",
+      "endTime": "05:35 PM",
       "eventDateTime": "October 26th at 05:15PM",
-      "duration": 15,
-      "title": "Engagement Activity",
-      "category": "",
-      "description": "",
-      "tags": [],
-      "speakersId": [],
-      "isLive": false
-    },
-    "31": {
-      "date": "October 26",
-      "startTime": "05:30 PM",
-      "endTime": "05:50 PM",
-      "eventDateTime": "October 26th at 05:30PM",
       "duration": 20,
       "title": "Transforming Business Intelligence with RAG and Agentic RAG: A Path to Smarter Operations and Insights",
       "category": "Tech Talk",
@@ -403,11 +377,11 @@
       "speakersId": [30, 31, 32],
       "isLive": false
     },
-    "32": {
+    "30": {
       "date": "October 26",
-      "startTime": "05:50 PM",
-      "endTime": "06:10 PM",
-      "eventDateTime": "October 26th at 05:50PM",
+      "startTime": "05:40 PM",
+      "endTime": "06:00 PM",
+      "eventDateTime": "October 26th at 05:40PM",
       "duration": 20,
       "title": "LangFlow Begins: A Journey Through Emerging Trends.",
       "category": "Tech Talk",
@@ -416,12 +390,25 @@
       "speakersId": [27, 28, 29],
       "isLive": false
     },
-    "33": {
+    "31": {
       "date": "October 26",
-      "startTime": "06:10 PM",
+      "startTime": "06:00 PM",
+      "endTime": "06:15 PM",
+      "eventDateTime": "October 26th at 06:00PM",
+      "duration": 15,
+      "title": "Engagement Activity",
+      "category": "",
+      "description": "",
+      "tags": [],
+      "speakersId": [],
+      "isLive": false
+    },
+    "32": {
+      "date": "October 26",
+      "startTime": "06:15 PM",
       "endTime": "06:30 PM",
       "eventDateTime": "October 26th at 06:15PM",
-      "duration": 20,
+      "duration": 15,
       "title": "Conclusion",
       "category": "",
       "description": "",
@@ -461,7 +448,7 @@
       "imageUrl": "/images/speakers/Mukesh Ravi.jpeg",
       "sessionDetails": {
         "12": [5, 6, 7],
-        "27": [36, 37]
+        "23": [36, 37]
       }
     },
     "5": {
@@ -591,7 +578,7 @@
       "email": "rajalakshmi.ramesh@cdw.com",
       "imageUrl": "/images/speakers/Rajalakshmi Ramesh.jpeg",
       "sessionDetails": {
-        "26": [21, 22]
+        "22": [21, 22]
       }
     },
     "21": {
@@ -599,7 +586,7 @@
       "email": "poornima.ravichandran@cdw.com",
       "imageUrl": "/images/speakers/Poornima Ravichandran.jpg",
       "sessionDetails": {
-        "26": [20, 22]
+        "22": [20, 22]
       }
     },
     "22": {
@@ -607,7 +594,7 @@
       "email": "prakruthi.itagalli@cdw.com",
       "imageUrl": "/images/speakers/Prakruthi Itagalli.jpeg",
       "sessionDetails": {
-        "26": [20, 21]
+        "22": [20, 21]
       }
     },
     "23": {
@@ -621,7 +608,7 @@
     "24": {
       "name": "Karthikeyan Arcot RadhaKrishnan",
       "email": "karthikeyan.arcotradhakrishnan@cdw.com",
-      "imageUrl": "/images/speakers/sample-image-three.png",
+      "imageUrl": "/images/speakers/Karthikeyan Arcot RadhaKrishnan.jpg",
       "sessionDetails": {
         "21": [23, 19]
       }
@@ -647,7 +634,7 @@
       "email": "kavinkumar.baskar@cdw.com",
       "imageUrl": "/images/speakers/KavinKumar Baskar.jpg",
       "sessionDetails": {
-        "32": [28, 29]
+        "30": [28, 29]
       }
     },
     "28": {
@@ -655,7 +642,7 @@
       "email": "charanraj.thiyagarajan@cdw.com",
       "imageUrl": "/images/speakers/Charanraj Thiyagarajan.jpg",
       "sessionDetails": {
-        "32": [27, 29]
+        "30": [27, 29]
       }
     },
     "29": {
@@ -663,7 +650,7 @@
       "email": "kavyapriya.govindarajan@cdw.com",
       "imageUrl": "/images/speakers/Kavyapriya Govindarajan.jpg",
       "sessionDetails": {
-        "32": [27, 28]
+        "30": [27, 28]
       }
     },
     "30": {
@@ -671,7 +658,7 @@
       "email": "vinishah.nagarajan@cdw.com",
       "imageUrl": "/images/speakers/Vinishah Nagarajan.jpeg",
       "sessionDetails": {
-        "31": [31, 32]
+        "29": [31, 32]
       }
     },
     "31": {
@@ -679,7 +666,7 @@
       "email": "naveenkumar.nallasamy@cdw.com",
       "imageUrl": "/images/speakers/Naveen kumar Nallasamy.jpg",
       "sessionDetails": {
-        "31": [30, 32]
+        "29": [30, 32]
       }
     },
     "32": {
@@ -687,7 +674,7 @@
       "email": "jayamaharaja.alagesan@cdw.com",
       "imageUrl": "/images/speakers/Jayamaharaja Alagesan.jpeg",
       "sessionDetails": {
-        "31": [30, 31]
+        "29": [30, 31]
       }
     },
     "33": {
@@ -719,7 +706,7 @@
       "email": "sruthika.balasubramani@cdw.com",
       "imageUrl": "/images/speakers/Sruthika Balasubramani.jpg",
       "sessionDetails": {
-        "27": [4, 37]
+        "23": [4, 37]
       }
     },
     "37": {
@@ -727,7 +714,7 @@
       "email": "balakumaran.prabhu@cdw.com",
       "imageUrl": "/images/speakers/Balakumaran Prabhu.jpeg",
       "sessionDetails": {
-        "27": [4, 36]
+        "23": [4, 36]
       }
     },
     "38": {
@@ -735,7 +722,7 @@
       "email": "swetha.prakashan@cdw.com",
       "imageUrl": "/images/speakers/Swetha Prakashan.jpg",
       "sessionDetails": {
-        "29": [39, 40]
+        "28": [39, 40]
       }
     },
     "39": {
@@ -743,7 +730,7 @@
       "email": "alagu.balaganapathy@cdw.com",
       "imageUrl": "/images/speakers/Alagu Bala Ganapathy.jpeg",
       "sessionDetails": {
-        "29": [38, 40]
+        "28": [38, 40]
       }
     },
     "40": {
@@ -751,19 +738,19 @@
       "email": "a.ponnusamy@cdw.com",
       "imageUrl": "/images/speakers/Arun kumar Ponnusamy.jpeg",
       "sessionDetails": {
-        "29": [38, 39]
+        "28": [38, 39]
       }
     }
   },
   "agenda": {
     "1": {
       "date": "October 25",
-      "sessions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      "sessions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     },
     "2": {
       "date": "October 26",
       "sessions": [
-        12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28
+        14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
       ]
     }
   }

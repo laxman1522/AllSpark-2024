@@ -21,7 +21,7 @@ const TeammateProfile: React.FC<TeammateProfileProps> = ({
           alt={teammateName}
           src={imageUrl}
           fill
-          objectFit="cover"
+          style={{ objectFit: 'cover' }}
           objectPosition="top"
           className="rounded-full"
         />

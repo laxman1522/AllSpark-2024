@@ -63,7 +63,7 @@ const UserInformationModal: React.FC<UserInformationModalProps> = ({
             alt={profileName}
             src={profileUrl}
             fill
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
             objectPosition="top"
             className="rounded-lg"
           />

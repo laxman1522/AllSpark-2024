@@ -1,3 +1,7 @@
+.counter-container {
+  opacity: 0;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 1024px) {
   .count-down-top,
   .count-down-bottom {
