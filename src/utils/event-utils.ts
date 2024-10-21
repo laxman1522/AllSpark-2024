@@ -93,10 +93,22 @@ export const getAllSpeakers = () => {
         });
         speakerDetails = {
           ...speakerDetails,
-          eventDateTime,
-          title,
-          description,
-          teammates,
+          eventDateTime:
+            speakerDetails.eventDateTime != undefined
+              ? speakerDetails.eventDateTime + ' & ' + eventDateTime
+              : eventDateTime,
+          title:
+            speakerDetails.title != undefined
+              ? speakerDetails.title + ' & ' + title
+              : title,
+          description:
+            speakerDetails.description != undefined
+              ? speakerDetails.description + ' & ' + description
+              : description,
+          teammates:
+            speakerDetails.teammates != undefined
+              ? speakerDetails.teammates.concat(teammates)
+              : teammates,
         };
       });
       return speakerDetails;
