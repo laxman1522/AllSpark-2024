@@ -393,9 +393,9 @@
     "31": {
       "date": "October 26",
       "startTime": "05:30 PM",
-      "endTime": "06:15 PM",
+      "endTime": "05:50 PM",
       "eventDateTime": "October 26th at 05:30PM",
-      "duration": 45,
+      "duration": 20,
       "title": "Transforming Business Intelligence with RAG and Agentic RAG: A Path to Smarter Operations and Insights",
       "category": "Tech Talk",
       "description": "Revolutionize Business Operations with RAG and Agentic RAG",
@@ -405,10 +405,23 @@
     },
     "32": {
       "date": "October 26",
-      "startTime": "06:15 PM",
+      "startTime": "05:50 PM",
+      "endTime": "06:10 PM",
+      "eventDateTime": "October 26th at 05:50PM",
+      "duration": 20,
+      "title": "LangFlow Begins: A Journey Through Emerging Trends.",
+      "category": "Tech Talk",
+      "description": "Build your AI powered applications in no time",
+      "tags": [],
+      "speakersId": [27, 28, 29],
+      "isLive": false
+    },
+    "33": {
+      "date": "October 26",
+      "startTime": "06:10 PM",
       "endTime": "06:30 PM",
       "eventDateTime": "October 26th at 06:15PM",
-      "duration": 30,
+      "duration": 20,
       "title": "Conclusion",
       "category": "",
       "description": "",
@@ -634,7 +647,7 @@
       "email": "kavinkumar.baskar@cdw.com",
       "imageUrl": "/images/speakers/KavinKumar Baskar.jpg",
       "sessionDetails": {
-        "31": [28, 29]
+        "32": [28, 29]
       }
     },
     "28": {
@@ -642,7 +655,7 @@
       "email": "charanraj.thiyagarajan@cdw.com",
       "imageUrl": "/images/speakers/Charanraj Thiyagarajan.jpg",
       "sessionDetails": {
-        "31": [27, 29]
+        "32": [27, 29]
       }
     },
     "29": {
@@ -650,7 +663,7 @@
       "email": "kavyapriya.govindarajan@cdw.com",
       "imageUrl": "/images/speakers/Kavyapriya Govindarajan.jpg",
       "sessionDetails": {
-        "31": [27, 28]
+        "32": [27, 28]
       }
     },
     "30": {
