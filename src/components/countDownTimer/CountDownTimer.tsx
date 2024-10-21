@@ -1,10 +1,12 @@
 'use client';
 import { getTimeRemaining } from '@/utils/countdown-utils';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TimeSection from '@/components/timeSection/TimeSection';
 import '../timeSegment/TimeSegment.scss';
 import { SCREEN_SIZES } from '@/constants/constants';
 import './CountDownTimer.scss';
+import { useWindowSize } from '@/contexts/WindowSizeContext';
+import gsap from 'gsap';
 
 interface CountDownTimerProps {
   targetTime: number;
@@ -99,9 +101,29 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({
     };
   }, []);
 
+  const { windowSize } = useWindowSize();
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (container.current) {
+      gsap.set(container.current, {
+        opacity: 0,
+        filter: 'blur(10px)',
+      });
+      gsap.to(container.current, {
+        opacity: 1,
+        duration: 1.5,
+        filter: 'blur(0px)',
+        ease: 'power2.out',
+        delay: 7,
+      });
+    }
+  }, [windowSize]);
+
   return (
     <div
       className={`counter-container animate flex flex-col min-[540px]:flex-row justify-center items-center md:gap-[3rem] gap-5 w-100 p-10 mt-20 xl:mt-8 md:mt-12  mx-auto absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+      ref={container}
     >
       <div className="flex count-down-top flex-col xl:flex-row md:gap-[3rem] gap-5">
         <TimeSection label="Days" value={timeRemaining?.days} />
