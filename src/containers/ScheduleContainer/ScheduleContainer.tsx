@@ -12,7 +12,14 @@ import './ScheduleContainer.scss';
 
 const ScheduleContainer = () => {
   const agenda = getAgenda();
-  const [activeTab, setActiveTab] = useState<string>(agenda[0].date);
+  const date = new Date();
+  let currentDateString =
+    date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate();
+  currentDateString =
+    currentDateString == agenda[0].date || currentDateString == agenda[1].date
+      ? currentDateString
+      : agenda[0].date;
+  const [activeTab, setActiveTab] = useState<string>(currentDateString);
   const [sessions, setSessions] = useState<any>(getSessionsByDate(activeTab));
   const [searchKeyword, setSearchKeyword] = useState<string>('');
   const [time, setTime] = useState(0);
