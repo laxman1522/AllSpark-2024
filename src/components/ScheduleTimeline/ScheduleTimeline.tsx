@@ -16,6 +16,7 @@ type sessionType = {
   isLive: boolean;
   description?: string;
   speakersId?: Array<number>;
+  url: string;
 };
 
 const ScheduleTimeline = ({ sessions }: SessionsProps) => {

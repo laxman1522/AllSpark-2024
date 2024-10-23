@@ -3,6 +3,7 @@ import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
 import Profile from '../Profile/Profile';
 import { createEvent } from 'ics';
+import Image from 'next/image';
 
 type sessionType = {
   date: string;
@@ -14,10 +15,16 @@ type sessionType = {
   isLive: boolean;
   description?: string;
   speakersId?: Array<number>;
+  url: string;
 };
 const ScheduleCard = (session: sessionType) => {
-  const { LIVE_NOW, ADD_TO_CALENDAR, SOLUTION_SPACE, TECH_TALK } =
-    SCHEDULE_CONSTANTS;
+  const {
+    LIVE_NOW,
+    ADD_TO_CALENDAR,
+    SOLUTION_SPACE,
+    TECH_TALK,
+    VIEW_RECORDING,
+  } = SCHEDULE_CONSTANTS;
   const {
     date,
     startTime,
@@ -27,6 +34,7 @@ const ScheduleCard = (session: sessionType) => {
     isLive,
     description,
     speakersId,
+    url,
   } = session;
 
   const constructSpeakersHtml = (speakersId: Array<number>) => {
@@ -147,6 +155,10 @@ const ScheduleCard = (session: sessionType) => {
     });
   };
 
+  const openURL = () => {
+    window.open(url, '_blank');
+  };
+
   return (
     <div
       className={`timeline__event  animated fadeInUp delay-3s ${isLive && 'active'}`}
@@ -180,7 +192,26 @@ const ScheduleCard = (session: sessionType) => {
             <span className="text-[#F9F0D5] max-[400px]:text-xs max-[768px]:text-sm max-[1024px]:text-lg text-base lg:font-semibold">
               {category}
             </span>
-            {!isLive && (
+            {url != '' && (
+              <div
+                className="flex items-center border-[1px] border-[#F2BAA7] rounded-[100px] lg:rounded-[10px] cursor-pointer mb-2"
+                onClick={openURL}
+              >
+                <div className="image-wrapper-play">
+                  <Image
+                    src={'/images/play.png'}
+                    width={40}
+                    height={40}
+                    className="w-[40px] h-[40px] sm:w-[20px] sm:h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]"
+                    alt="play button"
+                  />
+                </div>
+                <span className="max-[1024px]:text-[10px] text-xs max-[1024px]:mr-2 mr-1 text-white">
+                  {VIEW_RECORDING}
+                </span>
+              </div>
+            )}
+            {!isLive && url == '' && (
               <div
                 className="flex items-center border-[1px] border-[#F2BAA7] rounded-[100px] lg:rounded-[10px] cursor-pointer mb-2"
                 onClick={addEventToCalendar}

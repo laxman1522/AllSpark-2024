@@ -11,7 +11,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "2": {
       "date": "October 25",
@@ -24,7 +25,8 @@
       "description": "Streamline order processing with ePro AI by automating email attachments into seamless order submissions",
       "tags": [],
       "speakersId": [3],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "3": {
       "date": "October 25",
@@ -37,7 +39,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "4": {
       "date": "October 25",
@@ -50,7 +53,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "5": {
       "date": "October 25",
@@ -63,7 +67,8 @@
       "description": "See it to believe it: AR shopping redefined",
       "tags": [],
       "speakersId": [13, 14, 15, 16, 17],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "6": {
       "date": "October 25",
@@ -76,7 +81,8 @@
       "description": "A Powerful,Platform independent tool for executing Lift and Shift data migrations in hours and efficient data validations",
       "tags": [],
       "speakersId": [1, 2],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "7": {
       "date": "October 25",
@@ -89,7 +95,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "8": {
       "date": "October 25",
@@ -102,7 +109,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "9": {
       "date": "October 25",
@@ -115,7 +123,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "10": {
       "date": "October 25",
@@ -128,7 +137,8 @@
       "description": "Smartwatch Apps: Tiny Screens, Big Challenges, Infinite Possibilities!",
       "tags": [],
       "speakersId": [8, 9, 10, 11, 12],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "11": {
       "date": "October 25",
@@ -141,7 +151,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "12": {
       "date": "October 25",
@@ -154,7 +165,8 @@
       "description": "Data driven sales accelerator, one stop solution for all your sales needs",
       "tags": [],
       "speakersId": [4, 5, 6, 7],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "13": {
       "date": "October 25",
@@ -167,7 +179,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "14": {
       "date": "October 26",
@@ -180,7 +193,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "15": {
       "date": "October 26",
@@ -193,7 +207,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "16": {
       "date": "October 26",
@@ -206,7 +221,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "17": {
       "date": "October 26",
@@ -219,7 +235,8 @@
       "description": "Ransomware remains one of the most significant threats causing business interruption, Netapp Storage provides detection, and remediation to avoid costly downtime",
       "tags": [],
       "speakersId": [18, 19],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "18": {
       "date": "October 26",
@@ -232,7 +249,8 @@
       "description": "AI while keeping your data private with Federated Learning!",
       "tags": [],
       "speakersId": [14, 25, 26],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "19": {
       "date": "October 26",
@@ -245,12 +263,13 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "20": {
       "date": "October 26",
       "startTime": "11:45 AM",
-      "endTime": "12:30 AM",
+      "endTime": "12:30 PM",
       "eventDateTime": "October 26th at 11:45AM",
       "duration": 45,
       "title": "FutureReady Immersive: Gamified Employee Training",
@@ -258,7 +277,8 @@
       "description": "Empowering Tomorrow’s Workforce with Gamified Learning Solutions",
       "tags": [],
       "speakersId": [33, 34, 35],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "21": {
       "date": "October 26",
@@ -271,7 +291,8 @@
       "description": "Unlocking AI driven business value with Netapp Nvidia AI pod, accelerating time-to-insight and improving data-driven decision making",
       "tags": [],
       "speakersId": [19, 23, 24],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "22": {
       "date": "October 26",
@@ -284,7 +305,8 @@
       "description": "From mind to cloud and back again – bridging memories, emotions, and experiences with the power of technology",
       "tags": [],
       "speakersId": [20, 21, 22],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "23": {
       "date": "October 26",
@@ -297,7 +319,8 @@
       "description": "From chaotic data to informed decisions: embracing a fact-driven approach",
       "tags": [],
       "speakersId": [36, 37, 4],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "24": {
       "date": "October 26",
@@ -310,7 +333,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "25": {
       "date": "October 26",
@@ -323,7 +347,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "26": {
       "date": "October 26",
@@ -336,7 +361,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "27": {
       "date": "October 26",
@@ -349,7 +375,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "28": {
       "date": "October 26",
@@ -362,7 +389,8 @@
       "description": "AI as your coding copilot: accelerating innovation, minimizing errors, and streamlining software development",
       "tags": [],
       "speakersId": [38, 39, 40],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "29": {
       "date": "October 26",
@@ -375,7 +403,8 @@
       "description": "Revolutionize Business Operations with RAG and Agentic RAG",
       "tags": [],
       "speakersId": [30, 31, 32],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "30": {
       "date": "October 26",
@@ -388,7 +417,8 @@
       "description": "Build your AI powered applications in no time",
       "tags": [],
       "speakersId": [27, 28, 29],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "31": {
       "date": "October 26",
@@ -401,7 +431,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     },
     "32": {
       "date": "October 26",
@@ -414,7 +445,8 @@
       "description": "",
       "tags": [],
       "speakersId": [],
-      "isLive": false
+      "isLive": false,
+      "url": ""
     }
   },
   "speakers": {
