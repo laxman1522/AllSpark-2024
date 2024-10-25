@@ -6,7 +6,7 @@ import EventDetailsContainer from '../EventDetailsContainer/EventDetailsContaine
 import CountDown from '@/components/countDown/CountDown';
 
 const HomeContainer = () => {
-  const isCountDownDisplayed = true;
+  const isCountDownDisplayed = false;
   const { windowWidth } = useWindowSize();
 
   return (
