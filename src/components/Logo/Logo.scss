@@ -68,3 +68,21 @@
     }
   }
 }
+
+@media only screen and (max-width: 365px) {
+  .logo {
+    .left,
+    .right {
+      height: 8px;
+      width: 9.6px;
+    }
+    .logo-container {
+      height: 100px;
+      width: 300px;
+      .star {
+        height: 42.29px;
+        width: 50.35px;
+      }
+    }
+  }
+}
