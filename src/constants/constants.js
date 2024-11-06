@@ -88,6 +88,7 @@ export const SCHEDULE_CONSTANTS = {
   LIVE_NOW: 'Live Now',
   SOLUTION_SPACE: 'Solution Space',
   TECH_TALK: 'Tech Talk',
+  VIEW_RECORDING: 'View Recording',
 };
 
 export const ICS_CONSTANTS = {
