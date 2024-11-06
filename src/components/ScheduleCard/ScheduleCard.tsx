@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import CalendarIcon from '../CalendarIcon/CalendarIcon';
 import { ICS_CONSTANTS, SCHEDULE_CONSTANTS } from '@/constants/constants';
@@ -211,7 +212,7 @@ const ScheduleCard = (session: sessionType) => {
                 </span>
               </div>
             )}
-            {!isLive && url == '' && (
+            {/* {!isLive && url == '' && (
               <div
                 className="flex items-center border-[1px] border-[#F2BAA7] rounded-[100px] lg:rounded-[10px] cursor-pointer mb-2"
                 onClick={addEventToCalendar}
@@ -223,7 +224,7 @@ const ScheduleCard = (session: sessionType) => {
                   {ADD_TO_CALENDAR}
                 </span>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
